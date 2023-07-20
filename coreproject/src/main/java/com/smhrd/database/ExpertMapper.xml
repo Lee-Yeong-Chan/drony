@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.database.ExpertMapper">
+	<select id="selectExpert" parameterType="com.smhrd.domain.expertDTO" resultType="com.smhrd.domain.expertDTO">
+		select * from t_expert where exp_id=#{exp_id} and exp_pw=#{exp_pw}
+	</select>
+	<insert id="insertExpert" parameterType="com.smhrd.domain.expertDTO">
+		insert into t_expert values (#{exp_id}, #{exp_pw}, #{exp_name}, #{exp_email}, #{exp_phone}, #{bno}, #{company_name}, #{company_addr}, #{working_area}, #{working_field})
+	</insert>
+	<update id="updateExpertPw" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set exp_pw=#{exp_pw}  where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertName" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set exp_name=#{exp_name} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertEmail" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set exp_email=#{exp_email} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertPhone" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set exp_phone=#{exp_phone} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertBno" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set bno=#{bno} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertCompany_name" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set company_name=#{company_name} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertCompany_addr" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set company_addr=#{company_addr} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertWorking_area" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set working_area=#{working_area} where exp_id=#{exp_id}
+	</update>
+	<update id="updateExpertWorking_field" parameterType="com.smhrd.domain.expertDTO">
+		update t_expert set working_field=#{working_field} where exp_id=#{exp_id}
+	</update>
+</mapper>
