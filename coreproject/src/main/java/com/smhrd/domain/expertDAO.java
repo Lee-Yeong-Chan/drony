@@ -40,7 +40,7 @@ public class expertDAO {
 	public int updateExpert(expertDTO updateExpert) {
 		int cnt=0;
 		try {
-			if(updateExpert.getExp_id()!=null) {
+			if(updateExpert.getExp_pw()!=null) {
 				cnt+=sqlSession.update("updateExpertPw", updateExpert);
 			}
 			if(updateExpert.getExp_name()!=null) {

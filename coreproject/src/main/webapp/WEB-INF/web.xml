@@ -28,6 +28,30 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.JoinExpertCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>logoutCon</servlet-name>
+  	<display-name>logoutCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.logoutCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateUserCon</servlet-name>
+  	<display-name>updateUserCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateUserCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateExpertCon</servlet-name>
+  	<display-name>updateExpertCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateExpertCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateMypageCon</servlet-name>
+  	<display-name>updateMypageCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateMypageCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginUserCon</servlet-name>
   	<url-pattern>/LoginUserCon</url-pattern>
@@ -43,5 +67,21 @@
   <servlet-mapping>
   	<servlet-name>JoinExpertCon</servlet-name>
   	<url-pattern>/JoinExpertCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>logoutCon</servlet-name>
+  	<url-pattern>/logoutCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateUserCon</servlet-name>
+  	<url-pattern>/updateUserCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateExpertCon</servlet-name>
+  	<url-pattern>/updateExpertCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateMypageCon</servlet-name>
+  	<url-pattern>/updateMypageCon</url-pattern>
   </servlet-mapping>
 </web-app>

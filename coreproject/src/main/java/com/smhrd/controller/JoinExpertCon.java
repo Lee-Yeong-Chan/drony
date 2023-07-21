@@ -25,7 +25,10 @@ public class JoinExpertCon extends HttpServlet {
 		expertDAO expertDAO=new expertDAO();
 		int cnt =expertDAO.insertExpert(joinExpert);
 		if(cnt>0) {
-			response.sendRedirect("main.html");
+			response.sendRedirect("login.jsp");
+		}
+		else {
+			response.sendRedirect("main.jsp");
 		}
 	}
 }

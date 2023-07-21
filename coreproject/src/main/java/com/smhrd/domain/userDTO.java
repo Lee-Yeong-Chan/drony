@@ -5,6 +5,10 @@ public class userDTO {
 	 private String user_name;
 	 private String user_email;
 	 private String user_phone;
+	public userDTO(String user_id) {
+		super();
+		this.user_id = user_id;
+	}
 	public userDTO() {
 		super();
 	}

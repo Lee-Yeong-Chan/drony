@@ -10,6 +10,10 @@ public class expertDTO {
 	private String company_addr;
 	private String working_area;
 	private String working_field;
+	public expertDTO(String exp_id) {
+		super();
+		this.exp_id = exp_id;
+	}
 	public expertDTO() {
 		super();
 	}

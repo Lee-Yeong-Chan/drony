@@ -19,9 +19,8 @@ public class LoginUserCon extends HttpServlet {
 		if(login!=null) {
 	         HttpSession session = request.getSession();
 	         session.setAttribute("loginUser", login);
-	         System.out.println("로그인 완료");
 		}
-		response.sendRedirect("main.html");
+		response.sendRedirect("main.jsp");
 		
 	}
 }

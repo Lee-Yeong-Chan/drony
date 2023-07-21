@@ -6,7 +6,6 @@
 	<select id="selectUser" parameterType="com.smhrd.domain.userDTO" resultType="com.smhrd.domain.userDTO">
 		select * from t_user where user_id=#{user_id} and user_pw=#{user_pw}
 	</select>
-	
 	<insert id="insertUser" parameterType="com.smhrd.domain.userDTO">
 		insert into t_user values (#{user_id}, #{user_pw}, #{user_name}, #{user_email}, #{user_phone})
 	</insert>

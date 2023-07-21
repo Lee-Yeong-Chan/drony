@@ -20,6 +20,6 @@ public class LoginExpertCon extends HttpServlet {
 	         HttpSession session = request.getSession();
 	         session.setAttribute("loginExpert", login);
 		}
-		response.sendRedirect("main.html");
+		response.sendRedirect("main.jsp");
 	}
 }
