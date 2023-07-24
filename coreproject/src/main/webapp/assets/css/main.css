@@ -2661,13 +2661,15 @@ input, select, textarea {
 				-ms-transition: background-color .075s ease-in-out, color .075s ease-in-out;
 				transition: background-color .075s ease-in-out, color .075s ease-in-out;
 				position: relative;
-				display: block;
+				/* display: block; */
 				text-decoration: none;
 				color: #6b7770;
-				top: -6px;
-				padding: 6px 1.5em 0.25em 1.5em;
+				top: 0px;
+				padding: 0.25em 1.5em 0.25em 1.5em;
 				border-bottom-left-radius: 6px;
 				border-bottom-right-radius: 6px;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
 				outline: 0;
 			}
 
