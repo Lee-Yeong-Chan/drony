@@ -7,9 +7,39 @@
 		select tw.w_title, tw.w_idx, twm.status_memo from t_work_mypage twm, t_work tw where twm.w_idx=(select w_idx from t_work tw where tw.user_id=#{user_id})
 	</select>
 	<select id="selectExpertMypage" parameterType="String" resultType="com.smhrd.domain.mypageDTO">
-		select tw.w_title, tw.w_idx, twm.status_idx from t_work_mypage twm, t_work tw where tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
+		select tw.w_title, twm.created_at, twm.status_idx from t_work_mypage twm, t_work tw where tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
 	</select>
 	<update id="updateExpertMypage" parameterType="com.smhrd.domain.mypageDTO">
 		update t_work_mypage set status_memo=#{status_memo} where status_idx=#{status_idx}
 	</update>
+	<select id="selectExpertDrone" parameterType="String" resultType="com.smhrd.domain.expertDroneDTO">
+		select * from t_drone where exp_id=#{exp_id}
+	</select>
+	<update id="updateDroneModel" parameterType="com.smhrd.domain.expertDroneDTO">
+		update t_drone set dr_model=#{dr_model} where dr_idx=#{dr_idx}
+	</update>
+	<update id="updateDroneMaker" parameterType="com.smhrd.domain.expertDroneDTO">
+		update t_drone set dr_maker=#{dr_maker} where dr_idx=#{dr_idx}
+	</update>
+	<update id="updateDroneSerial" parameterType="com.smhrd.domain.expertDroneDTO">
+		update t_drone set dr_serial=#{dr_serial} where dr_idx=#{dr_idx}
+	</update>
+	<update id="updateDroneDesc" parameterType="com.smhrd.domain.expertDroneDTO">
+		update t_drone set dr_desc=#{dr_desc} where dr_idx=#{dr_idx}
+	</update>
+	<update id="updateDroneImg" parameterType="com.smhrd.domain.expertDroneDTO">
+		update t_drone set dr_img=#{dr_img} where dr_idx=#{dr_idx}
+	</update>
+	<delete id="deleteDrone" parameterType="int">
+		delete from t_drone where dr_idx=#{dr_idx}
+	</delete>
+	<insert id="insertDrone" parameterType="com.smhrd.domain.expertDroneDTO">
+		insert into t_drone values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{dr_img},#{exp_id})
+	</insert>
+	<select id="selectPost" parameterType="String" resultType="com.smhrd.domain.postDTO">
+		select * from t_work where exp_id=#{exp_id}
+	</select>
+	<select id="selectPostToUser" parameterType="String" resultType="int">
+		select count(*) from t_user_work where w_idx=(select w_idx from t_work where exp_id=#{exp_id})
+	</select>
 </mapper>

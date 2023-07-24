@@ -13,7 +13,9 @@
 	<body>
 		<a href="mypageExpert.jsp">내 프로필</a>
 		<a href="updateExpert.jsp">개인 정보 수정</a>
+		<a href="myPost.jsp">올린 게시글</a>
 		<a href="workExpert.jsp">작업 진행 상황</a>
+		<a href="droneList.jsp">내 드론 현황</a>
 		<form action="updateExpertCon" method="post">
 			변경할 비밀번호 : <input type="password" name="pw"><br>
 			변경할 이름 : <input type="text" placeholder="<%=loginExpert.getExp_name() %>" name="name"><br>

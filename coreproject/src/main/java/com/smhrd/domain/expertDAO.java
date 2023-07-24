@@ -67,7 +67,6 @@ public class expertDAO {
 			if(updateExpert.getWorking_field()!=null) {
 				cnt+=sqlSession.update("updateExpertWorking_field", updateExpert);
 			}
-			
 			if(cnt>0) {
 				sqlSession.commit();
 			}

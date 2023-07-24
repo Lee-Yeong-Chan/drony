@@ -13,7 +13,9 @@
    <body>
       <a href="mypageExpert.jsp">내 프로필</a>
       <a href="updateExpert.jsp">개인 정보 수정</a>
+      <a href="myPost.jsp">내 게시글</a>
       <a href="workExpert.jsp">작업 진행 상황</a>
+      <a href="droneList.jsp">내 드론 현황</a>
       <table>
          <tr>
             <td>아이디</td>

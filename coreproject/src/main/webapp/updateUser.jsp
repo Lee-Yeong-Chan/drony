@@ -10,6 +10,9 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 	</head>
+		<a href="mypageUser.jsp">내 프로필</a>
+		<a href="updateUser.jsp">개인 정보 수정</a>
+		<a href="workUser.jsp">작업 진행 상황</a>
 	<body>
 		<form action="updateUserCon" method="post">
 			변경할 비밀번호 : <input type="password" name="pw"><br>

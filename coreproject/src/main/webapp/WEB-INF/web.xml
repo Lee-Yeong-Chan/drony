@@ -52,6 +52,24 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.updateMypageCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>updateDroneCon</servlet-name>
+  	<display-name>updateDroneCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateDroneCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertDroneCon</servlet-name>
+  	<display-name>insertDroneCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.insertDroneCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deleteDroneCon</servlet-name>
+  	<display-name>deleteDroneCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteDroneCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginUserCon</servlet-name>
   	<url-pattern>/LoginUserCon</url-pattern>
@@ -83,5 +101,17 @@
   <servlet-mapping>
   	<servlet-name>updateMypageCon</servlet-name>
   	<url-pattern>/updateMypageCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateDroneCon</servlet-name>
+  	<url-pattern>/updateDroneCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertDroneCon</servlet-name>
+  	<url-pattern>/insertDroneCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteDroneCon</servlet-name>
+  	<url-pattern>/deleteDroneCon</url-pattern>
   </servlet-mapping>
 </web-app>

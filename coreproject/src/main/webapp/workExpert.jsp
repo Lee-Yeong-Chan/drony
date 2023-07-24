@@ -18,8 +18,10 @@
 	<body>
 		<a href="mypageExpert.jsp">내 프로필</a>
 		<a href="updateExpert.jsp">개인 정보 수정</a>
+		<a href="myPost.jsp">올린 게시글</a>
 		<a href="workExpert.jsp">작업 진행 상황</a>
-		<h1>의뢰한 계약 목록</h1>
+		<a href="droneList.jsp">내 드론 현황</a>
+		<h1>의뢰받은 계약 목록</h1>
 		<table border='1'>
 			<tr>
 				<td>번호</td>
@@ -46,7 +48,7 @@
 						<% session.setAttribute("updateStatus_idx", mypageList.get(i).getStatus_idx());%>
 					</form>
 				</td>
-				<td><%=mypageList.get(i).getCreated_at()%></td>
+				<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
 				<td><button onclick="location.href='.jsp'">채팅</button></td>
 			</tr>
 			<%	}
