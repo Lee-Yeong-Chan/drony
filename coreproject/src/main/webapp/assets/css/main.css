@@ -1898,7 +1898,7 @@ input, select, textarea {
 		border-bottom: solid 2px #e7eae8;
     	padding-top: 1em;
     	margin-left: 3em;
-   		margin-right: 3em;
+   		margin-right: 6em;
 	}
 
 			ul.divided > li:first-child {
@@ -2256,6 +2256,11 @@ input, select, textarea {
 		margin: 0;
 		line-height: 1em;
 	}
+	
+	.box.page-content{
+		position: relative;
+		left: 100px;
+	}
 
 	.box.page-content header {
 		margin: 0 0 2.5em 0;
@@ -2594,8 +2599,9 @@ input, select, textarea {
 /* Sidebar + Content */
 
 	.sidebar>section{
-		position: absolute;
-		top: 200px;
+		position: relative;
+		top: 70px;
+		left: 45px;
 	}
 	
 	.sidebar h1{
@@ -2607,9 +2613,17 @@ input, select, textarea {
 		margin: 0 0 1.5em 0;
 	}
 
-		.sidebar h3.major span {
-			padding-left: 0;
-		}
+	.sidebar h3.major span {
+		padding-left: 0;
+	}
+	
+	.mypagetable>table{
+		position: relative;
+    	width: 45%;
+    	margin-left: 70px;
+    	border-spacing: 12px;
+    	border-collapse: separate;
+	}
 
 /* Footer */
 
