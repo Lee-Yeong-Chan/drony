@@ -7,6 +7,9 @@
 		select tw.w_title, tw.w_idx, twm.status_memo from t_work_mypage twm, t_work tw where twm.w_idx=(select w_idx from t_work tw where tw.user_id=#{user_id})
 	</select>
 	<select id="selectExpertMypage" parameterType="String" resultType="com.smhrd.domain.mypageDTO">
-		select tw.w_title, tw.w_idx twm.status_idx from t_work_mypage twm, t_work tw where tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
+		select tw.w_title, tw.w_idx, twm.status_idx from t_work_mypage twm, t_work tw where tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
 	</select>
+	<update id="updateExpertMypage" parameterType="com.smhrd.domain.mypageDTO">
+		update t_work_mypage set status_memo=#{status_memo} where status_idx=#{status_idx}
+	</update>
 </mapper>

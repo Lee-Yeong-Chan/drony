@@ -20,8 +20,9 @@ public class updateMypageCon extends HttpServlet {
 		mypageDTO updateStatus = new mypageDTO(status,num);
 		mypageDAO mypageDAO= new mypageDAO();
 		int cnt=mypageDAO.updateMypage(updateStatus);
-		PrintWriter out=response.getWriter();
 		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(cnt>0) {
 			out.println("<script>alert('수정성공'); location.href='workExpert.jsp';</script>");
 		}

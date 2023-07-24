@@ -35,7 +35,7 @@ public class mypageDAO {
 	public int updateMypage(mypageDTO s) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.update("updateMypage", s);
+			cnt=sqlSession.update("updateExpertMypage", s);
 			if(cnt>0) {
 				sqlSession.commit();
 			}
