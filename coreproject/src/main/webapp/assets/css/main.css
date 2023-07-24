@@ -2320,7 +2320,7 @@ input, select, textarea {
 	}
 	
 	#page-wrapper #banner{
-		margin-top: 80px;
+		margin-top: 44px;
 	}
 
 /* Header */
@@ -2335,7 +2335,7 @@ input, select, textarea {
 		left: 0px;
 		font-weight: 700;
 		text-transform: uppercase;
-		padding: 1em 0;
+		padding: 1.5em 0;
 		background: #fff;
 		margin: 0 auto;
 		z-index: 10000;
@@ -2382,7 +2382,7 @@ input, select, textarea {
 
 /* Nav */
 
-	body {
+	/* body {
 		padding-top: 3.25em;
 	}
 
@@ -2457,7 +2457,7 @@ input, select, textarea {
 			#nav li.current a {
 				background: #b1ddab;
 				color: #fff;
-			} 
+			} */ 
 
 	.dropotron {
 		list-style: none;
@@ -2613,15 +2613,83 @@ input, select, textarea {
 
 /* Footer */
 
+	body {
+		padding-top: 3.25em;
+	}
+
 	#footer {
 		position: fixed;
-		bottom: 0px;
-		right: 0px;
-		left: 0px;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		background-color: rgba(255, 255, 255, 0.95);
+		background-image: url("images/overlay.png");
+		width: 100%;
+		height: 3.25em;
+		line-height: 3.25em;
 		text-align: center;
-		padding: 0 0 0 0;
-		/* background-color: #e7eae8; */
+		font-family: 'Open Sans Condensed', sans-serif;
+		font-weight: 700;
+		text-transform: uppercase;
+		cursor: default;
 	}
+
+		#footer ul {
+			position: relative;
+			z-index: 1001;
+		}
+
+		#footer li {
+			display: inline-block;
+			margin: 0 0.5em 0 0.5em;
+			top: 0;
+			position: relative;
+			-moz-transition: top .15s ease-in-out;
+			-webkit-transition: top .15s ease-in-out;
+			-o-transition: top .15s ease-in-out;
+			-ms-transition: top .15s ease-in-out;
+			transition: top .15s ease-in-out;
+		}
+
+			#footer li > ul {
+				display: none;
+			}
+
+			#footer li a, #footer li span {
+				-moz-transition: background-color .075s ease-in-out, color .075s ease-in-out;
+				-webkit-transition: background-color .075s ease-in-out, color .075s ease-in-out;
+				-ms-transition: background-color .075s ease-in-out, color .075s ease-in-out;
+				transition: background-color .075s ease-in-out, color .075s ease-in-out;
+				position: relative;
+				display: block;
+				text-decoration: none;
+				color: #6b7770;
+				top: -6px;
+				padding: 6px 1.5em 0.25em 1.5em;
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+				outline: 0;
+			}
+
+			#footer li:hover, #footer li.active {
+				top: 3px;
+			}
+
+			#footer li:hover a, #footer li:hover span {
+				background: #C1CAC5;
+				color: #fff;
+			}
+
+			#footer li.active a, #footer li.active span {
+				background: #C1CAC5;
+				color: #fff;
+			}
+
+			#footer li.current a {
+				background: #b1ddab;
+				color: #fff;
+			}
+			
 
 		#footer a {
 			color: inherit;

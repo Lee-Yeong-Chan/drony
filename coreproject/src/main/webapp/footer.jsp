@@ -13,14 +13,14 @@
 			<div class="container">
 				<div class="row gtr-200">
 					<div class="col-12">
-						<section>
-							<span><a href="#">공지사항</a></span> &nbsp;&nbsp;
-							<span><a href="#">문의사항</a></span> &nbsp;&nbsp;
-							<span><a href="#">판매업체</a></span> &nbsp;&nbsp;
-							<span><a href="#">수리업체</a></span> &nbsp;&nbsp;
-							<span><a href="#">비행지도</a></span> &nbsp;&nbsp;
-							<span><a href="#">드론원스탑민원서비스</a></span>
-						</section>
+						<ul>
+							<li><a href="#">공지사항</a></li> 
+							<li><a href="#">문의사항</a></li> 
+							<li><a href="#">판매업체</a></li> 
+							<li><a href="#">수리업체</a></li> 
+							<li><a href="#">비행지도</a></li> 
+							<li><a href="#">드론원스탑민원서비스</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
