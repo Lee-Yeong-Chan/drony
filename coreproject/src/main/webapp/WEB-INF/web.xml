@@ -70,6 +70,66 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.deleteDroneCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>uptdateNoticeCon</servlet-name>
+  	<display-name>uptdateNoticeCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.uptdateNoticeCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateNoticeCon</servlet-name>
+  	<display-name>updateNoticeCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateNoticeCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deleteNoticeCon</servlet-name>
+  	<display-name>deleteNoticeCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteNoticeCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertNoticeCon</servlet-name>
+  	<display-name>insertNoticeCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.insertNoticeCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateUserInquiryCon</servlet-name>
+  	<display-name>updateUserInquiryCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateUserInquiryCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateExpertInquiryCon</servlet-name>
+  	<display-name>updateExpertInquiryCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updateExpertInquiryCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deleteUserInquiryCon</servlet-name>
+  	<display-name>deleteUserInquiryCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteUserInquiryCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deleteExpertInquiryCon</servlet-name>
+  	<display-name>deleteExpertInquiryCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteExpertInquiryCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertUserInquiryCon</servlet-name>
+  	<display-name>insertUserInquiryCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.insertUserInquiryCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertExpertInquiryCon</servlet-name>
+  	<display-name>insertExpertInquiryCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.insertExpertInquiryCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginUserCon</servlet-name>
   	<url-pattern>/LoginUserCon</url-pattern>
@@ -113,5 +173,45 @@
   <servlet-mapping>
   	<servlet-name>deleteDroneCon</servlet-name>
   	<url-pattern>/deleteDroneCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>uptdateNoticeCon</servlet-name>
+  	<url-pattern>/uptdateNoticeCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateNoticeCon</servlet-name>
+  	<url-pattern>/updateNoticeCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteNoticeCon</servlet-name>
+  	<url-pattern>/deleteNoticeCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertNoticeCon</servlet-name>
+  	<url-pattern>/insertNoticeCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateUserInquiryCon</servlet-name>
+  	<url-pattern>/updateUserInquiryCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateExpertInquiryCon</servlet-name>
+  	<url-pattern>/updateExpertInquiryCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteUserInquiryCon</servlet-name>
+  	<url-pattern>/deleteUserInquiryCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteExpertInquiryCon</servlet-name>
+  	<url-pattern>/deleteExpertInquiryCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertUserInquiryCon</servlet-name>
+  	<url-pattern>/insertUserInquiryCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertExpertInquiryCon</servlet-name>
+  	<url-pattern>/insertExpertInquiryCon</url-pattern>
   </servlet-mapping>
 </web-app>

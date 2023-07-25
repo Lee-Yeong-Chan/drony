@@ -21,5 +21,6 @@
 		<mapper resource="com/smhrd/database/UserMapper.xml"/>
 		<mapper resource="com/smhrd/database/ExpertMapper.xml"/>
 		<mapper resource="com/smhrd/database/MypageMapper.xml"/>
+		<mapper resource="com/smhrd/database/CommunityMapper.xml" />
 	</mappers>
 </configuration>

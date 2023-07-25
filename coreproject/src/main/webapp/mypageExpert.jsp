@@ -5,8 +5,7 @@
 <%
    expertDTO loginExpert=(expertDTO)session.getAttribute("loginExpert");
 %>
-<html>
-      
+
 <head>
 	<title>DRONY</title>
 	<meta charset="utf-8" />

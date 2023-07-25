@@ -2275,6 +2275,7 @@ input, select, textarea {
 	.box.page-content h2 {
 		font-size: 2em;
 		margin: 0 0 0.5em 0;
+		text-align: center;
 	}
 
 	.box.page-content header > p {
