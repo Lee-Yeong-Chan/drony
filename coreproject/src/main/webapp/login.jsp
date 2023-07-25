@@ -7,7 +7,14 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<button type="button" onclick="location.href='userlogin.jsp'">유저 로그인</button>
-		<button type="button" onclick="location.href='expertlogin.jsp'">전문가 로그인</button>
+	
+		<button type="button" onclick="location.href='login_user.jsp'">유저 로그인</button>
+		<button type="button" onclick="location.href='login_expert.jsp'">전문가 로그인</button>
+		
 	</body>
 </html>
+
+
+
+
+
