@@ -2277,6 +2277,12 @@ input, select, textarea {
 		margin: 0 0 0.5em 0;
 		text-align: center;
 	}
+	
+	.box.page-content h3 {
+		font-size: 2em;
+		margin: 0 0 0.5em 0;
+		text-align: left;
+	}
 
 	.box.page-content header > p {
 		font-size: 1.65em;
@@ -2628,7 +2634,7 @@ input, select, textarea {
 
 	.sidebar h3.major span {
 		padding-left: 0;
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	.mypagetable>table{
