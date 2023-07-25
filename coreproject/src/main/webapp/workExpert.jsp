@@ -18,7 +18,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
-<<<<<<< HEAD
 		<a href="mypageExpert.jsp">내 프로필</a>
 		<a href="updateExpert.jsp">개인 정보 수정</a>
 		<a href="myPost.jsp">올린 게시글</a>
@@ -57,7 +56,6 @@
 			<%	}
 			}%>
 		</table>
-=======
 	
 		<div class="is-preload">
    		
@@ -168,6 +166,5 @@
 	<script src="assets/js/main.js"></script>
 	
 		
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 	</body>
 </html>
