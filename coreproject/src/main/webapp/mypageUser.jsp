@@ -8,13 +8,13 @@
 <html>
 	<head>
 		<title>DRONY</title>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-   <link rel="stylesheet" href="assets/css/main.css" />
+   		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 
 	</head>
-	<body>
-	   <div class="is-preload">
+	<body class="is-preload">
+	   <div id="page-wrapper">
          
          <!-- Header -->
       <%@include file="header.jsp" %>
@@ -28,31 +28,33 @@
                         <!-- Sidebar -->
                         
                         <!-- My page -->
-                        <section>
-                           <h3 class="major"><span><%=loginUser.getUser_id() %> 님의 프로필</span></h3>
-                           <ul class="devided">
-                              <li>
-                                 <article class="box mypage-menu">
-                                 <h1><a href="mypageUser.jsp">내프로필</a></h1>
-                              </article>
-                              </li>
+						<section>
+							<h3 class="major"><span><%=loginUser.getUser_id() %>님의 마이페이지</span></h3>
+							<ul class="divided">
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="mypageUser.jsp">내프로필</a></h1>
+									</article>
+								</li>
                             
-                           <li>
-                              <article class="box mypage-menu">
-                                 <h1><a href="workUser.jsp">작업의뢰현황</a></h1>
-                              </article>
-                           </li>
-                          </ul>
-                        </section>
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="workUser.jsp">작업의뢰현황</a></h1>
+									</article>
+								</li>
+							</ul>
+						</section>
                         
-                     </div>
-                  </div>
-                  <div class="col-9 col-12-medium imp-medium">
-                     <div class="content">
-                        <!-- Content -->
+					</div>
+				</div>
+				
+				<!-- 오른쪽 페이지 -->
+				<div class="col-9 col-12-medium imp-medium">
+					<div class="content">
+						<!-- Content -->
                         <article class="box page-content">
                            <header>
-                              <h2><%=loginUser.getUser_id() %>님의 프로필</h2>
+                              <h3><%=loginUser.getUser_id() %>님의 프로필</h3>
                            </header>
                            
                            <section class="mypagetable">
@@ -73,13 +75,8 @@
                                     <td>전화번호</td>
                                     <td><%=loginUser.getUser_phone() %></td>
                                  </tr>
-                                
-                                 
-                                
-                                 
                               </table>
                            </section>
-                           
                         </article>
                      </div>
                   </div>

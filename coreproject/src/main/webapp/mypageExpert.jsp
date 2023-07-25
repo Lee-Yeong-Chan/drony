@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="is-preload">
-	<div class="page-wrapper">
+	<div id="page-wrapper">
    		
    		<!-- Header -->
 		<%@include file="header.jsp" %>
@@ -24,11 +24,10 @@
    				<div class="row">
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-   							<!-- Sidebar -->
-   							
+   							<!-- Sidebar 여기서부터--> 
    							<!-- My page -->
    							<section>
-   								<h3 class="major"><span><%=loginExpert.getExp_id() %> 님의 마이페이지</span></h3>
+   								<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
    								<ul class="divided">
    									<li>
    										<article class="box mypage-menu">
@@ -55,14 +54,16 @@
    							
    						</div>
    					</div>
+   					<!-- 여기까지 유지되는 부분 -->
    					
-   					<!-- 오른쪽 메인페이지 -->
+   					
+   					<!-- 오른쪽 페이지 article 까지는 유지 -->
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
    							<article class="box page-content">
    								<header>
-   									<h2><%=loginExpert.getExp_id() %>님의 프로필</h2>
+   									<h3><%=loginExpert.getExp_id() %>전문가님의 프로필</h3>
    								</header>
    								
    								<section class="mypagetable">
@@ -103,7 +104,10 @@
 								            <td>작업가능분야</td>
 								            <td><%=loginExpert.getWorking_field() %></td>
 								         </tr>
+								         <tr><td colspan='2' align="right"><button type="button" onclick="location.href='updateExpert.jsp'">수정</button></td></tr>
+								         
 								      </table>
+								      
    								</section>
    								
    							</article>
