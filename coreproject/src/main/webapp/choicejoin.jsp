@@ -2,64 +2,10 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
-	<title>DRONY</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-</head>
-<body class="is-preload">
-	<div id="page-wrapper">
-		<!-- Header -->
-	
-		<!-- Nav -->
-
-		<!-- Main -->
-		<section id="main">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="content">
-							<!-- Content -->
-							<article class="box page-content join">
-								<header class="log">
-									<h2>회 원 가 입</h2>
-								</header>
-
-								<section class="logbutton">
-									<button type="button" onclick="location.href='userjoin.jsp'">의뢰인 회원가입</button>
-										 &nbsp;
-									<button type="button" onclick="location.href='expertjoin.jsp'">전문가 회원가입</button>
-								</section>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Footer -->
-	</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	
-	
-	
-</body>
-</html>
-=======
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
 body {
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
@@ -76,7 +22,7 @@ body {
             text-align: center;
         }
         .sign-up-wrap {
-            background-color: #4c8ac8;
+            background-color: #fff;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -91,9 +37,6 @@ body {
             color: #555;
             margin-bottom: 30px;
         }
-        .type01, .type02 {
-        text-align: center;
-        }
         .membership-type {
             display: flex;
             justify-content: center;
@@ -103,15 +46,15 @@ body {
         }
         .membership-type li {
             flex: 1;
-            margin: 0 30px;
+            margin: 0 10px;
         }
         .membership-type p {
             font-size: 18px;
             color: #333;
-            margin: 30px 0;
+            margin: 10px 0;
         }
         .membership-type strong {
-            font-size: 18px;
+            font-size: 20px;
             color: #000;
         }
         .btn-join {
@@ -132,9 +75,9 @@ body {
             background-color: #0056b3;
         }
 </style>
-	</head>
-	<body>
-		<div id="wrap">
+</head>
+<body>
+<div id="wrap">
         <article id="contents">
         <div class="k-container">
         <div class="sign-up-warp">
@@ -142,27 +85,26 @@ body {
         <p class="sub-text">DRONY에 오신 것을 환영합니다.
         </p>
         
-        <ul class="membership-type">
+        <ul class="membership-type"></ul>
         <li class="type01">
         <p>
             <strong>일반 회원</strong>
-           
+            "일반 회원 가입"
         </p>
-        <a href="userjoin.jsp" title="일반회원가입" class="btn black-line large btn-join">회원가입</a>
+        <a href="login_user.html" title="일반회원가입" class="btn black-line large btn-join">회원가입</a>
         </li>
         <li class="type02">
-        <p>
-            <strong>전문가 회원</strong>
-           
-       </p>
-       <a href="expertjoin.jsp" title="전문가 회원가입" class="btn black-line large btn-join">회원가입</a>
-       </li>
-       </ul>
+            <p>
+                <strong>전문가 회원</strong>
+                "전문가 회원 가입"
+            </p>
+            <a href="login_expert.html" title="전문가 회원가입" class="btn black-line large btn-join">회원가입</a>
+            </li>
+        </ul>
     </div>
 </div>
-</article>
+	</article>
 </div>
-	</body>
-</html>
 
->>>>>>> refs/remotes/origin/master
+</body>
+</html>
