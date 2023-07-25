@@ -14,6 +14,12 @@
     font-style: normal;
 }
 
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -106,7 +112,7 @@ input, select, textarea {
 		}
 
 	body, input, textarea, select {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 400;
 		color: #6b7770;
 		font-size: 13pt;
@@ -114,7 +120,7 @@ input, select, textarea {
 	}
 
 	h2, h3, h4, h5, h6 {
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		color: #6b7770;
@@ -214,7 +220,7 @@ input, select, textarea {
 
 	header > p {
 		display: block;
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		color: #c1cac5;
@@ -332,7 +338,7 @@ input, select, textarea {
 		}
 
 		.row > .col-3 {
-			width: 25%;
+			width: 30%;
 		}
 
 		.row > .off-3 {
@@ -380,7 +386,7 @@ input, select, textarea {
 		}
 
 		.row > .col-9 {
-			width: 75%;
+			width: 70%;
 		}
 
 		.row > .off-9 {
@@ -711,7 +717,7 @@ input, select, textarea {
 				}
 
 					.row > * {
-						padding: 50px 0 0 50px;
+						padding: 50px 50px 0 50px;
 					}
 
 					.row.gtr-uniform {
@@ -1798,7 +1804,7 @@ input, select, textarea {
 	.button {
 		-webkit-appearance: none;
 		display: inline-block;
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		text-decoration: none;
@@ -1898,7 +1904,7 @@ input, select, textarea {
 		border-bottom: solid 2px #e7eae8;
     	padding-top: 1em;
     	margin-left: 3em;
-   		margin-right: 7em;
+   		margin-right: 50px;
 	}
 
 			ul.divided > li:first-child {
@@ -2105,7 +2111,7 @@ input, select, textarea {
 	form label {
 		display: block;
 		margin: 0 0 1em 0;
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		color: #6b7770;
@@ -2190,7 +2196,7 @@ input, select, textarea {
 				text-align: left;
 				padding: 0.5em 1em 0.5em 1em;
 				margin: 0 0 1em 0;
-				font-family: 'Cafe24SsurroundAir';
+				font-family: 'Noto Sans KR', sans-serif;
 				font-weight: 700;
 				text-transform: uppercase;
 				color: #6b7770;
@@ -2261,7 +2267,7 @@ input, select, textarea {
 		position: relative;
 		left: 30px;
 	}
-
+	
 	.box.page-content header {
 		margin: 0 0 2.5em 0;
 	}
@@ -2316,7 +2322,10 @@ input, select, textarea {
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
-
+		
+		.icon.solid p{
+			font-family: 'Noto Sans KR', sans-serif;
+		}
 /* Page Wrapper */
 
 	#page-wrapper > section {
@@ -2351,7 +2360,7 @@ input, select, textarea {
 		background: #fff;
 		padding: 0 1.5em 0 1.5em;
 		top: -0.65em;
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		text-align: right;
 		
 	}
@@ -2471,7 +2480,7 @@ input, select, textarea {
 		border-radius: 6px;
 		line-height: 2.75em;
 		text-align: center;
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		padding: 1em 0;
@@ -2555,7 +2564,7 @@ input, select, textarea {
 
 			#banner .content p {
 				display: block;
-				font-family: 'Cafe24SsurroundAir';
+				font-family: 'Noto Sans KR', sans-serif;
 				font-weight: 700;
 				text-transform: uppercase;
 				color: #575d59;
@@ -2596,6 +2605,8 @@ input, select, textarea {
 		padding: 5em 0 5em 0;
 	}
 	
+	
+	
 /* Mypage */
 /* Sidebar + Content */
 
@@ -2610,12 +2621,13 @@ input, select, textarea {
 		
 	}
 	.sidebar h3.major {
-		text-align: left;
+		text-align: center;
 		margin: 0 0 1.5em 0;
 	}
 
 	.sidebar h3.major span {
 		padding-left: 0;
+		font-size: 1.25em;
 	}
 	
 	.mypagetable>table{
@@ -2650,7 +2662,7 @@ input, select, textarea {
 		height: 3.5em;
 		line-height: 10em;
 		text-align: center;
-		font-family: 'Cafe24SsurroundAir';
+		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		cursor: default;
@@ -2803,7 +2815,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				font-size: 1.5em;
+				 /* font-size: 1.5em; */
 			}
 
 		/* Banner */
@@ -2935,7 +2947,7 @@ input, select, textarea {
 				#titleBar .title {
 					display: block;
 					position: relative;
-					font-family: 'Cafe24SsurroundAir';
+					font-family: 'Noto Sans KR', sans-serif;
 					font-weight: 700;
 					text-transform: uppercase;
 					font-size: 1.25em;
@@ -3255,4 +3267,86 @@ input, select, textarea {
 				font-size: 10pt;
 			}
 
+	}
+	
+	
+	
+/* login & join */
+
+	.login-form{
+		width: 300px;
+		height: auto;
+		background-image: url("images/overlay.png");
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 30px;
+		padding: 20px;
+		text-align: center;
+		border: none;
+		position: relative;
+		border-radius: 5px;
+	}
+	
+	.join-form{
+		width: 400px;
+		height: auto;
+		background-image: url("images/overlay.png");
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 30px;
+		padding: 20px;
+		text-align: left;
+		border: none;
+		position: relative;
+		border-radius: 5px;
+	}
+	
+	.join>h2 {
+		text-align: center;
+	}
+		
+	.text-field {
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        width: 260px;
+        margin-bottom: 20px;
+    }
+    
+    .links {
+        text-align: center;
+        margin: 10px;
+    }
+    
+    .links a {
+        font-size: 12px;
+        color: #9B9B9B;
+    }
+    .submit-btn {
+    	width: 100%;
+    }
+    
+	.box.page-content.join{
+    	
+    	text-align: center;
+    	position: relative;
+		margin-top: 50px;
+    	
+    }
+    
+    .box.page-content.log{
+		text-align: center;
+		position: relative;
+		margin-top: 50px;
+		
+	} 
+	
+	.logbutton{
+		
+		width: 300px;
+		height: 180px;
+		text-align: center;		
+		margin-inline: auto;
+		display: grid;
+		
 	}
