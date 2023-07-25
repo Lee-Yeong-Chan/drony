@@ -8,7 +8,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-<<<<<<< HEAD
 	<body class="is-preload">
 		<div id="page-wrapper">
 
@@ -63,15 +62,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 	
-	
-	
-=======
-	<body>
-	
-		<button type="button" onclick="location.href='login_user.jsp'">유저 로그인</button>
-		<button type="button" onclick="location.href='login_expert.jsp'">전문가 로그인</button>
->>>>>>> refs/remotes/origin/master
-		
 	</body>
 </html>
 
