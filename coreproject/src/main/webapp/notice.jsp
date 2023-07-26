@@ -132,8 +132,7 @@
    			</div>
    		</section>
    		      
-		<!-- Footer -->
-		<%@include file="footer.jsp" %>
+		
 		      
 	</div>
 	
