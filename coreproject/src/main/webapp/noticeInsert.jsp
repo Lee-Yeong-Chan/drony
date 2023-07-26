@@ -3,13 +3,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-<<<<<<< HEAD
 		<title>DRONY</title>
 		<meta charset="utf-8" />
-=======
 		<title>Insert title here</title>
 		<meta charset="UTF-8">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>

@@ -87,11 +87,11 @@
 											<td>
 												<form action="updateMypageCon" method="post">
 													<select name="status">
-														<option value="wconsul">상담대기</option>
-														<option value="consul">상담중</option>
-														<option value="contra">계약완료</option>
-														<option value="working">작업중</option>
-														<option value="comple">작업완료</option>
+														<option value="상담대기">상담대기</option>
+														<option value="상담중">상담중</option>
+														<option value="계약완료">계약완료</option>
+														<option value="작업중">작업중</option>
+														<option value="작업완료">작업완료</option>
 													</select>
 													<input type="submit" value="수정">
 													<% session.setAttribute("updateStatus_idx", mypageList.get(i).getStatus_idx());%>

@@ -68,9 +68,9 @@
 				for(int i=0;i<mypageList.size();i++){%>
 			<tr>
 				<td><%=(i+1) %></td>
-				<td><%=mypageList.get(i).getW_title()%></td>
+				<td><a href="#"><%=mypageList.get(i).getW_title()%></a></td>
 				<td><%=mypageList.get(i).getStatus_memo()%></td>
-				<td><%=mypageList.get(i).getCreated_at()%></td>
+				<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
 				<td><button onclick="location.href='.jsp'">채팅</button></td>
 			</tr>
 			<%	}
