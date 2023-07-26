@@ -50,13 +50,15 @@
             background-color: #0056b3;
         }
     </style>
-	</head>
+</head>
 	<body>
+	 <div class="menu-licks">
 		<a href="mypageUser.jsp">내 프로필</a>
 		<a href="updateUser.jsp">개인 정보 수정</a>
 		<a href="workUser.jsp">작업 진행 상황</a>
+		</div>
 		<h1>의뢰한 계약 목록</h1>
-		<table border='1'>
+		<table>
 			<tr>
 				<td>번호</td>
 				<td>의뢰한 작업명</td>
