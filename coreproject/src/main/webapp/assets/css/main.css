@@ -3385,3 +3385,9 @@ input, select, textarea {
 	.mypost tbody {
 		height: 40px;
 	}
+	
+	/* board - notice, inquiry, companylist */
+	
+	.board{
+		list-style: none;
+	}
