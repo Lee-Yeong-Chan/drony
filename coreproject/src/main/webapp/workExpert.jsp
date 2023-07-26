@@ -42,7 +42,7 @@
    									</li>
    									<li>
 										<article class="box mypage-menu">
-											<h1><a href="#">내게시글</a></h1>
+											<h1><a href="myPost.jsp">내게시글</a></h1>
 										</article>
 									</li>
 									<li>
@@ -52,7 +52,7 @@
 									</li>
 									<li>
 										<article class="box mypage-menu">
-											<h1><a href="#">드론관리</a></h1>
+											<h1><a href="droneList.jsp">드론관리</a></h1>
 										</article>
 									</li>
    								</ul>
@@ -67,7 +67,7 @@
    							<!-- Content -->
    							<article class="box page-content">
    								<header>
-   									<h2>작업 목록</h2>
+   									<h3>작업 목록</h3>
    								</header>
    								
    								<section class="requestlist">

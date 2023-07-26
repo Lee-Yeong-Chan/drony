@@ -239,7 +239,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			.container {
-				width: 75em;
+				width: 90%;
 			}
 
 		}
@@ -3361,4 +3361,27 @@ input, select, textarea {
 	.mypageupdate{
 	width: 65%;
 	margin-left: 35px;
+	}
+	
+	/* Mypost */
+	
+	.mypost {
+		margin-top: 50px;
+		width: 90%
+	}
+	
+	.mypost>span {
+	    position: absolute;
+   		top: 60px;
+   		right: 110px;
+	}
+	
+	.mypost thead {
+		height: 40px;
+		font-weight: 700;
+		border-bottom: solid 2px;
+	}
+	
+	.mypost tbody {
+		height: 40px;
 	}

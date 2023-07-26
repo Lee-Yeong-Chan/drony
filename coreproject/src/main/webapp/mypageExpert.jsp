@@ -17,14 +17,16 @@
    		
    		<!-- Header -->
 		<%@include file="header.jsp" %>
-   
+   		
+   		
+   		 
    		<!-- Main -->
    		<section id="main">
    			<div class="container">
    				<div class="row">
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-   							<!-- Sidebar 여기서부터--> 
+   							<!-- Sidebar -->
    							<!-- My page -->
    							<section>
    								<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
@@ -36,7 +38,7 @@
    									</li>
    									<li>
 										<article class="box mypage-menu">
-											<h1><a href="#">내게시글</a></h1>
+											<h1><a href="myPost.jsp">내게시글</a></h1>
 										</article>
 									</li>
 									<li>
@@ -46,7 +48,7 @@
 									</li>
 									<li>
 										<article class="box mypage-menu">
-											<h1><a href="#">드론관리</a></h1>
+											<h1><a href="droneList.jsp">드론관리</a></h1>
 										</article>
 									</li>
    								</ul>
@@ -54,10 +56,10 @@
    							
    						</div>
    					</div>
-   					<!-- 여기까지 유지되는 부분 -->
    					
    					
-   					<!-- 오른쪽 페이지 article 까지는 유지 -->
+   					
+   					
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
@@ -66,6 +68,8 @@
    									<h3><%=loginExpert.getExp_id() %>전문가님의 프로필</h3>
    								</header>
    								
+   								
+   								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<section class="mypagetable">
    									<table>
          								<tr>
@@ -104,13 +108,20 @@
 								            <td>작업가능분야</td>
 								            <td><%=loginExpert.getWorking_field() %></td>
 								         </tr>
-								         <tr><td colspan='2' align="right"><button type="button" onclick="location.href='updateExpert.jsp'">수정</button></td></tr>
+								         <tr>
+								         	<td colspan='2' align="right">
+								         		<button type="button" onclick="location.href='updateExpert.jsp'">수정</button>
+								         		<button type="button" onclick="#">탈퇴</button>
+								         	</td>
+								         </tr>
 								         
 								      </table>
 								      
    								</section>
    								
    							</article>
+   							<!-- 여기까지 -->
+   							
    						</div>
    					</div>
    				</div>
