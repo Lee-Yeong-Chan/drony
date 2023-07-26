@@ -12,7 +12,7 @@
 	<header id="header">
 		<div class="logo container">
 			<div>
-				<span><a href="index.html" id="logo">DRONY</a></span>
+				<span><a href="main.jsp" id="logo">DRONY</a></span>
 			</div>
 						
 			<div class="mainlog">
