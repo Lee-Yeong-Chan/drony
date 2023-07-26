@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <%
 	workDAO workDAO=new workDAO();
-	List<workDTO> pestControl=workDAO.selectAllWork("P");
+	List<workDTO> transport=workDAO.selectAllWork("T");
 %>
 <html>
 	<head>
@@ -14,16 +14,16 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h1>방역 방제 농업</h1>
-		<%for(int i=0;i<pestControl.size();i++){ %>
+		<h1>운송</h1>
+		<%for(int i=0;i<transport.size();i++){ %>
 			<article>
-				<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
+				<a href="postDetail?w_idx=<%=transport.get(i).getW_idx()%>">
 					<div>
-						<img onerror=this.src="images/farm.png" src="<%=pestControl.get(i).getW_img()%>">
+						<img onerror=this.src="images/delivery.png" src="<%=transport.get(i).getW_img()%>">
 						<div>
-							<span><%=pestControl.get(i).getW_title()%></span><br>
-							<span><%=pestControl.get(i).getCreated_at().substring(0, pestControl.get(i).getCreated_at().length()-2)%></span><br>
-							<span><%=pestControl.get(i).getW_price()%></span>							
+							<span><%=transport.get(i).getW_title()%></span><br>
+							<span><%=transport.get(i).getCreated_at().substring(0, transport.get(i).getCreated_at().length()-2)%></span><br>
+							<span><%=transport.get(i).getW_price()%></span>							
 						</div>
 					</div>
 				</a>				

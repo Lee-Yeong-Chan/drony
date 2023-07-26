@@ -4,6 +4,7 @@ public class mypageDTO {
 	private String status_memo;
 	private String created_at;
 	private int status_idx;
+	private int w_idx;
 	public mypageDTO(String status_memo, int status_idx) {
 		super();
 		this.status_memo = status_memo;
@@ -24,6 +25,12 @@ public class mypageDTO {
 		this.w_title = w_title;
 		this.status_memo = status_memo;
 		this.created_at = created_at;
+	}
+	public int getW_idx() {
+		return w_idx;
+	}
+	public void setW_idx(int w_idx) {
+		this.w_idx = w_idx;
 	}
 	public int getStatus_idx() {
 		return status_idx;

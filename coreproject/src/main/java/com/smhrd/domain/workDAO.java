@@ -6,10 +6,10 @@ import com.smhrd.database.SqlSessionManager;
 public class workDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
-	public List<workDTO> selectAllWork() {
+	public List<workDTO> selectAllWork(String kind) {
 		List<workDTO> allWork=null;
 		try {
-			allWork=sqlSession.selectList("selectAllWork");
+			allWork=sqlSession.selectList("selectAllWork", kind);
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -54,7 +54,7 @@ public class workDAO {
 	public int updateWork(workDTO update) {
 		int cnt=0;
 		try {
-			if(update.getW_tltle()!=null) {
+			if(update.getW_title()!=null) {
 				cnt+=sqlSession.update("updateWorkTitle", update);
 			}
 			if(update.getW_content()!=null) {
