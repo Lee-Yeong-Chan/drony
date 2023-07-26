@@ -12,11 +12,17 @@
 %>
 <html>
 	<head>
+<<<<<<< HEAD
 		<title>DRONY</title>
 		<meta charset="utf-8" />
+=======
+		<title>Insert title here</title>
+		<meta charset="UTF-8">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+<<<<<<< HEAD
 	<body class="is-preload">
 		<div id="page-wrapper">
    		
@@ -43,7 +49,7 @@
    									</li>
    									<li>
 										<article class="box side-info">
-											<h1><a href="#">문의사항</a></h1>
+											<h1><a href="">문의사항</a></h1>
 										</article>
 									</li>
 									<li>
@@ -131,5 +137,25 @@
 	<script src="assets/js/main.js"></script>	
 	
 		
+=======
+	<body>
+		<h1>공지사항</h1>
+		<ul>
+		<%for(int i=0;i<AllNotice.size();i++){ %>
+			<li><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></li>
+		<%} %>
+		</ul>
+		<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
+				<button onclick="location.href='noticeInsert.jsp'">추가</button>
+		</c:if>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 	</body>
 </html>

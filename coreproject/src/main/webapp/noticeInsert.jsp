@@ -3,8 +3,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+<<<<<<< HEAD
 		<title>DRONY</title>
 		<meta charset="utf-8" />
+=======
+		<title>Insert title here</title>
+		<meta charset="UTF-8">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
@@ -22,5 +27,13 @@
 				<input type="submit" value="추가">
 			</form>
 		</div>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
