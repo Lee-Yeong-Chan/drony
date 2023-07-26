@@ -51,15 +51,27 @@
 										<c:when test="${not empty loginUser or not empty loginExpert}">
 											<c:choose>
 												<c:when test="${not empty loginUser}">
-													<li style="white-space: nowrap;"><a href="userInquiry.jsp">문의사항</a></li>
+													<li>
+														<article class="box side-info">
+															<h1><a href="userInquiry.jsp">문의사항</a></h1>
+														</article>	
+													</li>
 												</c:when>
 										 		<c:otherwise>
-													<li style="white-space: nowrap;"><a href="expertInquiry.jsp">문의사항</a></li>
+													<li>
+														<article class="box side-info">
+															<h1><a href="expertInquiry.jsp">문의사항</a></h1>
+														</article>
+													</li>
 										 		</c:otherwise>
 											</c:choose>
 										</c:when>
 										<c:otherwise>
-											<li><a href="login.jsp">문의사항</a></li>
+											<li>
+												<article class="box side-info">
+													<h1><a href="login.jsp">문의사항</a></h1>
+												</article>
+											</li>
 										</c:otherwise>
 									</c:choose>
 									<li>
