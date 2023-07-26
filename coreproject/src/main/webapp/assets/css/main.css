@@ -3355,3 +3355,10 @@ input, select, textarea {
 		display: grid;
 		
 	}
+	
+	/* Mypageupdate */
+	
+	.mypageupdate{
+	width: 65%;
+	margin-left: 35px;
+	}
