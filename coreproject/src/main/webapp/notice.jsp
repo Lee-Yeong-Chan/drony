@@ -12,11 +12,132 @@
 %>
 <html>
 	<head>
+<<<<<<< HEAD
+		<title>DRONY</title>
+		<meta charset="utf-8" />
+=======
 		<title>Insert title here</title>
 		<meta charset="UTF-8">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+<<<<<<< HEAD
+	<body class="is-preload">
+		<div id="page-wrapper">
+   		
+   		<!-- Header -->
+		<%@include file="header.jsp" %>
+   		
+   		
+   		 
+   		<!-- Main -->
+   		<section id="main">
+   			<div class="container">
+   				<div class="row">
+   					<div class="col-3 col-12-medium">
+   						<div class="sidebar">
+   							<!-- Sidebar -->
+   							<!-- My page -->
+   							<section>
+   								
+   								<ul class="divided">
+   									<li>
+   										<article class="box side-info">
+											<h1><a href="notice.jsp">공지사항</a></h1>
+										</article>
+   									</li>
+   									<li>
+										<article class="box side-info">
+											<h1><a href="">문의사항</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="#">판매업체</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="#">수리업체</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="#">비행지도</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="#">원스탑민원서비스</a></h1>
+										</article>
+									</li>
+   								</ul>
+   							</section>
+   							
+   						</div>
+   					</div>
+   					
+   					
+   					
+   					
+   					<div class="col-9 col-12-medium imp-medium">
+   						<div class="content">
+   							<!-- Content -->
+   							<article class="box page-content">
+   								<header>
+   									<h3>공지사항</h3>
+   								</header>
+   								
+   								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
+   																
+								<table>
+									<thead>
+										<tr>
+											<td>제목</td>
+											<td>작성자</td>
+											<td>날짜</td>
+										</tr>
+									</thead>
+									<tbody>
+										<%for(int i=0; i<AllNotice.size(); i++){ %>
+										<tr>
+											<td><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<%} %>
+										<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
+											<span align="right"><a href="noticeInsert.jsp">공지 작성하기</a></span>
+										</c:if>
+									</tbody>
+								</table>
+								
+   							<!-- 여기까지 -->
+   							</article>
+   							
+   						</div>
+   					</div>
+   				</div>
+   			</div>
+   		</section>
+   		      
+		<!-- Footer -->
+		<%@include file="footer.jsp" %>
+		      
+	</div>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>	
+	
+		
+=======
 	<body>
 		<h1>공지사항</h1>
 		<ul>
@@ -35,5 +156,6 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 	</body>
 </html>
