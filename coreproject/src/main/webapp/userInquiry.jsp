@@ -32,7 +32,7 @@
    						<div class="sidebar">
    							
    							<!-- Sidebar 시작-->
-   							<section>
+   							
    								
    								<ul class="divided">
    									<li>
@@ -76,7 +76,7 @@
 										</article>
 									</li>
    								</ul>
-   							</section>
+   							
    						</div>
    					</div>
    							<!-- Sidebar 끝-->

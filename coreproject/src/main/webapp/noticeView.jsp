@@ -41,7 +41,7 @@
    						<div class="sidebar">
    							<!-- Sidebar -->
    							<!-- My page -->
-   							<section>
+   							
    								
    								<ul class="divided">
    									<li>
@@ -75,7 +75,7 @@
 										</article>
 									</li>
    								</ul>
-   							</section>
+   							
    							
    						</div>
    					</div>

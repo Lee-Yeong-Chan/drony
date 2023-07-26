@@ -27,7 +27,7 @@
    						<div class="sidebar">
    							<!-- Sidebar 여기서부터-->
    							<!-- My page -->
-   							<section>
+   							
    								<h3 class="major"><span><%=loginExpert.getExp_id() %> 님의 마이페이지</span></h3>
    								<ul class="divided">
    									<li>
@@ -51,7 +51,7 @@
 										</article>
 									</li>
    								</ul>
-   							</section>
+   							
    							
    						</div>
    					</div>

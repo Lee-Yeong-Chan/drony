@@ -17,44 +17,42 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body>
-		<!-- Header -->
-		<%@include file="header.jsp" %>
-		
-		
-	<section id="main">
-   			<div class="container">
-   				<div class="row">
-   					<div class="col-3 col-12-medium">
-   						<div class="sidebar">
-   							<!-- Sidebar --> 
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<%@include file="header.jsp" %>
+			
+			<!-- Sidebar -->
+			<section id="main">
+   				<div class="container">
+   					<div class="row">
+   						<div class="col-3 col-12-medium">
+   							<div class="sidebar">
+   							 
    							<!-- My page -->
-   							<section>
-   								<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
-   								<ul class="divided">
-   									<li>
-   										<article class="box mypage-menu">
-											<h1><a href="mypageExpert.jsp">내프로필</a></h1>
-										</article>
-   									</li>
-   									<li>
-										<article class="box mypage-menu">
-											<h1><a href="myPost.jsp">내게시글</a></h1>
-										</article>
-									</li>
-									<li>
-										<article class="box mypage-menu">
-											<h1><a href="workExpert.jsp">작업목록</a></h1>
-										</article>
-									</li>
-									<li>
-										<article class="box mypage-menu">
-											<h1><a href="droneList.jsp">드론관리</a></h1>
-										</article>
-									</li>
-   								</ul>
-   							</section>
-   							
+   							<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+   							<ul class="divided">
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="mypageExpert.jsp">내프로필</a></h1>
+									</article>
+								</li>
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="myPost.jsp">내게시글</a></h1>
+									</article>
+								</li>
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="workExpert.jsp">작업목록</a></h1>
+									</article>
+								</li>
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="droneList.jsp">드론관리</a></h1>
+									</article>
+								</li>
+							</ul>
    						</div>
    					</div>
    					

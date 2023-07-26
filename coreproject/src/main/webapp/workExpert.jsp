@@ -17,8 +17,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body>
-		<div class="is-preload">
+	<body class="is-preload">
+		<div id="page-wrapper">
    		
    		<!-- Header -->
 		<%@include file="header.jsp" %>
@@ -32,7 +32,7 @@
    							<!-- Sidebar -->
    							
    							<!-- My page -->
-   							<section>
+   							
    								<h3 class="major"><span><%=loginExpert.getExp_id() %> 님의 마이페이지</span></h3>
    								<ul class="divided">
    									<li>
@@ -56,7 +56,7 @@
 										</article>
 									</li>
    								</ul>
-   							</section>
+   							
    							
    						</div>
    					</div>

@@ -40,7 +40,7 @@
                             <!-- Sidebar -->
                             
                             <!-- "내 프로필" 섹션 -->
-                            <section class="section-mypage">
+                            
                                 <h3 class="major"><span><%=loginUser.getUser_id() %>님의 마이페이지</span></h3>
                                 <ul class="divided">
                                     <li>
@@ -54,7 +54,7 @@
                                         </article>
                                     </li>
                                 </ul>
-                            </section>
+                            
                         </div>
                     </div>
                     
