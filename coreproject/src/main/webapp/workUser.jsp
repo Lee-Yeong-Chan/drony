@@ -12,13 +12,49 @@
 %>
 <html>
 	<head>
-		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+        /* 추가한 CSS 스타일 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        th {
+            background-color: #f1f1f1;
+        }
+
+        td {
+            border-bottom: 1px solid #ccc;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 	</head>
 	<body>
-		<a href="mypageExpert.jsp">내 프로필</a>
-		<a href="updateExpert.jsp">개인 정보 수정</a>
-		<a href="workExpert.jsp">작업 진행 상황</a>
+		<a href="mypageUser.jsp">내 프로필</a>
+		<a href="updateUser.jsp">개인 정보 수정</a>
+		<a href="workUser.jsp">작업 진행 상황</a>
 		<h1>의뢰한 계약 목록</h1>
 		<table border='1'>
 			<tr>
@@ -40,5 +76,13 @@
 			<%	}
 			}%>
 		</table>
+		<!-- Scripts -->
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/jquery.dropotron.min.js"></script>
+   <script src="assets/js/jquery.scrolly.min.js"></script>
+   <script src="assets/js/browser.min.js"></script>
+   <script src="assets/js/breakpoints.min.js"></script>
+   <script src="assets/js/util.js"></script>
+   <script src="assets/js/main.js"></script>
 	</body>
 </html>
