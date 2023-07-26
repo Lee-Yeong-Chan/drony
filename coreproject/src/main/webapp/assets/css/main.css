@@ -338,7 +338,12 @@ input, select, textarea {
 		}
 
 		.row > .col-3 {
-			width: 30%;
+			width: 23%;
+			height: 400px;
+			background-image: url("images/overlay.png");
+			padding: 20px 0;
+			margin: 30px 0;
+			text-align: center;
 		}
 
 		.row > .off-3 {
@@ -387,6 +392,7 @@ input, select, textarea {
 
 		.row > .col-9 {
 			width: 70%;
+			padding-left: 80px;
 		}
 
 		.row > .off-9 {
@@ -1902,9 +1908,10 @@ input, select, textarea {
 
 	ul.divided > li {
 		border-bottom: solid 2px #e7eae8;
-    	padding-top: 1em;
-    	margin-left: 3em;
-   		margin-right: 7em;
+    	/* padding-top: 1em;
+    	margin-left: 1em;
+   		margin-right: 8em; */
+   		margin: 15px 45px;
 	}
 
 			ul.divided > li:first-child {
@@ -2338,6 +2345,7 @@ input, select, textarea {
 	#page-wrapper > section {
 		
 		margin-bottom: 0;
+		padding: 80px 30px;
 	}
 	
 	#page-wrapper #banner{
@@ -3389,4 +3397,8 @@ input, select, textarea {
 	
 	.board{
 		list-style: none;
+	}
+	
+	.box.page-content table {
+		width: 120%;
 	}

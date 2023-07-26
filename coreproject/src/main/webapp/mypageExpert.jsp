@@ -24,37 +24,34 @@
    		<section id="main">
    			<div class="container">
    				<div class="row">
+   				
+   					<!-- Sidebar row 밑에 위치-->
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-   							<!-- Sidebar -->
-   							<!-- My page -->
-   							<section>
-   								<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
-   								<ul class="divided">
-   									<li>
-   										<article class="box mypage-menu">
-											<h1><a href="mypageExpert.jsp">내프로필</a></h1>
-										</article>
-   									</li>
-   									<li>
-										<article class="box mypage-menu">
-											<h1><a href="myPost.jsp">내게시글</a></h1>
-										</article>
-									</li>
-									<li>
-										<article class="box mypage-menu">
-											<h1><a href="workExpert.jsp">작업목록</a></h1>
-										</article>
-									</li>
-									<li>
-										<article class="box mypage-menu">
-											<h1><a href="droneList.jsp">드론관리</a></h1>
-										</article>
-									</li>
-   								</ul>
-   							</section>
-   							
-   						</div>
+		   					<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+		   					<ul class="divided">
+		   						<li>
+		   							<article class="box mypage-menu">
+										<h1><a href="mypageExpert.jsp">내프로필</a></h1>
+									</article>
+		   						</li>
+		   						<li>
+									<article class="box mypage-menu">
+										<h1><a href="myPost.jsp">내게시글</a></h1>
+									</article>
+								</li>
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="workExpert.jsp">작업목록</a></h1>
+									</article>
+								</li>
+								<li>
+									<article class="box mypage-menu">
+										<h1><a href="droneList.jsp">드론관리</a></h1>
+									</article>
+								</li>
+							</ul>
+						</div>
    					</div>
    					
    					
