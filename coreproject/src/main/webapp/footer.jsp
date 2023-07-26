@@ -31,7 +31,7 @@
 				<li style="white-space: nowrap;"><a href="sale.jsp">판매업체</a></li> 
 				<li style="white-space: nowrap;"><a href="repair.jsp">수리업체</a></li> 
 				<li style="white-space: nowrap;"><a href="flight.jsp">비행가능지도</a></li> 
-				<li style="white-space: nowrap;"><a href="civilComplaint.jsp">드론원스탑민원서비스</a></li>
+				<li style="white-space: nowrap;"><a href="https://drone.onestop.go.kr/" target="_blank">드론원스탑민원서비스</a></li>
 			</ul>
 		</footer>
 	

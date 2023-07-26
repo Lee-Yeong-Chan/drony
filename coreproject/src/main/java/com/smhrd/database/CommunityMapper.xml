@@ -24,7 +24,6 @@
 	<delete id="deleteNotice" parameterType="int">
 		delete from t_notice where notice_idx=#{notice_idx}
 	</delete>
-	
 	<select id="selectUserInquiry" parameterType="int" resultType="com.smhrd.domain.userInquiryDTO">
 		select * from t_inquiry_user where inq_idx=#{inq_idx}
 	</select>
@@ -46,7 +45,6 @@
 	<delete id="deleteUserInquiry" parameterType="int">
 		delete from t_inquiry_user where inq_idx=#{inq_idx}
 	</delete>
-	
 	<select id="selectExpertInquiry" parameterType="int" resultType="com.smhrd.domain.expertInquiryDTO">
 		select * from t_inquiry_exp where inq_idx=#{inq_idx}
 	</select>
@@ -68,5 +66,10 @@
 	<delete id="deleteExpertInquiry" parameterType="int">
 		delete from t_inquiry_exp where inq_idx=#{inq_idx}
 	</delete>
-	
+	<select id="selectSaleDroneCompany" resultType="com.smhrd.domain.droneCompanyDTO">
+		select * from t_drone_company where dc_kind='S' or dc_kind='A'
+	</select>
+	<select id="selectRepairDroneCompany" resultType="com.smhrd.domain.droneCompanyDTO">
+		select * from t_drone_company where dc_kind='R' or dc_kind='A'
+	</select>	
 </mapper>
