@@ -125,8 +125,8 @@
 										<%for(int i=0; i<AllNotice.size(); i++){ %>
 										<tr>
 											<td><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></td>
-											<td></td>
-											<td></td>
+											<td>admin</td>
+											<td><%=AllNotice.get(i).getCreated_at() %></td>
 										</tr>
 										<%} %>
 										<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
