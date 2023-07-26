@@ -37,8 +37,8 @@
    				<div class="row">
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-   							<!-- Sidebar -->
-   							<!-- My page -->
+   							
+   							<!-- Sidebar 시작-->
    							<section>
    								
    								<ul class="divided">
@@ -47,36 +47,46 @@
 											<h1><a href="notice.jsp">공지사항</a></h1>
 										</article>
    									</li>
-   									<li>
+   									<c:choose>
+										<c:when test="${not empty loginUser or not empty loginExpert}">
+											<c:choose>
+												<c:when test="${not empty loginUser}">
+													<li style="white-space: nowrap;"><a href="userInquiry.jsp">문의사항</a></li>
+												</c:when>
+										 		<c:otherwise>
+													<li style="white-space: nowrap;"><a href="expertInquiry.jsp">문의사항</a></li>
+										 		</c:otherwise>
+											</c:choose>
+										</c:when>
+										<c:otherwise>
+											<li><a href="login.jsp">문의사항</a></li>
+										</c:otherwise>
+									</c:choose>
+									<li>
 										<article class="box side-info">
-											<h1><a href="">문의사항</a></h1>
+											<h1><a href="sale.jsp">판매업체</a></h1>
 										</article>
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="#">판매업체</a></h1>
+											<h1><a href="repair.jsp">수리업체</a></h1>
 										</article>
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="#">수리업체</a></h1>
+											<h1><a href="flight.jsp">비행지도</a></h1>
 										</article>
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="#">비행지도</a></h1>
-										</article>
-									</li>
-									<li>
-										<article class="box side-info">
-											<h1><a href="#">원스탑민원서비스</a></h1>
+											<h1><a href="civilComplaint.jsp">원스탑민원서비스</a></h1>
 										</article>
 									</li>
    								</ul>
    							</section>
-   							
    						</div>
    					</div>
+   							<!-- Sidebar 끝-->
    					
    					
    					

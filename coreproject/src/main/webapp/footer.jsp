@@ -28,7 +28,7 @@
 							<li><a href="login.jsp">문의사항</a></li>
 						</c:otherwise>
 					</c:choose>
-				<li style="white-space: nowrap;"><a href="sale.jps">판매업체</a></li> 
+				<li style="white-space: nowrap;"><a href="sale.jsp">판매업체</a></li> 
 				<li style="white-space: nowrap;"><a href="repair.jsp">수리업체</a></li> 
 				<li style="white-space: nowrap;"><a href="flight.jsp">비행가능지도</a></li> 
 				<li style="white-space: nowrap;"><a href="civilComplaint.jsp">드론원스탑민원서비스</a></li>
