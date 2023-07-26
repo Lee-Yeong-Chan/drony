@@ -1904,7 +1904,7 @@ input, select, textarea {
 		border-bottom: solid 2px #e7eae8;
     	padding-top: 1em;
     	margin-left: 3em;
-   		margin-right: 50px;
+   		margin-right: 7em;
 	}
 
 			ul.divided > li:first-child {
@@ -2628,7 +2628,6 @@ input, select, textarea {
 		
 	}
 	.sidebar h3.major {
-		text-align: center;
 		margin: 0 0 1.5em 0;
 	}
 

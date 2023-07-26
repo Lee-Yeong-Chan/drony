@@ -58,5 +58,7 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
+		<!-- 작은화면 메뉴 -->
+		<%@include file="navPanel.jsp" %>
 	</body>
 </html>
