@@ -26,12 +26,8 @@
 				<div> 첨부파일 : <input type="file" name="file"></div>
 				<div> 단가 : <input type="text" name="price"></div>
 			</div>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
-			<input type="submit" value="등록">
-=======
 			<input type="submit" value="작성완료">
->>>>>>> dbe7e38 hihi
-			</form>
+		</form>
 			<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>

@@ -161,4 +161,45 @@ public class mypageDAO {
 		}
 		return cnt;
 	}
+	public int insertWorkUserMypage(userWorkDTO insert, workDTO workDTO) {
+		int cnt1=0, cnt2=0;
+		int cnt=0;
+		try {
+			cnt1=sqlSession.insert("insertWorkUserMypage", insert);
+			cnt2=sqlSession.insert("insertUserMypage", workDTO);
+			cnt=cnt1*cnt2;
+			if(cnt>0) {
+				sqlSession.commit();
+			}
+			else {
+				sqlSession.rollback();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	public int deleteWorkUserMypage(int d) {
+		int cnt=0;
+		try {
+			cnt=sqlSession.delete("deleteWorkUserMypage", d);
+			if(cnt>0) {
+				sqlSession.commit();
+			}
+			else {
+				sqlSession.rollback();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 }

@@ -89,10 +89,10 @@
 		</article>
 			<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
 				<button onclick="toggleUpdate()" id="updateButton">수정</button>
-				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>?w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
+				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
 			</c:if>
 			<c:if test="${not empty loginUser}">
-				<button onclick="location.href='insertWorkUserMypage?w_idx=<%=selectPost.get(0).getW_idx()%>'">의뢰하기</button>
+				<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
 			</c:if>
 			<button onclick="location.href='<%=y %>.jsp'">목록</button>
 		

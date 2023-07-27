@@ -9,6 +9,11 @@ public class workDTO {
 	private int w_price;
 	private String w_kind;
 	private String w_img;
+	public workDTO(int w_idx, String exp_id) {
+		super();
+		this.w_idx = w_idx;
+		this.exp_id = exp_id;
+	}
 	public workDTO(int w_idx, String w_title, String w_content, String w_file, int w_price, String w_kind,
 			String w_img) {
 		super();

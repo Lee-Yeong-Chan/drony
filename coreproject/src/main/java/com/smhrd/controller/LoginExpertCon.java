@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,10 +18,16 @@ public class LoginExpertCon extends HttpServlet {
 		expertDTO loginExpert =new expertDTO(id,pw);
 		expertDAO expertDAO=new expertDAO();
 		expertDTO login=expertDAO.selectExpert(loginExpert);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(login!=null) {
 	         HttpSession session = request.getSession();
 	         session.setAttribute("loginExpert", login);
+	         response.sendRedirect("main.jsp");
 		}
-		response.sendRedirect("main.jsp");
+		else {
+			out.println("<script>alert('아이디 혹은 비밀번호가 틀립니다.'); location.href='expertLogin.jsp';</script>");
+		}
 	}
 }

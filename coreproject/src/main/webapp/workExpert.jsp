@@ -76,6 +76,7 @@
 										<tr>
 											<td style="text-align: center;">번호</td>
 											<td>의뢰받은 작업명</td>
+											<td>의뢰자 아이디</td>
 											<td>진행 상황</td>
 											<td>상황 갱신 날짜</td>
 											<td>채팅방</td>
@@ -85,13 +86,12 @@
 											for(int i=0;i<mypageList.size();i++){%>
 										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
 											<td style="text-align: center;"><%=(i+1) %></td>
-											<td><%=mypageList.get(i).getW_title()%></td>
-										<tr>
-											<td><%=(i+1) %></td>
 											<td><a href="postDetail.jsp?w_idx=<%=mypageList.get(i).getW_idx()%>"><%=mypageList.get(i).getW_title()%></a></td>
+											<td><%=mypageList.get(i).getUser_id()%></td>
 											<td>
 												<form action="updateMypageCon" method="post">
 													<select name="status">
+														<option>선택해주세요</option>
 														<option value="상담대기">상담대기</option>
 														<option value="상담중">상담중</option>
 														<option value="계약완료">계약완료</option>

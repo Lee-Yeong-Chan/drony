@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +18,17 @@ public class LoginUserCon extends HttpServlet {
 		userDTO loginUser =new userDTO(id,pw);
 		userDAO userDAO=new userDAO();
 		userDTO login=userDAO.selectUser(loginUser);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(login!=null) {
 	         HttpSession session = request.getSession();
 	         session.setAttribute("loginUser", login);
+	         response.sendRedirect("main.jsp");
 		}
-		response.sendRedirect("main.jsp");
+		else {
+			out.println("<script>alert('아이디 혹은 비밀번호가 틀립니다.'); location.href='userLogin.jsp';</script>");
+		}
 		
 	}
 }
