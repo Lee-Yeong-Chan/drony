@@ -90,7 +90,6 @@
 										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
 											<td style="text-align: center;"><%=(i+1) %></td>
 											<td><%=allPost.get(i).getW_title()%></td>
-										<tr>
 											<td><%=(i+1) %></td>
 											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>"><%=allPost.get(i).getW_title()%></a></td>
 											<td><%=allPost.get(i).getCreated_at()%></td>
