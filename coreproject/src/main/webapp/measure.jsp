@@ -10,8 +10,10 @@
 %>
 <html>
 	<head>
-		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
 		<h1>측량</h1>
@@ -30,9 +32,22 @@
 			</article>
 		<%} %>
 		<c:if test="${not empty loginExpert}">
+		<!-- Footer -->
+		<%@include file="footer.jsp" %>
 			<div>
 				<button onclick="location.href='postInsert.jsp'">글 작성하기</button>
 			</div>
 		</c:if>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- 작은화면 메뉴 -->
+		<%@include file="navPanel.jsp" %>
 	</body>
 </html>
