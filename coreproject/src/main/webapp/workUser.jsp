@@ -53,6 +53,11 @@
 </head>
 	<body>
 	 <div class="menu-licks">
+	 
+	 	<!-- Header -->
+		
+		<%@include file="header.jsp" %> 
+		
 		<a href="mypageUser.jsp">내 프로필</a>
 		<a href="updateUser.jsp">개인 정보 수정</a>
 		<a href="workUser.jsp">작업 진행 상황</a>
@@ -79,6 +84,9 @@
 			<%	}
 			}%>
 		</table>
+		<!-- Footer -->
+		<%@include file="footer.jsp" %>
+		
 		<!-- Scripts -->
    <script src="assets/js/jquery.min.js"></script>
    <script src="assets/js/jquery.dropotron.min.js"></script>

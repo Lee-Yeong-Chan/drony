@@ -11,10 +11,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<title>방역 방제 농업</title>
 	</head>
 	<body>
 		<h1>방역 방제 농업</h1>
+		<%@include file="header.jsp" %> 
 		<%for(int i=0;i<pestControl.size();i++){ %>
 			<article>
 				<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
@@ -34,5 +37,17 @@
 				<button onclick="location.href='postInsert.jsp'">글 작성하기</button>
 			</div>
 		</c:if>
+		
+		<!-- Footer -->
+		<%@include file="footer.jsp" %>
+		
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
