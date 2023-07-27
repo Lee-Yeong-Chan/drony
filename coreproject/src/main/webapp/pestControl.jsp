@@ -10,10 +10,10 @@
 %>
 <html>
 	<head>
+		<title>방역 방제 농업</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<title>방역 방제 농업</title>
 	</head>
 	<body class="is-preload">
 	
@@ -78,19 +78,19 @@
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<section class="pest">
    								<%for(int i=0;i<pestControl.size();i++){ %>
-			<article>
-				<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
-					<div>
-						<img onerror=this.src="images/farm.png" src="<%=pestControl.get(i).getW_img()%>">
-						<div>
-							<span><%=pestControl.get(i).getW_title()%></span><br>
-							<span><%=pestControl.get(i).getCreated_at().substring(0, pestControl.get(i).getCreated_at().length()-2)%></span><br>
-							<span><%=pestControl.get(i).getW_price()%></span>							
-						</div>
-						
-					</div>
-				</a>				
-			</article>
+								<article>
+									<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
+										<div>
+											<img onerror=this.src="images/farm.png" src="<%=pestControl.get(i).getW_img()%>">
+											<div>
+												<span><%=pestControl.get(i).getW_title()%></span><br>
+												<span><%=pestControl.get(i).getCreated_at().substring(0, pestControl.get(i).getCreated_at().length()-2)%></span><br>
+												<span><%=pestControl.get(i).getW_price()%></span>							
+											</div>
+											
+										</div>
+									</a>				
+								</article>
 		<%} %>
 		<c:if test="${not empty loginExpert}">
 			<div>

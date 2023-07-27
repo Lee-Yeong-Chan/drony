@@ -38,7 +38,7 @@
 %>
 <html>
 	<head>
-		<title>Insert title here</title>
+		<title>게시글 수정</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -51,6 +51,7 @@
 	<body>
 		<article id="view">
 		<!-- 배치 어떻게 해야할지 감이 안옴... -->
+		<%@include file="header.jsp" %> 
 			<h1><%=selectPost.get(0).getW_title()%></h1>
 			<div>
 				<div> <img onerror=this.src="images/<%=x%>.png" src="<%=selectPost.get(0).getW_img()%>"></div>
@@ -66,6 +67,9 @@
 				<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
 				<div>
 					<!-- 위랑 같은 배치 맞춰주면 좋을것 같음 -->
+					<!-- Header -->		
+					<%@include file="header.jsp" %> 
+					
 					<div> 분야 : 
 						<select name="w_kind">
 							<option value="">선택</option>
@@ -91,6 +95,8 @@
 				<button onclick="location.href='insertWorkUserMypage?w_idx=<%=selectPost.get(0).getW_idx()%>'">의뢰하기</button>
 			</c:if>
 			<button onclick="location.href='<%=y %>.jsp'">목록</button>
+		
+		<!-- Scripts -->
 		<script>
 			function toggleUpdate() {
 				const update = document.getElementById('update');
@@ -108,6 +114,10 @@
 				}
 			}
 		</script>
+			<!-- Footer -->
+			<%@include file="footer.jsp" %>
+		
+		
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
