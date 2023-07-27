@@ -136,6 +136,42 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.deleteExpertCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>deleteUserCon</servlet-name>
+  	<display-name>deleteUserCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteUserCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertPostCon</servlet-name>
+  	<display-name>insertPostCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.insertPostCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updatePostCon</servlet-name>
+  	<display-name>updatePostCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.updatePostCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deletePostCon</servlet-name>
+  	<display-name>deletePostCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deletePostCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertWorkUserMypage</servlet-name>
+  	<display-name>insertWorkUserMypage</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.insertWorkUserMypage</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>deleteWorkUserMypageCon</servlet-name>
+  	<display-name>deleteWorkUserMypageCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteWorkUserMypageCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginUserCon</servlet-name>
   	<url-pattern>/LoginUserCon</url-pattern>
@@ -223,5 +259,29 @@
   <servlet-mapping>
   	<servlet-name>deleteExpertCon</servlet-name>
   	<url-pattern>/deleteExpertCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteUserCon</servlet-name>
+  	<url-pattern>/deleteUserCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertPostCon</servlet-name>
+  	<url-pattern>/insertPostCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updatePostCon</servlet-name>
+  	<url-pattern>/updatePostCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deletePostCon</servlet-name>
+  	<url-pattern>/deletePostCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertWorkUserMypage</servlet-name>
+  	<url-pattern>/insertWorkUserMypage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteWorkUserMypageCon</servlet-name>
+  	<url-pattern>/deleteWorkUserMypageCon</url-pattern>
   </servlet-mapping>
 </web-app>

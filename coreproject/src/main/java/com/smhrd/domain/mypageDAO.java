@@ -135,8 +135,8 @@ public class mypageDAO {
 		}
 		return cnt;
 	}
-	public List<postDTO> selectPost(String id) {
-		List<postDTO> postList=null;
+	public List<workDTO> selectPost(String id) {
+		List<workDTO> postList=null;
 		try {
 			postList=sqlSession.selectList("selectPost", id);
 		}

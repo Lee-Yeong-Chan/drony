@@ -97,6 +97,19 @@ public class inquiryDAO {
 		}
 		return cnt;
 	}
+	public List<Integer> selectRecentUserInquiry(userInquiryDTO userInquiryDTO) {
+		List<Integer> selectRecentUserInquiryList=null;
+		try {
+			selectRecentUserInquiryList=sqlSession.selectList("selectRecentUserInquiry", userInquiryDTO);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return selectRecentUserInquiryList;
+	}
 	public List<expertInquiryDTO> selectAllExpertInquiry(String Exp_id) {
 		List<expertInquiryDTO> expertInquiryList=null;
 		try {
@@ -187,5 +200,18 @@ public class inquiryDAO {
 			sqlSession.close();
 		}
 		return cnt;
+	}
+	public List<Integer> selectRecentExpertInquiry(expertInquiryDTO expertInquiryDTO) {
+		List<Integer> selectRecentExpertInquiryList=null;
+		try {
+			selectRecentExpertInquiryList=sqlSession.selectList("selectRecentExpertInquiry", expertInquiryDTO);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return selectRecentExpertInquiryList;
 	}
 }

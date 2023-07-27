@@ -96,5 +96,17 @@ public class noticeDAO {
 			sqlSession.close();
 		}
 		return cnt;
+	}public List<Integer> selectRecentNotice(noticeDTO noticeDTO) {
+		List<Integer> selectRecentNoticeList=null;
+		try {
+			selectRecentNoticeList=sqlSession.selectList("selectRecentNotice", noticeDTO);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return selectRecentNoticeList;
 	}
 }

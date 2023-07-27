@@ -17,7 +17,7 @@
 		<h1>운송</h1>
 		<%for(int i=0;i<transport.size();i++){ %>
 			<article>
-				<a href="postDetail?w_idx=<%=transport.get(i).getW_idx()%>">
+				<a href="postDetail.jsp?w_idx=<%=transport.get(i).getW_idx()%>">
 					<div>
 						<img onerror=this.src="images/delivery.png" src="<%=transport.get(i).getW_img()%>">
 						<div>

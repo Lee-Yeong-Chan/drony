@@ -17,7 +17,7 @@
 		<h1>측량</h1>
 		<%for(int i=0;i<mesure.size();i++){ %>
 			<article>
-				<a href="postDetail?w_idx=<%=mesure.get(i).getW_idx()%>">
+				<a href="postDetail.jsp?w_idx=<%=mesure.get(i).getW_idx()%>">
 					<div>
 						<img onerror=this.src="images/measure.png" src="<%=mesure.get(i).getW_img()%>">
 						<div>

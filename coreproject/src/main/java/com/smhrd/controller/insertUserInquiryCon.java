@@ -26,10 +26,15 @@ public class insertUserInquiryCon extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		if (cnt>0) {
-			out.println("<script>alert('문의사항 추가'); location.href='userInquiry.jsp';</script>");
+			inquiryDAO DAO=new inquiryDAO();
+			int max=0;
+			for(int i=0;i<DAO.selectRecentUserInquiry(insert).size();i++) {
+				max=Math.max(max, DAO.selectRecentUserInquiry(insert).get(i));
+			}
+			out.println("<script>alert('문의사항 등록'); location.href='userInquiryView.jsp?number="+max+"';</script>");
 		}
 		else {
-			out.println("<script>alert('문의사항 추가 실패'); location.href='userInquiry.jsp';</script>");
+			out.println("<script>alert('문의사항 등록 실패'); location.href='userInquiry.jsp';</script>");
 		}
 	}
 }

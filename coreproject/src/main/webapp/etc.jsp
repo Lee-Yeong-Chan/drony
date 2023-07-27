@@ -17,7 +17,7 @@
 		<h1>기타</h1>
 		<%for(int i=0;i<etc.size();i++){ %>
 			<article>
-				<a href="postDetail?w_idx=<%=etc.get(i).getW_idx()%>">
+				<a href="postDetail.jsp?w_idx=<%=etc.get(i).getW_idx()%>">
 					<div>
 						<img onerror=this.src="images/hobbydrone.png" src="<%=etc.get(i).getW_img()%>">
 						<div>

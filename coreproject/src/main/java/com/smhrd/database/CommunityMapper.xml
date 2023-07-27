@@ -24,6 +24,9 @@
 	<delete id="deleteNotice" parameterType="int">
 		delete from t_notice where notice_idx=#{notice_idx}
 	</delete>
+	<select id="selectRecentNotice" parameterType="com.smhrd.domain.noticeDTO" resultType="int">
+		select notice_idx from t_notice where notice_title=#{notice_title} and notice_content=#{notice_content} and notice_file=#{notice_file}
+	</select>
 	<select id="selectUserInquiry" parameterType="int" resultType="com.smhrd.domain.userInquiryDTO">
 		select * from t_inquiry_user where inq_idx=#{inq_idx}
 	</select>
@@ -45,6 +48,9 @@
 	<delete id="deleteUserInquiry" parameterType="int">
 		delete from t_inquiry_user where inq_idx=#{inq_idx}
 	</delete>
+	<select id="selectRecentUserInquiry" parameterType="com.smhrd.domain.userInquiryDTO" resultType="int">
+		select inq_idx from t_inquiry_user where inq_title=#{inq_title} and inq_content=#{inq_content} and inq_file=#{inq_file} and user_id=#{user_id}
+	</select>
 	<select id="selectExpertInquiry" parameterType="int" resultType="com.smhrd.domain.expertInquiryDTO">
 		select * from t_inquiry_exp where inq_idx=#{inq_idx}
 	</select>
@@ -66,6 +72,9 @@
 	<delete id="deleteExpertInquiry" parameterType="int">
 		delete from t_inquiry_exp where inq_idx=#{inq_idx}
 	</delete>
+	<select id="selectRecentExpertInquiry" parameterType="com.smhrd.domain.expertInquiryDTO" resultType="int">
+		select inq_idx from t_inquiry_exp where inq_title=#{inq_title} and inq_content=#{inq_content} and inq_file=#{inq_file} and exp_id=#{exp_id}
+	</select>
 	<select id="selectSaleDroneCompany" resultType="com.smhrd.domain.droneCompanyDTO">
 		select * from t_drone_company where dc_kind='S' or dc_kind='A'
 	</select>

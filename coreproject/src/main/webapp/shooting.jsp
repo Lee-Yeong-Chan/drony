@@ -17,7 +17,7 @@
 		<h1>촬영</h1>
 		<%for(int i=0;i<shooting.size();i++){ %>
 			<article>
-				<a href="postDetail?w_idx=<%=shooting.get(i).getW_idx()%>">
+				<a href="postDetail.jsp?w_idx=<%=shooting.get(i).getW_idx()%>">
 					<div>
 						<img onerror=this.src="images/camera.png" src="<%=shooting.get(i).getW_img()%>">
 						<div>

@@ -67,4 +67,23 @@ public class userDAO {
 		}
 		return cnt;
 	}
+	public int deleteUser(String user_id) {
+		int cnt=0;
+		try {
+			cnt=sqlSession.delete("deleteUser", user_id);
+			if(cnt>0) {
+				sqlSession.commit();
+			}
+			else {
+				sqlSession.rollback();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 }

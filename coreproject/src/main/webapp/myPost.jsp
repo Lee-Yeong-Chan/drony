@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.expertDTO"%>
 <%@page import="com.smhrd.domain.mypageDAO"%>
-<%@page import="com.smhrd.domain.postDTO"%>
+<%@page import="com.smhrd.domain.workDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 	expertDTO loginExpert=(expertDTO)session.getAttribute("loginExpert");
 	mypageDAO mypageDAO=new mypageDAO();
 	mypageDAO mypageDAO2=new mypageDAO();
-	List <postDTO> allPost=mypageDAO.selectPost(loginExpert.getExp_id());
+	List <workDTO> allPost=mypageDAO.selectPost(loginExpert.getExp_id());
 %>
 <html>
 	<head>
@@ -87,15 +87,21 @@
 										<tbody>
 										<%if (allPost!=null){
 											for(int i=0;i<allPost.size();i++){%>
+<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
 											<td style="text-align: center;"><%=(i+1) %></td>
 											<td><%=allPost.get(i).getW_title()%></td>
 											<td><%=allPost.get(i).getW_view()%></td>
+=======
+										<tr>
+											<td><%=(i+1) %></td>
+											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>"><%=allPost.get(i).getW_title()%></a></td>
+>>>>>>> 50355e0 커밋 앤 푸쉬 -> 리베이스
 											<td><%=allPost.get(i).getCreated_at()%></td>
 											<td><%=allPost.get(i).getW_price()%></td>
 											<td><%=mypageDAO2.selectPostToUser(loginExpert.getExp_id())%></td>
-											<td><a href="?w_idx=<%=allPost.get(i).getW_idx()%>">수정</a></td>
-											<td><a href="?w_idx=<%=allPost.get(i).getW_idx()%>">삭제</a></td>
+											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>">수정</a></td>
+											<td><a href="deletePostCon?w_idx=<%=allPost.get(0).getW_idx()%>">삭제</a></td>
 										</tr>
 										<%	}
 										}%>

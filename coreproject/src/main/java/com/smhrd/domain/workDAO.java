@@ -35,7 +35,18 @@ public class workDAO {
 	public int insertWork(workDTO insert) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("insertWork", insert);
+			if(insert.getW_file()==null&&insert.getW_img()==null) {
+				cnt+=sqlSession.insert("insertWorkEmpty", insert);
+			}
+			else if(insert.getW_file()==null) {
+				cnt+=sqlSession.insert("insertWorkImg", insert);
+			}
+			else if(insert.getW_img()==null) {
+				cnt+=sqlSession.insert("insertWorkFile", insert);
+			}
+			else{
+				cnt+=sqlSession.insert("insertWorkAll", insert);
+			}			
 			if(cnt>0) {
 				sqlSession.commit();
 			}
@@ -99,5 +110,18 @@ public class workDAO {
 			sqlSession.close();
 		}
 		return cnt;
+	}
+	public List<Integer> selectRecentWork(workDTO workDTO) {
+		List<Integer> selectRecentWork=null;
+		try {
+			selectRecentWork=sqlSession.selectList("selectRecentWork", workDTO);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return selectRecentWork;
 	}
 }

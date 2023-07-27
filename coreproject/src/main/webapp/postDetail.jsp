@@ -60,10 +60,20 @@
 			</div>
 		</article>
 		<article id="update">
-			<form action="updatePostCon" method="post">
+			<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
 				<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
 				<div>
 					<!-- 위랑 같은 배치 맞춰주면 좋을것 같음 -->
+					<div> 분야 : 
+						<select name="w_kind">
+							<option value="">선택</option>
+							<option value="P">방역·방제·살포</option>
+							<option value="M">측량</option>
+							<option value="S">촬영</option>
+							<option value="T">물류·운송</option>
+							<option value="E">기타</option>
+						</select>
+					</div>
 					<div> 이미지 : <input type="file" name="img"> </div>
 					<div> 내용 : <input type="text" name="content" placeholder="<%=selectPost.get(0).getW_content()%>"></div>
 					<div> 첨부파일 : <input type="file" name="file"></div>
@@ -73,7 +83,10 @@
 		</article>
 			<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
 				<button onclick="toggleUpdate()" id="updateButton">수정</button>
-				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>'">삭제</button>
+				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>?w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
+			</c:if>
+			<c:if test="${not empty loginUser}">
+				<button onclick="location.href='insertWorkUserMypage?w_idx=<%=selectPost.get(0).getW_idx()%>'">의뢰하기</button>
 			</c:if>
 			<button onclick="location.href='<%=y %>.jsp'">목록</button>
 		<script>
