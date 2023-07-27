@@ -70,45 +70,45 @@
    								<section class="mypagetable">
    									<table>
          								<tr>
-            								<td>아이디</td>
-            								<td><%=loginExpert.getExp_id() %></td>
+            								<td class="co1">아이디 : </td>
+            								<td class="co2"><%=loginExpert.getExp_id() %></td>
          								</tr>
 								         <tr>
-								            <td>이름</td>
-								            <td><%=loginExpert.getExp_name() %></td>
+								            <td class="co1">이름 : </td>
+								            <td class="co2"><%=loginExpert.getExp_name() %></td>
 								         </tr>
 								         <tr>
-								            <td>이메일</td>
-								            <td><%=loginExpert.getExp_email() %></td>
+								            <td class="co1">이메일 : </td>
+								            <td class="co2"><%=loginExpert.getExp_email() %></td>
 								         </tr>
 								         <tr>
-								            <td>전화번호</td>
-								            <td><%=loginExpert.getExp_phone() %></td>
+								            <td class="co1">전화번호 : </td>
+								            <td class="co2"><%=loginExpert.getExp_phone() %></td>
 								         </tr>
 								         <tr>
-								            <td>사업자번호</td>
-								            <td><%=loginExpert.getBno() %></td>
+								            <td class="co1">사업자번호 : </td>
+								            <td class="co2"><%=loginExpert.getBno() %></td>
 								         </tr>
 								         <tr>
-								            <td>사업자명</td>
-								            <td><%=loginExpert.getCompany_name() %></td>
+								            <td class="co1">사업자명 : </td>
+								            <td class="co2"><%=loginExpert.getCompany_name() %></td>
 								         </tr>
 								         <tr>
-								            <td>사업자주소</td>
-								            <td><%=loginExpert.getCompany_addr() %></td>
+								            <td class="co1">사업자주소 : </td>
+								            <td class="co2"><%=loginExpert.getCompany_addr() %></td>
 								         </tr>
 								         <tr>
-								            <td>작업가능구역</td>
-								            <td><%=loginExpert.getWorking_area() %></td>
+								            <td class="co1">작업가능구역 : </td>
+								            <td class="co2"><%=loginExpert.getWorking_area() %></td>
 								         </tr>
 								         <tr>
-								            <td>작업가능분야</td>
-								            <td><%=loginExpert.getWorking_field() %></td>
+								            <td class="co1">작업가능분야 : </td>
+								            <td class="co2"><%=loginExpert.getWorking_field() %></td>
 								         </tr>
 								         <tr>
-								         	<td colspan='2' align="right">
-								         		<button type="button" onclick="location.href='updateExpert.jsp'">수정</button>
-								         		<button type="button" onclick="#">탈퇴</button>
+								         	<td colspan='2' align="center" style="font-size: 0.8em;">
+								         		<a href="updateExpert.jsp">개인정보수정</a>
+								         		<a href="#">회원탈퇴</a>
 								         	</td>
 								         </tr>
 								         

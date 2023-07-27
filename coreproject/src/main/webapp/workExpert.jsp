@@ -33,7 +33,7 @@
    							
    							<!-- My page -->
    							
-   								<h3 class="major"><span><%=loginExpert.getExp_id() %> 님의 마이페이지</span></h3>
+   								<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
    								<ul class="divided">
    									<li>
    										<article class="box mypage-menu">
@@ -70,8 +70,8 @@
    									<h3>작업 목록</h3>
    								</header>
    								
-   								<section class="requestlist">
-   									<table class>
+   								<section class="mywork">
+   									<table>
 										<tr>
 											<td>번호</td>
 											<td>의뢰받은 작업명</td>

@@ -718,12 +718,15 @@ input, select, textarea {
 						}
 
 				.row {
-					margin-top: -50px;
-					margin-left: -50px;
+					/* margin-top: -50px;
+					margin-left: -50px; */
+					position: relative;
+					top: 40px;
+					left: 50px;
 				}
 
 					.row > * {
-						padding: 50px 50px 0 50px;
+						padding: 30px 50px 0 50px;
 					}
 
 					.row.gtr-uniform {
@@ -2148,7 +2151,7 @@ input, select, textarea {
 	form input[type="email"],
 	form input[type="password"],
 	form select {
-		line-height: 3em;
+		line-height: 1.7em;
 		padding: 0 1em;
 	}
 
@@ -2646,18 +2649,16 @@ input, select, textarea {
 	
 	.mypagetable>table{
 		position: relative;
-    	width: 45%;
-    	margin-left: 70px;
     	border-spacing: 12px;
     	border-collapse: separate;
 	}
 	
-	.requestlist>table select{
+	.mywork>table select{
 		-webkit-appearance: none;
 		display: inline-block;
 		width: 50%;
 		border-radius: 8px;
-		border: solid 2px #E7EAE8;
+		border: solid 1px #E7EAE8;
 	}
 /* Footer */
 
@@ -3363,6 +3364,22 @@ input, select, textarea {
 		
 	}
 	
+	/* Mypagedefault */
+	.co1 {
+		text-align: right;
+		width: 25%;
+	}
+	
+	.co2 {
+		padding-left: 30px
+	}
+	
+	/* Mypageupdate*/
+	
+	.box.page-content>.mypageupdate {
+		margin-left: 0;
+	}
+	
 	/* Mypageupdate */
 	
 	.mypageupdate{
@@ -3373,14 +3390,14 @@ input, select, textarea {
 	/* Mypost */
 	
 	.mypost {
-		margin-top: 50px;
+		margin-top: 60px;
 		width: 90%
 	}
 	
 	.mypost>span {
 	    position: absolute;
    		top: 60px;
-   		right: 110px;
+   		right: 100px;
 	}
 	
 	.mypost thead {
@@ -3391,6 +3408,7 @@ input, select, textarea {
 	
 	.mypost tbody {
 		height: 40px;
+		border-bottom: solid 1px #e7eae8;
 	}
 	
 	/* board - notice, inquiry, companylist */
@@ -3400,5 +3418,5 @@ input, select, textarea {
 	}
 	
 	.box.page-content table {
-		width: 120%;
+		
 	}

@@ -72,6 +72,7 @@
    								</header>
    								
    								<section class="mypost">
+   								<span><a href="#">게시글 작성</a></span>
 								      <table border='1'>
 								      	<thead>
 										<tr>
@@ -100,11 +101,12 @@
 										}%>
 										</tbody>
 									</table>
-									<span><a href="#">게시글 작성</a></span>
+									
    								</section>
    								
    							</article>
    						</div>
+   						
    					</div>
    				</div>
    			</div>
