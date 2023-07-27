@@ -15,7 +15,7 @@
         /* 추가한 CSS 스타일 */
         /* "내 프로필" 섹션 스타일 */
         .section-mypage {
-            background-color: #f1f1f1;
+            background-color: #fdfdfd;
             padding: 20px;
         }
        
@@ -81,33 +81,21 @@
                                                 <td class="co1">전화번호</td>
                                                 <td class="co2"><%=loginUser.getUser_phone() %></td>
                                             </tr>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
                                         </table>
                                         <table>
                                         	<tr>
                                         		<td colspan='2' align="right" style="font-size: 0.8em;">
                                         			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
-                                        			<a href="#">회원탈퇴</a>
+                                        			<a href="deleteUserCon">회원탈퇴</a>
                                         		</td>
                                    			</tr>
-=======
-                                            <tr><td colspan='2' align="center"><a href="updateExpert.jsp">개인정보수정</a>
-								         		<a href="deleteUserCon">회원탈퇴</a></td></tr>
->>>>>>> dbe7e38 hihi
                                         </table>
                                     </section>
                                 </article>
                             </section>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
-=======
 
-                            <!-- "작업의 뢰 현황" 섹션 -->
-                            <section class="section-work">
-                                <!-- 여기에 작업의 뢰 현황 내용 추가 -->
-                            </section>
                             <!-- Footer -->
 							<%@include file="footer.jsp" %>
->>>>>>> dbe7e38 hihi
                         </div>
                     </div>
                 </div>

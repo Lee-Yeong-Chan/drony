@@ -107,9 +107,6 @@
 												<td colspan='2' align="right"><input type="submit" value="수정"></td>
 											</tr>
 										</table>
-										
-										
-										
 											
 									</form>
    								</section>

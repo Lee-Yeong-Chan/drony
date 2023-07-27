@@ -83,15 +83,12 @@
 										</thead>
 										<%if (mypageList!=null){
 											for(int i=0;i<mypageList.size();i++){%>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
 											<td style="text-align: center;"><%=(i+1) %></td>
 											<td><%=mypageList.get(i).getW_title()%></td>
-=======
 										<tr>
 											<td><%=(i+1) %></td>
 											<td><a href="postDetail.jsp?w_idx=<%=mypageList.get(i).getW_idx()%>"><%=mypageList.get(i).getW_title()%></a></td>
->>>>>>> 50355e0 커밋 앤 푸쉬 -> 리베이스
 											<td>
 												<form action="updateMypageCon" method="post">
 													<select name="status">
