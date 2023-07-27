@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -53,12 +55,15 @@ public class updateExpertCon extends HttpServlet {
 		expertDTO updateExpert=new expertDTO(id,pw,name,email,phone,bno,cname,cadd,warea,wfield);
 		expertDAO expertDAO=new expertDAO();
 		int cnt=expertDAO.updateExpert(updateExpert);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(cnt>0) {
-			request.setAttribute("loginExpert", updateExpert);
-			request.getRequestDispatcher("main.jsp").forward(request, response);
+			session.setAttribute("loginExpert", updateExpert);
+			out.println("<script>alert('내 정보 수정 완료'); location.href='mypageExpert.jsp';</script>");
 		}
 		else{
-			response.sendRedirect("updateExpert.jsp");
+			out.println("<script>alert('내 정보 수정 실패'); location.href='updateExpert.jsp';</script>");
 		}
 	}
 }

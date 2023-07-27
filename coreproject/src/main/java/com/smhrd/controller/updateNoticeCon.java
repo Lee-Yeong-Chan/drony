@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,12 +20,14 @@ public class updateNoticeCon extends HttpServlet {
 		noticeDTO update=new noticeDTO(idx,title,content,file);
 		noticeDAO noticeDAO=new noticeDAO();
 		int cnt=noticeDAO.updateNotice(update);
-		if (cnt>0) {
-			System.out.println("수정");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		if(cnt>0) {
+			out.println("<script>alert('공지사항 수정'); location.href='noticeView.jsp?number="+idx+"';</script>");
 		}
-		else {
-			System.out.println("실패");			
+		else{
+			out.println("<script>alert('공지사항 수정 실패'); location.href='noticeView.jsp?number="+idx+"';</script>");
 		}
-		response.sendRedirect("noticeView.jsp?number="+idx);
 	}
 }

@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,12 +34,15 @@ public class updateUserCon extends HttpServlet {
 		userDTO updateUser=new userDTO(id,pw,name,email,phone);
 		userDAO userDAO=new userDAO();
 		int cnt=userDAO.updateUser(updateUser);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(cnt>0) {
-			request.setAttribute("loginUser", updateUser);
-			request.getRequestDispatcher("main.jsp").forward(request, response);
+			session.setAttribute("loginExpert", updateUser);
+			out.println("<script>alert('내 정보 수정 완료'); location.href='mypageUser.jsp';</script>");
 		}
 		else{
-			response.sendRedirect("updateUser.jsp");
+			out.println("<script>alert('내 정보 수정 실패'); location.href='updateUser.jsp';</script>");
 		}
 	}
 }

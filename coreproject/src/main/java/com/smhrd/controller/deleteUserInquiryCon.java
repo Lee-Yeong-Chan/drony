@@ -1,5 +1,6 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,12 +13,14 @@ public class deleteUserInquiryCon extends HttpServlet {
 		int idx=Integer.valueOf(request.getParameter("inq_idx"));
 		inquiryDAO inquiryDAO=new inquiryDAO();
 		int cnt=inquiryDAO.deleteUserInquiry(idx);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if (cnt>0) {
-			System.out.println("삭제");
+			out.println("<script>alert('문의사항 삭제'); location.href='userInquiry.jsp';</script>");
 		}
 		else {
-			System.out.println("실패");			
+			out.println("<script>alert('문의사항 삭제 실패'); location.href='userInquiry.jsp';</script>");
 		}
-		response.sendRedirect("userInquiry.jsp");
 	}
 }

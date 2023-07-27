@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +21,14 @@ public class JoinUserCon extends HttpServlet {
 		userDTO joinUser=new userDTO(id,pw,name,email,phone);
 		userDAO userDAO=new userDAO();
 		int cnt=userDAO.insertUser(joinUser);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(cnt>0) {
-			response.sendRedirect("login.jsp");
+			out.println("<script>alert('회원가입완료'); location.href='login.jsp';</script>");
+		}
+		else {
+			out.println("<script>alert('회원가입실패'); location.href='userJoin.jsp';</script>");
 		}
 	}
 }

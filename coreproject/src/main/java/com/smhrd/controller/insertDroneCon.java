@@ -1,11 +1,11 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import com.smhrd.domain.expertDTO;
 import com.smhrd.domain.expertDroneDTO;
 import com.smhrd.domain.mypageDAO;
@@ -30,12 +30,14 @@ public class insertDroneCon extends HttpServlet {
 		insertDrone.setExp_id(exp_id);
 		mypageDAO mypageDAO=new mypageDAO();
 		int cnt =mypageDAO.insertDrone(insertDrone);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if (cnt>0) {
-			System.out.println("드론 추가 성공");
+			out.println("<script>alert('드론 수정 완료'); location.href='droneList.jsp';</script>");
 		}
 		else {	
-			System.out.println("드론 추가 실패");
+			out.println("<script>alert('드론 수정 실패'); location.href='droneList.jsp';</script>");
 		}
-		response.sendRedirect("droneList.jsp");
 	}
 }

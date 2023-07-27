@@ -18,20 +18,20 @@
 
 							<!-- Content -->
 
-							<article class="box page-content expertlog">
+							<article class="box page-content userlog">
 
 								<header class="log">
-									<h2>전문가 로그인</h2>
+									<h2>의뢰인 로그인</h2>
 								</header>
 				
 								<section class="login-form">
-									<form action="LoginExpertCon" method="post">
+									<form action="LoginUserCon" method="post">
 										<input type="text" name="id" class="text-field" placeholder="아이디">
 										<input type="password" name="pw" class="text-field" placeholder="비밀번호">
 										<input type="submit" value="로그인" class="submit-btn">
 									</form>
 									<div class="links">
-									<a href="expertlogin.jsp">회원가입</a> &nbsp;
+									<a href="userJoin.jsp">회원가입</a> &nbsp;
 									<a href="#">비밀번호를 잊어버리셨나요?</a>
 									</div>		
 								</section>
@@ -43,21 +43,5 @@
 			</div>
 		</section>
 	</div>
-	
-	
-	
-	
-
-
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
 </body>
 </html>

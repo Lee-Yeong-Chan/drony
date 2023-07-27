@@ -33,9 +33,9 @@
 											</header>
 
 											<section class="logbutton">
-												<button type="button" onclick="location.href='userlogin.jsp'">의뢰인 로그인</button>
+												<button type="button" onclick="location.href='userLogin.jsp'">의뢰인 로그인</button>
 													 &nbsp;
-												<button type="button" onclick="location.href='expertlogin.jsp'">전문가 로그인</button>
+												<button type="button" onclick="location.href='expertLogin.jsp'">전문가 로그인</button>
 											</section>
 
 											

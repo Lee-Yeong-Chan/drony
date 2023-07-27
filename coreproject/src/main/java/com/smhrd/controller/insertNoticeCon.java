@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,12 +19,14 @@ public class insertNoticeCon extends HttpServlet {
 		noticeDTO insert=new noticeDTO(title,content,file);
 		noticeDAO noticeDAO=new noticeDAO();
 		int cnt=noticeDAO.insertNotice(insert);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if (cnt>0) {
-			System.out.println("추가");
+			out.println("<script>alert('공지사항 추가'); location.href='notice.jsp';</script>");
 		}
 		else {
-			System.out.println("실패");			
+			out.println("<script>alert('공지사항 추가 실패'); location.href='notice.jsp';</script>");
 		}
-		response.sendRedirect("notice.jsp");
 	}
 }

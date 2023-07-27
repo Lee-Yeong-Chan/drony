@@ -1,0 +1,31 @@
+package com.smhrd.controller;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.smhrd.domain.expertDAO;
+import com.smhrd.domain.expertDTO;
+public class deleteExpertCon extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session=request.getSession();
+		expertDTO loginExpert=(expertDTO)session.getAttribute("loginExpert");
+		expertDAO expertDAO=new expertDAO();
+		int cnt=expertDAO.deleteExpert(loginExpert.getExp_id());
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		if(cnt>0) {
+			session.removeAttribute("loginExpert");
+			out.println("<script>alert('탈퇴되었습니다.'); location.href='workExpert.jsp';</script>");
+		}
+		else {
+			out.println("<script>alert('탈퇴 실패'); location.href='mypageExpert.jsp';</script>");			
+		}
+	}
+}

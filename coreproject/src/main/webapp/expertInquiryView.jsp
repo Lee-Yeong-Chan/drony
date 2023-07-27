@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div id="update">
-			<form action="updateNoticeCon?inquiry_idx=<%=inquiry.get(0).getInq_idx()%>" method="post">
+			<form action="updateExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post">
 				<h1> 제목<input type="text" name="title" placeholder="<%=inquiry.get(0).getInq_title()%>"></h1>
 				<div>
 					내용<input type="text" name="content" placeholder="<%=inquiry.get(0).getInq_content()%>">
@@ -47,7 +47,7 @@
 		</div>
 		<div>
 				<button onclick="toggleUpdate()" id="updateButton">수정</button>
-				<button onclick="location.href='deleteExpertUnquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>'">삭제</button>
+				<button onclick="location.href='deleteExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>'">삭제</button>
 			<button onclick="location.href='expertInquiry.jsp'">목록</button>
 		</div>
 		<script>

@@ -36,4 +36,7 @@
 	<update id="updateExpertWorking_field" parameterType="com.smhrd.domain.expertDTO">
 		update t_expert set working_field=#{working_field} where exp_id=#{exp_id}
 	</update>
+	<delete id="deleteExpert" parameterType="String">
+		delete from t_expert where exp_id=#{exp_id}
+	</delete>
 </mapper>

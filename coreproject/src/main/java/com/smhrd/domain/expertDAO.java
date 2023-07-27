@@ -82,4 +82,23 @@ public class expertDAO {
 		}
 		return cnt;
 	}
+	public int deleteExpert(String exp_id) {
+		int cnt=0;
+		try {
+			cnt=sqlSession.delete("deleteExpert", exp_id);
+			if(cnt>0) {
+				sqlSession.commit();
+			}
+			else {
+				sqlSession.rollback();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
 }

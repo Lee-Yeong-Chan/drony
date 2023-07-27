@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,11 +26,14 @@ public class JoinExpertCon extends HttpServlet {
 		expertDTO joinExpert=new expertDTO(id,pw,name,email,phone,bno,company_name, company_address, working_area, working_field);
 		expertDAO expertDAO=new expertDAO();
 		int cnt =expertDAO.insertExpert(joinExpert);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if(cnt>0) {
-			response.sendRedirect("login.jsp");
+			out.println("<script>alert('회원가입완료'); location.href='login.jsp';</script>");
 		}
 		else {
-			response.sendRedirect("main.jsp");
+			out.println("<script>alert('회원가입실패'); location.href='expertJoin.jsp';</script>");
 		}
 	}
 }

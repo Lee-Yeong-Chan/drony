@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,12 +23,14 @@ public class insertExpertInquiryCon extends HttpServlet {
 		expertInquiryDTO insert=new expertInquiryDTO(title,content,file, expert_id);
 		inquiryDAO inquiryDAO=new inquiryDAO();
 		int cnt=inquiryDAO.insertExpertInquiry(insert);
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
 		if (cnt>0) {
-			System.out.println("추가");
+			out.println("<script>alert('문의사항 등록'); location.href='expertInquiry.jsp';</script>");
 		}
 		else {
-			System.out.println("실패");			
+			out.println("<script>alert('문의사항 등록 실패'); location.href='expertInquiry.jsp';</script>");
 		}
-		response.sendRedirect("expertInquiry.jsp");
 	}
 }

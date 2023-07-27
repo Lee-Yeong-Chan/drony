@@ -27,9 +27,9 @@
 								</header>
 
 								<section class="logbutton">
-									<button type="button" onclick="location.href='userjoin.jsp'">의뢰인 회원가입</button>
+									<button type="button" onclick="location.href='userJoin.jsp'">의뢰인 회원가입</button>
 										 &nbsp;
-									<button type="button" onclick="location.href='expertjoin.jsp'">전문가 회원가입</button>
+									<button type="button" onclick="location.href='expertJoin.jsp'">전문가 회원가입</button>
 								</section>
 							</article>
 						</div>

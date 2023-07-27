@@ -1,5 +1,7 @@
 package com.smhrd.controller;
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,12 +18,14 @@ public class updateUserInquiryCon extends HttpServlet {
 		userInquiryDTO update=new userInquiryDTO(idx,title,content,file);
 		inquiryDAO noticeDAO=new inquiryDAO();
 		int cnt=noticeDAO.updateUserInquiry(update);
-		if (cnt>0) {
-			System.out.println("수정");
+		response.setContentType("text/html; charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out=response.getWriter();
+		if(cnt>0) {
+			out.println("<script>alert('문의사항 수정'); location.href='userInquiryView.jsp?number="+idx+"';</script>");
 		}
-		else {
-			System.out.println("실패");			
+		else{
+			out.println("<script>alert('문의사항 수정 실패'); location.href='userInquiryView.jsp?number="+idx+"';</script>");
 		}
-		response.sendRedirect("userInquiryView.jsp?number="+idx);
 	}
 }
