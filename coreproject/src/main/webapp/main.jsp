@@ -16,13 +16,13 @@
 		<%@include file="header.jsp" %> 
 
 		<!-- Banner -->
-		<section id="banner">
+		<div id="banner">
 			<div class="content">
 				<h2>Welcome to DRONY</h2>
 				<p>A free responsive site template built on HTML5, CSS3, and some other stuff</p>
 				<a href="#main" class="button scrolly">Alright let's go</a>
 			</div>
-		</section>
+		</div>
 
 		<!-- Main -->
 		<section id="main">

@@ -2359,8 +2359,10 @@ select {
 		padding: 80px 30px;
 	}
 	
-	#page-wrapper #banner{
+	#banner{
 		margin-top: 44px;
+		margin-bottom: 0;
+		padding: 50px 0;
 	}
 
 /* Header */

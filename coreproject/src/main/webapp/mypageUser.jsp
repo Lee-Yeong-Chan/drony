@@ -18,12 +18,7 @@
             background-color: #f1f1f1;
             padding: 20px;
         }
-
-        /* "작업의 뢰 현황" 섹션 스타일 */
-        .section-work {
-            background-color: #f7f7f7;
-            padding: 20px;
-        }
+       
     </style>
 	</head>
 	<body class="is-preload">
@@ -71,30 +66,32 @@
                                     <section class="mypagetable">
                                         <table>
                                             <tr>
-                                                <td>아이디</td>
-                                                <td><%=loginUser.getUser_id() %></td>
+                                                <td class="co1">아이디</td>
+                                                <td class="co2"><%=loginUser.getUser_id() %></td>
                                             </tr>
                                             <tr>
-                                                <td>이름</td>
-                                                <td><%=loginUser.getUser_name() %></td>
+                                                <td class="co1">이름</td>
+                                                <td class="co2"><%=loginUser.getUser_name() %></td>
                                             </tr>
                                             <tr>
-                                                <td>이메일</td>
-                                                <td><%=loginUser.getUser_email() %></td>
+                                                <td class="co1">이메일</td>
+                                                <td class="co2"><%=loginUser.getUser_email() %></td>
                                             </tr>
                                             <tr>
-                                                <td>전화번호</td>
-                                                <td><%=loginUser.getUser_phone() %></td>
+                                                <td class="co1">전화번호</td>
+                                                <td class="co2"><%=loginUser.getUser_phone() %></td>
                                             </tr>
-                                            <tr><td colspan='2' align="right"><button type="button" onclick="location.href='updateUser.jsp'">수정</button></td></tr>
+                                        </table>
+                                        <table>
+                                        	<tr>
+                                        		<td colspan='2' align="right" style="font-size: 0.8em;">
+                                        			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
+                                        			<a href="#">회원탈퇴</a>
+                                        		</td>
+                                   			</tr>
                                         </table>
                                     </section>
                                 </article>
-                            </section>
-
-                            <!-- "작업의 뢰 현황" 섹션 -->
-                            <section class="section-work">
-                                <!-- 여기에 작업의 뢰 현황 내용 추가 -->
                             </section>
                         </div>
                     </div>
