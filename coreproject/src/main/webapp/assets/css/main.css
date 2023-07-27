@@ -79,11 +79,17 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-input, select, textarea {
+input,textarea {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+}
+
+select {
+	height: 30px;
+	background: url('down-arrow.png') no-repeat 95% 50%;
+	
 }
 
 /* Basic */
@@ -1817,11 +1823,11 @@ input, select, textarea {
 		font-weight: 700;
 		text-transform: uppercase;
 		text-decoration: none;
-		background: #607579;
+		background: #a3b9bd;
 		color: #fff;
 		border: 0;
-		line-height: 0.5em;
-		border-radius: 8px;
+		line-height: 0.3em;
+		border-radius: 5px;
 		outline: 0;
 		cursor: pointer;
 		-moz-transition: background-color .2s ease-in-out;
@@ -2130,13 +2136,13 @@ input, select, textarea {
 	form input[type="text"],
 	form input[type="email"],
 	form input[type="password"],
-	form select,
+	/* form select, */
 	form textarea {
 		-webkit-appearance: none;
 		display: block;
-		width: 100%;
+		width: 95%;
 		border-radius: 8px;
-		border: solid 2px #E7EAE8;
+		border: solid 1px #E7EAE8;
 	}
 
 		form input[type="text"]:focus,
@@ -2184,6 +2190,7 @@ input, select, textarea {
 
 	table {
 		width: 100%;
+		
 	}
 
 		table.default {
@@ -2276,6 +2283,7 @@ input, select, textarea {
 	.box.page-content{
 		position: relative;
 		left: 30px;
+		margin-bottom: 50px;
 	}
 	
 	.box.page-content header {
@@ -2649,12 +2657,15 @@ input, select, textarea {
 	
 	.mypagetable>table{
 		position: relative;
-    	border-spacing: 12px;
+    	border-spacing: 7px;
     	border-collapse: separate;
+    	width: 550px;
+    	/* border: solid 1px;
+    	border-radius: 3px; */
+    	margin-bottom: 5px;
 	}
 	
-	.mywork>table select{
-		-webkit-appearance: none;
+	.mycontent>table select{
 		display: inline-block;
 		width: 50%;
 		border-radius: 8px;
@@ -3368,6 +3379,7 @@ input, select, textarea {
 	.co1 {
 		text-align: right;
 		width: 25%;
+		font-wight: 700;
 	}
 	
 	.co2 {
@@ -3380,6 +3392,10 @@ input, select, textarea {
 		margin-left: 0;
 	}
 	
+	.mypageupdate table{
+		height: 350px;
+	}
+	
 	/* Mypageupdate */
 	
 	.mypageupdate{
@@ -3387,27 +3403,24 @@ input, select, textarea {
 	margin-left: 35px;
 	}
 	
-	/* Mypost */
+	/* mycontent */
 	
-	.mypost {
-		margin-top: 60px;
-		width: 90%
-	}
 	
-	.mypost>span {
+	
+	.mycontent>span {
 	    position: absolute;
    		top: 60px;
-   		right: 100px;
+   		right: 0;
 	}
 	
-	.mypost thead {
-		height: 40px;
+	.mycontent thead {
+		
 		font-weight: 700;
 		border-bottom: solid 2px;
 	}
 	
-	.mypost tbody {
-		height: 40px;
+	.mycontent tbody {
+		height: 30px;
 		border-bottom: solid 1px #e7eae8;
 	}
 	
@@ -3417,6 +3430,6 @@ input, select, textarea {
 		list-style: none;
 	}
 	
-	.box.page-content table {
-		
+	.box.page-content section {
+		margin-top: 60px;
 	}

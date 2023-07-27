@@ -61,46 +61,59 @@
    							<!-- Content -->
    							<article class="box page-content">
    								<header>
-   									<h3>내게시글</h3>
+   									<h3>드론관리</h3>
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정 -->
-   								<section class="dronelist">
+   								<section class="mycontent">
 								      <form action="updateDroneCon" method="post">
-										<table border='1'>
+										<table>
+											<thead>
 											<tr>
-												<td>순번</td>
+												<td style="width: 35px;">순번</td>
 												<td>모델명</td>
 												<td>제조사</td>
 												<td>일련번호</td>
 												<td>설명</td>
 												<td>사진</td>
 											</tr>
+											</thead>											
 											<%for(int i=0;i<droneList.size();i++){%>
-											<tr>
-												<td><%=i+1 %></td>
+											<tr style="border-bottom: solid 1px #e7eae8;" height='58px'>
+												<td style="text-align: center;"><%=i+1 %></td>
 												<td> <input type="text" name="model" placeholder=<%=droneList.get(i).getDr_model()%>></td>
 												<td> <input type="text" name="maker" placeholder=<%=droneList.get(i).getDr_maker()%>></td>
 												<td> <input type="text" name="serial" placeholder=<%=droneList.get(i).getDr_serial()%>></td>
 												<td> <input type="text" name="desc" placeholder=<%=droneList.get(i).getDr_desc()%>></td>
 												<td> <input type="file" name="img" placeholder=<%=droneList.get(i).getDr_img()%>></td>
-												<td> <input type="submit" value="수정"></td>
-												<td><a href="deleteDroneCon?dr_idx=<%=droneList.get(i).getDr_idx()%>">삭제</a></td>
+												<td> <input type="submit" value="수정" style="margin-bottom: 3px;">
+													 <button type="button" onclick="location.href='deleteDroneCon?dr_idx=<%=droneList.get(i).getDr_idx()%>'">삭제</button>
+												</td>
 											</tr>
 											<% session.setAttribute("dr_idx", droneList.get(i).getDr_idx());
 											}%>
 										</table>
 									</form>
 									<form action="insertDroneCon" method="post">
-										<table border="1">
+										<table>
+											<thead>
 											<tr>
-												<td>추가 </td>
+												<td style="width: 35px;">추가</td>
+												<td>모델명</td>
+												<td>제조사</td>
+												<td>일련번호</td>
+												<td>설명</td>
+												<td>사진</td>
+											</tr>
+											</thead>
+											<tr style="border-bottom: solid 1px #e7eae8;" height='30px'>
+												<td> </td>
 												<td> <input type="text" name="model"></td>
 												<td> <input type="text" name="maker"></td>
 												<td> <input type="text" name="serial"></td>
 												<td> <input type="text" name="desc"></td>
 												<td> <input type="file" name="img"></td>
-												<td> <input type="submit" value="추가"> </td>
+												<td> <input type="submit" value="추가" style="margin-right: 24px;"></td>
 											</tr>
 										</table>
 									</form>
@@ -126,12 +139,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	
-		<a href="mypageExpert.jsp">내 프로필</a>
-		<a href="updateExpert.jsp">개인 정보 수정</a>
-		<a href="myPost.jsp">올린 게시글</a>
-		<a href="workExpert.jsp">작업 진행 상황</a>
-		<a href="droneList.jsp">내 드론 현황</a>
-		
+				
 	</body>
 </html>

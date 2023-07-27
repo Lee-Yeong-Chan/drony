@@ -105,21 +105,15 @@
 								            <td class="co1">작업가능분야 : </td>
 								            <td class="co2"><%=loginExpert.getWorking_field() %></td>
 								         </tr>
-								         <tr>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
-								         	<td colspan='2' align="center" style="font-size: 0.8em;">
-								         		<a href="updateExpert.jsp">개인정보수정</a>
+								      </table>
+								      <table>
+								     	 <tr>
+								         	<td colspan='2' align="right" style="font-size: 0.8em;">
+								         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
 								         		<a href="#">회원탈퇴</a>
-=======
-								         	<td colspan='2' align="right">
-								         		<button type="button" onclick="location.href='updateExpert.jsp'">수정</button>
-								         		<button type="button" onclick="location.href='deleteExpertCon'">탈퇴</button>
->>>>>>> 3410398 커커커커커커커미밈미밋
 								         	</td>
 								         </tr>
-								         
 								      </table>
-								      
    								</section>
    								
    							</article>

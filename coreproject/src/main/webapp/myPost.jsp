@@ -71,12 +71,12 @@
    									<h3>내게시글</h3>
    								</header>
    								
-   								<section class="mypost">
+   								<section class="mycontent">
    								<span><a href="#">게시글 작성</a></span>
 								      <table border='1'>
 								      	<thead>
 										<tr>
-											<td>번호</td>
+											<td style="text-align: center;">번호</td>
 											<td>작업제목</td>
 											<td>작업조회수</td>
 											<td>글작성일자</td>
@@ -84,11 +84,11 @@
 											<td>요청받은개수</td>
 										</tr>
 										</thead>
-										</tbody>
+										<tbody>
 										<%if (allPost!=null){
 											for(int i=0;i<allPost.size();i++){%>
-										<tr>
-											<td><%=(i+1) %></td>
+										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
+											<td style="text-align: center;"><%=(i+1) %></td>
 											<td><%=allPost.get(i).getW_title()%></td>
 											<td><%=allPost.get(i).getW_view()%></td>
 											<td><%=allPost.get(i).getCreated_at()%></td>

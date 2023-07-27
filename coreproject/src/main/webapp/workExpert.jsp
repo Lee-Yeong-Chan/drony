@@ -70,19 +70,21 @@
    									<h3>작업 목록</h3>
    								</header>
    								
-   								<section class="mywork">
+   								<section class="mycontent">
    									<table>
+   										<thead>
 										<tr>
-											<td>번호</td>
+											<td style="text-align: center;">번호</td>
 											<td>의뢰받은 작업명</td>
 											<td>진행 상황</td>
 											<td>상황 갱신 날짜</td>
 											<td>채팅방</td>
 										</tr>
+										</thead>
 										<%if (mypageList!=null){
 											for(int i=0;i<mypageList.size();i++){%>
-										<tr>
-											<td><%=(i+1) %></td>
+										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
+											<td style="text-align: center;"><%=(i+1) %></td>
 											<td><%=mypageList.get(i).getW_title()%></td>
 											<td>
 												<form action="updateMypageCon" method="post">

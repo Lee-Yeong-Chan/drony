@@ -66,16 +66,51 @@
    								
    								<section class="mypageupdate">
    									<form action="updateExpertCon" method="post">
-										변경할 비밀번호 : <input type="password" name="pw"><br>
-										변경할 이름 : <input type="text" placeholder="<%=loginExpert.getExp_name() %>" name="name"><br>
-										변경할 이메일 : <input type="text" placeholder="<%=loginExpert.getExp_email() %>" name="email"><br>
-										변경할 전화번호 : <input type="text" placeholder="<%=loginExpert.getExp_phone() %>" name="phone"><br>
-										변경할 사업자번호 : <input type="text" placeholder="<%=loginExpert.getBno() %>" name="bno"><br>
-										변경할 사업자명 : <input type="text" placeholder="<%=loginExpert.getCompany_name() %>" name="cname"><br>
-										변경할 사업자 주소 : <input type="text" placeholder="<%=loginExpert.getCompany_addr() %>" name="cadd"><br>
-										변경할 작업 구역 : <input type="text" placeholder="<%=loginExpert.getWorking_area() %>" name="warea"><br>
-										변경할 작업 가능 분야 : <input type="text" placeholder="<%=loginExpert.getWorking_field() %>" name="wfield"><br>
-										<input type="submit" name="수정">	
+										<table>
+											<tr>
+												<td class="co1">변경할 비밀번호 : </td>
+												<td class="co2"><input type="password" name="pw"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 이름 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getExp_name() %>" name="name"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 이메일 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getExp_email() %>" name="email"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 전화번호 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getExp_phone() %>" name="phone"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 사업자번호 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getBno() %>" name="bno"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 업체명 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getCompany_name() %>" name="cname"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 업체 주소 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getCompany_addr() %>" name="cadd"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 작업 지역 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getWorking_area() %>" name="warea"></td>
+											</tr>
+											<tr>
+												<td class="co1">변경할 작업 분야 : </td>
+												<td class="co2"><input type="text" placeholder="<%=loginExpert.getWorking_field() %>" name="wfield"></td>
+											</tr>
+											<tr>
+												<td colspan='2' align="right"><input type="submit" value="수정"></td>
+											</tr>
+										</table>
+										
+										
+										
+											
 									</form>
    								</section>
    								
