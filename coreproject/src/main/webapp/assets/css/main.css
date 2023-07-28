@@ -45,7 +45,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 ol, ul {
@@ -3479,8 +3480,8 @@ select {
 	
 	/* 드론 업체정보 */
 	.droneCom img {
-		width: 250px;
-		border: solid 1px;
+		width: 95%;
+		border: solid 1px #E7EAE8;
 		border-radius: 5px;
 	}
 	
