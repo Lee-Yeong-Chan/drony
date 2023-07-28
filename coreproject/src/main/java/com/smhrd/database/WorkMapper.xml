@@ -13,16 +13,16 @@
 		select w_idx from t_work where w_title=#{w_title} and w_content=#{w_content} and exp_id=#{exp_id} and w_price=#{w_price} and w_kind=#{w_kind}
 	</select>
 	<insert id="insertWorkAll" parameterType="com.smhrd.domain.workDTO">
-		insert into t_work values (t_work_seq.nextval,#{w_title},#{w_content},#{w_file},#{exp_id},sysdate,#{w_price},#{w_kind},#{w_img})
+		insert into t_work(w_title,w_content,w_file,exp_id,created_at,w_price,w_kind,w_img) values(#{w_title},#{w_content},#{w_file},#{exp_id},sysdate,#{w_price},#{w_kind},#{w_img})
 	</insert>
 	<insert id="insertWorkFile" parameterType="com.smhrd.domain.workDTO">
-		insert into t_work(w_idx, w_title, w_content, w_file, exp_id,created_at,w_price,w_kind) values (t_work_seq.nextval,#{w_title},#{w_content},#{w_file},#{exp_id},sysdate,#{w_price},#{w_kind})
+		insert into t_work(w_title,w_content,w_file,exp_id,created_at,w_price,w_kind) values values (#{w_title},#{w_content},#{w_file},#{exp_id},sysdate,#{w_price},#{w_kind})
 	</insert>
 	<insert id="insertWorkImg" parameterType="com.smhrd.domain.workDTO">
-		insert into t_work(w_idx, w_title, w_content, exp_id,created_at,w_price,w_kind,w_img) values (t_work_seq.nextval,#{w_title},#{w_content},#{exp_id},sysdate,#{w_price},#{w_kind},#{w_img})
+		insert into t_work(w_title,w_content,exp_id,created_at,w_price,w_kind,w_img) values values (#{w_title},#{w_content},#{exp_id},sysdate,#{w_price},#{w_kind},#{w_img})
 	</insert>
 	<insert id="insertWorkEmpty" parameterType="com.smhrd.domain.workDTO">
-		insert into t_work(w_idx, w_title, w_content, exp_id,created_at,w_price,w_kind) values (t_work_seq.nextval,#{w_title},#{w_content},#{exp_id},sysdate,#{w_price},#{w_kind})
+		insert into t_work(w_title,w_content,exp_id,created_at,w_price,w_kind) values values (t_work_seq.nextval,#{w_title},#{w_content},#{exp_id},sysdate,#{w_price},#{w_kind})
 	</insert>
 	<update id="updateWorkTitle" parameterType="com.smhrd.domain.workDTO">
 		update t_work set w_title=#{w_title} where w_idx=#{w_idx}

@@ -17,30 +17,10 @@ public class deletePostCon extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		if (cnt>0) {
-			String y=request.getParameter("w_kind");
-			String x="";
-			if(y.equals("P")){
-				x="pestControl";
-			}
-			else if(y.equals("M")) {
-				x="measure";
-			}
-			else if(y.equals("S")) {
-				x="shooting";
-			}
-			else if(y.equals("T")) {
-				x="transport";
-			}
-			else if(y.equals("E")) {
-				x="etc";
-			}
-			else {
-				x="";
-			}
-			out.println("<script>alert('게시글 삭제'); location.href='"+x+".jsp';</script>");
+			out.println("<script>alert('게시글 삭제'); location.href='myPost.jsp';</script>");
 		}
 		else {
-			out.println("<script>alert('게시글 삭제 실패'); location.href='mypost.jsp';</script>");
+			out.println("<script>alert('게시글 삭제 실패'); location.href='myPost.jsp';</script>");
 		}
 	}
 }

@@ -91,7 +91,7 @@
 											<td>
 												<form action="updateMypageCon" method="post">
 													<select name="status">
-														<option>선택해주세요</option>
+														<option><%=mypageList.get(i).getStatus_memo()%></option>
 														<option value="상담대기">상담대기</option>
 														<option value="상담중">상담중</option>
 														<option value="계약완료">계약완료</option>
@@ -104,7 +104,7 @@
 											</td>
 											<td><%=mypageList.get(i).getCreated_at()%></td>
 											<td><button onclick="location.href='.jsp'">채팅</button></td>
-											<td><button onclick="location.href='deleteWorkExpertMypageCon'">삭제</button></td>
+											<td><button onclick="location.href='deleteWorkExpertMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">삭제</button></td>
 										</tr>
 										<%	}
 										}%>

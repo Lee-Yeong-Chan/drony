@@ -7,7 +7,7 @@
 		select tw.w_title ,twm.status_memo, twm.created_at, tuw.tuw_idx from t_work_mypage twm, t_work tw, t_user_work tuw where tw.w_idx=twm.w_idx and tuw.tuw_idx=twm.status_idx and tw.w_idx  in (select w_idx from t_user_work tuw where user_id=#{user_id})
 	</select>
 	<select id="selectExpertMypage" parameterType="String" resultType="com.smhrd.domain.mypageDTO">
-		select tw.w_title, twm.created_at, twm.status_idx, tw.w_idx, tuw.user_id from t_work tw, t_work_mypage twm, t_user_work tuw where tw.w_idx=twm.w_idx and tuw.tuw_idx=twm.status_idx and tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
+		select tw.w_title, twm.created_at, twm.status_idx, tw.w_idx, tuw.user_id, tuw.tuw_idx from t_work tw, t_work_mypage twm, t_user_work tuw where tw.w_idx=twm.w_idx and tuw.tuw_idx=twm.status_idx and tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
 	</select>
 	<update id="updateExpertMypage" parameterType="com.smhrd.domain.mypageDTO">
 		update t_work_mypage set status_memo=#{status_memo}, created_at=sysdate where status_idx=#{status_idx}
@@ -33,8 +33,11 @@
 	<delete id="deleteDrone" parameterType="int">
 		delete from t_drone where dr_idx=#{dr_idx}
 	</delete>
-	<insert id="insertDrone" parameterType="com.smhrd.domain.expertDroneDTO">
-		insert into t_drone values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{dr_img},#{exp_id})
+	<insert id="insertDroneImg" parameterType="com.smhrd.domain.expertDroneDTO">
+		insert into t_drone(dr_model,dr_maker,dr_serial,dr_desc,dr_img,exp_id) values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{dr_img},#{exp_id})
+	</insert>
+	<insert id="insertDroneEmpty" parameterType="com.smhrd.domain.expertDroneDTO">
+		insert into t_drone(dr_model,dr_maker,dr_serial,dr_desc,exp_id) values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{exp_id})
 	</insert>
 	<select id="selectPost" parameterType="String" resultType="com.smhrd.domain.workDTO">
 		select * from t_work where exp_id=#{exp_id}
@@ -43,10 +46,10 @@
 		select count(*) from t_user_work where w_idx=(select w_idx from t_work where exp_id=#{exp_id})
 	</select>
 	<insert id="insertWorkUserMypage" parameterType="com.smhrd.domain.userWorkDTO">
-		insert into t_user_work values (t_user_work_seq.nextval,#{w_idx},#{user_id})
+		insert into t_user_work(w_idx,user_id) values (#{w_idx},#{user_id})
 	</insert>
 	<insert id="insertUserMypage" parameterType="com.smhrd.domain.workDTO">
-		insert into t_work_mypage values (t_work_mypage_seq.nextval,#{w_idx},'상담대기',#{exp_id},sysdate)
+		insert into t_work_mypage(w_idx,status_memo,exp_id,created_at) values (#{w_idx},'상담대기',#{exp_id},sysdate)
 	</insert>
 	<delete id="deleteWorkUserMypage" parameterType="int">
 		delete from t_user_work where tuw_idx=#{tuw_idx}

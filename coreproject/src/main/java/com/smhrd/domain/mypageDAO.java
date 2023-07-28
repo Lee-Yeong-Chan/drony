@@ -119,7 +119,12 @@ public class mypageDAO {
 	public int insertDrone(expertDroneDTO insert) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("insertDrone", insert);
+			if(insert.getDr_img()!=null) {
+				cnt+=sqlSession.insert("insertDroneImg", insert);
+			}
+			else {
+				cnt+=sqlSession.insert("insertDroneEmpty", insert);
+			}
 			if(cnt>0) {
 				sqlSession.commit();
 			}
