@@ -13,7 +13,7 @@
 	<body>
 		<h1>공지사항</h1>
 		<div>
-			<form action="insertNoticeCon" method="post">
+			<form action="insertNoticeCon" method="post" enctype='multipart/form-data'>
 				<h1> 제목<input type="text" name="title"></h1>
 				<div>
 					내용<input type="text" name="content">

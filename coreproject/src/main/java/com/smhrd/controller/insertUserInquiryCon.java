@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -46,9 +47,10 @@ public class insertUserInquiryCon extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		if (cnt>0) {
 			inquiryDAO DAO=new inquiryDAO();
+			List<Integer> inquiry=DAO.selectRecentUserInquiry(insert);
 			int max=0;
-			for(int i=0;i<DAO.selectRecentUserInquiry(insert).size();i++) {
-				max=Math.max(max, DAO.selectRecentUserInquiry(insert).get(i));
+			for(int i=0;i<inquiry.size();i++) {
+				max=Math.max(max, inquiry.get(i));
 			}
 			out.println("<script>alert('문의사항 등록'); location.href='userInquiryView.jsp?number="+max+"';</script>");
 		}

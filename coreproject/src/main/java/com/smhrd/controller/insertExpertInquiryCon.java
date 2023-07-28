@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Collection;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -57,9 +58,10 @@ public class insertExpertInquiryCon extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		if (cnt>0) {
 			inquiryDAO DAO=new inquiryDAO();
+			List<Integer> inquiry=DAO.selectRecentExpertInquiry(insert);
 			int max=0;
-			for(int i=0;i<DAO.selectRecentExpertInquiry(insert).size();i++) {
-				max=Math.max(max, DAO.selectRecentExpertInquiry(insert).get(i));
+			for(int i=0;i<inquiry.size();i++) {
+				max=Math.max(max, inquiry.get(i));
 			}
 			out.println("<script>alert('문의사항 등록'); location.href='expertInquiryView.jsp?number="+max+"';</script>");
 		}

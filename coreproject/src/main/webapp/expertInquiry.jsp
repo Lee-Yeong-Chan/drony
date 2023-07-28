@@ -118,7 +118,7 @@
 										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
 											<td style="text-align: center;"><%=i+1 %></td>
 											<td><a href="expertInquiryView.jsp?number=<%=expertInquiryList.get(i).getInq_idx()%>"><%=expertInquiryList.get(i).getInq_title()%></a></td>
-											<td><%=expertInquiryList.get(i).getUser_id()%></td>
+											<td><%=expertInquiryList.get(i).getexp_id()%></td>
 											<td align="right"><%=expertInquiryList.get(i).getCreated_at()%></td>
 										</tr>
 										<%} %>

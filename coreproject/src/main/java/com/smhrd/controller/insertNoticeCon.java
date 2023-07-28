@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -42,9 +43,10 @@ public class insertNoticeCon extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		if (cnt>0) {
 			noticeDAO DAO=new noticeDAO();
+			List<Integer> noticeLi=DAO.selectRecentNotice(insert);
 			int max=0;
-			for(int i=0;i<DAO.selectRecentNotice(insert).size();i++) {
-				max=Math.max(max, DAO.selectRecentNotice(insert).get(i));
+			for(int i=0;i<noticeLi.size();i++) {
+				max=Math.max(max, noticeLi.get(i));
 			}
 			out.println("<script>alert('공지사항 등록'); location.href='noticeView.jsp?number="+max+"';</script>");
 		}
