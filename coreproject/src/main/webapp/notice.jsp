@@ -12,15 +12,10 @@
 %>
 <html>
 	<head>
-
-		<title>DRONY</title>
-		<meta charset="utf-8" />
-
-		<title>Insert title here</title>
-		<meta charset="UTF-8">
-
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+	<title>DRONY</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 
 	<body class="is-preload">
@@ -39,8 +34,6 @@
    						<div class="sidebar">
    							
    							<!-- Sidebar 시작-->
-   							
-   								
    								<ul class="divided">
    									<li>
    										<article class="box side-info">
@@ -106,35 +99,35 @@
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
-   							<article class="box page-content">
+   							<article class="box page-content"  style="width: 80%;">
    								<header>
    									<h3>공지사항</h3>
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   																
+   								<section class="mycontent" style="margin-left: 50px;">
+								<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
+									<span><a href="noticeInsert.jsp">공지 작성하기</a></span>
+								</c:if>
 								<table>
 									<thead>
 										<tr>
-											<td>제목</td>
+											<td width="50%">제목</td>
 											<td>작성자</td>
-											<td>날짜</td>
+											<td align="right">날짜</td>
 										</tr>
 									</thead>
 									<tbody>
 										<%for(int i=0; i<AllNotice.size(); i++){ %>
 										<tr>
 											<td><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></td>
-											<td>admin</td>
-											<td><%=AllNotice.get(i).getCreated_at() %></td>
+											<td>관리자</td>
+											<td align="right"><%=AllNotice.get(i).getCreated_at() %></td>
 										</tr>
 										<%} %>
-										<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
-											<span align="right"><a href="noticeInsert.jsp">공지 작성하기</a></span>
-										</c:if>
 									</tbody>
 								</table>
-								
+								</section>
    							<!-- 여기까지 -->
    							</article>
    							

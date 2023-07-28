@@ -110,13 +110,8 @@
 								     	 <tr>
 								         	<td colspan='2' align="right" style="font-size: 0.8em;">
 								         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
-								         		<a href="#">회원탈퇴</a>
-								         	</td>
-								         <tr>
-								         	<td colspan='2' align="center" style="font-size: 0.8em;">
-								         		<a href="updateExpert.jsp">개인정보수정</a>
 								         		<a href="deleteExpertCon">회원탈퇴</a>	
-											</td>
+								         	</td>
 								         </tr>
 								      </table>
    								</section>

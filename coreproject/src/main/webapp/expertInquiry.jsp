@@ -44,15 +44,27 @@
 										<c:when test="${not empty loginUser or not empty loginExpert}">
 											<c:choose>
 												<c:when test="${not empty loginUser}">
-													<li style="white-space: nowrap;"><a href="userInquiry.jsp">문의사항</a></li>
+													<li>
+														<article class="box side-info">
+															<h1><a href="userInquiry.jsp">문의사항</a></h1>
+														</article>
+													</li>
 												</c:when>
 										 		<c:otherwise>
-													<li style="white-space: nowrap;"><a href="expertInquiry.jsp">문의사항</a></li>
+													<li>
+														<article class="box side-info">
+															<h1><a href="expertInquiry.jsp">문의사항</a></h1>
+														</article>
+													</li>
 										 		</c:otherwise>
 											</c:choose>
 										</c:when>
 										<c:otherwise>
-											<li><a href="login.jsp">문의사항</a></li>
+											<li>
+												<article class="box side-info">
+													<h1><a href="login.jsp">문의사항</a></h1>
+												</article>
+											</li>
 										</c:otherwise>
 									</c:choose>
 									<li>
@@ -84,35 +96,35 @@
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
-   							<article class="box page-content">
+   							<article class="box page-content" style="width: 80%;">
    								<header>
    									<h3>문의사항</h3>
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   																
+   								<section class="mycontent" style="margin-left: 50px;">								
+								<span><a href="expertInquiryInsert.jsp">문의 작성하기</a></span>
 								<table>
 									<thead>
 										<tr>
-											<td>순번</td>
-											<td>제목</td>
+											<td style="text-align: center;">순번</td>
+											<td width="40%">제목</td>
 											<td>작성자</td>
-											<td>작성일자</td>
+											<td align="right">작성일자</td>
 										</tr>
 									</thead>
 									<tbody>
 										<%for(int i=0;i<expertInquiryList.size();i++){ %>
-										<tr>
-											<td><%=i+1 %></td>
+										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
+											<td style="text-align: center;"><%=i+1 %></td>
 											<td><a href="expertInquiryView.jsp?number=<%=expertInquiryList.get(i).getInq_idx()%>"><%=expertInquiryList.get(i).getInq_title()%></a></td>
 											<td><%=expertInquiryList.get(i).getUser_id()%></td>
-											<td><%=expertInquiryList.get(i).getCreated_at()%></td>
+											<td align="right"><%=expertInquiryList.get(i).getCreated_at()%></td>
 										</tr>
 										<%} %>
 									</tbody>
 								</table>
-								<button onclick="location.href='expertInquiryInsert.jsp'">문의하기</button>
-								
+								</section>
    							<!-- 여기까지 -->
    							</article>
    							

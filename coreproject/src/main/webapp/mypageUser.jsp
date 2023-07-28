@@ -80,11 +80,8 @@
                                             <tr>
                                                 <td class="co1">전화번호</td>
                                                 <td class="co2"><%=loginUser.getUser_phone() %></td>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
                                             </tr>
-=======
                                             </tr>
->>>>>>> 1d0cf39 너무힘들다
                                         </table>
                                         <table>
                                         	<tr>
@@ -92,27 +89,15 @@
                                         			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
                                         			<a href="deleteUserCon">회원탈퇴</a>
                                         		</td>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
                                    			</tr>
-=======
-                                   			</tr>
-                                            <tr><td colspan='2' align="center"><a href="updateExpert.jsp">개인정보수정</a>
-								         		<a href="deleteUserCon">회원탈퇴</a></td></tr>
->>>>>>> 1d0cf39 너무힘들다
                                         </table>
                                     </section>
                                 </article>
                             </section>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 
-=======
->>>>>>> 1d0cf39 너무힘들다
                             <!-- Footer -->
 							<%@include file="footer.jsp" %>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
-=======
 
->>>>>>> 1d0cf39 너무힘들다
                         </div>
                     </div>
                 </div>
