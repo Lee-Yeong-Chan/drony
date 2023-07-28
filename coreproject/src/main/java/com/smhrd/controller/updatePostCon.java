@@ -1,10 +1,17 @@
 package com.smhrd.controller;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Collection;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
 import com.smhrd.domain.workDAO;
 import com.smhrd.domain.workDTO;
 public class updatePostCon extends HttpServlet {
@@ -14,11 +21,34 @@ public class updatePostCon extends HttpServlet {
 		int idx=Integer.valueOf(request.getParameter("w_idx"));
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
-		String file=request.getParameter("file");
-		String kind=request.getParameter("w_kind");		
-		String img=request.getParameter("img");		
+		String kind=request.getParameter("w_kind");
+		Collection<Part> parts=request.getParts();
+		String img="", fi="";
+		int j=1;
+		for(Part file:parts) {
+			if(!file.getName().equals("file")) continue;
+			String originName = file.getSubmittedFileName();
+			InputStream fis = file.getInputStream();
+			String realPath = request.getServletContext().getRealPath("/upload");
+			String filePath = realPath + File.separator + originName; 
+			FileOutputStream fos = new FileOutputStream(filePath);
+			byte[] buf = new byte[1024];
+			int size = 0;
+			while((size = fis.read(buf)) != -1) {
+				fos.write(buf, 0, size);
+			}
+			if (j==1) {
+				img=originName;
+			}
+			else if(j==2) {
+				fi=originName;
+			}
+			fis.close();
+	        fos.close();
+	        j++;
+		}
 		int price=Integer.valueOf(request.getParameter("price"));
-		workDTO update=new workDTO(idx,title,content,file,price,kind,img);
+		workDTO update=new workDTO(idx,title,content,fi,price,kind,img);
 		workDAO workDAO=new workDAO();
 		int cnt=workDAO.updateWork(update);
 		response.setContentType("text/html; charset=UTF-8");

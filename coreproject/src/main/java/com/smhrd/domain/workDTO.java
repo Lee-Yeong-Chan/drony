@@ -9,13 +9,8 @@ public class workDTO {
 	private int w_price;
 	private String w_kind;
 	private String w_img;
-	public workDTO(int w_idx, String exp_id) {
-		super();
-		this.w_idx = w_idx;
-		this.exp_id = exp_id;
-	}
-	public workDTO(int w_idx, String w_title, String w_content, String w_file, int w_price, String w_kind,
-			String w_img) {
+	public workDTO(int w_idx, String w_title, String w_content, String w_file, int w_price,
+			String w_kind, String w_img) {
 		super();
 		this.w_idx = w_idx;
 		this.w_title = w_title;
@@ -35,6 +30,27 @@ public class workDTO {
 		this.w_price = w_price;
 		this.w_kind = w_kind;
 		this.w_img = w_img;
+	}
+	public workDTO(int w_idx, String exp_id) {
+		super();
+		this.w_idx = w_idx;
+		this.exp_id = exp_id;
+	}
+	public workDTO(int w_idx, String w_title, String w_content, int w_price, String w_kind) {
+		super();
+		this.w_idx = w_idx;
+		this.w_title = w_title;
+		this.w_content = w_content;
+		this.w_price = w_price;
+		this.w_kind = w_kind;
+	}
+	public workDTO(String w_title, String w_content, String exp_id, int w_price, String w_kind) {
+		super();
+		this.w_title = w_title;
+		this.w_content = w_content;
+		this.exp_id = exp_id;
+		this.w_price = w_price;
+		this.w_kind = w_kind;
 	}
 	public workDTO(String exp_id) {
 		super();

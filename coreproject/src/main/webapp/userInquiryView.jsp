@@ -99,7 +99,7 @@
 									내용<%=inquiry.get(0).getInq_content() %>
 								</div>
 								<div>
-									첨부파일<%=inquiry.get(0).getInq_file()%>
+									<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>첨부파일</a>
 								</div>
 								<div>
 									날짜<%=inquiry.get(0).getCreated_at() %>

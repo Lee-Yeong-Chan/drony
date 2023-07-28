@@ -81,7 +81,7 @@
 								<article>
 									<a href="postDetail.jsp?w_idx=<%=shooting.get(i).getW_idx()%>">
 									<div>
-										<img onerror=this.src="images/camera.png" src="<%=shooting.get(i).getW_img()%>">
+										<img onerror=this.src="images/camera.png" src="upload/<%=shooting.get(i).getW_img()%>">
 										<div>
 											<span><%=shooting.get(i).getW_title()%></span><br>
 											<span><%=shooting.get(i).getCreated_at().substring(0, shooting.get(i).getCreated_at().length()-2)%></span><br>

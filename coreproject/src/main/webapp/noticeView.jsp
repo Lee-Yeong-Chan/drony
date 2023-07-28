@@ -95,7 +95,7 @@
 										내용<%=notice.get(0).getNotice_content() %>
 									</div>
 									<div>
-										첨부파일<%=notice.get(0).getNotice_file()%>
+										<a href="notice/<%=notice.get(0).getNotice_file()%>" download>첨부파일</a>
 									</div>
 									<div>
 										날짜<%=notice.get(0).getCreated_at() %>

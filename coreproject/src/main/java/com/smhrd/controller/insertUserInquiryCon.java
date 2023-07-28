@@ -1,5 +1,8 @@
 package com.smhrd.controller;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -7,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
+
 import com.smhrd.domain.inquiryDAO;
 import com.smhrd.domain.userDTO;
 import com.smhrd.domain.userInquiryDTO;
@@ -15,11 +20,22 @@ public class insertUserInquiryCon extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String title=request.getParameter("title");
-		String content=request.getParameter("content");
-		String file=request.getParameter("file");
+		String content=request.getParameter("content");Part file=request.getPart("file");
+		String originName = file.getSubmittedFileName();
+		InputStream fis = file.getInputStream();
+		String realPath = request.getServletContext().getRealPath("/inquiry");
+		String filePath = realPath + File.separator + originName; 
+		FileOutputStream fos = new FileOutputStream(filePath);
+		byte[] buf = new byte[1024];
+		int size = 0;
+		while((size = fis.read(buf)) != -1) {
+			fos.write(buf, 0, size);
+		}
+		fis.close();
+        fos.close();
 		HttpSession session=request.getSession();
 		String user_id=((userDTO)session.getAttribute("loginUser")).getUser_id();
-		userInquiryDTO insert=new userInquiryDTO(title,content,file, user_id);
+		userInquiryDTO insert=new userInquiryDTO(title,content,originName, user_id);
 		inquiryDAO inquiryDAO=new inquiryDAO();
 		int cnt=inquiryDAO.insertUserInquiry(insert);
 		response.setContentType("text/html; charset=UTF-8");

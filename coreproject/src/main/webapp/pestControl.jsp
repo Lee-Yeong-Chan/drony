@@ -81,7 +81,7 @@
 								<article>
 									<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
 										<div>
-											<img onerror=this.src="images/farm.png" src="<%=pestControl.get(i).getW_img()%>">
+											<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>">
 											<div>
 												<span><%=pestControl.get(i).getW_title()%></span><br>
 												<span><%=pestControl.get(i).getCreated_at().substring(0, pestControl.get(i).getCreated_at().length()-2)%></span><br>

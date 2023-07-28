@@ -81,7 +81,7 @@
 									<article>
 										<a href="postDetail.jsp?w_idx=<%=transport.get(i).getW_idx()%>">
 											<div>
-												<img onerror=this.src="images/delivery.png" src="<%=transport.get(i).getW_img()%>">
+												<img onerror=this.src="images/delivery.png" src="upload/<%=transport.get(i).getW_img()%>">
 												<div>
 													<span><%=transport.get(i).getW_title()%></span><br>
 													<span><%=transport.get(i).getCreated_at().substring(0, transport.get(i).getCreated_at().length()-2)%></span><br>

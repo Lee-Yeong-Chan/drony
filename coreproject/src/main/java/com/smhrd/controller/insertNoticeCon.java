@@ -1,11 +1,15 @@
 package com.smhrd.controller;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import com.smhrd.domain.noticeDAO;
 import com.smhrd.domain.noticeDTO;
@@ -15,8 +19,20 @@ public class insertNoticeCon extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
-		String file=request.getParameter("file");
-		noticeDTO insert=new noticeDTO(title,content,file);
+		Part file=request.getPart("file");
+		String originName = file.getSubmittedFileName();
+		InputStream fis = file.getInputStream();
+		String realPath = request.getServletContext().getRealPath("/inquiry");
+		String filePath = realPath + File.separator + originName; 
+		FileOutputStream fos = new FileOutputStream(filePath);
+		byte[] buf = new byte[1024];
+		int size = 0;
+		while((size = fis.read(buf)) != -1) {
+			fos.write(buf, 0, size);
+		}
+		fis.close();
+        fos.close();
+		noticeDTO insert=new noticeDTO(title,content,originName);
 		noticeDAO noticeDAO=new noticeDAO();
 		int cnt=noticeDAO.insertNotice(insert);
 		response.setContentType("text/html; charset=UTF-8");

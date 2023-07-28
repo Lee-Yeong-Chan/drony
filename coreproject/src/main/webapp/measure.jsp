@@ -80,7 +80,7 @@
 			<article>
 				<a href="postDetail.jsp?w_idx=<%=mesure.get(i).getW_idx()%>">
 					<div>
-						<img onerror=this.src="images/measure.png" src="<%=mesure.get(i).getW_img()%>">
+						<img onerror=this.src="images/measure.png" src="upload/<%=mesure.get(i).getW_img()%>">
 						<div>
 							<span><%=mesure.get(i).getW_title()%></span><br>
 							<span><%=mesure.get(i).getCreated_at().substring(0, mesure.get(i).getCreated_at().length()-2)%></span><br>

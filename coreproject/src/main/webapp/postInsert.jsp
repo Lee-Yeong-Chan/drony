@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
-		<form action="insertPostCon" method="post">
+		<form action="insertPostCon" method="post" enctype="multipart/form-data">
 			<h1> 제목 : <input type="text" name="title"></h1>
 			<div>
 				<div> 분야 : <select name="w_kind">
@@ -21,7 +21,7 @@
 						<option value="E">기타</option>
 					</select>
 				</div>
-				<div> 이미지 : <input type="file" name="img"> </div>
+				<div> 이미지 : <input type="file" name="file"> </div>
 				<div> 내용 : <input type="text" name="content"></div>
 				<div> 첨부파일 : <input type="file" name="file"></div>
 				<div> 단가 : <input type="text" name="price"></div>

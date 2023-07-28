@@ -81,7 +81,7 @@
 									<article>
 										<a href="postDetail.jsp?w_idx=<%=etc.get(i).getW_idx()%>">
 											<div>
-												<img onerror=this.src="images/hobbydrone.png" src="<%=etc.get(i).getW_img()%>">
+												<img onerror=this.src="images/hobbydrone.png" src="upload/<%=etc.get(i).getW_img()%>">
 												<div>
 													<span><%=etc.get(i).getW_title()%></span><br>
 													<span><%=etc.get(i).getCreated_at().substring(0, etc.get(i).getCreated_at().length()-2)%></span><br>

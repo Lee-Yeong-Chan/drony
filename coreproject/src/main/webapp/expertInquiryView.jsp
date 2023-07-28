@@ -27,7 +27,7 @@
 				내용<%=inquiry.get(0).getInq_content() %>
 			</div>
 			<div>
-				첨부파일<%=inquiry.get(0).getInq_file()%>
+				<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>첨부파일</a>
 			</div>
 			<div>
 				날짜<%=inquiry.get(0).getCreated_at() %>
@@ -40,7 +40,7 @@
 					내용<input type="text" name="content" placeholder="<%=inquiry.get(0).getInq_content()%>">
 				</div>
 				<div>
-					첨부파일<input type="text" name="file" placeholder="<%=inquiry.get(0).getInq_file()%>">
+					첨부파일<input type="text" name="file">
 				</div>
 				<input type="submit" value="수정완료">
 			</form>

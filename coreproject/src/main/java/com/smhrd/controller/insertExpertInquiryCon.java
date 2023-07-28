@@ -1,12 +1,17 @@
 package com.smhrd.controller;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
+import java.util.Collection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import com.smhrd.domain.inquiryDAO;
 import com.smhrd.domain.expertDTO;
@@ -17,10 +22,22 @@ public class insertExpertInquiryCon extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
-		String file=request.getParameter("file");
+		Part file=request.getPart("file");
+		String originName = file.getSubmittedFileName();
+		InputStream fis = file.getInputStream();
+		String realPath = request.getServletContext().getRealPath("/inquiry");
+		String filePath = realPath + File.separator + originName; 
+		FileOutputStream fos = new FileOutputStream(filePath);
+		byte[] buf = new byte[1024];
+		int size = 0;
+		while((size = fis.read(buf)) != -1) {
+			fos.write(buf, 0, size);
+		}
+		fis.close();
+        fos.close();
 		HttpSession session=request.getSession();
 		String expert_id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
-		expertInquiryDTO insert=new expertInquiryDTO(title,content,file, expert_id);
+		expertInquiryDTO insert=new expertInquiryDTO(title,content,originName, expert_id);
 		inquiryDAO inquiryDAO=new inquiryDAO();
 		int cnt=inquiryDAO.insertExpertInquiry(insert);
 		response.setContentType("text/html; charset=UTF-8");

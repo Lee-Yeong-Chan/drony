@@ -23,7 +23,7 @@ public class deletePostCon extends HttpServlet {
 				x="pestControl";
 			}
 			else if(y.equals("M")) {
-				x="mesure";
+				x="measure";
 			}
 			else if(y.equals("S")) {
 				x="shooting";
@@ -40,7 +40,7 @@ public class deletePostCon extends HttpServlet {
 			out.println("<script>alert('게시글 삭제'); location.href='"+x+".jsp';</script>");
 		}
 		else {
-			out.println("<script>alert('게시글 삭제 실패'); location.href='postDetail.jsp?w_idx="+idx+"';</script>");
+			out.println("<script>alert('게시글 삭제 실패'); location.href='mypost.jsp';</script>");
 		}
 	}
 }
