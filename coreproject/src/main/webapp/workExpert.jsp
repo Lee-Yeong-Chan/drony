@@ -104,6 +104,7 @@
 											</td>
 											<td><%=mypageList.get(i).getCreated_at()%></td>
 											<td><button onclick="location.href='.jsp'">채팅</button></td>
+											<td><button onclick="location.href='deleteWorkExpertMypageCon'">삭제</button></td>
 										</tr>
 										<%	}
 										}%>

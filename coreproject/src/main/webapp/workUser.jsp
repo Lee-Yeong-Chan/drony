@@ -78,7 +78,7 @@
 											<td><%=mypageList.get(i).getStatus_memo()%></td>
 											<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
 											<td><button onclick="location.href='#'">채팅</button></td>
-											<td><button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(0).getTuw_idx()%>'">삭제</button></td>
+											<td><button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">삭제</button></td>
 										</tr>
 										<%	}
 										}%>
