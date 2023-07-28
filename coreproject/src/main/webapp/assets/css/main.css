@@ -167,7 +167,7 @@ select {
 
 	a {
 		color: #006376;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 		a:hover {
@@ -352,6 +352,15 @@ select {
 			margin: 30px 0;
 			text-align: center;
 		}
+		
+		.row.workfield > .col-3.col-12-small{
+			background-image: none;
+		}
+		
+		.row > .col-3.col-12-small{
+			width: 100%;
+			overflow: hidden;
+		}
 
 		.row > .off-3 {
 			margin-left: 25%;
@@ -398,7 +407,7 @@ select {
 		}
 
 		.row > .col-9 {
-			width: 70%;
+			width: 65%;
 			padding-left: 80px;
 		}
 
@@ -3464,9 +3473,9 @@ select {
 	
 	/* 작업 분야 */
 	
-	.pest img {
+	/* .pest img {
 		width: 100px;
-	}
+	} */
 	
 	/* 드론 업체정보 */
 	.droneCom img {
@@ -3475,14 +3484,25 @@ select {
 		border-radius: 5px;
 	}
 	
-	.droneCom p{
+	 .droneCom p{
 		text-align: left;
 		font-size: 0.8em;
 		margin: 0 0.6em;
+	} 
+	
+	.droneCom h5{
+		text-align: left;
+		margin: 10px 20px 0 20px;
+	}
+	
+	.droneCom h6{
+		text-align: right;
+		margin: 0 20px;
+		font-weight: 500;
 	}
 	
 	.droneCom.dronecomp.dronecoma{
-		link-decoration-line: none;
+		
 		cursor: pointer;
 	}
 	
@@ -3494,5 +3514,7 @@ select {
     	gap: 28px;
 	}
 	
-
+	.workfield img{
+		width: 90%;
+	}
 	

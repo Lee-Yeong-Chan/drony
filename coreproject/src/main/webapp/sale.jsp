@@ -95,17 +95,19 @@
 							<div>
 								<div class="row comlist">
 									<%for(int i=0;i<dcSaleList.size();i++){ %>
-									<div class="col-3 col-6-medium col-12-small" style="width: 100%; overflow: hidden;">
+									<div class="col-3 col-6-medium col-12-small">
 										<section class="box feature droneCom">
 											<a href="<%=dcSaleList.get(i).getDc_homepage()%>">
 												<img alt="abcd" src="<%=dcSaleList.get(i).getDc_img()%>">
 											</a>
-											<p class="dronecomp"><a class="dronecoma">
+											<p class="dronecomp">
+											<a class="dronecoma" href="<%=dcSaleList.get(i).getDc_homepage()%>">
 												업체명 : <%=dcSaleList.get(i).getDc_name() %><br>
 												주소 : <%=dcSaleList.get(i).getDc_addr() %><br>
 												연락처 : <%=dcSaleList.get(i).getDc_tel() %><br>
 												업체 소개 : <%=dcSaleList.get(i).getDc_info() %>
-											</a></p>
+											</a>
+											</p>
 										</section>
 									</div>
 									<%} %>
