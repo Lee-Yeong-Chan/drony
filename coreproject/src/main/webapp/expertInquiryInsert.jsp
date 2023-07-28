@@ -3,25 +3,125 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Insert title here</title>
+		<title>DRONY</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
-	<body>
-		<h1>공지사항</h1>
-		<div>
-			<form action="insertExpertInquiryCon" method="post" enctype='multipart/form-data'>
-				<h1> 제목<input type="text" name="title"></h1>
-				<div>
-					내용<input type="text" name="content">
+	<body class="is-preload">
+		<div id="page-wrapper">
+  	 		
+   		<!-- Header -->
+		<%@include file="header.jsp" %>
+   		 
+   		<!-- Main -->
+   		<section id="main">
+   			<div class="container">
+   				<div class="row">
+   					<div class="col-3 col-12-medium">
+   						<div class="sidebar">
+   							
+   							<!-- Sidebar 시작-->
+   								<ul class="divided">
+   									<li>
+   										<article class="box side-info">
+											<h1><a href="notice.jsp">공지사항</a></h1>
+										</article>
+   									</li>
+   									<c:choose>
+										<c:when test="${not empty loginUser or not empty loginExpert}">
+											<c:choose>
+												<c:when test="${not empty loginUser}">
+													<li>
+														<article class="box side-info">
+															<h1><a href="userInquiry.jsp">문의사항</a></h1>
+														</article>	
+													</li>
+												</c:when>
+										 		<c:otherwise>
+													<li>
+														<article class="box side-info">
+															<h1><a href="expertInquiry.jsp">문의사항</a></h1>
+														</article>
+													</li>
+										 		</c:otherwise>
+											</c:choose>
+										</c:when>
+										<c:otherwise>
+											<li>
+												<article class="box side-info">
+													<h1><a href="login.jsp">문의사항</a></h1>
+												</article>
+											</li>
+										</c:otherwise>
+									</c:choose>
+									<li>
+										<article class="box side-info">
+											<h1><a href="sale.jsp">판매업체</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="repair.jsp">수리업체</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="flight.jsp">비행지도</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box side-info">
+											<h1><a href="civilComplaint.jsp">원스탑민원서비스</a></h1>
+										</article>
+									</li>
+   								</ul>
+   							
+   						</div>
+   					</div>
+					<!-- Sidebar 끝-->
+   					
+   					<div class="col-9 col-12-medium imp-medium">
+   						<div class="content">
+   							<!-- Content -->
+   							<article class="box page-content">
+   								<header>
+   									<h3>문의사항</h3>
+   								</header>
+   								
+   								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
+   								<div id="insert" class="mypagetable" style="margin-left: 30px;">
+   								
+   								<form action="insertExpertInquiryCon" method="post">
+   									<table class="noticetable" height="180px">
+   										<tr>
+   											<td>제목</td>
+   											<td><input type="text" name="title"></td>
+   										</tr>
+   										<tr>
+   											<td>첨부파일</td>
+   											<td><input type="text" name="file"></td>
+   										</tr>
+   										<tr>
+   											<td>내용</td>
+   											<td>
+   												<textarea rows="7" name="content"></textarea>
+   											</td>
+   										</tr>
+   										<tr style="text-align: right;">
+   											<td colspan='2'><input type="submit" value="작성"></td>
+   										</tr>
+   									</table>
+   								</form>
+							</div>
+						</article>
+						</div>
+					</div>
 				</div>
-				<div>
-					첨부파일<input type="file" name="file">
-				</div>
-				<input type="submit" value="추가">
-			</form>
+			</div>
+		</section>
 		</div>
+	
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>

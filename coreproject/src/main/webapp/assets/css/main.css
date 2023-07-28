@@ -45,6 +45,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	overflow: scroll;
 }
 
 ol, ul {
@@ -211,7 +212,7 @@ select {
 	}
 
 	p, ul, ol, dl, table {
-		margin-bottom: 3em;
+		margin-bottom: 1em;
 	}
 
 /* Section/Article */
@@ -1826,7 +1827,7 @@ select {
 		background: #a3b9bd;
 		color: #fff;
 		border: 0;
-		line-height: 0.3em;
+		line-height: 3px;
 		border-radius: 5px;
 		outline: 0;
 		cursor: pointer;
@@ -1835,7 +1836,7 @@ select {
 		-o-transition: background-color .2s ease-in-out;
 		-ms-transition: background-color .2s ease-in-out;
 		transition: background-color .2s ease-in-out;
-		font-size: 1em;
+		font-size: 13px;
 		padding: 0.7em 0.8em;
 		text-align: center;
 	}
@@ -2189,7 +2190,7 @@ select {
 /* Tables */
 
 	table {
-		width: 100%;
+		width: 95%;
 		
 	}
 
@@ -2223,6 +2224,10 @@ select {
 				background: #E7EAE8;
 				color: #fff;
 			}
+		
+		/* table input[type="text"], table textarea{
+			border: hidden;
+		} */
 
 /* Box */
 
@@ -2661,7 +2666,7 @@ select {
 		position: relative;
     	border-spacing: 7px;
     	border-collapse: separate;
-    	width: 550px;
+    	width: 90%;
     	/* border: solid 1px;
     	border-radius: 3px; */
     	margin-bottom: 5px;
@@ -3388,6 +3393,7 @@ select {
 		padding-left: 30px
 	}
 	
+	
 	/* Mypageupdate*/
 	
 	.box.page-content>.mypageupdate {
@@ -3412,7 +3418,7 @@ select {
 	.mycontent>span {
 	    position: absolute;
    		top: 60px;
-   		right: 0;
+   		right: 40px;
 	}
 	
 	.mycontent thead {
@@ -3436,8 +3442,57 @@ select {
 		margin-top: 60px;
 	}
 	
+	.noticetable{
+		width: 90%;
+		border-collapse: separate;
+		border-spacing: 0 10px;
+	}
+	
+	.noticetable td.co1 {
+		text-align: left;
+		border-bottom : solid 2px;
+	}
+	
+	#view>.noticetable tr{
+		border-bottom: solid 1px #E7EAE8;
+	}
+	
+	.noticetable td.co3{
+		border: solid 1px #E7EAE8;
+    	border-radius: 5px;
+	}
+	
 	/* 작업 분야 */
 	
 	.pest img {
 		width: 100px;
 	}
+	
+	/* 드론 업체정보 */
+	.droneCom img {
+		width: 250px;
+		border: solid 1px;
+		border-radius: 5px;
+	}
+	
+	.droneCom p{
+		text-align: left;
+		font-size: 0.8em;
+		margin: 0 0.6em;
+	}
+	
+	.droneCom.dronecomp.dronecoma{
+		link-decoration-line: none;
+		cursor: pointer;
+	}
+	
+	.row.comlist{
+		
+   		width: 100%;
+    	display: grid;
+    	grid-template-columns: repeat(3, 1fr);
+    	gap: 28px;
+	}
+	
+	
+	

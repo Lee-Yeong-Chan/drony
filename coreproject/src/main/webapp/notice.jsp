@@ -99,22 +99,28 @@
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
-   							<article class="box page-content"  style="width: 80%;">
+   							<article class="box page-content">
    								<header>
    									<h3>공지사항</h3>
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<section class="mycontent" style="margin-left: 50px;">
-								<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
-									<span><a href="noticeInsert.jsp">공지 작성하기</a></span>
-								</c:if>
-								<table>
+   								<section class="mycontent" style="margin-left: 30px;">
+								
+								
+								<table class="noticetable">
 									<thead>
 										<tr>
-											<td width="50%">제목</td>
-											<td>작성자</td>
-											<td align="right">날짜</td>
+											<td colspan="3" align="right">
+												<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
+													<span><a href="noticeInsert.jsp">공지 작성하기</a></span>
+												</c:if>
+											</td>
+										</tr>
+										<tr>
+											<td class="co1" style="width: 50%;">제목</td>
+											<td class="co1" style="width: 20%;">작성자</td>
+											<td class="co1" style="width: 30%;">작성일자</td>
 										</tr>
 									</thead>
 									<tbody>

@@ -16,8 +16,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
-</head>
+	</head>
 	<body class="is-preload">
 	 	<div id="page-wrapper">
    		
@@ -59,7 +58,7 @@
    									<h3>계약 목록</h3>
    								</header>
    								
-   								<section class="mycontent">
+   								<section class="mycontent" style="margin-left: 50px;">
    									<table>
    										<thead>
 										<tr>
@@ -70,6 +69,7 @@
 											<td>채팅방</td>
 										</tr>
 										</thead>
+										<tbody>
 										<%if (mypageList!=null){
 											for(int i=0;i<mypageList.size();i++){%>
 										<tr>
@@ -77,11 +77,14 @@
 											<td><a href="postDetail.jsp?w_idx=<%=mypageList.get(i).getW_idx()%>"><%=mypageList.get(i).getW_title()%></a></td>
 											<td><%=mypageList.get(i).getStatus_memo()%></td>
 											<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
-											<td><button onclick="location.href='#'">채팅</button></td>
-											<td><button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(0).getTuw_idx()%>'">삭제</button></td>
+											<td>
+											<button onclick="location.href='.jsp'">채팅</button>
+											<button onclick="location.href='deleteWorkUserMypageCon?w_idx=<%=mypageList.get(i).getW_idx()%>'">삭제</button>
+											</td>
 										</tr>
 										<%	}
 										}%>
+										</tbody>
 									</table>
    								</section>
    								
@@ -91,9 +94,11 @@
    				</div>
    			</div>
    		</section>
-		<!-- Footer -->
+ 
+ 		<!-- Footer -->
 		<%@include file="footer.jsp" %>
-	</div>     
+		      
+	</div>
 		
 		<!-- Scripts -->
    <script src="assets/js/jquery.min.js"></script>

@@ -9,7 +9,6 @@
 	int w_idx=Integer.valueOf(request.getParameter("w_idx"));
 	workDAO workDAO=new workDAO();
 	List<workDTO> selectPost=workDAO.selectWork(w_idx);
-	
 	String x, y;
 	if(selectPost.get(0).getW_kind().equals("P")){
 		x="farm";
@@ -55,9 +54,9 @@
 		<%@include file="header.jsp" %> 
 			<h1><%=selectPost.get(0).getW_title()%></h1>
 			<div>
-				<div> <img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
+				<div> <img onerror=this.src="images/<%=x%>.png" src="<%=selectPost.get(0).getW_img()%>"></div>
 				<div><%=selectPost.get(0).getW_content() %></div>
-				<div> <a href="upload/<%=selectPost.get(0).getW_file()%>" download>첨부파일</a></div>
+				<div><%=selectPost.get(0).getW_file() %></div>
 				<div><%=selectPost.get(0).getW_price() %></div>
 				<div><%=selectPost.get(0).getExp_id()%></div>
 				<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>

@@ -96,21 +96,23 @@
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
-   							<article class="box page-content" style="width: 80%;">
+   							<article class="box page-content">
    								<header>
    									<h3>문의사항</h3>
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<section class="mycontent" style="margin-left: 50px;">								
-								<span><a href="expertInquiryInsert.jsp">문의 작성하기</a></span>
-								<table>
+   								<section class="mycontent" style="margin-left: 30px;">								
+								<table class="noticetable">
 									<thead>
 										<tr>
-											<td style="text-align: center;">순번</td>
-											<td width="40%">제목</td>
-											<td>작성자</td>
-											<td align="right">작성일자</td>
+											<td colspan='4' align="right"><span><a href="expertInquiryInsert.jsp">문의 작성하기</a></span></td>
+										</tr>
+										<tr>
+											<td class="co1" style="text-align: center; width: 10%;">순번</td>
+											<td class="co1" style="width: 40%;">제목</td>
+											<td class="co1" style="width: 20%;">작성자</td>
+											<td class="co1" style="width: 30%;">작성일자</td>
 										</tr>
 									</thead>
 									<tbody>

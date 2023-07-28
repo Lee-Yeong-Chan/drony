@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<title>DRONY</title>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style type="text/css">
@@ -39,39 +39,58 @@
    				<div class="row">
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-   							<!-- Sidebar -->
-   							<!-- My page -->
-   							
-   								
+   							<!-- Sidebar 시작-->
    								<ul class="divided">
    									<li>
    										<article class="box side-info">
-											<h1><a href="#">공지사항</a></h1>
+											<h1><a href="notice.jsp">공지사항</a></h1>
 										</article>
    									</li>
-   									<li>
+   									<c:choose>
+										<c:when test="${not empty loginUser or not empty loginExpert}">
+											<c:choose>
+												<c:when test="${not empty loginUser}">
+													<li>
+														<article class="box side-info">
+															<h1><a href="userInquiry.jsp">문의사항</a></h1>
+														</article>	
+													</li>
+												</c:when>
+										 		<c:otherwise>
+													<li>
+														<article class="box side-info">
+															<h1><a href="expertInquiry.jsp">문의사항</a></h1>
+														</article>
+													</li>
+										 		</c:otherwise>
+											</c:choose>
+										</c:when>
+										<c:otherwise>
+											<li>
+												<article class="box side-info">
+													<h1><a href="login.jsp">문의사항</a></h1>
+												</article>
+											</li>
+										</c:otherwise>
+									</c:choose>
+									<li>
 										<article class="box side-info">
-											<h1><a href="#">문의사항</a></h1>
+											<h1><a href="sale.jsp">판매업체</a></h1>
 										</article>
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="#">판매업체</a></h1>
+											<h1><a href="repair.jsp">수리업체</a></h1>
 										</article>
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="#">수리업체</a></h1>
+											<h1><a href="flight.jsp">비행지도</a></h1>
 										</article>
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="#">비행지도</a></h1>
-										</article>
-									</li>
-									<li>
-										<article class="box side-info">
-											<h1><a href="#">원스탑민원서비스</a></h1>
+											<h1><a href="civilComplaint.jsp">원스탑민원서비스</a></h1>
 										</article>
 									</li>
    								</ul>
@@ -89,37 +108,68 @@
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
- 								<div id="view">
-									<h1> 제목<%=notice.get(0).getNotice_title() %></h1>
-								<div>
-										내용<%=notice.get(0).getNotice_content() %>
-									</div>
-									<div>
-										<a href="notice/<%=notice.get(0).getNotice_file()%>" download>첨부파일</a>
-									</div>
-									<div>
-										날짜<%=notice.get(0).getCreated_at() %>
-									</div>
-								</div>
-								<div id="update">
+   								<div id="view" class="mypagetable" style="margin-left: 30px; width: 90%">
+   									<table class="noticetable">
+   										<tr>
+   											<td style="width: 25%;">작성자</td>
+   											<td class="co3">관리자</td>
+   										</tr>
+   										<tr>
+   											<td>날짜</td>
+   											<td class="co3"><%=notice.get(0).getCreated_at() %></td>
+   										</tr>
+   										<tr>
+   											<td>제목</td>
+   											<td class="co3"><%=notice.get(0).getNotice_title() %></td>
+   										</tr>
+   										<tr>
+   											<td>첨부파일</td>
+   											<td class="co3"><%=notice.get(0).getNotice_file()%></td>
+   										</tr>
+   										<tr style="height: 150px;">
+   											<td>내용</td>
+   											<td class="co3"><%=notice.get(0).getNotice_content() %></td>
+   										</tr>
+   									</table>
+   									<table>
+	   									<tr>
+	   										<td colspan='2' align="right" style="font-size: 0.8em;">
+	   											<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
+													<button onclick="toggleUpdate()" id="updateButton">수정</button>
+													<button onclick="location.href='deleteNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>'">삭제</button>
+												</c:if>
+												<button onclick="location.href='notice.jsp'">목록</button>
+	   										</td>
+	   									</tr>
+   									</table>
+   								</div>
+   								
+								<div id="update" class="mypagetable" style="margin-left: 30px;">
 									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" method="post">
-										<h1> 제목<input type="text" name="title" placeholder="<%=notice.get(0).getNotice_title()%>"></h1>
-										<div>
-											내용<input type="text" name="content" placeholder="<%=notice.get(0).getNotice_content()%>">
-										</div>
-										<div>
-											첨부파일<input type="text" name="file" placeholder="<%=notice.get(0).getNotice_file()%>">
-										</div>
-										<input type="submit" value="수정완료">
+										<table class="noticetable" height="180px">
+											<tr>
+   												<td>작성자</td>
+   												<td>관리자</td>
+   											</tr>
+											<tr>
+												<td>제목</td>
+												<td><input type="text" name="title" placeholder="<%=notice.get(0).getNotice_title()%>"></td>
+											</tr>
+											<tr>
+												<td>첨부파일</td>
+												<td><input type="text" name="file" placeholder="<%=notice.get(0).getNotice_file()%>"></td>
+											</tr>
+											<tr>
+												<td>내용</td>
+												<td><textarea rows="7" cols="" name="content" placeholder="<%=notice.get(0).getNotice_content()%>"></textarea></td>
+											</tr>
+											<tr>
+												<td colspan='2' style="text-align:right;"><input type="submit" value="수정"></td>
+											</tr>
+										</table>
 									</form>
 								</div>
-								<div>
-									<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
-										<button onclick="toggleUpdate()" id="updateButton">수정</button>
-										<button onclick="location.href='deleteNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>'">삭제</button>
-									</c:if>
-									<button onclick="location.href='notice.jsp'">목록</button>
-								</div>
+								
 								<script>
 									function toggleUpdate() {
 										  const update = document.getElementById('update');
