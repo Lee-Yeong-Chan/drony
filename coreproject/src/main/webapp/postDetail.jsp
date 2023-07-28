@@ -100,6 +100,7 @@
 					<div> 첨부파일 : <input type="file" name="file"></div>
 					<div> 단가 : <input type="text" name="price" placeholder="<%=selectPost.get(0).getW_price()%>"></div>
 				</div>
+				<input type="submit" value="수정완료">
 			</form>
 		</article>
 			

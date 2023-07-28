@@ -95,11 +95,7 @@
 							<div>
 								<div class="row comlist">
 									<%for(int i=0;i<dcRepairList.size();i++){ %>
-<<<<<<< HEAD
 									<div class="col-3 col-6-medium col-12-small" style="width: 100%; overflow: hidden;">
-=======
-									<div class="col-3 col-6-medium col-12-small" style="width: 100%;">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 										<section class="box feature droneCom">
 											<a href="<%=dcRepairList.get(i).getDc_homepage()%>">
 												<img alt="abcd" src="<%=dcRepairList.get(i).getDc_img()%>">

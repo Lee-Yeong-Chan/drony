@@ -37,6 +37,19 @@ public class userDAO {
 		}
 		return loginUser;
 	}
+	public userDTO selectUserId(String user_id) {
+		userDTO loginUser=null;
+		try {
+			loginUser=sqlSession.selectOne("selectUserId", user_id);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return loginUser;
+	}
 	public int updateUser(userDTO updateUser) {
 		int cnt=0;
 		try {

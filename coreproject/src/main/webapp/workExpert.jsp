@@ -91,7 +91,7 @@
 											<td>
 												<form action="updateMypageCon" method="post">
 													<select name="status">
-														<option><%=mypageList.get(i).getStatus_memo()%></option>
+														<option disabled><%=mypageList.get(i).getStatus_memo()%></option>
 														<option value="상담대기">상담대기</option>
 														<option value="상담중">상담중</option>
 														<option value="계약완료">계약완료</option>
