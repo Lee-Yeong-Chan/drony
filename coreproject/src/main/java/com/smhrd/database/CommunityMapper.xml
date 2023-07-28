@@ -12,6 +12,9 @@
 	<insert id="insertNotice" parameterType="com.smhrd.domain.noticeDTO">
 		insert into t_notice values (t_notice_seq.nextval,#{notice_title},#{notice_content},#{notice_file},sysdate)
 	</insert>
+	<insert id="insertNoticeEmpty" parameterType="com.smhrd.domain.noticeDTO">
+		insert into t_notice(notice_idx,notice_title,notice_content,created_at) values (t_notice_seq.nextval,#{notice_title},#{notice_content},sysdate)
+	</insert>
 	<update id="updateNoticeTitle" parameterType="com.smhrd.domain.noticeDTO">
 		update t_notice set notice_title=#{notice_title} where notice_idx=#{notice_idx}
 	</update>
@@ -36,6 +39,9 @@
 	<insert id="insertUserInquiry" parameterType="com.smhrd.domain.userInquiryDTO">
 		insert into t_inquiry_user values (t_inquiry_user_seq.nextval,#{inq_title},#{inq_content},#{inq_file},sysdate,#{user_id})
 	</insert>
+	<insert id="insertUserInquiryEmpty" parameterType="com.smhrd.domain.userInquiryDTO">
+		insert into t_inquiry_user(inq_idx,inq_title,inq_content,created_at,user_id) values (t_inquiry_user_seq.nextval,#{inq_title},#{inq_content},sysdate,#{user_id})
+	</insert>
 	<update id="updateUserInquiryTitle" parameterType="com.smhrd.domain.userInquiryDTO">
 		update t_inquiry_user set inq_title=#{inq_title} where inq_idx=#{inq_idx}
 	</update>
@@ -59,6 +65,9 @@
 	</select>
 	<insert id="insertExpertInquiry" parameterType="com.smhrd.domain.expertInquiryDTO">
 		insert into t_inquiry_exp values (t_inquiry_exp_seq.nextval,#{inq_title},#{inq_content},#{inq_file},sysdate,#{exp_id})
+	</insert>
+	<insert id="insertExpertInquiryEmpty" parameterType="com.smhrd.domain.userInquiryDTO">
+		insert into t_inquiry_user(inq_idx,inq_title,inq_content,created_at,exp_id) values (t_inquiry_user_seq.nextval,#{inq_title},#{inq_content},sysdate,#{exp_id})
 	</insert>
 	<update id="updateExpertInquiryTitle" parameterType="com.smhrd.domain.expertInquiryDTO">
 		update t_inquiry_exp set inq_title=#{inq_title} where inq_idx=#{inq_idx}

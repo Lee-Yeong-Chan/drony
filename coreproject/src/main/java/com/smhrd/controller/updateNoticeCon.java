@@ -22,17 +22,19 @@ public class updateNoticeCon extends HttpServlet {
 		String content=request.getParameter("content");
 		Part file=request.getPart("file");
 		String originName = file.getSubmittedFileName();
-		InputStream fis = file.getInputStream();
-		String realPath = request.getServletContext().getRealPath("/inquiry");
-		String filePath = realPath + File.separator + originName; 
-		FileOutputStream fos = new FileOutputStream(filePath);
-		byte[] buf = new byte[1024];
-		int size = 0;
-		while((size = fis.read(buf)) != -1) {
-			fos.write(buf, 0, size);
+		if (!originName.equals("")) {
+			InputStream fis = file.getInputStream();
+			String realPath = request.getServletContext().getRealPath("/inquiry");
+			String filePath = realPath + File.separator + originName; 
+			FileOutputStream fos = new FileOutputStream(filePath);
+			byte[] buf = new byte[1024];
+			int size = 0;
+			while((size = fis.read(buf)) != -1) {
+				fos.write(buf, 0, size);
+			}
+			fis.close();
+	        fos.close();
 		}
-		fis.close();
-        fos.close();
 		noticeDTO update=new noticeDTO(idx,title,content,originName);
 		noticeDAO noticeDAO=new noticeDAO();
 		int cnt=noticeDAO.updateNotice(update);

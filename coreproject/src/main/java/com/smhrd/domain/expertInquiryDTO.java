@@ -71,10 +71,10 @@ public class expertInquiryDTO {
 	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
-	public String getUser_id() {
+	public String getexp_id() {
 		return exp_id;
 	}
-	public void setUser_id(String exp_id) {
+	public void setexp_id(String exp_id) {
 		this.exp_id = exp_id;
 	}
 	

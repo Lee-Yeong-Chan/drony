@@ -26,11 +26,17 @@ public class updatePostCon extends HttpServlet {
 		String img="", fi="";
 		int j=1;
 		for(Part file:parts) {
-			if(!file.getName().equals("file")) continue;
+			if(!file.getName().equals("file")){
+				continue;
+			}
 			String originName = file.getSubmittedFileName();
+			if(originName.equals(""))
+			{
+				continue;
+			}
 			InputStream fis = file.getInputStream();
 			String realPath = request.getServletContext().getRealPath("/upload");
-			String filePath = realPath + File.separator + originName; 
+			String filePath = realPath + File.separator + originName;
 			FileOutputStream fos = new FileOutputStream(filePath);
 			byte[] buf = new byte[1024];
 			int size = 0;

@@ -17,7 +17,7 @@
 					내용<input type="text" name="content">
 				</div>
 				<div>
-					첨부파일<input type="text" name="file">
+					첨부파일<input type="file" name="file">
 				</div>
 				<input type="submit" value="추가">
 			</form>

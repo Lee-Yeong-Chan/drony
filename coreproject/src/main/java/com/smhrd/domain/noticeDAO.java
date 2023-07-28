@@ -35,7 +35,12 @@ public class noticeDAO {
 	public int insertNotice(noticeDTO insert) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("insertNotice", insert);
+			if(insert.getNotice_file()!=null) {
+				cnt+=sqlSession.insert("insertNotice", insert);
+			}
+			else {
+				cnt+=sqlSession.insert("insertNoticeEmpty", insert);
+			}
 			if(cnt>0) {
 				sqlSession.commit();
 			}

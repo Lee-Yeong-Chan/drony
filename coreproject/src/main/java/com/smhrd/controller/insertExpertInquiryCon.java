@@ -22,19 +22,31 @@ public class insertExpertInquiryCon extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
-		Part file=request.getPart("file");
-		String originName = file.getSubmittedFileName();
-		InputStream fis = file.getInputStream();
-		String realPath = request.getServletContext().getRealPath("/inquiry");
-		String filePath = realPath + File.separator + originName; 
-		FileOutputStream fos = new FileOutputStream(filePath);
-		byte[] buf = new byte[1024];
-		int size = 0;
-		while((size = fis.read(buf)) != -1) {
-			fos.write(buf, 0, size);
+		Collection<Part> parts=request.getParts();
+		String originName="";
+		int j=1;
+		for(Part file:parts) {
+			if(!file.getName().equals("file")){
+				continue;
+			}
+			originName = file.getSubmittedFileName();
+			if(originName.equals(""))
+			{
+				continue;
+			}
+			InputStream fis = file.getInputStream();
+			String realPath = request.getServletContext().getRealPath("/upload");
+			String filePath = realPath + File.separator + originName;
+			FileOutputStream fos = new FileOutputStream(filePath);
+			byte[] buf = new byte[1024];
+			int size = 0;
+			while((size = fis.read(buf)) != -1) {
+				fos.write(buf, 0, size);
+			}
+			fis.close();
+	        fos.close();
+	        j++;
 		}
-		fis.close();
-        fos.close();
 		HttpSession session=request.getSession();
 		String expert_id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
 		expertInquiryDTO insert=new expertInquiryDTO(title,content,originName, expert_id);

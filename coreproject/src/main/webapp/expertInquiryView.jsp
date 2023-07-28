@@ -40,7 +40,7 @@
 					내용<input type="text" name="content" placeholder="<%=inquiry.get(0).getInq_content()%>">
 				</div>
 				<div>
-					첨부파일<input type="text" name="file">
+					첨부파일<input type="file" name="file">
 				</div>
 				<input type="submit" value="수정완료">
 			</form>

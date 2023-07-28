@@ -35,7 +35,12 @@ public class inquiryDAO {
 	public int insertUserInquiry(userInquiryDTO insert) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("insertUserInquiry", insert);
+			if(insert.getInq_file()!=null) {
+				cnt+=sqlSession.insert("insertUserInquiry", insert);
+			}
+			else {
+				cnt+=sqlSession.insert("insertUserInquiryEmpty", insert);
+			}
 			if(cnt>0) {
 				sqlSession.commit();
 			}
@@ -139,7 +144,12 @@ public class inquiryDAO {
 	public int insertExpertInquiry(expertInquiryDTO insert) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("insertExpertInquiry", insert);
+			if(insert.getInq_file()!=null) {
+				cnt+=sqlSession.insert("insertExpertInquiry", insert);
+			}
+			else {
+				cnt+=sqlSession.insert("insertExpertInquiryEmpty", insert);
+			}
 			if(cnt>0) {
 				sqlSession.commit();
 			}
