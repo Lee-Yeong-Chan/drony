@@ -172,6 +172,12 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.deleteWorkUserMypageCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>deleteWorkExpertMypageCon</servlet-name>
+  	<display-name>deleteWorkExpertMypageCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.deleteWorkExpertMypageCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginUserCon</servlet-name>
   	<url-pattern>/LoginUserCon</url-pattern>
@@ -283,5 +289,9 @@
   <servlet-mapping>
   	<servlet-name>deleteWorkUserMypageCon</servlet-name>
   	<url-pattern>/deleteWorkUserMypageCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>deleteWorkExpertMypageCon</servlet-name>
+  	<url-pattern>/deleteWorkExpertMypageCon</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -4,10 +4,10 @@
 	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.database.MypageMapper">
 	<select id="selectUserMypage" parameterType="String" resultType="com.smhrd.domain.mypageDTO">
-		select tw.w_title, twm.status_memo, twm.created_at, tw.w_idx, tuw.tuw_idx from t_work tw, t_work_mypage twm, t_user_work tuw where tw.w_idx=twm.w_idx and twm.w_idx=tuw.w_idx and tuw.user_id=#{user_id}
+		select tw.w_title ,twm.status_memo, twm.created_at, tuw.tuw_idx from t_work_mypage twm, t_work tw, t_user_work tuw where tw.w_idx=twm.w_idx and tuw.tuw_idx=twm.status_idx and tw.w_idx  in (select w_idx from t_user_work tuw where user_id=#{user_id})
 	</select>
 	<select id="selectExpertMypage" parameterType="String" resultType="com.smhrd.domain.mypageDTO">
-		select tw.w_title, twm.created_at, twm.status_idx, tw.w_idx, tuw.user_id from t_work tw, t_work_mypage twm, t_user_work tuw where tw.w_idx=twm.w_idx and twm.w_idx=tuw.w_idx and tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
+		select tw.w_title, twm.created_at, twm.status_idx, tw.w_idx, tuw.user_id from t_work tw, t_work_mypage twm, t_user_work tuw where tw.w_idx=twm.w_idx and tuw.tuw_idx=twm.status_idx and tw.exp_id=#{exp_id} and twm.exp_id=#{exp_id}
 	</select>
 	<update id="updateExpertMypage" parameterType="com.smhrd.domain.mypageDTO">
 		update t_work_mypage set status_memo=#{status_memo}, created_at=sysdate where status_idx=#{status_idx}
