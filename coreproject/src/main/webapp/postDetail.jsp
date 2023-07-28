@@ -53,7 +53,9 @@
 		<article id="view">
 		<!-- 배치 어떻게 해야할지 감이 안옴... -->
 		<%@include file="header.jsp" %> 
-			<h1><%=selectPost.get(0).getW_title()%></h1>
+			
+			
+			
 			<div>
 				<div> <img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
 				<div><%=selectPost.get(0).getW_content() %></div>
@@ -62,7 +64,19 @@
 				<div><%=selectPost.get(0).getExp_id()%></div>
 				<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
 			</div>
+			<h1><%=selectPost.get(0).getW_title()%></h1>
+			<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
+				<button onclick="toggleUpdate()" id="updateButton">수정</button>
+				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
+			</c:if>
+			<c:if test="${not empty loginUser}">
+				<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
+			</c:if>
+			<button onclick="location.href='<%=y %>.jsp'">목록</button>		
 		</article>
+		
+			
+		
 		<article id="update">
 			<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
 				<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
@@ -88,14 +102,7 @@
 				</div>
 			</form>
 		</article>
-			<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
-				<button onclick="toggleUpdate()" id="updateButton">수정</button>
-				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
-			</c:if>
-			<c:if test="${not empty loginUser}">
-				<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
-			</c:if>
-			<button onclick="location.href='<%=y %>.jsp'">목록</button>
+			
 		
 		<!-- Scripts -->
 		<script>
