@@ -12,7 +12,6 @@
 	<div id="page-wrapper">
 
 		<!-- Header -->
-		
 		<%@include file="header.jsp" %> 
 
 		<!-- Banner -->

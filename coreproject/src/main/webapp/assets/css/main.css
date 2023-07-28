@@ -2301,6 +2301,11 @@ select {
 		margin-bottom: 50px;
 	}
 	
+	.box.page-content.userlog{
+		position: relative;
+		left: 0;
+	}
+	
 	.box.page-content header {
 		margin: 0 0 2.5em 0;
 	}
@@ -2436,6 +2441,11 @@ select {
 			display: inline;
 			color: #C1CAC5;
 		}
+
+	header.log{
+		text-align: center;
+		margin-bottom: 50px;
+	}
 
 /* Nav */
 
@@ -3326,10 +3336,16 @@ select {
 		border: none;
 		position: relative;
 		border-radius: 5px;
+		
+		width: 300px;
+		height: 165px;
+		text-align: center;		
+		margin-inline: auto;
+		display: grid;
 	}
 	
-	.join-form{
-		width: 400px;
+	.logbutton.join-form{
+		width: 350px;
 		height: auto;
 		background-image: url("images/overlay.png");
 		margin-right: auto;
@@ -3341,6 +3357,7 @@ select {
 		position: relative;
 		border-radius: 5px;
 	}
+	
 	
 	.join>h2 {
 		text-align: center;
@@ -3385,11 +3402,31 @@ select {
 	.logbutton{
 		
 		width: 300px;
-		height: 180px;
+		height: 165px;
 		text-align: center;		
 		margin-inline: auto;
 		display: grid;
 		
+	}
+	
+	section.logbutton>button{
+		font-size: 14px;
+	}
+	
+	.logbutton.login-form{
+		width: 300px;
+		height: 210px;
+		text-align: center;
+		margin-inline: auto;
+		display: grid;
+	}
+	
+	
+	
+	.logbutton.login-form input{
+		line-height: 2.5em;
+		padding: 0 1em;
+		font-size: 14px;
 	}
 	
 	/* Mypagedefault */

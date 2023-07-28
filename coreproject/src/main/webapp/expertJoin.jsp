@@ -10,18 +10,27 @@
 </head>
 <body class="is-preload">
 	<div id="page-wrapper">
+	
+		<!-- Header -->
+			<header id="header">
+				<div class="logo container">
+					<div>
+						<span><a href="main.jsp" id="logo">DRONY</a></span>
+					</div>
+				</div>	
+			</header>
+	
 		<section id="main">
 			<div class="container">
-				<div class="row">
+			
 					<div class="col-12">
 						<div class="content">
 
 							<!-- Content -->
-							<article class="box page-content expertjoin">
 								<header class="join">
 									<h2>회 원 가 입</h2>
 								</header>
-								<section class="join-form">
+								<section class="logbutton join-form">
 									<form action="JoinExpertCon" method="post">
 										<b>아이디</b><br>
 										<input type="text" name="id"><br>
@@ -47,10 +56,8 @@
 									</form>
 								</section>
 								
-							</article>
 						</div>
 					</div>
-				</div>
 			</div>
 		</section>
 	</div>	
