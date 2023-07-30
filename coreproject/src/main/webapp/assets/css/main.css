@@ -347,11 +347,15 @@ select {
 
 		.row > .col-3 {
 			width: 23%;
-			height: 400px;
+			height: 320px;
 			background-image: url("images/overlay.png");
-			padding: 20px 0;
+			padding: 30px 0;
 			margin: 30px 0;
 			text-align: center;
+		}
+		
+		.row > .col-3.col-12-medium.noback{
+			background: none;
 		}
 		
 		.row.workfield > .col-3.col-12-small{
@@ -2151,7 +2155,7 @@ select {
 	form textarea {
 		-webkit-appearance: none;
 		display: block;
-		width: 95%;
+		width: 100%;
 		border-radius: 8px;
 		border: solid 1px #E7EAE8;
 	}
@@ -3324,6 +3328,11 @@ select {
 	
 /* login & join */
 
+	.logbutton.join-form>form>button{
+		position: relative;
+		left: 220px;
+	}
+
 	.login-form{
 		width: 300px;
 		height: auto;
@@ -3511,6 +3520,28 @@ select {
 	.noticetable td.co3{
 		border: solid 1px #E7EAE8;
     	border-radius: 5px;
+	}
+	
+	#view h1{
+		font-size: 20px;
+		font-weight: 700;
+		padding: 10px;
+		border-bottom: solid 1px #E7EAE8;
+	}
+	
+	#view>div>img{
+		position: relative;
+		left: 30px;
+	}
+	
+	#view.post{
+		border: solid 1px #E7EAE8;
+		
+	}
+	
+	.box.page-content .post-content{
+		margin: 0;
+		padding: 10px;
 	}
 	
 	/* 작업 분야 */

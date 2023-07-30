@@ -54,8 +54,6 @@
    		
    		<!-- Header -->
 		<%@include file="header.jsp" %>
-   		
-   		
    		 
    		<!-- Main -->
    		<section id="main">
@@ -100,6 +98,8 @@
    					
    					
    					<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
+   					
+   					<!-- 이미지 -->
    					<div class="col-4 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
@@ -109,19 +109,47 @@
 								</article>
    							</article>
    						</div>
+   					</div>
+   					
+   					<!-- 게시글내용 -->
+   					<div class="col-4">
+   						<div class="content">
+   							<!-- Content -->
+   							<article class="box page-content">
+   								<article id="view" class="post">
+   									<h1><%=selectPost.get(0).getW_title()%></h1>
+   									
+   									<section class="post-content">
+   										<div><%=selectPost.get(0).getW_content() %></div>
+										<div><%=selectPost.get(0).getW_file() %></div>
+										<div><%=selectPost.get(0).getW_price() %></div>
+										<div><%=selectPost.get(0).getExp_id()%></div>
+										<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
+   									</section>
+   									
+   								
+									<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
+										<button onclick="toggleUpdate()" id="updateButton">수정</button>
+										<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
+									</c:if>
+									<c:if test="${not empty loginUser}">
+										<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
+									</c:if>
+									<button onclick="location.href='<%=y %>.jsp'">목록</button>		
+								</article>
+   							</article>
+   						</div>
+   					</div>	
+   					
+   					<div class="col-3 col-12-medium noback"></div>
+   					<div class="col-8"> adf</div>   					
+   					
+   					<!-- 어디로 넣어야하지...  -->
+   					<article id="update">
    						
-   						<!-- 수정하는 부분 -->
-   						
-						
-							
-						
-						<article id="update">
-							<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
+   							<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
 								<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
 								<div>
-									<!-- 위랑 같은 배치 맞춰주면 좋을것 같음 -->
-									<!-- Header -->		
-									<%@include file="header.jsp" %> 
 									
 									<div> 분야 : 
 										<select name="w_kind">
@@ -140,10 +168,8 @@
 								</div>
 								<input type="submit" value="수정완료">
 							</form>
-						</article>
 							
-						
-						<!-- Scripts -->
+							<!-- Scripts -->
 						<script>
 							function toggleUpdate() {
 								const update = document.getElementById('update');
@@ -161,48 +187,16 @@
 								}
 							}
 						</script>
-   						
-   						
-   						
-   						
-   						
+							
+					</article>
+   					
+   		  						
    			<!-- 여기까지 -->				
-   					</div>
    					
-   					<div class="col-4">
-   						<div class="content">
-   							<!-- Content -->
-   							<article class="box page-content">
-   								<article id="view">
-									<div>
-										
-										<div><%=selectPost.get(0).getW_content() %></div>
-										<div><%=selectPost.get(0).getW_file() %></div>
-										<div><%=selectPost.get(0).getW_price() %></div>
-										<div><%=selectPost.get(0).getExp_id()%></div>
-										<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
-									</div>
-									<h1><%=selectPost.get(0).getW_title()%></h1>
-									<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
-										<button onclick="toggleUpdate()" id="updateButton">수정</button>
-										<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
-									</c:if>
-									<c:if test="${not empty loginUser}">
-										<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
-									</c:if>
-									<button onclick="location.href='<%=y %>.jsp'">목록</button>		
-								</article>
-   							</article>
-   						</div>
-   					
-   					
-   					
-   					
-   					
-   					</div>
    				</div>
    			</div>
    		</section>
+   		
    		      
 		<!-- Footer -->
 		<%@include file="footer.jsp" %>

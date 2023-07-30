@@ -47,7 +47,7 @@
 											<input type="text" name="email"><br>
 											<b>전화번호</b><br>
 											<input type="text" name="phone"><br>
-											<input type="submit" value="회원가입" onclick="fn_joinMember()">
+											<input class="submit-btn" type="submit" value="회원가입" onclick="fn_joinMember()">
 										</form>
 									</section>
 							</div>
