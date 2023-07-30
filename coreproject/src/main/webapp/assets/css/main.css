@@ -3504,6 +3504,10 @@ select {
 		border-bottom: solid 1px #E7EAE8;
 	}
 	
+	.box.page-content>#view img{
+		width: 90%;
+	}
+	
 	.noticetable td.co3{
 		border: solid 1px #E7EAE8;
     	border-radius: 5px;
