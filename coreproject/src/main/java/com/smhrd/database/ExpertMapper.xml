@@ -6,6 +6,9 @@
 	<select id="selectExpert" parameterType="com.smhrd.domain.expertDTO" resultType="com.smhrd.domain.expertDTO">
 		select * from t_expert where exp_id=#{exp_id} and exp_pw=#{exp_pw}
 	</select>
+	<select id="selectExpertId" parameterType="String" resultType="int">
+		select count(*) from t_expert where exp_id=#{exp_id}
+	</select>
 	<insert id="insertExpert" parameterType="com.smhrd.domain.expertDTO">
 		insert into t_expert values (#{exp_id}, #{exp_pw}, #{exp_name}, #{exp_email}, #{exp_phone}, #{bno}, #{company_name}, #{company_addr}, #{working_area}, #{working_field})
 	</insert>

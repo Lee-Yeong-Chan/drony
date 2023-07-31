@@ -7,6 +7,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -33,21 +34,21 @@
 									<section class="logbutton join-form">
 										<form action="JoinUserCon" method="post" name="joinForm">
 											<b>아이디</b><br>
-											<input type="text" name="id" onkeydown="inputIdCheck()">
-											<button type="button" onclick="fn_dbCheckId()" name="dbCheckId" class="checkId">중복확인</button>
-											<input type="hidden" name="idDuplication" value="idUnCheck">
+											<input type="text" name="id" id="id">
+											<button type="button" id="CheckId" class="checkId">중복확인</button>
+											<p id="result"></p>
 											<br>
 											<b>비밀번호</b><br>
 											<input type="password" name="pw"><br>
 											<b>비밀번호확인</b><br>
-											<input type="password" name="repw"><br>
+											<input type="password" name="pw_re"><br>
 											<b>이름</b><br>
 											<input type="text" name="name"><br>
 											<b>이메일</b><br>
 											<input type="text" name="email"><br>
 											<b>전화번호</b><br>
 											<input type="text" name="phone"><br>
-											<input class="submit-btn" type="submit" value="회원가입" onclick="fn_joinMember()">
+											<input class="submit-btn" type="button" value="회원가입" onclick="join()">
 										</form>
 									</section>
 							</div>
@@ -64,71 +65,71 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<!-- <script>
-			function fn_joinMember(){
-				var joinForm=document.joinForm;
-				var name=joinForm.name.value;
-				var id=joinForm.id.value;
-				var pwd=joinForm.pw.value;
-				var rePwd=joinForm.repw.value;
-				var email=joinForm.email.value;
-				var phone=joinForm.phone.value;
-				if(name.length==0||name==""){
-					alert("이름을 입력해주세요.");
-					joinForm.name.focus();
-					return false;
+		<script>
+			$('#CheckId').click(function(){	
+				if($('#id').val()!=''){
+					$.ajax({
+						type:'get',
+						url:'checkUserId',
+						data:{'user_id':$("#id").val()},
+						dataType:'json',
+						success:function(res){
+							if(res=='0'){
+								$('#result').text('사용가능한 아이디입니다.');
+							}
+							else{
+								$('#result').text('이미 사용중인 아이디입니다.');
+							}
+						},
+						error:function(){
+							alert('비동기접속 실패');
+						}
+					});
 				}
-				else if(id.length==0||id==""){
+				else{
+					alert('아이디를 입력하세요.');
+					$('#id').focus();
+				}
+			});
+			var form = document.joinForm;
+			function join(){
+				if(!form.id.value){
 					alert("아이디를 입력해주세요.");
-					joinForm.id.focus();
-					return false;
+					form.id.focus();
+					return;
 				}
-				if(joinForm.idDuplication.value!="idCheck"){
-					alert("아이디 중복체크를 해주세요.");
-					return false;
-				}
-				if(pw.length==0||pw==""){
+				if(!form.pw.value){
 					alert("비밀번호를 입력해주세요.");
-					joinForm.pw.focus();
-					return false;
+					form.password.focus();
+					return;
 				}
-				if(repw.length==0||repw==""){
-					alert("비밀번호 확인을 입력해주세요.");
-					joinForm.pw.focus();
-					return false;
+				if(form.pw.value != form.pw_re.value){
+					alert("비밀번호를 확인해주세요.");
+					form.password.focus();
+					return;
 				}
-				if(pw!=repw){
-					alert("비밀번호 확인이 비밀번호와 다릅니다.");
-					joinForm.repw.focus();
-					return false;
+				if(!form.name.value){
+					alert("이름을 입력해주세요.");
+					form.name.focus();
+					return;
 				}
-				if(email.length==0||email==""){
-					alert("이메일을 입력해주세요.");
-					joinForm.email.focus();
-					return false;
+				if(!form.email.value){
+					alert("이메일을 확인해주세요.");
+					form.email.focus();
+					return;
 				}
-				if(phone.length==0||phone==""){
+				if(!form.phone.value){
 					alert("전화번호를 입력해주세요.");
-					joinForm.phone.focus();
-					return false;
+					form.phone.focus();
+					return;
 				}
-				else{
-					joinForm.method="post";
-					joinForm.action="joinUserCon";
-					joinForm.submit();
+				if($('#result').text()!='사용가능한 아이디입니다.'){
+					alert("아이디 중복확인해주세요.");
+					form.id.focus();
+					return;
 				}
+				form.submit();
 			}
-			function fn_dbCheckId(){
-				var joinForm=document.joinForm;
-				var id=joinForm.id.value;
-				if(id.length==0||id==""){
-					alert("아이디를 입력해주세요.");
-					joinForm.id.focus();
-				}
-				else{
-					window.open("${contextPath}/mem?user_id="+id,"","width=500, height=300");
-				}
-			}
-		</script> -->
+		</script>
 	</body>
 </html>

@@ -37,8 +37,8 @@ public class userDAO {
 		}
 		return loginUser;
 	}
-	public userDTO selectUserId(String user_id) {
-		userDTO loginUser=null;
+	public int selectUserId(String user_id) {
+		int loginUser=0;
 		try {
 			loginUser=sqlSession.selectOne("selectUserId", user_id);
 		} 
