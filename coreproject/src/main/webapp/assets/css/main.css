@@ -346,7 +346,7 @@ select {
 		}
 
 		.row > .col-3 {
-			width: 23%;
+			width: 20%;
 			height: 320px;
 			background-image: url("images/overlay.png");
 			padding: 30px 0;
@@ -1944,7 +1944,7 @@ select {
 				padding-top: 0;
 				margin-top: 0;
 			}
-
+	
 /* Actions */
 
 	ul.actions {
@@ -2447,7 +2447,7 @@ select {
 			color: #C1CAC5;
 		}
 
-	header.log{
+	header.log>h2{
 		text-align: center;
 		margin-bottom: 50px;
 	}
@@ -2687,14 +2687,19 @@ select {
 		font-size: 1em;
 	}
 	
+	.sidebar>table{
+		width: 84%;
+	}
+	
 	.mypagetable>table{
 		position: relative;
     	border-spacing: 7px;
     	border-collapse: separate;
-    	width: 90%;
+    	width: 70%;
     	/* border: solid 1px;
     	border-radius: 3px; */
     	margin-bottom: 5px;
+    	border: solid 1px #E7EAE8;
 	}
 	
 	.mycontent>table select{
@@ -2702,6 +2707,10 @@ select {
 		width: 50%;
 		border-radius: 8px;
 		border: solid 1px #E7EAE8;
+	}
+	
+	.mycontent input[type="text"] {
+		width: 95%;
 	}
 /* Footer */
 
@@ -3442,13 +3451,15 @@ select {
 	/* Mypagedefault */
 	.co1 {
 		text-align: right;
-		width: 25%;
+		width: 30%;
 		font-wight: 700;
 	}
 	
 	.co2 {
+		
 		padding-left: 30px
 	}
+	
 	
 	
 	/* Mypageupdate*/

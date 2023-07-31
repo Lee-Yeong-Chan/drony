@@ -108,7 +108,7 @@
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<div id="view" class="mypagetable" style="margin-left: 30px; width: 90%">
+   								<div id="view" style="margin-left: 30px; width: 90%">
    									<table class="noticetable">
    										<tr>
    											<td style="width: 25%;">작성자</td>
@@ -144,7 +144,7 @@
    									</table>
    								</div>
    								
-								<div id="update" class="mypagetable" style="margin-left: 30px;">
+								<div id="update" style="margin-left: 30px;">
 									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" method="post">
 										<table class="noticetable" height="180px">
 											<tr>

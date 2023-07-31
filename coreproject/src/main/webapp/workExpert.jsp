@@ -33,7 +33,7 @@
    							
    							<!-- My page -->
    							
-   								<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
    								<ul class="divided">
    									<li>
    										<article class="box mypage-menu">
@@ -56,7 +56,14 @@
 										</article>
 									</li>
    								</ul>
-   							
+   								<table>
+						     	 <tr>
+						         	<td colspan='2' align="right" style="font-size: 0.8em;">
+						         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+						         		<a href="deleteExpertCon">회원탈퇴</a>	
+						         	</td>
+						         </tr>
+						     </table>
    							
    						</div>
    					</div>
@@ -75,11 +82,11 @@
    										<thead>
 										<tr>
 											<td style="text-align: center;">번호</td>
-											<td>의뢰받은 작업명</td>
-											<td>의뢰자 아이디</td>
-											<td>진행 상황</td>
-											<td>상황 갱신 날짜</td>
-											<td>채팅방</td>
+											<td>제목</td>
+											<td>의뢰인</td>
+											<td>진행상황</td>
+											<td>갱신날짜</td>
+											<td>1:1상담</td>
 										</tr>
 										</thead>
 										<%if (mypageList!=null){
@@ -103,8 +110,8 @@
 												</form>
 											</td>
 											<td><%=mypageList.get(i).getCreated_at()%></td>
-											<td><button onclick="location.href='.jsp'">채팅</button></td>
-											<td><button onclick="location.href='deleteWorkExpertMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">삭제</button></td>
+											<td><button onclick="location.href='.jsp'"><i class="icon solid fa-comments"></i></button>
+												<button onclick="location.href='deleteWorkExpertMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-trash"></i></button></td>
 										</tr>
 										<%	}
 										}%>

@@ -28,7 +28,7 @@
    					<!-- Sidebar row 밑에 위치-->
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-		   					<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+		   					<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
 		   					<ul class="divided">
 		   						<li>
 		   							<article class="box mypage-menu">
@@ -51,6 +51,14 @@
 									</article>
 								</li>
 							</ul>
+							<table>
+						     	 <tr>
+						         	<td colspan='2' align="right" style="font-size: 0.8em;">
+						         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+						         		<a href="deleteExpertCon">회원탈퇴</a>	
+						         	</td>
+						         </tr>
+						     </table>
 						</div>
    					</div>
    					
@@ -60,14 +68,16 @@
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
+   							<section class="section-mypage">
    							<article class="box page-content">
    								<header>
-   									<h3><%=loginExpert.getExp_id() %>전문가님의 프로필</h3>
+   									<h3><%=loginExpert.getExp_id() %>님의 프로필</h3>
    								</header>
    								
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<section class="mypagetable">
+   									<h5>개인 정보</h5>
    									<table>
          								<tr>
             								<td class="co1">아이디 : </td>
@@ -85,6 +95,9 @@
 								            <td class="co1">전화번호 : </td>
 								            <td class="co2"><%=loginExpert.getExp_phone() %></td>
 								         </tr>
+							         </table>
+							         <h5>업체 정보</h5>
+							         <table>
 								         <tr>
 								            <td class="co1">사업자번호 : </td>
 								            <td class="co2"><%=loginExpert.getBno() %></td>
@@ -106,17 +119,11 @@
 								            <td class="co2"><%=loginExpert.getWorking_field() %></td>
 								         </tr>
 								      </table>
-								      <table>
-								     	 <tr>
-								         	<td colspan='2' align="right" style="font-size: 0.8em;">
-								         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
-								         		<a href="deleteExpertCon">회원탈퇴</a>	
-								         	</td>
-								         </tr>
-								      </table>
+								      
    								</section>
    								
    							</article>
+   							</section>
    							<!-- 여기까지 -->
    							
    						</div>

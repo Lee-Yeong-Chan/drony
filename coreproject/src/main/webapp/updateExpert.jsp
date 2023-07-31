@@ -27,7 +27,7 @@
    					<!-- Sidebar 여기서부터-->
    					<div class="col-3 col-12-medium">
    						<div class="sidebar">
-		   					<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+		   					<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
 		   					<ul class="divided">
 		   						<li>
 		   							<article class="box mypage-menu">
@@ -50,6 +50,14 @@
 									</article>
 								</li>
 							</ul>
+							<table>
+						     	 <tr>
+						         	<td colspan='2' align="right" style="font-size: 0.8em;">
+						         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+						         		<a href="deleteExpertCon">회원탈퇴</a>	
+						         	</td>
+						         </tr>
+						     </table>
 						</div>
    					</div>
    					<!-- 여기까지 유지되는 부분 -->

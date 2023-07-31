@@ -30,7 +30,7 @@
    							<div class="sidebar">
    							 
    							<!-- My page -->
-   							<h3 class="major"><span><%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+   							<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
    							<ul class="divided">
 								<li>
 									<article class="box mypage-menu">
@@ -53,6 +53,14 @@
 									</article>
 								</li>
 							</ul>
+							<table>
+						     	 <tr>
+						         	<td colspan='2' align="right" style="font-size: 0.8em;">
+						         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+						         		<a href="deleteExpertCon">회원탈퇴</a>	
+						         	</td>
+						         </tr>
+						     </table>
    						</div>
    					</div>
    					
@@ -113,7 +121,7 @@
 												<td> <input type="text" name="serial"></td>
 												<td> <input type="text" name="desc"></td>
 												<td> <input type="file" name="img"></td>
-												<td> <input type="submit" value="추가" style="margin-right: 24px;"></td>
+												<td> <input type="submit" value="추가" style="margin-right: 14px;"></td>
 											</tr>
 										</table>
 									</form>

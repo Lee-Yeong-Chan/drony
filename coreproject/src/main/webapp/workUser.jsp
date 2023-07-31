@@ -46,6 +46,14 @@
 	                                    </article>
 	                                </li>
    								</ul>
+   								<table>
+	                               	<tr>
+                               			<td colspan='2' align="right" style="font-size: 0.8em;">
+	                               			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
+	                               			<a href="deleteUserCon">회원탈퇴</a>
+                               			</td>
+                          			</tr>
+                               	</table>
    						</div>
    					</div>
    					
@@ -77,15 +85,9 @@
 											<td><a href="postDetail.jsp?w_idx=<%=mypageList.get(i).getW_idx()%>"><%=mypageList.get(i).getW_title()%></a></td>
 											<td><%=mypageList.get(i).getStatus_memo()%></td>
 											<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
-<<<<<<< HEAD
 											<td>
 											<button onclick="location.href='.jsp'">채팅</button>
 											<button onclick="location.href='deleteWorkUserMypageCon?w_idx=<%=mypageList.get(i).getW_idx()%>'">삭제</button>
-											</td>
-=======
-											<td><button onclick="location.href='#'">채팅</button></td>
-											<td><button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">삭제</button></td>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
 										</tr>
 										<%	}
 										}%>

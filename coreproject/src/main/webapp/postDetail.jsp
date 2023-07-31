@@ -99,50 +99,35 @@
    					
    					<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    					
-   					<!-- 이미지 -->
+   					<!-- 게시글 -->
    					<div class="col-4 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
    							<article class="box page-content">
-   								<article id="view">
-									<div> <img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
+   								<article id="view" class="post">
+   								<h1><%=selectPost.get(0).getW_title()%></h1>
+								<div> <img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
+								<section class="post-content">
+									<div><%=selectPost.get(0).getW_content() %></div>
+									<div><a href="upload/<%=selectPost.get(0).getW_file() %>" download>첨부파일</a></div>
+									<div><%=selectPost.get(0).getW_price() %></div>
+									<div><%=selectPost.get(0).getExp_id()%></div>
+									<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
+								</section>
+								<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
+									<button onclick="toggleUpdate()" id="updateButton">수정</button>
+									<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
+								</c:if>
+								<c:if test="${not empty loginUser}">
+									<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
+								</c:if>
+								<button onclick="location.href='<%=y %>.jsp'">목록</button>
+								
 								</article>
    							</article>
    						</div>
    					</div>
    					
-   					<!-- 게시글내용 -->
-   					<div class="col-4">
-   						<div class="content">
-   							<!-- Content -->
-   							<article class="box page-content">
-   								<article id="view" class="post">
-   									<h1><%=selectPost.get(0).getW_title()%></h1>
-   									
-   									<section class="post-content">
-   										<div><%=selectPost.get(0).getW_content() %></div>
-										<div><a href="upload/<%=selectPost.get(0).getW_file() %>" download>첨부파일</a></div>
-										<div><%=selectPost.get(0).getW_price() %></div>
-										<div><%=selectPost.get(0).getExp_id()%></div>
-										<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
-   									</section>
-   									
-   								
-									<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
-										<button onclick="toggleUpdate()" id="updateButton">수정</button>
-										<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
-									</c:if>
-									<c:if test="${not empty loginUser}">
-										<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
-									</c:if>
-									<button onclick="location.href='<%=y %>.jsp'">목록</button>		
-								</article>
-   							</article>
-   						</div>
-   					</div>	
-   					
-   					<div class="col-3 col-12-medium noback"></div>
-   					<div class="col-8"> adf</div>   					
    					
    					<!-- 어디로 넣어야하지...  -->
    					<article id="update">
@@ -204,47 +189,7 @@
 	</div>
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	 <!-- 찐 -->
-=======
-	<body>
-		<article id="view">
-		<!-- 배치 어떻게 해야할지 감이 안옴... -->
-		<%@include file="header.jsp" %> 
-			
-			
-			
-			<div>
-				<div><img onerror=this.src="images/<%=x%>.png" src="update/<%=selectPost.get(0).getW_img()%>"></div>
-				<div><%=selectPost.get(0).getW_content() %></div>
-				<div><a href="upload/<%=selectPost.get(0).getW_file() %>" download>첨부파일</a></div>
-				<div><%=selectPost.get(0).getW_price() %></div>
-				<div><%=selectPost.get(0).getExp_id()%></div>
-				<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
-			</div>
-			<h1><%=selectPost.get(0).getW_title()%></h1>
-			<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
-				<button onclick="toggleUpdate()" id="updateButton">수정</button>
-				<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
-			</c:if>
-			<c:if test="${not empty loginUser}">
-				<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
-			</c:if>
-			<button onclick="location.href='<%=y %>.jsp'">목록</button>		
-		</article>
->>>>>>> a01e925 맨날고장나
-		
-		
-
-
-
 		
 		
 		<!-- Scripts -->
