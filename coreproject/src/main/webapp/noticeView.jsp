@@ -124,7 +124,7 @@
    										</tr>
    										<tr>
    											<td>첨부파일</td>
-   											<td class="co3"><%=notice.get(0).getNotice_file()%></td>
+   											<td class="co3"><a href="notice/<%=notice.get(0).getNotice_file()%>" download>첨부파일</a></td>
    										</tr>
    										<tr style="height: 150px;">
    											<td>내용</td>

@@ -120,7 +120,7 @@
    										</tr>
    										<tr>
    											<td>첨부파일</td>
-   											<td class="co3"><%=inquiry.get(0).getInq_file()%></td>
+   											<td class="co3"><a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>첨부파일</a></td>
    										</tr>
    										<tr style="height: 150px;">
    											<td>내용</td>
