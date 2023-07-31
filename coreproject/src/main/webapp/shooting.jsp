@@ -4,10 +4,6 @@
 <%@ page isELIgnored="false" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<%
-	workDAO workDAO=new workDAO();
-	List<workDTO> shooting=workDAO.selectAllWork("S");
-%>
 <html>
 	<head>
 		<title>촬영</title>
@@ -73,7 +69,20 @@
 								</header>
 							</article>	
 						</div>
-						
+						<form action="shooting.jsp" method="get">
+   							<input type="text" placeholder="검색어 입력" name="searchText">
+   							<button type="submit" value="검색">검색</button>		
+   						</form>
+   						<%
+							workDAO workDAO=new workDAO();
+   							workDAO workDAO2=new workDAO();
+   							request.setCharacterEncoding("utf-8");
+   							String searchText=request.getParameter("searchText");
+   							List<workDTO> shooting=workDAO.selectAllWork("S");
+   							if(searchText!=null){
+   								shooting=workDAO2.selectSearchWork("S", searchText);
+   							}
+						%>
 						<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
 						<div>
 							<c:if test="${not empty loginExpert}">

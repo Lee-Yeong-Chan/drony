@@ -39,4 +39,49 @@
 	<delete id="deleteWork">
 		delete from t_work where w_idx=#{w_idx}
 	</delete>
+	<select id="selectSearchPestControlTitleWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='P' and w_title LIKE '%'||#{w_title}||'%'
+	</select>
+	<select id="selectSearchPestControlContentWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='P' and w_content LIKE '%'||#{w_content}||'%'
+	</select>
+	<select id="selectSearchPestControlExpertWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='P' and exp_id LIKE '%'||#{exp_id}||'%'
+	</select>
+	<select id="selectSearchMeasureTitleWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='M' and w_title LIKE '%'||#{w_title}||'%'
+	</select>
+	<select id="selectSearchMeasureContentWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='M' and w_content LIKE '%'||#{w_content}||'%'
+	</select>
+	<select id="selectSearchMeasureExpertWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='M' and exp_id LIKE '%'||#{exp_id}||'%'
+	</select>
+	<select id="selectSearchShootingTitleWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='S' and w_title LIKE '%'||#{w_title}||'%'
+	</select>
+	<select id="selectSearchShootingContentWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='S' and w_content LIKE '%'||#{w_content}||'%'
+	</select>
+	<select id="selectSearchShootingExpertWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='S' and exp_id LIKE '%'||#{exp_id}||'%'
+	</select>
+	<select id="selectSearchTransportTitleWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='T' and w_title LIKE '%'||#{w_title}||'%'
+	</select>
+	<select id="selectSearchTransportContentWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='T' and w_content LIKE '%'||#{w_content}||'%'
+	</select>
+	<select id="selectSearchTransportExpertWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='T' and exp_id LIKE '%'||#{exp_id}||'%'
+	</select>
+	<select id="selectSearchETCTitleWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='E' and w_title LIKE '%'||#{w_title}||'%'
+	</select>
+	<select id="selectSearchETCContentWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='E' and w_content LIKE '%'||#{w_content}||'%'
+	</select>
+	<select id="selectSearchETCExpertWork" parameterType="String" resultType="com.smhrd.domain.workDTO">
+		select * from t_work where w_kind='E' and exp_id LIKE '%'||#{exp_id}||'%'
+	</select>
 </mapper>

@@ -1,19 +1,17 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="com.smhrd.domain.workDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.workDAO"%>
 <%@ page isELIgnored="false" language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<%
-	workDAO workDAO=new workDAO();
-	List<workDTO> pestControl=workDAO.selectAllWork("P");
-%>
 <html>
 	<head>
 		<title>방역 방제 농업</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 	</head>
 	<body class="is-preload">
 	
@@ -76,7 +74,20 @@
    								</header>
    							</article>
    						</div>
-   						
+   						<form action="pestControl.jsp" method="get">
+   							<input type="text" placeholder="검색어 입력" name="searchText">
+   							<button type="submit" value="검색">검색</button>		
+   						</form>
+   						<%
+							workDAO workDAO=new workDAO();
+   							workDAO workDAO2=new workDAO();
+   							request.setCharacterEncoding("utf-8");
+   							String searchText=request.getParameter("searchText");
+   							List<workDTO> pestControl=workDAO.selectAllWork("P");
+   							if(searchText!=null){
+   								pestControl=workDAO2.selectSearchWork("P", searchText);
+   							}
+						%>
    						<!-- 수정하는 부분 -->
    						<div>
    							<c:if test="${not empty loginExpert}">
@@ -117,6 +128,5 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-		
 	</body>
 </html>
