@@ -100,6 +100,7 @@
    					<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    					
    					<!-- 게시글 -->
+   					<article id="view">
    					<div class="col-4 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
@@ -122,37 +123,34 @@
 									<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
 								</c:if>
 								<button onclick="location.href='<%=y %>.jsp'">목록</button>
-								
-								</article>
    							</article>
    						</div>
    					</div>
-   					
+   					</article>
    					
    					<!-- 어디로 넣어야하지...  -->
    					<article id="update">
-   						
-   							<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
-								<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
-								<div>
-									
-									<div> 분야 : 
-										<select name="w_kind">
-											<option value="">선택</option>
-											<option value="P">방역·방제·살포</option>
-											<option value="M">측량</option>
-											<option value="S">촬영</option>
-											<option value="T">물류·운송</option>
-											<option value="E">기타</option>
-										</select>
-									</div>
-									<div> 이미지 : <input type="file" name="img"> </div>
-									<div> 내용 : <input type="text" name="content" placeholder="<%=selectPost.get(0).getW_content()%>"></div>
-									<div> 첨부파일 : <input type="file" name="file"></div>
-									<div> 단가 : <input type="text" name="price" placeholder="<%=selectPost.get(0).getW_price()%>"></div>
+						<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
+							<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
+							<div>
+								
+								<div> 분야 : 
+									<select name="w_kind">
+										<option value="">선택</option>
+										<option value="P">방역·방제·살포</option>
+										<option value="M">측량</option>
+										<option value="S">촬영</option>
+										<option value="T">물류·운송</option>
+										<option value="E">기타</option>
+									</select>
 								</div>
-								<input type="submit" value="수정완료">
-							</form>
+								<div> 이미지 : <input type="file" name="img"> </div>
+								<div> 내용 : <input type="text" name="content" placeholder="<%=selectPost.get(0).getW_content()%>"></div>
+								<div> 첨부파일 : <input type="file" name="file"></div>
+								<div> 단가 : <input type="text" name="price" placeholder="<%=selectPost.get(0).getW_price()%>"></div>
+							</div>
+							<input type="submit" value="수정완료">
+						</form>
 							
 							<!-- Scripts -->
 						<script>

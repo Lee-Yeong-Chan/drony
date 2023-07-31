@@ -37,6 +37,19 @@ public class expertDAO {
 		}
 		return loginExpert;
 	}
+	public int selectExpertId(String exp_id) {
+		int loginExpert=0;
+		try {
+			loginExpert=sqlSession.selectOne("selectExpertId", exp_id);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return loginExpert;
+	}
 	public int updateExpert(expertDTO updateExpert) {
 		int cnt=0;
 		try {

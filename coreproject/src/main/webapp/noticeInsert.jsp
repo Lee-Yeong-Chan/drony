@@ -72,7 +72,7 @@
 									</li>
 									<li>
 										<article class="box side-info">
-											<h1><a href="civilComplaint.jsp">원스탑민원서비스</a></h1>
+											<h1><a href="https://drone.onestop.go.kr/" target="_blank">원스탑민원서비스</a></h1>
 										</article>
 									</li>
    								</ul>
