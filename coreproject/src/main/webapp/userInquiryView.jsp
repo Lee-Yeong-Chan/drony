@@ -47,15 +47,27 @@
 										<c:when test="${not empty loginUser or not empty loginExpert}">
 											<c:choose>
 												<c:when test="${not empty loginUser}">
-													<li style="white-space: nowrap;"><a href="userInquiry.jsp">문의사항</a></li>
+													<li>
+														<article class="box side-info">
+															<h1><a href="userInquiry.jsp">문의사항</a></h1>
+														</article>	
+													</li>
 												</c:when>
 										 		<c:otherwise>
-													<li style="white-space: nowrap;"><a href="expertInquiry.jsp">문의사항</a></li>
+													<li>
+														<article class="box side-info">
+															<h1><a href="expertInquiry.jsp">문의사항</a></h1>
+														</article>
+													</li>
 										 		</c:otherwise>
 											</c:choose>
 										</c:when>
 										<c:otherwise>
-											<li><a href="login.jsp">문의사항</a></li>
+											<li>
+												<article class="box side-info">
+													<h1><a href="login.jsp">문의사항</a></h1>
+												</article>
+											</li>
 										</c:otherwise>
 									</c:choose>
 									<li>
@@ -94,17 +106,24 @@
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<div id="view">
-								<h1> 제목<%=inquiry.get(0).getInq_title() %></h1>
-								<div>
-									내용<%=inquiry.get(0).getInq_content() %>
+   									<table class="inquiryview">
+   										<thead>
+   											<tr>
+   												<td colspan="2"><h1><%=inquiry.get(0).getInq_title() %></h1></td>
+   											</tr>
+   										</thead>
+   										<tbody>
+   											<tr>
+   												<td><span><a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>다운로드</a></span></td>
+   												<td align="right"><span><%=inquiry.get(0).getCreated_at() %></span></td>
+   											</tr>
+   											<tr style="height: 50px;">
+   												<td colspan="2"><span><%=inquiry.get(0).getInq_content() %></span></td>
+   											</tr>
+   										</tbody>
+   									</table>
 								</div>
-								<div>
-									<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>첨부파일</a>
-								</div>
-								<div>
-									날짜<%=inquiry.get(0).getCreated_at() %>
-								</div>
-							</div>
+							
 							<div id="update">
 								<form action="updateUserInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post">
 									<h1> 제목<input type="text" name="title" placeholder="<%=inquiry.get(0).getInq_title()%>"></h1>
@@ -118,8 +137,8 @@
 								</form>
 							</div>
 							<div>
-									<button onclick="toggleUpdate()" id="updateButton">수정</button>
-									<button onclick="location.href='deleteUserInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>'">삭제</button>
+								<button onclick="toggleUpdate()" id="updateButton">수정</button>
+								<button onclick="location.href='deleteUserInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>'">삭제</button>
 								<button onclick="location.href='userInquiry.jsp'">목록</button>
 							</div>
 							<script>

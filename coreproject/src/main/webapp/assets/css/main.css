@@ -3502,6 +3502,14 @@ select {
 	
 	/* board - notice, inquiry, companylist */
 	
+	.inquiryview span{
+		margin: 10px;
+	}
+	
+	.inquiryview tr{
+		border-bottom: solid 1px #E7EAE8;
+	}
+	
 	.board{
 		list-style: none;
 	}

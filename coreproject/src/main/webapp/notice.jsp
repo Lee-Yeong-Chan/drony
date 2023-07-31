@@ -111,14 +111,15 @@
 								<table class="noticetable">
 									<thead>
 										<tr>
-											<td colspan="3" align="right">
+											<td colspan="4" align="right">
 												<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
 													<span><a href="noticeInsert.jsp">공지 작성하기</a></span>
 												</c:if>
 											</td>
 										</tr>
 										<tr>
-											<td class="co1" style="width: 50%;">제목</td>
+											<td class="co1" style="text-align: center; width: 10%;">순번</td>
+											<td class="co1" style="width: 40%;">제목</td>
 											<td class="co1" style="width: 20%;">작성자</td>
 											<td class="co1" style="width: 30%;">작성일자</td>
 										</tr>
@@ -126,6 +127,7 @@
 									<tbody>
 										<%for(int i=0; i<AllNotice.size(); i++){ %>
 										<tr>
+											<td style="text-align: center;"><%=i+1 %></td>
 											<td><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></td>
 											<td>관리자</td>
 											<td align="right"><%=AllNotice.get(i).getCreated_at() %></td>
