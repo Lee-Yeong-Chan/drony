@@ -45,7 +45,6 @@
 		</section>
 		<!-- Footer -->
 		<%@include file="footer.jsp" %>
-
 	</div>
 
 		<!-- Scripts -->

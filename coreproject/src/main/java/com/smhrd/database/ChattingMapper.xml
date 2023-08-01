@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.database.ChattingMapper">
+	<select id="EachChattingRoom" parameterType="int" resultType="com.smhrd.domain.chatDTO">
+		select * from t_chatting where cr_idx=#{cr_idx} order by created_at
+	</select>
+	<insert id="SubmitChatting" parameterType="com.smhrd.domain.chatDTO">
+		insert into t_chatting(cr_idx, talker, talk, created_at, ch_file) values (#{cr_idx},#{talker},#{talk},sysdate,#{ch_file})
+	</insert>
+</mapper>
