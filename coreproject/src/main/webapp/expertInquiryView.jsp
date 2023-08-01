@@ -47,37 +47,30 @@
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<div id="view" class="mypagetable" style="margin-left: 30px;">
-   									<table class="noticetable" style="height: 180px;">
-   										<tr>
-   											<td style="width: 25%;">작성자</td>
-   											<td class="co3"><%=inquiry.get(0).getexp_id() %></td>
-   										</tr>
-   										<tr>
-   											<td>날짜</td>
-   											<td class="co3"><%=inquiry.get(0).getCreated_at() %></td>
-   										</tr>
-   										<tr>
-   											<td>제목</td>
-   											<td class="co3"><%=inquiry.get(0).getInq_title() %></td>
-   										</tr>
-   										<tr>
-   											<td>첨부파일</td>
-   											<td class="co3"><a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>첨부파일</a></td>
-   										</tr>
-   										<tr style="height: 150px;">
-   											<td>내용</td>
-   											<td class="co3"><%=inquiry.get(0).getInq_content() %></td>
-   										</tr>
-   										<tr>
-	   										<td colspan='2' align="right">
-	   											<button onclick="toggleUpdate()" id="updateButton">수정</button>
-												<button onclick="location.href='deleteExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>'">삭제</button>
-												<button onclick="location.href='expertInquiry.jsp'">목록</button>
-	   										</td>
-	   									</tr>
-   									</table>
-   								</div>
+   								<div id="view">
+   									<table class="inquiryview">
+   										<thead>
+   											<tr>
+   												<td><h1><%=inquiry.get(0).getInq_title() %></h1></td>
+   												<td align="right" style="vertical-align: bottom"><%=inquiry.get(0).getexp_id() %></td>
+   											</tr>
+   										</thead>
+   										<tbody>
+   											<tr>
+   												<td><span>첨부파일<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download><i class="icon solid fa-download"></i></a></span></td>
+   												<td align="right"><span><%=inquiry.get(0).getCreated_at() %></span></td>
+   											</tr>
+   											<tr style="height: 50px;">
+   												<td colspan="2"><span><%=inquiry.get(0).getInq_content() %></span></td>
+   											</tr>
+   										</tbody>
+									</table>
+								</div>
+								<div>
+									<button onclick="toggleUpdate()" id="updateButton">수정</button>
+									<button onclick="location.href='deleteExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>'">삭제</button>
+									<button onclick="location.href='expertInquiry.jsp'">목록</button>
+								</div>
    								
 								<div id="update" class="mypagetable" style="margin-left: 30px;">
 									<form action="updateExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post" enctype="multipart/form-data">

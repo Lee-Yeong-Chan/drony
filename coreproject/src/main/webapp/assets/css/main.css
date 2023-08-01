@@ -3530,7 +3530,7 @@ select {
 	}
 	
 	.noticetable{
-		width: 90%;
+		width: 95%;
 		border-collapse: separate;
 		border-spacing: 0 10px;
 	}
@@ -3540,7 +3540,7 @@ select {
 		border-bottom : solid 2px;
 	}
 	
-	#view>.noticetable tr{
+	.noticetable tr{
 		border-bottom: solid 1px #E7EAE8;
 	}
 	

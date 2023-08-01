@@ -49,12 +49,13 @@
    									<table class="inquiryview">
    										<thead>
    											<tr>
-   												<td colspan="2"><h1><%=inquiry.get(0).getInq_title() %></h1></td>
+   												<td><h1><%=inquiry.get(0).getInq_title() %></h1></td>
+   												<td align="right" style="vertical-align: bottom"><%=inquiry.get(0).getUser_id() %></td>
    											</tr>
    										</thead>
    										<tbody>
    											<tr>
-   												<td><span><a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download>다운로드</a></span></td>
+   												<td><span>첨부파일<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download><i class="icon solid fa-download"></i></a></span></td>
    												<td align="right"><span><%=inquiry.get(0).getCreated_at() %></span></td>
    											</tr>
    											<tr style="height: 50px;">
@@ -71,7 +72,7 @@
 										내용<input type="text" name="content" value="<%=inquiry.get(0).getInq_content()%>">
 									</div>
 									<div>
-										첨부파일<input type="file" name="file" value="<%=inquiry.get(0).getInq_file()%>">
+										<input type="file" name="file" value="<%=inquiry.get(0).getInq_file()%>">
 									</div>
 									<input type="submit" value="수정완료">
 								</form>

@@ -51,40 +51,30 @@
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<div id="view" style="margin-left: 30px; width: 90%">
-   									<table class="noticetable">
-   										<tr>
-   											<td style="width: 25%;">작성자</td>
-   											<td class="co3">관리자</td>
-   										</tr>
-   										<tr>
-   											<td>날짜</td>
-   											<td class="co3"><%=notice.get(0).getCreated_at() %></td>
-   										</tr>
-   										<tr>
-   											<td>제목</td>
-   											<td class="co3"><%=notice.get(0).getNotice_title() %></td>
-   										</tr>
-   										<tr>
-   											<td>첨부파일</td>
-   											<td class="co3"><a href="notice/<%=notice.get(0).getNotice_file()%>" download>첨부파일</a></td>
-   										</tr>
-   										<tr style="height: 150px;">
-   											<td>내용</td>
-   											<td class="co3"><%=notice.get(0).getNotice_content() %></td>
-   										</tr>
+   								<div id="view">
+   									<table class="inquiryview">
+   										<thead>
+   											<tr>
+   												<td colspan="2"><h1><%=notice.get(0).getNotice_title() %></h1></td>
+   											</tr>
+   										</thead>
+   										<tbody>
+   											<tr>
+   												<td><span>첨부파일</span><a href="notice/<%=notice.get(0).getNotice_file()%>" download><i class="icon solid fa-download"></i></a></td>
+   												<td align="right"><span><%=notice.get(0).getCreated_at() %></span></td>
+   											</tr>
+   											<tr style="height: 50px;">
+   												<td colspan="2"><span><%=notice.get(0).getNotice_content() %></span></td>
+   											</tr>
+   										</tbody>
    									</table>
-   									<table>
-	   									<tr>
-	   										<td colspan='2' align="right" style="font-size: 0.8em;">
-	   											<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
-													<button onclick="toggleUpdate()" id="updateButton">수정</button>
-													<button onclick="location.href='deleteNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>'">삭제</button>
-												</c:if>
-												<button onclick="location.href='notice.jsp'">목록</button>
-	   										</td>
-	   									</tr>
-   									</table>
+   									<div>
+   										<c:if test="${(not empty loginUser and loginUser.user_id eq 'admin')or(not empty loginExpert and loginExpert.exp_id eq 'admin')}">
+											<button onclick="toggleUpdate()" id="updateButton">수정</button>
+											<button onclick="location.href='deleteNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>'">삭제</button>
+										</c:if>
+										<button onclick="location.href='notice.jsp'">목록</button>
+   									</div>
    								</div>
    								
 								<div id="update" style="margin-left: 30px;">
