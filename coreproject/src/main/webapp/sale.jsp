@@ -14,6 +14,45 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		.page-nation li{
+		list-style: none;
+	}
+	
+	.page-wrap{
+		text-align:center;
+		font-size:0;
+	}
+	.page-nation{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+	}
+	
+	.page-nation a {
+		display:block;
+		margin:0 3px;
+		float:left;
+		border:1px solid #e6e6e6;
+		width:28px;
+		height:28px;
+		line-height:28px;
+		text-align:center;
+		background-color:#fff;
+		font-size: 13px;
+		color:black;
+		text-decoration:none;
+		font-weight:bold;
+	
+	}
+	
+	.page-nation a:hover{
+		background-color: gray;
+		color:  white;
+	
+		
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -115,10 +154,15 @@
 							</div>
 							
 						</div>
+								<div class="page-wrap">
+									<ul class="page-nation">			
+										<li><a href="/board/list?p=1">1</a></li>
+										<li><a href="/board/list?p=2">2</a></li>
+										<li><a href="/board/list?p=3">3</a></li>
+										<li><a href="/board/list?p=4">4</a></li>
+										<li><a href="/board/list?p=5">5</a></li>
 						
-						
-						
-					</div>
+				   </div>
 				</div>
 			</section>
 		</div>
