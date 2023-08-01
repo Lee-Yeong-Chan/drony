@@ -40,13 +40,13 @@
 		insert into t_drone(dr_model,dr_maker,dr_serial,dr_desc,exp_id) values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{exp_id})
 	</insert>
 	<select id="selectPost" parameterType="String" resultType="com.smhrd.domain.workDTO">
-		select * from t_work where exp_id=#{exp_id}
+		select * from t_work where exp_id=#{exp_id} order by w_idx desc
 	</select>
 	<select id="selectPostToUser" parameterType="String" resultType="int">
-		select count(*) from t_user_work where w_idx=(select w_idx from t_work where exp_id=#{exp_id})
+		select count(tuw.w_idx) from t_work tw left join t_user_work tuw on tw.w_idx=tuw.w_idx where exp_id=#{exp_id} group by tw.w_idx having count(tw.w_idx)>=1 order by tw.w_idx desc
 	</select>
 	<insert id="insertWorkUserMypage" parameterType="com.smhrd.domain.userWorkDTO">
-		insert into t_user_work(w_idx,user_id) values (#{w_idx},#{user_id})
+		insert into t_user_work(w_idx,user_id, created_at) values (#{w_idx},#{user_id},sysdate)
 	</insert>
 	<insert id="insertUserMypage" parameterType="com.smhrd.domain.workDTO">
 		insert into t_work_mypage(w_idx,status_memo,exp_id,created_at) values (#{w_idx},'상담대기',#{exp_id},sysdate)

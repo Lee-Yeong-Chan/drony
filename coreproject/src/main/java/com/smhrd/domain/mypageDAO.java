@@ -153,10 +153,10 @@ public class mypageDAO {
 		}
 		return postList;
 	}
-	public int selectPostToUser(String id) {
-		int cnt=0;
+	public List<Integer> selectPostToUser(String id) {
+		List<Integer> cnt=null;
 		try {
-			cnt=sqlSession.selectOne("selectPostToUser", id);
+			cnt=sqlSession.selectList("selectPostToUser", id);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

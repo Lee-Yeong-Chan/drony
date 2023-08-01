@@ -10,6 +10,7 @@
 	mypageDAO mypageDAO=new mypageDAO();
 	mypageDAO mypageDAO2=new mypageDAO();
 	List <workDTO> allPost=mypageDAO.selectPost(loginExpert.getExp_id());
+	List <Integer> postView=mypageDAO2.selectPostToUser(loginExpert.getExp_id());
 %>
 <html>
 	<head>
@@ -98,7 +99,7 @@
 											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>"><%=allPost.get(i).getW_title()%></a></td>
 											<td><%=allPost.get(i).getCreated_at()%></td>
 											<td><%=allPost.get(i).getW_price()%></td>
-											<td><%=mypageDAO2.selectPostToUser(loginExpert.getExp_id())%></td>
+											<td><%=postView.get(i)%></td>
 											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>">수정</a></td>
 											<td><a href="deletePostCon?w_idx=<%=allPost.get(i).getW_idx()%>&w_kind=<%=allPost.get(i).getW_kind()%>">삭제</a></td>
 										</tr>
