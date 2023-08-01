@@ -140,7 +140,7 @@
    					
    					<!-- 어디로 넣어야하지...  -->
    					<article id="update">
-						<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post">
+						<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post" enctype="multipart/form-data">
 							<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
 							<div>
 								

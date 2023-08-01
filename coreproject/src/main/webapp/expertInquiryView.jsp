@@ -137,7 +137,7 @@
    								</div>
    								
 								<div id="update" class="mypagetable" style="margin-left: 30px;">
-									<form action="updateExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post">
+									<form action="updateExpertInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post" enctype="multipart/form-data">
 										<table class="noticetable" style="height: 180px;">
 											<tr>
    												<td>작성자</td>

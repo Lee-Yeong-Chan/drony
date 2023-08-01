@@ -145,7 +145,7 @@
    								</div>
    								
 								<div id="update" style="margin-left: 30px;">
-									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" method="post">
+									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" method="post" enctype="multipart/form-data">
 										<table class="noticetable" height="180px">
 											<tr>
    												<td>작성자</td>
