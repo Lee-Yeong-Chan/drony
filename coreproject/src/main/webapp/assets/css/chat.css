@@ -21,7 +21,7 @@
 	   .wrap {
 	       padding: 10px 0;
 	       background-color: white;
-	       display: none;
+	       /* display: none; */
 		   width: 500px;
 		   height: 530px;
 		   position: absolute;
@@ -109,7 +109,7 @@
 	   	border: solid 1px #efefef;
 	   	position: absolute;
 	   	bottom: 25px;
-	   	border-radius: 3px;
+	   	border-radius: 5px;
 	   }
 	   
 	   .closebtn{
@@ -126,3 +126,24 @@
 	       right: 5px;
 	       bottom: 1px;
 	   }
+	   
+/* chattest */	   
+	
+	.username{
+		
+	    width: 96%;
+	    padding: 10px;
+	    border-bottom: solid 1px;
+	    position: absolute;
+	    top: 0;
+	    left: 10px;
+
+	}
+	
+	.chat-form{
+		width: 96%;
+	    position: absolute;
+	    bottom: 10px;
+	    right: 10px;
+	}	   
+	   
