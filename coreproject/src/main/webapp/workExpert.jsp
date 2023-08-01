@@ -16,6 +16,17 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/chat.css" />
+		<style type="text/css">
+			#modal_background{
+				display: none;
+			}
+			
+			input[type="submit"] {
+				font-family: "FontAwesome";
+			}
+		</style>
+	
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -110,7 +121,7 @@
 												</form>
 											</td>
 											<td><%=mypageList.get(i).getCreated_at()%></td>
-											<td><button onclick="location.href='.jsp'"><i class="icon solid fa-comments"></i></button>
+											<td><button id="chat" onclick="modalOpen()"><i class="icon solid fa-comments"></i></button>
 												<button onclick="location.href='deleteWorkExpertMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-trash"></i></button></td>
 										</tr>
 										<%	}
@@ -122,8 +133,57 @@
    						</div>
    					</div>
    				</div>
+   				
+   				<!-- 모달창 -->
+   					<div class="wrap">
+   						<div class="closebtn"><button>X</button></div>
+   						<div class="userchat">
+   							<div class="chat ch1">
+					            <div class="icon"><i class="icon solid fa-user"></i></div>
+					            <div class="textbox">안녕하세요. 반갑습니다.</div>
+					        </div>
+					        <div class="chat ch2">
+					            <div class="icon"><span>🍀</span><i class="icon solid fa-user"></i></div>
+					            <div class="textbox">안녕하세요. 친절한효자손입니다. 그동안 잘 지내셨어요?</div>
+					        </div>
+					        <div class="chat ch1">
+					            <div class="icon"><i class="icon solid fa-user"></i></div>
+					            <div class="textbox">아유~ 너무요너무요! 요즘 어떻게 지내세요?</div>
+					        </div>
+					        <div class="chat ch2">
+					            <div class="icon"><span>🍀</span><i class="icon solid fa-user"></i></div>
+					            <div class="textbox">뭐~ 늘 똑같은 하루 하루를 보내는 중이에요. 코로나가 다시 극성이어서 모이지도 못하구 있군요 ㅠㅠ 얼른 좀 잠잠해졌으면 좋겠습니다요!</div>
+					        </div>
+					        <div class="input-text">
+					        	<input type="text" class="text_input" placeholder="메세지를 입력하세요.">
+					    	</div>
+					    	<div class="sub">
+					    		<span class="file"></span>
+					    		<span class="submit"><input type="submit" value="전송"></span>
+					    	</div>
+   						</div>
+   					</div>
+   				
+   				<script>
+   					// 모달 열기
+   					function modalOpen(){
+   						document.querySelector('.wrap').style.display='block';
+   					}
+   					// 모달 끄기
+   					function modalClose(){
+   						document.querySelector('.wrap').style.display='none';
+   						
+   					}
+   					//버튼 클릭리스너 달기
+   					document.querySelector("#chat").addEventListener('click', modalOpen);
+   					document.querySelector(".closebtn").addEventListener('click', modalClose);
+   				</script>
+   				<!-- 모달끝 -->
+   				
    			</div>
    		</section>
+   		
+   		
    		      
 		<!-- Footer -->
 		<%@include file="footer.jsp" %>
