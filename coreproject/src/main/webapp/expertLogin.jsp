@@ -36,9 +36,15 @@
 				
 								<section class="logbutton login-form">
 									<form action="LoginExpertCon" method="post">
-										<input type="text" name="id" class="text-field" placeholder="아이디">
-										<input type="password" name="pw" class="text-field" placeholder="비밀번호">
-										<input type="submit" value="로그인" class="submit-btn">
+										<div>
+											<input type="text" name="id" class="text-field" placeholder="아이디">
+										</div>
+										<div>
+											<input type="password" name="pw" class="text-field" placeholder="비밀번호">
+										</div>
+										<div>
+											<input type="submit" value="로그인" class="login-btn">
+										</div>
 									</form>
 									<div class="links">
 									<a href="expertJoin.jsp">회원가입</a> &nbsp;

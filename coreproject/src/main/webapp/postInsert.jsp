@@ -18,40 +18,9 @@
    		<section id="main">
    			<div class="container">
    				<div class="row">
-   					<div class="col-3 col-12-medium">
-   						<div class="sidebar">
-   							
-   							<!-- Sidebar 시작-->
-   								<ul class="divided">
-		   						<li>
-		   							<article class="box side-info">
-										<h1><a href="pestControl.jsp">방역·방제·살포</a></h1>
-									</article>
-		   						</li>
-		   						<li>
-									<article class="box side-info">
-										<h1><a href="measure.jsp">측량</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="shooting.jsp">촬영</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="transport.jsp">물류·운송</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="etc.jsp">기타</a></h1>
-									</article>
-								</li>
-							</ul>
-   							
-   						</div>
-   					</div>
+   				
+   					<!-- sidebar 시작 -->
+   					<%@include file="fisidebar.jsp" %>
 					<!-- Sidebar 끝-->
    					
    					<div class="col-9 col-12-medium imp-medium">

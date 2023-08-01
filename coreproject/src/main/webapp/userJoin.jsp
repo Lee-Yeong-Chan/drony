@@ -33,22 +33,37 @@
 									</header>
 									<section class="logbutton join-form">
 										<form action="JoinUserCon" method="post" name="joinForm">
-											<b>아이디</b><br>
-											<input type="text" name="id" id="id">
-											<button type="button" id="CheckId" class="checkId">중복확인</button>
-											<p id="result"></p>
-											<br>
-											<b>비밀번호</b><br>
-											<input type="password" name="pw"><br>
-											<b>비밀번호확인</b><br>
-											<input type="password" name="pw_re"><br>
-											<b>이름</b><br>
-											<input type="text" name="name"><br>
-											<b>이메일</b><br>
-											<input type="text" name="email"><br>
-											<b>전화번호</b><br>
-											<input type="text" name="phone"><br>
-											<input class="submit-btn" type="button" value="회원가입" onclick="join()">
+											<div>
+												<b>아이디</b><br>
+												<input type="text" name="id" id="id">
+											</div>
+											<div align="right">
+												<p id="result"></p>
+												<button type="button" id="CheckId" class="checkId">중복확인</button>
+											</div>
+											<div>
+												<b>비밀번호</b><br>
+												<input type="password" name="pw">
+											</div>
+											<div>
+												<b>비밀번호확인</b><br>
+												<input type="password" name="pw_re">
+											</div>
+											<div>
+												<b>이름</b><br>
+												<input type="text" name="name">
+											</div>
+											<div>
+												<b>이메일</b><br>
+												<input type="text" name="email">
+											</div>
+											<div>
+												<b>전화번호</b><br>
+												<input type="text" name="phone">
+											</div>
+											<div>
+												<input class="submit-btn" type="button" value="회원가입" onclick="join()">
+											</div>
 										</form>
 									</section>
 							</div>

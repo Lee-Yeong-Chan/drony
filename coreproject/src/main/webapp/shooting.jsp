@@ -26,38 +26,7 @@
    				<div class="row">
    				
    					<!-- Sidebar row 밑에 위치-->
-   					<div class="col-3 col-12-medium">
-   						<div class="sidebar">
-		   					
-		   					<ul class="divided">
-		   						<li>
-		   							<article class="box side-info">
-										<h1><a href="pestControl.jsp">방역·방제·살포</a></h1>
-									</article>
-		   						</li>
-		   						<li>
-									<article class="box side-info">
-										<h1><a href="measure.jsp">측량</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="shooting.jsp">촬영</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="transport.jsp">물류·운송</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="etc.jsp">기타</a></h1>
-									</article>
-								</li>
-							</ul>
-						</div>
-   					</div>
+   					<%@include file="fisidebar.jsp" %>
    					<!-- 사이드바끝 -->
    					
    					<div class="col-9 col-12-medium imp-medium">
@@ -96,6 +65,7 @@
 									<section class="box feature droneCom">
 										<a href="postDetail.jsp?w_idx=<%=shooting.get(i).getW_idx()%>">
 										<img onerror=this.src="images/camera.png" src="upload/<%=shooting.get(i).getW_img()%>">
+										<p><%=shooting.get(i).getExp_id()%></p>
 										<h5><%=shooting.get(i).getW_title()%></h5>
 										<h6><%=shooting.get(i).getW_price()%>원~</h6>
 										</a>

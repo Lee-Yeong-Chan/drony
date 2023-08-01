@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.expertDTO"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="com.smhrd.domain.workDTO"%>
 <%@page import="java.util.List"%>
@@ -13,22 +14,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 	</head>
-	<style>
-	.css-1nbuyxl {
-    color: rgb(154, 155, 167);
-    font-size: 11px;
-	}
-	.css-kmstd8 {
-    display: flex;
-    width: 214px;
-    flex-direction: column;
-    position: relative;
-    text-decoration: none;
-    .droneCom h5 {
-    text-align: center;
-    margin: 10px 20px 0 20px;
-}
-	</style>
 	<body class="is-preload">
 	
 		<div id="page-wrapper">
@@ -44,39 +29,7 @@
    				<div class="row">
    				
    					<!-- Sidebar row 밑에 위치-->
-   					<div class="col-3 col-12-medium">
-   						<div class="sidebar">
-		   					
-		   					<ul class="divided">
-		   						<li>
-		   							<article class="box side-info">
-										<h1><a href="pestControl.jsp">방역·방제·살포</a></h1>
-									</article>
-		   						</li>
-		   						<li>
-									<article class="box side-info">
-										<h1><a href="measure.jsp">측량</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="shooting.jsp">촬영</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="transport.jsp">물류·운송</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box side-info">
-										<h1><a href="etc.jsp">기타</a></h1>
-									</article>
-								</li>
-							</ul>
-							
-						</div>
-   					</div>
+   					<%@include file="fisidebar.jsp" %>
    					<!-- 사이드바끝 -->
    					
    					
@@ -117,7 +70,7 @@
    									<section class="box feature droneCom">
    										<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
 										<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>"><br>
-										<span class="css-1nbuyxl esrn31v0" style="text-align:left;">방역·방제·살포</span>
+										<p><%=pestControl.get(i).getExp_id()%></p>
 										<h5><%=pestControl.get(i).getW_title()%></h5>
 										<h6><%=pestControl.get(i).getW_price()%>원~</h6>
 										</a>

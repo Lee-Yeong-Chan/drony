@@ -33,31 +33,57 @@
 								</header>
 								<section class="logbutton join-form">
 									<form action="JoinExpertCon" method="post" name="joinForm">
-										<b>아이디</b><br>
-										<input type="text" name="id" id="id"><br>
-										<button type="button" id="CheckId" class="checkId">중복확인</button>
-										<p id="result"></p>
-										<b>비밀번호</b><br>
-										<input type="password" name="pw"><br>
-										<b>비밀번호 확인</b><br>
-										<input type="password" name="pw_re"><br>
-										<b>이름</b><br>
-										<input type="text" name="name"><br>
-										<b>이메일</b><br>
-										<input type="text" name="email"><br>
-										<b>전화번호</b><br>
-										<input type="text" name="phone"><br>
-										<b>사업자번호</b><br>
-										<input type="text" name="bno"><br>
-										<b>업체명</b><br>
-										<input type="text" name="company_name"><br>
-										<b>업체주소</b><br>
-										<input type="text" name="company_address"><br>
-										<b>작업지역</b><br>
-										<input type="text" name="working_area"><br>
-										<b>분야</b><br>
-										<input type="text" name="working_field"><br>
-										<input type="button" value="회원가입" class="submit-btn"  onclick="join()">
+										<div>
+											<b>아이디</b><br>
+											<input type="text" name="id" id="id">
+										</div>
+										<div align="right">
+											<p id="result"></p>
+											<button type="button" id="CheckId" class="checkId">중복확인</button>
+										</div>
+										<div>
+											<b>비밀번호</b><br>
+										<input type="password" name="pw">
+										</div>
+										<div>
+											<b>비밀번호 확인</b><br>
+											<input type="password" name="pw_re">
+										</div>
+										<div>
+											<b>이름</b><br>
+											<input type="text" name="name">
+										</div>
+										<div>
+											<b>이메일</b><br>
+											<input type="text" name="email">
+										</div>
+										<div>
+											<b>전화번호</b><br>
+											<input type="text" name="phone">
+										</div>
+										<div>
+											<b>사업자번호</b><br>
+											<input type="text" name="bno">
+										</div>
+										<div>
+											<b>업체명</b><br>
+											<input type="text" name="company_name">
+										</div>
+										<div>
+											<b>업체주소</b><br>
+											<input type="text" name="company_address">
+										</div>
+										<div>
+											<b>작업지역</b><br>
+											<input type="text" name="working_area">
+										</div>
+										<div>
+											<b>분야</b><br>
+											<input type="text" name="working_field">
+										</div>
+										<div>
+											<input type="button" value="회원가입" class="submit-btn"  onclick="join()">
+										</div>
 									</form>
 								</section>
 								

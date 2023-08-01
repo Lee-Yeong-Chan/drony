@@ -33,10 +33,10 @@
 						<section class="box highlight">
 							<ul class="special">
 								<li><a href="pestControl.jsp" class="icon solid"><img src="images/farm.png"><p>방역·방제·살포</p></a></li>
-								<li><a href="measure.jsp" class="icon solid"><img src="images/measure.png"><p>측량</p></a></li>
-								<li><a href="shooting.jsp" class="icon solid"><img src="images/camera.png"><p>촬영</p></a></li>
+								<li><a href="measure.jsp" class="icon solid"><img src="images/measure.png"><p>공간정보·측량</p></a></li>
+								<li><a href="shooting.jsp" class="icon solid"><img src="images/camera.png"><p>영상촬영·편집</p></a></li>
 								<li><a href="transport.jsp" class="icon solid"><img src="images/delivery.png"><p>물류·운송</p></a></li>
-								<li><a href="etc.jsp" class="icon solid"><img src="images/hobbydrone.png"><p>기타</p></a></li>
+								<!-- <li><a href="etc.jsp" class="icon solid"><img src="images/hobbydrone.png"><p>기타</p></a></li> -->
 							</ul>
 						</section>
 					</div>

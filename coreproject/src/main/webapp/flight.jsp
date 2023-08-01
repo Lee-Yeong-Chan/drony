@@ -11,17 +11,34 @@
 <body class="homepage is-preload">
 	<div id="page-wrapper">
 	
-	<!-- Header -->
+		<!-- Header -->
 		<%@include file="header.jsp" %> 
 
-		<!-- Banner -->
-		
-
-		<!-- Main -->
-		
-
-		<!-- Footer -->
-		<%@include file="footer.jsp" %>
+		<section id="main">
+			<div class="container">
+				<div class="row">
+					<!-- sidebar -->
+					<%@include file="boardsidebar.jsp" %>
+					<!-- sidebar끝 -->
+					
+					<!-- Main -->
+					<div class="col-9 col-12-medium imp-medium">
+							<div class="content">
+								<article class="box page-content">
+									<header>
+										<h3>비행 지도</h3>
+									</header>
+								</article>
+							</div>
+							<div>
+								
+								
+								
+							</div>
+						</div>
+				</div>
+			</div>
+		</section>
 	</div>
 
 		<!-- Scripts -->

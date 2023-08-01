@@ -82,12 +82,12 @@
 		   						</li>
 		   						<li>
 									<article class="box side-info">
-										<h1><a href="measure.jsp">측량</a></h1>
+										<h1><a href="measure.jsp">공간정보·측량</a></h1>
 									</article>
 								</li>
 								<li>
 									<article class="box side-info">
-										<h1><a href="shooting.jsp">촬영</a></h1>
+										<h1><a href="shooting.jsp">영상촬영·편집</a></h1>
 									</article>
 								</li>
 								<li>
@@ -95,11 +95,11 @@
 										<h1><a href="transport.jsp">물류·운송</a></h1>
 									</article>
 								</li>
-								<li>
+								<!-- <li>
 									<article class="box side-info">
 										<h1><a href="etc.jsp">기타</a></h1>
 									</article>
-								</li>
+								</li> -->
 							</ul>
 							
 						</div>
