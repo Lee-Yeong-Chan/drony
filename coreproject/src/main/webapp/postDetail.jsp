@@ -47,6 +47,16 @@
 			#update{
 				display: none;
 			}
+			.css-1nbuyxl {
+    			color: rgb(154, 155, 167);
+    			font-size: 11px;
+    			font-family: 'Metro Sans',sans-serif;
+    			box-sizing: border-box;
+			}
+			
+			
+			
+		
 		</style>
 	</head>
 	<body class="is-preload">
@@ -110,7 +120,7 @@
 								<div> <img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
 								<section class="post-content">
 									<div><%=selectPost.get(0).getW_content() %></div>
-									<div><a href="upload/<%=selectPost.get(0).getW_file() %>" download>첨부파일</a></div>
+									<div><span>첨부파일</span><a href="upload/<%=selectPost.get(0).getW_file() %>" download><i class="icon solid fa-download"></i></a></div>
 									<div><%=selectPost.get(0).getW_price() %></div>
 									<div><%=selectPost.get(0).getExp_id()%></div>
 									<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>

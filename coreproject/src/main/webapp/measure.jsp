@@ -99,7 +99,7 @@
 										<a href="postDetail.jsp?w_idx=<%=measure.get(i).getW_idx()%>">
 										<img onerror=this.src="images/measure.png" src="upload/<%=measure.get(i).getW_img()%>">
 										<h5><%=measure.get(i).getW_title()%></h5>
-										<h6><%=measure.get(i).getW_price()%></h6>							
+										<h6><%=measure.get(i).getW_price()%>원~</h6>							
 										</a>	
 									</section>			
 								</div>

@@ -13,6 +13,22 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 	</head>
+	<style>
+	.css-1nbuyxl {
+    color: rgb(154, 155, 167);
+    font-size: 11px;
+	}
+	.css-kmstd8 {
+    display: flex;
+    width: 214px;
+    flex-direction: column;
+    position: relative;
+    text-decoration: none;
+    .droneCom h5 {
+    text-align: center;
+    margin: 10px 20px 0 20px;
+}
+	</style>
 	<body class="is-preload">
 	
 		<div id="page-wrapper">
@@ -100,7 +116,8 @@
    								<div class="col-3 col-6-medium col-12-small">
    									<section class="box feature droneCom">
    										<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
-										<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>">
+										<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>"><br>
+										<span class="css-1nbuyxl esrn31v0" style="text-align:left;">방역·방제·살포</span>
 										<h5><%=pestControl.get(i).getW_title()%></h5>
 										<h6><%=pestControl.get(i).getW_price()%>원~</h6>
 										</a>
