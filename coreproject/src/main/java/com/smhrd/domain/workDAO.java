@@ -123,6 +123,7 @@ public class workDAO {
 		int cnt=0;
 		try {
 			if(update.getW_title()!=null) {
+				System.out.println(update.getW_title());
 				cnt+=sqlSession.update("updateWorkTitle", update);
 			}
 			if(update.getW_content()!=null) {

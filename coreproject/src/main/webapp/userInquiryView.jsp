@@ -126,12 +126,12 @@
 							
 							<div id="update">
 								<form action="updateUserInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post" enctype="multipart/form-data">
-									<h1> 제목<input type="text" name="title" placeholder="<%=inquiry.get(0).getInq_title()%>"></h1>
+									<h1> 제목<input type="text" name="title" value="<%=inquiry.get(0).getInq_title()%>"></h1>
 									<div>
-										내용<input type="text" name="content" placeholder="<%=inquiry.get(0).getInq_content()%>">
+										내용<input type="text" name="content" value="<%=inquiry.get(0).getInq_content()%>">
 									</div>
 									<div>
-										첨부파일<input type="file" name="file" placeholder="<%=inquiry.get(0).getInq_file()%>">
+										첨부파일<input type="file" name="file" value="<%=inquiry.get(0).getInq_file()%>">
 									</div>
 									<input type="submit" value="수정완료">
 								</form>

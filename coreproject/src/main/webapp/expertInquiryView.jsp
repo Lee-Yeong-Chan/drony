@@ -145,15 +145,15 @@
    											</tr>
 											<tr>
 												<td>제목</td>
-												<td><input type="text" name="title" placeholder="<%=inquiry.get(0).getInq_title()%>"></td>
+												<td><input type="text" name="title" value="<%=inquiry.get(0).getInq_title()%>"></td>
 											</tr>
 											<tr>
 												<td>첨부파일</td>
-												<td><input type="text" name="file" placeholder="<%=inquiry.get(0).getInq_file()%>"></td>
+												<td><input type="text" name="file" value="<%=inquiry.get(0).getInq_file()%>"></td>
 											</tr>
 											<tr>
 												<td>내용</td>
-												<td><textarea rows="6" cols="" name="content" placeholder="<%=inquiry.get(0).getInq_content()%>"></textarea></td>
+												<td><textarea rows="6" cols="" name="content" value="<%=inquiry.get(0).getInq_content()%>"></textarea></td>
 											</tr>
 											<tr>
 												<td colspan='2' style="text-align:right;"><input type="submit" value="수정"></td>

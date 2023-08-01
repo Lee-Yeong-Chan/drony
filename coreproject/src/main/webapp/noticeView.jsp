@@ -153,15 +153,15 @@
    											</tr>
 											<tr>
 												<td>제목</td>
-												<td><input type="text" name="title" placeholder="<%=notice.get(0).getNotice_title()%>"></td>
+												<td><input type="text" name="title" value="<%=notice.get(0).getNotice_title()%>"></td>
 											</tr>
 											<tr>
 												<td>첨부파일</td>
-												<td><input type="text" name="file" placeholder="<%=notice.get(0).getNotice_file()%>"></td>
+												<td><input type="text" name="file" value="<%=notice.get(0).getNotice_file()%>"></td>
 											</tr>
 											<tr>
 												<td>내용</td>
-												<td><textarea rows="7" cols="" name="content" placeholder="<%=notice.get(0).getNotice_content()%>"></textarea></td>
+												<td><textarea rows="7" cols="" name="content" value="<%=notice.get(0).getNotice_content()%>"></textarea></td>
 											</tr>
 											<tr>
 												<td colspan='2' style="text-align:right;"><input type="submit" value="수정"></td>

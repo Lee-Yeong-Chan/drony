@@ -141,7 +141,7 @@
    					<!-- 어디로 넣어야하지...  -->
    					<article id="update">
 						<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post" enctype="multipart/form-data">
-							<h1> 제목 : <input type="text" name="title" placeholder="<%=selectPost.get(0).getW_title()%>"></h1>
+							<h1> 제목 : <input type="text" name="title" value="<%=selectPost.get(0).getW_title()%>"></h1>
 							<div>
 								
 								<div> 분야 : 
@@ -155,9 +155,9 @@
 									</select>
 								</div>
 								<div> 이미지 : <input type="file" name="img"> </div>
-								<div> 내용 : <input type="text" name="content" placeholder="<%=selectPost.get(0).getW_content()%>"></div>
+								<div> 내용 : <input type="text" name="content" value="<%=selectPost.get(0).getW_content()%>"></div>
 								<div> 첨부파일 : <input type="file" name="file"></div>
-								<div> 단가 : <input type="text" name="price" placeholder="<%=selectPost.get(0).getW_price()%>"></div>
+								<div> 단가 : <input type="text" name="price" value="<%=selectPost.get(0).getW_price()%>"></div>
 							</div>
 							<input type="submit" value="수정완료">
 						</form>
