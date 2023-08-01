@@ -171,8 +171,46 @@ public class mypageDAO {
 		int cnt=0;
 		try {
 			cnt1=sqlSession.insert("insertWorkUserMypage", insert);
-			cnt2=sqlSession.insert("insertUserMypage", workDTO);
+			cnt2=sqlSession.insert("insertUserMypage", workDTO);	
 			cnt=cnt1*cnt2;
+			if(cnt>0) {
+				sqlSession.commit();
+			}
+			else {
+				sqlSession.rollback();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	public int insertWelcomeChatting(userWorkDTO insert) {
+		int cnt=0;
+		try {
+			cnt=sqlSession.insert("insertWelcomeChatting", insert);	
+			if(cnt>0) {
+				sqlSession.commit();
+			}
+			else {
+				sqlSession.rollback();
+			}
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}
+	public int selectRecentUserMypage() {
+		int cnt=0;
+		try {
+			cnt=sqlSession.selectOne("selectRecentUserMypage");	
 			if(cnt>0) {
 				sqlSession.commit();
 			}

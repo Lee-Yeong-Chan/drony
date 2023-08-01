@@ -12,7 +12,6 @@
 	mypageDAO dao=new mypageDAO();
 	List<mypageDTO> mypageList= dao.selectExpertMypage(loginExpert.getExp_id());
 	chatDAO chatDAO=new chatDAO();
-	List<chatDTO> chattingList=chatDAO.selectEachChattingRoom(tuw_idx);
 %>
 <html>
 	<head>
@@ -124,7 +123,7 @@
 													<% session.setAttribute("updateStatus_idx", mypageList.get(i).getStatus_idx());%>
 												</form>
 											</td>
-											<td><%=mypageList.get(i).getCreated_at()%></td>
+											<td><%=mypageList.get(i).getCreated_at().substring(0,mypageList.get(i).getCreated_at().length()-2)%></td>
 											<td><button id="chat" onclick="modalOpen()"><i class="icon solid fa-comments"></i></button>
 												<button onclick="location.href='deleteWorkExpertMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-trash"></i></button></td>
 										</tr>
@@ -149,7 +148,7 @@
 					        </div>
 					        
 					        <div class="input-text">
-					        	<input type="text" class="text_input" placeholder="메세지를 입력하세요.">
+					        	<input type="text" class="text_input" placeholder="메세지를 입력하세요." name="chatText">
 					    	</div>
 					    	<div class="sub">
 					    		<span class="file"></span>

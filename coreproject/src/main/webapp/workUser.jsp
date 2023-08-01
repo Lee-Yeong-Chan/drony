@@ -86,8 +86,8 @@
 											<td><%=mypageList.get(i).getStatus_memo()%></td>
 											<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
 											<td>
-											<button onclick="location.href='.jsp'">채팅</button>
-											<button onclick="location.href='deleteWorkUserMypageCon?w_idx=<%=mypageList.get(i).getW_idx()%>'">삭제</button>
+											<button onclick="location.href='chattingRoom.jsp?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">채팅</button>
+											<button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">삭제</button>
 										</tr>
 										<%	}
 										}%>

@@ -6,10 +6,10 @@ import com.smhrd.database.SqlSessionManager;
 public class chatDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
-	public List<chatDTO> selectEachChattingRoom(int cr_idx) {
+	public List<chatDTO> selectEachChattingRoom(int tuw_idx) {
 		List<chatDTO> eachRoom=null;
 		try {
-			eachRoom=sqlSession.selectList("EachChattingRoom", cr_idx);
+			eachRoom=sqlSession.selectList("EachChattingRoom", tuw_idx);
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -22,7 +22,12 @@ public class chatDAO {
 	public int submit(chatDTO chatDTO) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("SubmitChatting", chatDTO);
+			if(chatDTO.getCh_file()!=null) {
+				cnt+=sqlSession.insert("SubmitChattingFile", chatDTO);
+			}
+			else {
+				cnt+=sqlSession.insert("SubmitChattingEmpty", chatDTO);
+			}
 			if(cnt>0) {
 				sqlSession.commit();
 			}

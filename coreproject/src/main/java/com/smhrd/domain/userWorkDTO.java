@@ -3,6 +3,7 @@ public class userWorkDTO {
 	private int tuw_idx;
 	private int w_idx;
 	private String user_id;
+	private String created_at;
 	public userWorkDTO(int w_idx, String user_id) {
 		super();
 		this.w_idx = w_idx;
@@ -11,6 +12,12 @@ public class userWorkDTO {
 	public userWorkDTO(int tuw_idx) {
 		super();
 		this.tuw_idx = tuw_idx;
+	}
+	public String getCreated_at() {
+		return created_at;
+	}
+	public void setCreated_at(String created_at) {
+		this.created_at = created_at;
 	}
 	public int getTuw_idx() {
 		return tuw_idx;

@@ -54,4 +54,7 @@
 	<delete id="deleteWorkUserMypage" parameterType="int">
 		delete from t_user_work where tuw_idx=#{tuw_idx}
 	</delete>
+	<select id="selectRecentUserMypage" resultType="int">
+		select max(tuw_idx) from t_user_work
+	</select>
 </mapper>

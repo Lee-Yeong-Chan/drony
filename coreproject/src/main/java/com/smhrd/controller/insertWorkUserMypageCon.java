@@ -22,10 +22,15 @@ public class insertWorkUserMypageCon extends HttpServlet {
 		workDTO workDTO=new workDTO(w_idx,exp_id);
 		userWorkDTO userWorkDTO=new userWorkDTO(w_idx,user_id);
 		mypageDAO mypageDAO=new mypageDAO();
-		int cnt=mypageDAO.insertWorkUserMypage(userWorkDTO, workDTO);
+		int cnt1=mypageDAO.insertWorkUserMypage(userWorkDTO, workDTO);
+		mypageDAO mypageDAO2=new mypageDAO();
+		mypageDAO mypageDAO3=new mypageDAO();
+		userWorkDTO.setTuw_idx(mypageDAO2.selectRecentUserMypage());
+		int cnt2=mypageDAO3.insertWelcomeChatting(userWorkDTO);
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
+		int cnt=cnt1*cnt2;
 		if(cnt>0) {
 			out.println("<script>alert('의뢰 신청 완료'); location.href='workUser.jsp';</script>");
 		}

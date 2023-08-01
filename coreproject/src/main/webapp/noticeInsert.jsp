@@ -92,7 +92,7 @@
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<div id="insert" class="mypagetable" style="margin-left: 30px;">
    								
-   								<form action="insertNoticeCon" method="post">
+   								<form action="insertNoticeCon" method="post" enctype="multipart/form-data">
    									<table class="noticetable" height="180px">
    										<tr>
    											<td>제목</td>
