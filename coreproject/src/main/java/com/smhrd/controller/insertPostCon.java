@@ -29,6 +29,10 @@ public class insertPostCon extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
+		int price=Integer.valueOf(request.getParameter("price"));
+		HttpSession session=request.getSession();
+		String kind=request.getParameter("w_kind");
+		String exp_id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
 		Collection<Part> parts=request.getParts();
 		String img="", fi="";
 		int j=1;
@@ -37,8 +41,8 @@ public class insertPostCon extends HttpServlet {
 				continue;
 			}
 			String originName = file.getSubmittedFileName();
-			if (!"".equals(originName)){
-				continue;
+			if ("".equals(originName)){
+				break;
 			}
 			InputStream fis = file.getInputStream();
 			String realPath = request.getServletContext().getRealPath("/upload");
@@ -59,10 +63,6 @@ public class insertPostCon extends HttpServlet {
 	        fos.close();
 	        j++;
 		}
-		int price=Integer.valueOf(request.getParameter("price"));
-		HttpSession session=request.getSession();
-		String kind=request.getParameter("w_kind");
-		String exp_id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
 		workDTO insert=new workDTO(title,content,fi,exp_id,price,kind,img);
 		workDAO postDAO=new workDAO();
 		int cnt=postDAO.insertWork(insert);

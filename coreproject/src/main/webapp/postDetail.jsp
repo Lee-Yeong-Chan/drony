@@ -131,7 +131,7 @@
 											</tr>
 											<tr>
 												<td>이미지업로드</td>
-												<td><input type="file" name="img"></td>
+												<td><input type="file" name="file"></td>
 											</tr>
 											<tr>
 												<td>첨부파일</td>

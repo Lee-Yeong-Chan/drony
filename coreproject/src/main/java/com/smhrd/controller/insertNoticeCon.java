@@ -24,7 +24,7 @@ public class insertNoticeCon extends HttpServlet {
 		String originName = file.getSubmittedFileName();
 		if (!"".equals(originName)) {
 			InputStream fis = file.getInputStream();
-			String realPath = request.getServletContext().getRealPath("/inquiry");
+			String realPath = request.getServletContext().getRealPath("/notice");
 			String filePath = realPath + File.separator + originName; 
 			FileOutputStream fos = new FileOutputStream(filePath);
 			byte[] buf = new byte[1024];
