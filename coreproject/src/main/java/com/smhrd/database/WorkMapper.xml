@@ -36,6 +36,9 @@
 	<update id="updateWorkPrice" parameterType="com.smhrd.domain.workDTO">
 		update t_work set w_price=#{w_price} where w_idx=#{w_idx}
 	</update>
+	<update id="updateWorkImg" parameterType="com.smhrd.domain.workDTO">
+		update t_work set w_img=#{w_img} where w_idx=#{w_idx}
+	</update>	
 	<delete id="deleteWork">
 		delete from t_work where w_idx=#{w_idx}
 	</delete>

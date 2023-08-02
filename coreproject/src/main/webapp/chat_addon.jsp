@@ -12,10 +12,10 @@
 <body>
     <!-- 로그인한 상태일 경우와 비로그인 상태일 경우의 chat_id설정 -->
     <c:if test="${(login.id ne '') and !(empty login.id)}">
-        <input type="hidden" value='${login.id }' id='chat_id' />
+        <input type="text" value='${login.id }' id='chat_id' />
     </c:if>
     <c:if test="${(login.id eq '') or (empty login.id)}">
-        <input type="hidden" value='<%=session.getId().substring(0, 6)%>'id='chat_id' />
+        <input type="text" value='<%=session.getId().substring(0, 6)%>'id='chat_id' />
     </c:if>
     <!--     채팅창 -->
     <div id="_chatbox" style="display: none">
