@@ -36,13 +36,16 @@
    							<!-- Content -->
    							<article class="box page-content">
    								<header>
-									<h3>운송</h3>
+									<h3>물류·운송</h3>
 								</header>
 							</article>
 						</div>
-						<form action="transport.jsp" method="get">
-   							<input type="text" placeholder="검색어 입력" name="searchText">
-   							<button type="submit" value="검색">검색</button>		
+						<!-- 검색창 -->
+   						<form action="transport.jsp" method="get">
+   							<div class="searchfi">
+   								<input type="text" placeholder="검색어 입력" name="searchText">
+   								<button type="submit" value="검색">검색</button>
+   							</div>
    						</form>
    						<%
 							workDAO workDAO=new workDAO();
@@ -64,7 +67,7 @@
 							<div class="row comlist workfield">
    								<%for(int i=0;i<transport.size();i++){ %>
    								<div class="col-3 col-6-medium col-12-small">
-   									<section class="box feature droneCom">
+   									<section class="box feature">
    										<a href="postDetail.jsp?w_idx=<%=transport.get(i).getW_idx()%>">
 										<img onerror=this.src="images/farm.png" src="upload/<%=transport.get(i).getW_img()%>">
 										<p><%=transport.get(i).getExp_id()%></p>

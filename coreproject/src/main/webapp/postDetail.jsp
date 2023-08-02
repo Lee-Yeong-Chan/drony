@@ -78,21 +78,24 @@
    					<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    					
    					<!-- 게시글 -->
-   					<article id="view">
-   					<div class="col-4 col-12-medium imp-medium">
-   						<div class="content">
-   							<!-- Content -->
-   							<article class="box page-content">
-   								<article id="view" class="post">
-   								<h1><%=selectPost.get(0).getW_title()%></h1>
-								<div> <img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
+   					<div class="col-8 col-12-medium imp-medium">
+						<!-- Content -->
+						<article class="box page-content">
+							<article id="view" class="postDetail">
+								<h1><%=selectPost.get(0).getW_title()%></h1>
+								<div class="posthead">
+									<div class="id"><span><%=selectPost.get(0).getExp_id()%></span></div>
+									<div class="date"><span style="text-align: right;"><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></span></div>
+								</div>
+								<div class="file"><span>첨부파일</span><a href="upload/<%=selectPost.get(0).getW_file() %>" download><i class="icon solid fa-download"></i></a></div>
+								<div class="postimg"><img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
+								
 								<section class="post-content">
+									
+									<div><b>단가 : </b><%=selectPost.get(0).getW_price() %>원</div>	
 									<div><%=selectPost.get(0).getW_content() %></div>
-									<div><span>첨부파일</span><a href="upload/<%=selectPost.get(0).getW_file() %>" download><i class="icon solid fa-download"></i></a></div>
-									<div><%=selectPost.get(0).getW_price() %></div>
-									<div><%=selectPost.get(0).getExp_id()%></div>
-									<div><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></div>
 								</section>
+								
 								<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
 									<button onclick="toggleUpdate()" id="updateButton">수정</button>
 									<button onclick="location.href='deletePostCon?w_idx=<%=selectPost.get(0).getW_idx()%>&w_kind=<%=selectPost.get(0).getW_kind()%>'">삭제</button>
@@ -101,55 +104,81 @@
 									<button onclick="location.href='insertWorkUserMypageCon?w_idx=<%=selectPost.get(0).getW_idx()%>&exp_id=<%=selectPost.get(0).getExp_id()%>'">의뢰하기</button>
 								</c:if>
 								<button onclick="location.href='<%=y %>.jsp'">목록</button>
-   							</article>
-   						</div>
+							</article>
+							
+							
+							<!-- postDetail 수정부분 -->
+							<article id="update">
+								<div>
+									<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post" enctype="multipart/form-data">
+										<table class="noticetable">
+											<tr>
+												<td>제목</td>
+												<td><input type="text" name="title" value="<%=selectPost.get(0).getW_title()%>"></td>
+											</tr>
+											<tr>
+												<td>분야</td>
+												<td>
+													<select name="w_kind">
+													<option value="">선택</option>
+													<option value="P">방역·방제·살포</option>
+													<option value="M">측량</option>
+													<option value="S">촬영</option>
+													<option value="T">물류·운송</option>
+													<option value="E">기타</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td>이미지업로드</td>
+												<td><input type="file" name="img"></td>
+											</tr>
+											<tr>
+												<td>첨부파일</td>
+												<td><input type="file" name="file"></td>
+											</tr>
+											<tr>
+												<td>단가</td>
+												<td><input type="text" name="price" value="<%=selectPost.get(0).getW_price()%>"></td>
+											</tr>
+											<tr>
+												<td>내용</td>
+												<td><textarea type="text" name="content" value="<%=selectPost.get(0).getW_content()%>"></textarea></td>
+											</tr>
+											<tr style="text-align: right;">
+												<td colspan="2"><input type="submit" value="수정완료"></td>
+											</tr>
+										</table>
+									</form>
+								</div>
+									
+								<!-- Scripts -->
+								<script>
+									function toggleUpdate() {
+										const update = document.getElementById('update');
+										const view = document.getElementById('view');
+										const updateButton = document.getElementById('updateButton');
+										if(update.style.display !== 'none') {
+											update.style.display = 'none';
+											view.style.display='block';
+											updateButton.innerText='수정';
+										}
+										else {
+											update.style.display = 'block';
+											view.style.display='none';
+											updateButton.innerText='돌아가기';
+										}
+									}
+								</script>
+							</article>
+							
+							
+						</article>	
    					</div>
-   					</article>
+   					
    					
    					<!-- 어디로 넣어야하지...  -->
-   					<article id="update">
-						<form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post" enctype="multipart/form-data">
-							<h1> 제목 : <input type="text" name="title" value="<%=selectPost.get(0).getW_title()%>"></h1>
-							<div>
-								
-								<div> 분야 : 
-									<select name="w_kind">
-										<option value="">선택</option>
-										<option value="P">방역·방제·살포</option>
-										<option value="M">측량</option>
-										<option value="S">촬영</option>
-										<option value="T">물류·운송</option>
-										<option value="E">기타</option>
-									</select>
-								</div>
-								<div> 이미지 : <input type="file" name="img"> </div>
-								<div> 내용 : <input type="text" name="content" value="<%=selectPost.get(0).getW_content()%>"></div>
-								<div> 첨부파일 : <input type="file" name="file"></div>
-								<div> 단가 : <input type="text" name="price" value="<%=selectPost.get(0).getW_price()%>"></div>
-							</div>
-							<input type="submit" value="수정완료">
-						</form>
-							
-							<!-- Scripts -->
-						<script>
-							function toggleUpdate() {
-								const update = document.getElementById('update');
-								const view = document.getElementById('view');
-								const updateButton = document.getElementById('updateButton');
-								if(update.style.display !== 'none') {
-									update.style.display = 'none';
-									view.style.display='block';
-									updateButton.innerText='수정';
-								}
-								else {
-									update.style.display = 'block';
-									view.style.display='none';
-									updateButton.innerText='돌아가기';
-								}
-							}
-						</script>
-							
-					</article>
+   					
    					
    		  						
    			<!-- 여기까지 -->				

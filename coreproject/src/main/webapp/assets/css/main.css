@@ -360,6 +360,9 @@ select {
 		
 		.row.workfield > .col-3.col-12-small{
 			background-image: none;
+			width: 100%;
+			height: 350px;
+			margin: 0;
 		}
 		
 		.row > .col-3.col-12-small{
@@ -782,7 +785,7 @@ select {
 				}
 
 					.row.gtr-200 > * {
-						padding: 50px 0 0 0;
+						padding: 25px 0 0 0;
 					}
 
 					.row.gtr-200.gtr-uniform {
@@ -2044,7 +2047,7 @@ select {
 		padding-left: 0;
 		cursor: default;
 		position: relative;
-		margin: -2em 0 4em -2em;
+		/* margin: -2em 0 4em -2em; */
 	}
 
 		ul.special li {
@@ -3530,7 +3533,8 @@ select {
 	}
 	
 	.noticetable{
-		width: 95%;
+		width: 90%;
+		height: 180%;
 		border-collapse: separate;
 		border-spacing: 0 10px;
 	}
@@ -3544,9 +3548,11 @@ select {
 		border-bottom: solid 1px #E7EAE8;
 	}
 	
-	.box.page-content>#view img{
+	
+	
+	/* .box.page-content>#view img{
 		width: 90%;
-	}
+	} */
 	
 	.noticetable td.co3{
 		border: solid 1px #E7EAE8;
@@ -3557,25 +3563,60 @@ select {
 		font-size: 20px;
 		font-weight: 700;
 		padding: 10px;
-		border-bottom: solid 1px #E7EAE8;
+		border-bottom: solid 1px;
 	}
 	
 	#view>div>img{
-		position: relative;
-		left: 30px;
+		width: 250px;
+		height: 250px;
 	}
 	
-	#view.post{
-		border: solid 1px #E7EAE8;
-		
+	
+	.posthead{
+		display: flex;
+		border-bottom: solid 1px #E7EAE8;
+		margin: 0 10px 0 10px;
 	}
+	
+	.posthead>.id{
+		width: 25%;
+	}
+	
+	.posthead>.date{
+		width: 75%;
+		text-align: right;
+	}
+	
+	.file{
+		margin: 0 10px 0 10px;
+		border-bottom: solid 1px #E7EAE8;
+	}
+	
 	
 	.box.page-content .post-content{
-		margin: 0;
+		margin: 10px 0 10px 0;
 		padding: 10px;
 	}
 	
+	.postimg{
+		margin: 20px 20px 0 20px;
+		border-bottom: solid 1px #E7EAE8;
+	}
+	
 	/* 작업 분야 */
+	
+	.searchfi{
+		display: flex;
+		text-algin: center;
+		
+	}
+	
+	.searchfi input[type="text"]{
+		width: 70%;
+		margin-left: 70px;
+		margin-right: 5px;
+	}
+	
 	
 	/* .pest img {
 		width: 100px;
@@ -3584,24 +3625,23 @@ select {
 	/* 드론 업체정보 */
 	.droneCom img {
 		width: 95%;
-		
 		border: solid 1px #E7EAE8;
 		border-radius: 5px;
 	}
 	
-	 .droneCom p{
+	 .workfield p{
 		text-align: left;
 		font-size: 0.8em;
 		margin: 0 0.6em;
 		color: #71779f;
 	} 
 	
-	.droneCom h5{
+	.workfield h5{
 		text-align: left;
 		margin: 0 20px 0 20px;
 	}
 	
-	.droneCom h6{
+	.workfield h6{
 		text-align: right;
 		margin: 0 20px;
 		font-weight: 500;
@@ -3621,6 +3661,9 @@ select {
 	}
 	
 	.workfield img{
-		width: 90%;
+		width: 180px;
+		height: 180px;
+		border: solid 1px #E7EAE8;
+		border-radius: 5px;
 	}
 	

@@ -23,7 +23,7 @@
    					<%@include file="fisidebar.jsp" %>
 					<!-- Sidebar 끝-->
    					
-   					<div class="col-9 col-12-medium imp-medium">
+   					<div class="col-8 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
    							<article class="box page-content">
@@ -32,9 +32,9 @@
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<div id="insert" class="mypagetable" style="margin-left: 30px;">
+   								<div id="insert" class="mypagetable">
    									<form action="insertPostCon" method="post" enctype="multipart/form-data">
-	   									<table class="noticetable" height="180px">
+	   									<table class="noticetable">
 	   										<tr>
 	   											<td>제목</td>
 	   											<td><input type="text" name="title"></td>

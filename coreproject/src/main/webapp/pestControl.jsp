@@ -39,13 +39,17 @@
    							<!-- Content -->
    							<article class="box page-content">
    								<header>
-   									<h3>방역 방제 농업</h3>
+   									<h3>방역·방제·살포</h3>
    								</header>
    							</article>
    						</div>
+   						
+   						<!-- 검색창 -->
    						<form action="pestControl.jsp" method="get">
-   							<input type="text" placeholder="검색어 입력" name="searchText">
-   							<button type="submit" value="검색">검색</button>		
+   							<div class="searchfi">
+   								<input type="text" placeholder="검색어 입력" name="searchText">
+   								<button type="submit" value="검색">검색</button>
+   							</div>
    						</form>
    						<%
 							workDAO workDAO=new workDAO();
@@ -64,10 +68,10 @@
 									<span><a href='postInsert.jsp'>글 작성하기</a></span>
 								</div>
 							</c:if>
-   							<div class="row comlist workfield">
+   							<div class="row comlist  workfield">
    								<%for(int i=0;i<pestControl.size();i++){ %>
    								<div class="col-3 col-6-medium col-12-small">
-   									<section class="box feature droneCom">
+   									<section class="box feature">
    										<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
 										<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>"><br>
 										<p><%=pestControl.get(i).getExp_id()%></p>
