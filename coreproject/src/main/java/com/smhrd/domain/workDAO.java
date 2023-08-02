@@ -134,6 +134,9 @@ public class workDAO {
 			if(update.getW_price()!=0) {
 				cnt+=sqlSession.update("updateWorkPrice", update);
 			}
+			if(update.getW_img()!=null) {
+				cnt+=sqlSession.update("updateWorkImg", update);
+			}
 			if(cnt>0) {
 				sqlSession.commit();
 			}

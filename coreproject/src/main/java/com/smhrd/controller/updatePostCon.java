@@ -28,6 +28,7 @@ public class updatePostCon extends HttpServlet {
 		int idx=Integer.valueOf(request.getParameter("w_idx"));
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
+		int price=Integer.valueOf(request.getParameter("price"));
 		String kind=request.getParameter("w_kind");
 		Collection<Part> parts=request.getParts();
 		String img="", fi="";
@@ -59,7 +60,6 @@ public class updatePostCon extends HttpServlet {
 	        fos.close();
 	        j++;
 		}
-		int price=Integer.valueOf(request.getParameter("price"));
 		workDTO update=new workDTO(idx,title,content,fi,price,kind,img);
 		workDAO workDAO=new workDAO();
 		int cnt=workDAO.updateWork(update);
