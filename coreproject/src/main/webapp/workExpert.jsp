@@ -124,7 +124,7 @@
 												</form>
 											</td>
 											<td><%=mypageList.get(i).getCreated_at().substring(0,mypageList.get(i).getCreated_at().length()-2)%></td>
-											<td><button id="chat" onclick="modalOpen()"><i class="icon solid fa-comments"></i></button>
+											<td><button id="chat" onclick="location.href='chattingRoom.jsp?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-comments"></i></button>
 												<button onclick="location.href='deleteWorkExpertMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-trash"></i></button></td>
 										</tr>
 										<%	}
@@ -137,11 +137,11 @@
    					</div>
    				</div>
    				
-   				<!-- 모달창 -->
+   				<!--
    					<div class="wrap">
    						<div class="closebtn"><button>X</button></div>
    						<div class="userchat">
-   						<!-- for문으로 이 과정 반복하기 -->
+   						for문으로 이 과정 반복하기
    							<div class="chat ch1">
 					            <div class="icon"><i class="icon solid fa-user"></i></div>
 					            <div class="textbox">안녕하세요. 반갑습니다.</div>
@@ -172,8 +172,8 @@
    					document.querySelector("#chat").addEventListener('click', modalOpen);
    					document.querySelector(".closebtn").addEventListener('click', modalClose);
    				</script>
-   				<!-- 모달끝 -->
-   				
+   				모달끝
+   				 -->
    			</div>
    		</section>
    		

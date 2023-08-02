@@ -23,6 +23,7 @@ import com.smhrd.domain.expertInquiryDTO;
 public class updateExpertInquiryCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		int idx=Integer.valueOf(request.getParameter("inq_idx"));
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
