@@ -128,12 +128,12 @@
    							</div>
    						</div>
    						<div class="page-wrap">
-									<ul class="page-nation">
-									<%for(int i=startPage;i<=endPage;i++){%>
-										<li><a href="pestControl.jsp?pageNum=<%=i%>"><%=i%></a></li>
-									<%}%>
-									</ul>
-								</div>
+							<ul class="page-nation">
+							<%for(int i=startPage;i<=endPage;i++){%>
+								<li><a href="pestControl.jsp?pageNum=<%=i%>"><%=i%></a></li>
+							<%}%>
+							</ul>
+						</div>
    			<!-- 여기까지 -->				
    					</div>
    				</div>
