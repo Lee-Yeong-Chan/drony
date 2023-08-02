@@ -1,11 +1,15 @@
 package com.smhrd.controller;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import com.smhrd.domain.expertDTO;
 import com.smhrd.domain.expertDroneDTO;
 import com.smhrd.domain.mypageDAO;
@@ -17,7 +21,6 @@ public class insertDroneCon extends HttpServlet {
 		String maker= request.getParameter("maker");
 		String serial= request.getParameter("serial");
 		String desc= request.getParameter("desc");
-		String img= request.getParameter("img");
 		HttpSession session=request.getSession();
 		expertDTO loginExpert=(expertDTO)session.getAttribute("loginExpert");
 		String exp_id=loginExpert.getExp_id();
@@ -26,8 +29,23 @@ public class insertDroneCon extends HttpServlet {
 		insertDrone.setDr_maker(maker);
 		insertDrone.setDr_serial(serial);
 		insertDrone.setDr_desc(desc);
-		insertDrone.setDr_img(img);		
+		Part file=request.getPart("file");
+		String originName = file.getSubmittedFileName();
+		if (!"".equals(originName)) {
+			InputStream fis = file.getInputStream();
+			String realPath = request.getServletContext().getRealPath("/inquiry");
+			String filePath = realPath + File.separator + originName; 
+			FileOutputStream fos = new FileOutputStream(filePath);
+			byte[] buf = new byte[1024];
+			int size = 0;
+			while((size = fis.read(buf)) != -1) {
+				fos.write(buf, 0, size);
+			}
+			fis.close();
+	        fos.close();
+		}	
 		insertDrone.setExp_id(exp_id);
+		insertDrone.setDr_img(originName);
 		mypageDAO mypageDAO=new mypageDAO();
 		int cnt =mypageDAO.insertDrone(insertDrone);
 		response.setContentType("text/html; charset=UTF-8");

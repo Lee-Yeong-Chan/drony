@@ -6,9 +6,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <%
+	String pageN=request.getParameter("pageNum");
 	expertDTO loginExpert=(expertDTO)session.getAttribute("loginExpert");
 	inquiryDAO inquiryDAO=new inquiryDAO();
 	List<expertInquiryDTO> expertInquiryList=inquiryDAO.selectAllExpertInquiry(loginExpert.getExp_id());
+	if(pageN==null){
+		pageN="1";
+	}
+	int pageNum=Integer.valueOf(pageN);
+	int startRow=(pageNum-1)*10+1;
+	int startPage=0, endPage=0;
+	if(expertInquiryList.size()!=0){
+		int pageCount=expertInquiryList.size()/10+(expertInquiryList.size()%10==0?0:1);
+		startPage=((pageNum-1)/5)*5+1;
+		endPage=startPage+4;
+		if(endPage>pageCount){
+			endPage=pageCount;
+		}
+	}
 %>
 <html>
 	<head>
@@ -56,17 +71,45 @@
 										</tr>
 									</thead>
 									<tbody>
-										<%for(int i=0;i<expertInquiryList.size();i++){ %>
-										<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
-											<td style="text-align: center;"><%=i+1 %></td>
-											<td><a href="expertInquiryView.jsp?number=<%=expertInquiryList.get(i).getInq_idx()%>"><%=expertInquiryList.get(i).getInq_title()%></a></td>
-											<td><%=expertInquiryList.get(i).getexp_id()%></td>
-											<td align="right"><%=expertInquiryList.get(i).getCreated_at()%></td>
+										<%if(pageNum==expertInquiryList.size()/10+1){
+											for(int i=(expertInquiryList.size()/10)*10; i<expertInquiryList.size(); i++){ %>
+											<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
+												<td style="text-align: center;"><%=i+1 %></td>
+												<td><a href="expertInquiryView.jsp?number=<%=expertInquiryList.get(i).getInq_idx()%>"><%=expertInquiryList.get(i).getInq_title()%></a></td>
+												<td><%=expertInquiryList.get(i).getexp_id()%></td>
+												<td align="right"><%=expertInquiryList.get(i).getCreated_at()%></td>
+											</tr>
+										<%	} 
+										}
+										else if(pageNum<expertInquiryList.size()/10+1){
+											for(int i=(pageNum-1)*10+1; i<10*pageNum+1; i++){ %>
+											<tr style="border-bottom: solid 1px #e7eae8;" height='33px'>
+												<td style="text-align: center;"><%=i+1 %></td>
+												<td><a href="expertInquiryView.jsp?number=<%=expertInquiryList.get(i).getInq_idx()%>"><%=expertInquiryList.get(i).getInq_title()%></a></td>
+												<td><%=expertInquiryList.get(i).getexp_id()%></td>
+												<td align="right"><%=expertInquiryList.get(i).getCreated_at()%></td>
+											</tr>
+										<%	} 
+										}
+										else{
+										%>
+										<tr>
+											<td style="text-align: center;"></td>
+											<td><a></a></td>
+											<td></td>
+											<td align="right"></td>
 										</tr>
 										<%} %>
 									</tbody>
 								</table>
 								</section>
+								<div class="page-wrap">
+									<ul class="page-nation">
+									<%for(int i=startPage;i<=endPage;i++){%>
+										<li><a href="expertInquiry.jsp?pageNum=<%=i%>"><%=i%></a></li>
+									<%}%>
+									</ul>
+								</div>
    							<!-- 여기까지 -->
    							</article>
    							

@@ -22,7 +22,7 @@ public class updateNoticeCon extends HttpServlet {
 		String content=request.getParameter("content");
 		Part file=request.getPart("file");
 		String originName = file.getSubmittedFileName();
-		if (!originName.equals("")) {
+		if (!"".equals(originName)) {
 			InputStream fis = file.getInputStream();
 			String realPath = request.getServletContext().getRealPath("/inquiry");
 			String filePath = realPath + File.separator + originName; 

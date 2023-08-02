@@ -7,8 +7,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <%
+	String pageN=request.getParameter("pageNum");
 	noticeDAO noticeDAO=new noticeDAO();
 	List<noticeDTO> AllNotice= noticeDAO.selectAllNotice();
+	if(pageN==null){
+		pageN="1";
+	}
+	int pageNum=Integer.valueOf(pageN);
+	int startRow=(pageNum-1)*10+1;
+	int startPage=0, endPage=0;
+	if(AllNotice.size()!=0){
+		int pageCount=AllNotice.size()/10+(AllNotice.size()%10==0?0:1);
+		startPage=((pageNum-1)/5)*5+1;
+		endPage=startPage+4;
+		if(endPage>pageCount){
+			endPage=pageCount;
+		}
+	}
 %>
 <html>
 	<head>
@@ -99,23 +114,45 @@
 										</tr>
 									</thead>
 									<tbody>
-										<%for(int i=0; i<AllNotice.size(); i++){ %>
+										<%if(pageNum==AllNotice.size()/10+1){
+											for(int i=(AllNotice.size()/10)*10; i<AllNotice.size(); i++){ %>
 										<tr>
 											<td style="text-align: center;"><%=i+1 %></td>
 											<td><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></td>
 											<td>관리자</td>
 											<td align="right"><%=AllNotice.get(i).getCreated_at() %></td>
 										</tr>
+										<%	} 
+										}
+										else if(pageNum<AllNotice.size()/10+1){
+											for(int i=(pageNum-1)*10; i<10*pageNum; i++){ %>
+										<tr>
+											<td style="text-align: center;"><%=i+1 %></td>
+											<td><a href="noticeView.jsp?number=<%=AllNotice.get(i).getNotice_idx()%>"><%=AllNotice.get(i).getNotice_title()%></a></td>
+											<td>관리자</td>
+											<td align="right"><%=AllNotice.get(i).getCreated_at() %></td>
+										</tr>
+										<%	} 
+										}
+										else{
+										%>
+										<tr>
+											<td style="text-align: center;"></td>
+											<td><a></a></td>
+											<td></td>
+											<td align="right"></td>
+										</tr>
 										<%} %>
 									</tbody>
 								</table>
+								</section>
 								<div class="page-wrap">
-									<ul class="page-nation">			
-										<li><a href="/board/list?p=1">1</a></li>
-										<li><a href="/board/list?p=2">2</a></li>
-										<li><a href="/board/list?p=3">3</a></li>
-										<li><a href="/board/list?p=4">4</a></li>
-										<li><a href="/board/list?p=5">5</a></li>
+									<ul class="page-nation">
+									<%for(int i=startPage;i<=endPage;i++){%>
+										<li><a href="notice.jsp?pageNum=<%=i%>"><%=i%></a></li>
+									<%}%>
+									</ul>
+								</div>
    							<!-- 여기까지 -->
    							</article>
    							

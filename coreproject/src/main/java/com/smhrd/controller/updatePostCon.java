@@ -30,8 +30,7 @@ public class updatePostCon extends HttpServlet {
 				continue;
 			}
 			String originName = file.getSubmittedFileName();
-			if(originName.equals(""))
-			{
+			if (!"".equals(originName)){
 				continue;
 			}
 			InputStream fis = file.getInputStream();

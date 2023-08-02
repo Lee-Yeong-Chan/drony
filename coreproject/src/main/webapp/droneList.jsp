@@ -102,7 +102,7 @@
 											}%>
 										</table>
 									</form>
-									<form action="insertDroneCon" method="post">
+									<form action="insertDroneCon" method="post" enctype="multipart/form-data">
 										<table>
 											<thead>
 											<tr>
@@ -120,7 +120,7 @@
 												<td> <input type="text" name="maker"></td>
 												<td> <input type="text" name="serial"></td>
 												<td> <input type="text" name="desc"></td>
-												<td> <input type="file" name="img"></td>
+												<td> <input type="file" name="file"></td>
 												<td> <input type="submit" value="추가" style="margin-right: 14px;"></td>
 											</tr>
 										</table>

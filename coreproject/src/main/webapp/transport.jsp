@@ -56,6 +56,21 @@
    							if(searchText!=null){
    								transport=workDAO2.selectSearchWork("T", searchText);
    							}
+   							String pageN=request.getParameter("pageNum");
+   							if(pageN==null){
+   								pageN="1";
+   							}
+   							int pageNum=Integer.valueOf(pageN);
+   							int startRow=(pageNum-1)*9+1;
+   							int startPage=0, endPage=0;
+   							if(transport.size()!=0){
+   								int pageCount=transport.size()/9+(transport.size()%9==0?0:1);
+   								startPage=((pageNum-1)/5)*5+1;
+   								endPage=startPage+4;
+   								if(endPage>pageCount){
+   									endPage=pageCount;
+   								}
+   							}
 						%>
 						<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
 						<div>
@@ -65,6 +80,7 @@
 								</div>
 							</c:if>
 							<div class="row comlist workfield">
+<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
    								<%for(int i=0;i<transport.size();i++){ %>
    								<div class="col-3 col-6-medium col-12-small">
    									<section class="box feature">
@@ -77,8 +93,58 @@
    									</section>
    								</div>
    								<%} %>
+=======
+   								<%if(pageNum==transport.size()/9+1){
+									for(int i=(transport.size()/9)*9; i<transport.size(); i++){ %>
+		   								<div class="col-3 col-6-medium col-12-small">
+		   									<section class="box feature droneCom">
+		   										<a href="postDetail.jsp?w_idx=<%=transport.get(i).getW_idx()%>">
+												<img onerror=this.src="images/delivery.png" src="upload/<%=transport.get(i).getW_img()%>">
+												<p><%=transport.get(i).getExp_id()%></p>
+												<h5><%=transport.get(i).getW_title()%></h5>
+												<h6><%=transport.get(i).getW_price()%>원~</h6>
+												</a>
+		   									</section>
+		   								</div>
+								<%	} 
+								}
+								else if(pageNum<transport.size()/9+1){
+									for(int i=(pageNum-1)*9; i<9*pageNum; i++){ %>
+	   								<div class="col-3 col-6-medium col-12-small">
+	   									<section class="box feature droneCom">
+	   										<a href="postDetail.jsp?w_idx=<%=transport.get(i).getW_idx()%>">
+											<img onerror=this.src="images/delivery.png" src="upload/<%=transport.get(i).getW_img()%>">
+											<p><%=transport.get(i).getExp_id()%></p>
+											<h5><%=transport.get(i).getW_title()%></h5>
+											<h6><%=transport.get(i).getW_price()%>원~</h6>
+											</a>
+	   									</section>
+	   								</div>
+								<%	} 
+								}
+								else{
+								%>
+	   								<div class="col-3 col-6-medium col-12-small">
+	   									<section class="box feature droneCom">
+	   										<a>
+											<img>
+											<p></p>
+											<h5></h5>
+											<h6></h6>
+											</a>
+	   									</section>
+	   								</div>
+								<%} %>
+>>>>>>> f52950a sdfadff
    							</div>
 						</div>
+						<div class="page-wrap">
+									<ul class="page-nation">
+									<%for(int i=startPage;i<=endPage;i++){%>
+										<li><a href="transport.jsp?pageNum=<%=i%>"><%=i%></a></li>
+									<%}%>
+									</ul>
+								</div>
 									<!-- 여기까지 -->
 					  </div>
 					  

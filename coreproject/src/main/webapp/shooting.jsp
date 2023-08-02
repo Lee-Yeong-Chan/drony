@@ -55,6 +55,11 @@
    							if(searchText!=null){
    								shooting=workDAO2.selectSearchWork("S", searchText);
    							}
+   							String pageN=request.getParameter("pageN");
+   							if(pageN==null){
+   								pageN="1";
+   							}
+   							int pageNum=Integer.valueOf(pageN);
 						%>
 						<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
 						<div>
@@ -64,7 +69,7 @@
 								</div>
 							</c:if>
 							<div class="row comlist workfield">
-								<%for(int i=0;i<shooting.size();i++){ %>
+								<%for(int i=(pageNum-1)*10+1; i<10*pageNum+1; i++){ %>
 								<div class="col-3 col-6-medium col-12-small">
 									<section class="box feature">
 										<a href="postDetail.jsp?w_idx=<%=shooting.get(i).getW_idx()%>">
@@ -77,6 +82,25 @@
    								</div>
    								<%} %>
 							</div>
+							<div class="page-wrap">
+									<ul class="page-nation">
+									<%if(pageNum>=3&&pageNum<=shooting.size()/9-1){
+										for(int i=0;i<5;i++){%>	
+										<li><a href="measure.jsp?pageN=<%=pageNum-2+i%>"><%=pageNum-2+i%></a></li>
+									<%	}
+									}
+									else if(pageNum==2||pageNum==1){
+										for(int i=0;i<5;i++){%>
+									<li><a href="measure.jsp?pageN=<%=i+1%>"><%=i+1%></a></li>
+									<%	} 
+									}
+									else{
+										for(int i=0;i<5;i++){%>
+									<li><a href="measure.jsp?pageN=<%=shooting.size()/9-3+i%>"><%=shooting.size()/9-3+i%></a></li>
+									<%	} 
+									}%>
+									</ul>
+								</div>
 						<!-- 여기까지 -->
 			 </div>
 		   </div>

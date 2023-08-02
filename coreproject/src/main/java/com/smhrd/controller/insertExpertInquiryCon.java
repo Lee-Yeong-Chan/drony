@@ -31,8 +31,7 @@ public class insertExpertInquiryCon extends HttpServlet {
 				continue;
 			}
 			originName = file.getSubmittedFileName();
-			if(originName.equals(""))
-			{
+			if (!"".equals(originName)){
 				continue;
 			}
 			InputStream fis = file.getInputStream();

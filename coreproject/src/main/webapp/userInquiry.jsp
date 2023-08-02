@@ -6,9 +6,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <%
+	String pageN=request.getParameter("pageNum");
 	userDTO loginUser=(userDTO)session.getAttribute("loginUser");
 	inquiryDAO inquiryDAO=new inquiryDAO();
 	List<userInquiryDTO> userInquiryList=inquiryDAO.selectAllUserInquiry(loginUser.getUser_id());
+	if(pageN==null){
+		pageN="1";
+	}
+	int pageNum=Integer.valueOf(pageN);
+	int startRow=(pageNum-1)*10+1;
+	int startPage=0, endPage=0;
+	if(userInquiryList.size()!=0){
+		int pageCount=userInquiryList.size()/10+(userInquiryList.size()%10==0?0:1);
+		startPage=((pageNum-1)/5)*5+1;
+		endPage=startPage+4;
+		if(endPage>pageCount){
+			endPage=pageCount;
+		}
+	}
 %>
 <html>
 	<head>
@@ -59,20 +74,45 @@
 										</tr>
 									</thead>
 									<tbody>
-										<%if(userInquiryList!=null){
-											for(int i=0;i<userInquiryList.size();i++){ %>
+									<%if(pageNum==userInquiryList.size()/10+1){
+											for(int i=(userInquiryList.size()/10)*10; i<userInquiryList.size(); i++){ %>
 										<tr>
 											<td style="text-align: center;"><%=i+1 %></td>
 											<td><a href="userInquiryView.jsp?number=<%=userInquiryList.get(i).getInq_idx()%>"><%=userInquiryList.get(i).getInq_title()%></a></td>
 											<td><%=userInquiryList.get(i).getUser_id()%></td>
 											<td align="right"><%=userInquiryList.get(i).getCreated_at()%></td>
 										</tr>
-										<%	}
-										} %>
+										<%	} 
+										}
+										else if(pageNum<userInquiryList.size()/10+1){
+											for(int i=(pageNum-1)*10+1; i<10*pageNum+1; i++){ %>
+											<tr>
+												<td style="text-align: center;"><%=i+1 %></td>
+												<td><a href="userInquiryView.jsp?number=<%=userInquiryList.get(i).getInq_idx()%>"><%=userInquiryList.get(i).getInq_title()%></a></td>
+												<td><%=userInquiryList.get(i).getUser_id()%></td>
+												<td align="right"><%=userInquiryList.get(i).getCreated_at()%></td>
+											</tr>
+										<%	} 
+										}
+										else{
+										%>
+										<tr>
+											<td style="text-align: center;"></td>
+											<td><a></a></td>
+											<td></td>
+											<td align="right"></td>
+										</tr>
+										<%} %>
 									</tbody>
 								</table>
 								</section>
-								
+								<div class="page-wrap">
+									<ul class="page-nation">
+									<%for(int i=startPage;i<=endPage;i++){%>
+										<li><a href="userInquiry.jsp?pageNum=<%=i%>"><%=i%></a></li>
+									<%}%>
+									</ul>
+								</div>
    							<!-- 여기까지 -->
    							</article>
    							
