@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +15,12 @@ import com.smhrd.domain.chatDAO;
 import com.smhrd.domain.chatDTO;
 import com.smhrd.domain.expertDTO;
 import com.smhrd.domain.userDTO;
+@MultipartConfig(
+//		location = "/",
+//		fileSizeThreshold =1024*1024,
+		maxFileSize = 1024*1024*50,
+		maxRequestSize = 1024*1024*50*5	
+		)
 public class chatSubmit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,7 +29,7 @@ public class chatSubmit extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
-		String chatText=request.getParameter("chatText");
+		String chatText=request.getParameter("chatText").replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>");
 		HttpSession session=request.getSession();
 		String id="", originName="";
 		Part file=request.getPart("file");

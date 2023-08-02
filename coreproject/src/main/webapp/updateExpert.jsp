@@ -81,35 +81,35 @@
 											</tr>
 											<tr>
 												<td class="co1">변경할 이름 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getExp_name() %>" name="name"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getExp_name() %>" name="name"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 이메일 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getExp_email() %>" name="email"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getExp_email() %>" name="email"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 전화번호 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getExp_phone() %>" name="phone"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getExp_phone() %>" name="phone"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 사업자번호 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getBno() %>" name="bno"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getBno() %>" name="bno"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 업체명 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getCompany_name() %>" name="cname"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getCompany_name() %>" name="cname"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 업체 주소 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getCompany_addr() %>" name="cadd"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getCompany_addr() %>" name="cadd"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 작업 지역 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getWorking_area() %>" name="warea"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getWorking_area() %>" name="warea"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 작업 분야 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginExpert.getWorking_field() %>" name="wfield"></td>
+												<td class="co2"><input type="text" value="<%=loginExpert.getWorking_field() %>" name="wfield"></td>
 											</tr>
 											<tr>
 												<td colspan='2' align="right"><input type="submit" value="수정"></td>
