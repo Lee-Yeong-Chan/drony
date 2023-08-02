@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.domain.droneCompanyDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.droneCompanyDAO"%>
@@ -15,7 +16,15 @@
 		int startPage=0, endPage=0;
 		if(dcRepairList.size()!=0){
 			int pageCount=dcRepairList.size()/9+(dcRepairList.size()%9==0?0:1);
-			startPage=((pageNum-1)/5)*5+1;
+			if(pageNum<=3){
+				startPage=((pageNum-1)/5)*5+1;
+			}
+			else if(pageNum>=pageCount-2){
+				startPage=pageCount-4;
+			}
+			else{
+				startPage=pageNum-2;
+			}			
 			endPage=startPage+4;
 			if(endPage>pageCount){
 				endPage=pageCount;
