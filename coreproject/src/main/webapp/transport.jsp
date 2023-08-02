@@ -80,20 +80,6 @@
 								</div>
 							</c:if>
 							<div class="row comlist workfield">
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
-   								<%for(int i=0;i<transport.size();i++){ %>
-   								<div class="col-3 col-6-medium col-12-small">
-   									<section class="box feature">
-   										<a href="postDetail.jsp?w_idx=<%=transport.get(i).getW_idx()%>">
-										<img onerror=this.src="images/farm.png" src="upload/<%=transport.get(i).getW_img()%>">
-										<p><%=transport.get(i).getExp_id()%></p>
-										<h5><%=transport.get(i).getW_title()%></h5>
-										<h6><%=transport.get(i).getW_price()%>원~</h6>
-										</a>
-   									</section>
-   								</div>
-   								<%} %>
-=======
    								<%if(pageNum==transport.size()/9+1){
 									for(int i=(transport.size()/9)*9; i<transport.size(); i++){ %>
 		   								<div class="col-3 col-6-medium col-12-small">
@@ -135,7 +121,6 @@
 	   									</section>
 	   								</div>
 								<%} %>
->>>>>>> f52950a sdfadff
    							</div>
 						</div>
 						<div class="page-wrap">

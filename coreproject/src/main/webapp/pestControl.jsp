@@ -60,11 +60,21 @@
    							if(searchText!=null){
    								pestControl=workDAO2.selectSearchWork("P", searchText);
    							}
-   							String pageN=request.getParameter("pageN");
+   							String pageN=request.getParameter("pageNum");
    							if(pageN==null){
    								pageN="1";
    							}
    							int pageNum=Integer.valueOf(pageN);
+   							int startRow=(pageNum-1)*9+1;
+   							int startPage=0, endPage=0;
+   							if(pestControl.size()!=0){
+   								int pageCount=pestControl.size()/9+(pestControl.size()%9==0?0:1);
+   								startPage=((pageNum-1)/5)*5+1;
+   								endPage=startPage+4;
+   								if(endPage>pageCount){
+   									endPage=pageCount;
+   								}
+   							}
 						%>
    						<!-- 수정하는 부분 -->
    						<div>
@@ -73,43 +83,55 @@
 									<span><a href='postInsert.jsp'>글 작성하기</a></span>
 								</div>
 							</c:if>
-<<<<<<< Upstream, based on branch 'master' of https://github.com/2022-SMHRD-DCX-BigData-7/DRONY.git
-   							<div class="row comlist  workfield">
-   								<%for(int i=0;i<pestControl.size();i++){ %>
-=======
    							<div class="row comlist workfield">
-   								<%for(int i=(pageNum-1)*10+1; i<10*pageNum+1; i++){ %>
->>>>>>> f52950a sdfadff
-   								<div class="col-3 col-6-medium col-12-small">
-   									<section class="box feature">
-   										<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
-										<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>"><br>
-										<p><%=pestControl.get(i).getExp_id()%></p>
-										<h5><%=pestControl.get(i).getW_title()%></h5>
-										<h6><%=pestControl.get(i).getW_price()%>원~</h6>
-										</a>
-   									</section>
-   								</div>
-   								<%} %>
+   								<%if(pageNum==pestControl.size()/9+1){
+									for(int i=(pestControl.size()/9)*9; i<pestControl.size(); i++){ %>
+		   								<div class="col-3 col-6-medium col-12-small">
+		   									<section class="box feature droneCom">
+		   										<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
+												<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>">
+												<p><%=pestControl.get(i).getExp_id()%></p>
+												<h5><%=pestControl.get(i).getW_title()%></h5>
+												<h6><%=pestControl.get(i).getW_price()%>원~</h6>
+												</a>
+		   									</section>
+		   								</div>
+								<%	} 
+								}
+								else if(pageNum<pestControl.size()/9+1){
+									for(int i=(pageNum-1)*9; i<9*pageNum; i++){ %>
+	   								<div class="col-3 col-6-medium col-12-small">
+	   									<section class="box feature droneCom">
+	   										<a href="postDetail.jsp?w_idx=<%=pestControl.get(i).getW_idx()%>">
+											<img onerror=this.src="images/farm.png" src="upload/<%=pestControl.get(i).getW_img()%>">
+											<p><%=pestControl.get(i).getExp_id()%></p>
+											<h5><%=pestControl.get(i).getW_title()%></h5>
+											<h6><%=pestControl.get(i).getW_price()%>원~</h6>
+											</a>
+	   									</section>
+	   								</div>
+								<%	} 
+								}
+								else{
+								%>
+	   								<div class="col-3 col-6-medium col-12-small">
+	   									<section class="box feature droneCom">
+	   										<a>
+											<img>
+											<p></p>
+											<h5></h5>
+											<h6></h6>
+											</a>
+	   									</section>
+	   								</div>
+								<%} %>
    							</div>
    						</div>
    						<div class="page-wrap">
 									<ul class="page-nation">
-									<%if(pageNum>=3&&pageNum<=pestControl.size()/9-1){
-										for(int i=0;i<5;i++){%>	
-										<li><a href="measure.jsp?pageN=<%=pageNum-2+i%>"><%=pageNum-2+i%></a></li>
-									<%	}
-									}
-									else if(pageNum==2||pageNum==1){
-										for(int i=0;i<5;i++){%>
-									<li><a href="measure.jsp?pageN=<%=i+1%>"><%=i+1%></a></li>
-									<%	} 
-									}
-									else{
-										for(int i=0;i<5;i++){%>
-									<li><a href="measure.jsp?pageN=<%=pestControl.size()/9-3+i%>"><%=pestControl.size()/9-3+i%></a></li>
-									<%	} 
-									}%>
+									<%for(int i=startPage;i<=endPage;i++){%>
+										<li><a href="pestControl.jsp?pageNum=<%=i%>"><%=i%></a></li>
+									<%}%>
 									</ul>
 								</div>
    			<!-- 여기까지 -->				
