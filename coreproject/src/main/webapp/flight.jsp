@@ -38,11 +38,8 @@
 								</article>
 							</div>
 								<article class="box page-content">
-									<div id="map">
-								
-								
-								
-									</div>
+									<div id="map"></div>
+									
 								</article>
 							
 						</div>
@@ -59,18 +56,24 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-	
-	
-	
+		
+		
+		<!-- 지도가져오기 -->
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eeea66c563498d245de93e3e9e6c7a59"></script>
 		<script>
 			const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-			let options = { //지도를 생성할 때 필요한 기본 옵션
+			const options = { //지도를 생성할 때 필요한 기본 옵션
 				center: new kakao.maps.LatLng(34.950798382552, 127.48720558448), //지도의 중심좌표.
 				level: 5 //지도의 레벨(확대, 축소 정도)
 			};
-			let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+			const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 		</script>
+	
+		<!-- 지도 라이브러리 불러오기 -->
+		<!-- services와 clusterer, drawing 라이브러리 불러오기 -->
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+									
+	
 	
 </body>
 </html>
