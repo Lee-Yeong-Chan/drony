@@ -19,7 +19,7 @@
 			<div class="content">
 				<h2>Welcome to DRONY</h2>
 				<p>내게 필요한 드론 전문가를 찾아보세요</p>
-				<a href="#main" class="button scrolly">Alright let's go</a>
+				<a href="pestControl.jsp" class="button scrolly">Alright let's go</a>
 			</div>
 		</div>
 

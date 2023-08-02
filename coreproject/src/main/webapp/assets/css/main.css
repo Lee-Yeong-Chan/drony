@@ -3658,6 +3658,7 @@ select {
     	display: grid;
     	grid-template-columns: repeat(3, 1fr);
     	gap: 28px;
+    	margin-bottom: 30px;
 	}
 	
 	.workfield img{
@@ -3666,6 +3667,8 @@ select {
 		border: solid 1px #E7EAE8;
 		border-radius: 5px;
 	}
+	
+/* 페이징 */	
 	.page-nation li{
 		list-style: none;
 	}
@@ -3673,6 +3676,7 @@ select {
 	.page-wrap{
 		text-align:center;
 		font-size:0;
+		margin: 40px 0 20px 0;
 	}
 	.page-nation{
 		display: flex;
