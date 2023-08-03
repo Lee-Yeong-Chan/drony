@@ -30,20 +30,12 @@ public class insertExpertInquiryCon extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		String title=request.getParameter("title");
 		String content=request.getParameter("content");
-		Collection<Part> parts=request.getParts();
-		String originName="";
-		int j=1;
-		for(Part file:parts) {
-			if(!file.getName().equals("file")){
-				continue;
-			}
-			originName = file.getSubmittedFileName();
-			if (!"".equals(originName)){
-				continue;
-			}
+		Part file=request.getPart("file");
+		String originName = file.getSubmittedFileName();
+		if (!"".equals(originName)) {
 			InputStream fis = file.getInputStream();
-			String realPath = request.getServletContext().getRealPath("/upload");
-			String filePath = realPath + File.separator + originName;
+			String realPath = request.getServletContext().getRealPath("/inquiry");
+			String filePath = realPath + File.separator + originName; 
 			FileOutputStream fos = new FileOutputStream(filePath);
 			byte[] buf = new byte[1024];
 			int size = 0;
@@ -52,7 +44,6 @@ public class insertExpertInquiryCon extends HttpServlet {
 			}
 			fis.close();
 	        fos.close();
-	        j++;
 		}
 		HttpSession session=request.getSession();
 		String expert_id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();

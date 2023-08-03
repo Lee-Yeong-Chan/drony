@@ -15,23 +15,22 @@ import com.smhrd.domain.chatDAO;
 import com.smhrd.domain.chatDTO;
 import com.smhrd.domain.expertDTO;
 import com.smhrd.domain.userDTO;
-@MultipartConfig(
+/* @MultipartConfig(
 //		location = "/",
 //		fileSizeThreshold =1024*1024,
 		maxFileSize = 1024*1024*50,
 		maxRequestSize = 1024*1024*50*5	
-		)
+		) */
 public class chatSubmit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		PrintWriter out=response.getWriter();
 		int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
 		String chatText=request.getParameter("chatText").replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>");
-		HttpSession session=request.getSession();
-		String id="", originName="";
+		String id="abcde";
+		/*String originName="";
 		Part file=request.getPart("file");
 		originName = file.getSubmittedFileName();
 		if (originName!=null||!"".equals(originName)) {
@@ -46,24 +45,25 @@ public class chatSubmit extends HttpServlet {
 			}
 			fis.close();
 	        fos.close();
-		}
-		if(session.getAttribute("loginUser")!=null) {
-			id=((userDTO)session.getAttribute("loginUser")).getUser_id();
-		}
-		else if(session.getAttribute("loginExpert")!=null){
-			id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
-		}
-		else {
-			out.print("<script>alert('로그인상태가 아닙니다.')location.href='main.jsp';</script>");
-		}
+		}*/
+		/*
+		 * PrintWriter out=response.getWriter();
+		 * HttpSession session=request.getSession();
+		 * if(session.getAttribute("loginUser")!=null) {
+		 * id=((userDTO)session.getAttribute("loginUser")).getUser_id(); } else
+		 * if(session.getAttribute("loginExpert")!=null){
+		 * id=((expertDTO)session.getAttribute("loginExpert")).getExp_id(); } else {
+		 * out.print("<script>alert('로그인상태가 아닙니다.')location.href='main.jsp';</script>");
+		 * }
+		 */
 		if(chatText==null||chatText.equals("")) {
 			response.getWriter().write("0");
 		}
 		else {
 			chatDTO chatDTO=new chatDTO(tuw_idx,id,chatText);
-			if (originName!=null||!"".equals(originName)) {
+			/* if (originName!=null||!"".equals(originName)) {
 				chatDTO.setCh_file(originName);
-			}
+			}*/
 			response.getWriter().write(new chatDAO().submit(chatDTO)+"");
 		}
 	}

@@ -16,11 +16,12 @@ public class chatList extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		String listType=request.getParameter("listType");
-		int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
+		int tuw_idx=11;
+		/*Integer.valueOf(request.getParameter("tuw_idx"));*/
 		if(listType==null || listType.equals("")) {
 			response.getWriter().write("");
 		}
-		else(listType.equals("today")) {
+		else if(listType.equals("today")) {
 			response.getWriter().write(getWork(tuw_idx));
 		}
 	}
@@ -35,6 +36,7 @@ public class chatList extends HttpServlet {
 		}
 		timeSet+=half;
 		timeSet+=hour;
+		timeSet+=":";
 		timeSet+=time.substring(14,16);
 		return timeSet;
 	}

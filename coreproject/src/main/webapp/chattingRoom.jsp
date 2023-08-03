@@ -7,19 +7,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <%
-	int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
+	int tuw_idx=11;
+	/*Integer.valueOf(request.getParameter("tuw_idx"));*/
 	chatDAO chatDAO=new chatDAO();
 	List<chatDTO> chatting=chatDAO.selectEachChattingRoom(tuw_idx);
-	String id="";
-	if(session.getAttribute("loginUser")!=null) {
+	String id="abcde";
+	/*if(session.getAttribute("loginUser")!=null) {
 		id=((userDTO)session.getAttribute("loginUser")).getUser_id();
 	}
 	else if(session.getAttribute("loginExpert")!=null){
 		id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
 	}
 	else {
-		out.print("<script>alert('로그인상태가 아닙니다.')location.href='main.jsp';</script>");
-	}
+		out.print("<script>alert('로그인상태가 아닙니다.');location.href='main.jsp';</script>");
+	}*/
 %>
 <html>
 	<head>
@@ -29,34 +30,40 @@
 		<title>Insert title here</title>
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<script type="text/javascript">
+		<%-- <%=Integer.valueOf(request.getParameter("tuw_idx"))%>--%>
+		/* formData.append("file",$('#file')[0].files[0]); */
+			/* enctype:'multipart/form-data', */
+			/* contentType:false,
+			processData:false, */
 			var lastID=0;
 			function submitFunction(){
-				var formData = new FormData();
-				formData.append('chatText',$('#chatText').val());
-				formData.append('tuw_idx',<%=Integer.valueOf(request.getParameter("tuw_idx"))%>);
-				formData.append("file",$('#file')[0].files[0])
+				chatText=$('#chatText').val();
+				tuw_idx='11';
 				var chatText=$('#chatText').val();
 				$.ajax({
 					type:"POST",
-					enctype:'multipart/form-data',
 					url:'chatSubmit',
-					data:formData,
-					contentType:false,
-					processData:false,
+					data:{
+						'chatText':encodeURIComponent(chatText),
+						'tuw_idx':tuw_idx
+					},
 					success: function(res){
 						if(res==1){
-							alert("접근1");
+							alert("1");
 						}
 						else if(res==0){
-							alert("접근2");
+							alert("2");
 						}
 						else{
-							alert("접근3");
+							alert("3");
 						}
 					}
 				})
 				$('#chatText').val('');
 			}
+			/* enctype:'multipart/form-data', */
+			/*contentType:false,
+			processData:false, */
 			function chatListFunction(type){
 				$.ajax({
 					type:"POST",
@@ -67,8 +74,8 @@
 					},
 					contentType:false,
 					processData:false,
-					success:function(res){
-						var parsed=Json.parse(data);
+					success:function(data){
+						var parsed=JSON.parse(data);
 						var result=parsed.result;
 						for(var i=0;i<result.length;i++){
 							addChat(result[i][0].value,result[i][1].value,result[i][2].value)
@@ -79,8 +86,6 @@
 			}
 			function addChat(chatName,chatContent,chatTime){
 				$('#chatList').append('<div class="row"'+
-						'<div class="col-lg-12">'+
-						'<div class="media">'+
 						'<div class="dedia-body">'+
 						'<h4 class="media-heading">'+
 						chatName+
@@ -93,14 +98,12 @@
 						'</p>'+
 						'</div>'+
 						'</div>'+
-						'</div>'+
-						'</div>'+
 						'<hr>');
 			}
 			function getInfiniteChat(){
 				setInterval(function(){
 					chatListFunction(lastID);
-				},500);
+				},10000000);
 			}
 		</script>
 	</head>
