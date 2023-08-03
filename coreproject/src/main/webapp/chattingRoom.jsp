@@ -23,6 +23,8 @@
 %>
 <html>
 	<head>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/chat.css" />
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -112,7 +114,10 @@
 			        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText"></textarea>
 			    	</div>
 			    	<div class="sub">
-			    		<span class="file"> <input id="file" type="file" name="file"> </span>
+			    		<span class="file"> 
+			    			<label for="file">파일</label>
+			    			<input id="file" type="file" name="file"> 
+			    		</span>
 			    		<span class="submit"> <button type="button" onclick="submitFunction()">전송</button></span>
 			    	</div>
 			</div>

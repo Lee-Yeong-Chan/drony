@@ -1830,7 +1830,8 @@ select {
 			}
 
 /* Button */
-
+	
+	.file label,
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
@@ -1858,7 +1859,7 @@ select {
 		padding: 0.7em 0.8em;
 		text-align: center;
 	}
-
+		
 		input[type="button"]:hover,
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -1883,22 +1884,23 @@ select {
 			background: #c1cac5;
 		}
 
-			input[type="button"].alt:hover,
-			input[type="submit"].alt:hover,
-			input[type="reset"].alt:hover,
-			button.alt:hover,
-			.button.alt:hover {
-				background: #ccd5d0;
-			}
+		input[type="button"].alt:hover,
+		input[type="submit"].alt:hover,
+		input[type="reset"].alt:hover,
+		button.alt:hover,
+		.button.alt:hover {
+			background: #ccd5d0;
+		}
 
-			input[type="button"].alt:active,
-			input[type="submit"].alt:active,
-			input[type="reset"].alt:active,
-			button.alt:active,
-			.button.alt:active {
-				background: #b1bab5;
-			}
+		input[type="button"].alt:active,
+		input[type="submit"].alt:active,
+		input[type="reset"].alt:active,
+		button.alt:active,
+		.button.alt:active {
+			background: #b1bab5;
+		}
 
+		
 		input[type="button"].large,
 		input[type="submit"].large,
 		input[type="reset"].large,
@@ -1906,7 +1908,9 @@ select {
 		.button.large {
 			font-size: 1.65em;
 		}
-
+		
+		
+		
 /* List */
 
 	ul {
