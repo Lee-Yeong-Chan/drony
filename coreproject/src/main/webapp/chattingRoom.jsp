@@ -96,60 +96,59 @@
 							'</div>'+
 							'<br>');
 				}
-				
-				/* $('#chatList').scrollTop($('#chatList')[0].scrollHeight); */
-				
 				$(function(){
 					$('.userchat').scrollTop($('.userchat')[0].scrollHeight)
 				});
-				
-				
 			};
 			function getInfiniteChat(){
 				setInterval(function(){
 					chatListFunction(lastID);
 				},1000);
 			};
+			function enterText(e){
+				if(e.keyCode==13){
+					submitFunction();
+				}
+			}
 		</script>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
 			<!-- Header -->
 			<%@include file="header.jsp" %>
-			
 			<!-- Main -->
 			<section id="main">
 				<div class="container">
 					<div class="row">
   							<!-- Sidebar -->
 						<div class="col-3 col-12-medium">
-  								<div class="sidebar">
+  							<div class="sidebar">
 								<c:choose>
 									<c:when test="${not empty loginUser}">
 										<ul class="divided">
-                                   <li>
-                                       <article class="box mypage-menu">
-                                       <h3 class="major"><span><%=id %>님</span></h3>
-                                           <h1><a href="mypageUser.jsp">내 프로필</a></h1>
-                                       </article>
-                                   </li>
-                                   <li>
-                                       <article class="box mypage-menu">
-                                           <h1><a href="workUser.jsp">작업의뢰 현황</a></h1>
-                                       </article>
-                                   </li>
-                               </ul>
-                               <table>
-                               	<tr>
-                              			<td colspan='2' align="right" style="font-size: 0.8em;">
-                               			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
-                               			<a href="deleteUserCon">회원탈퇴</a>
-                              			</td>
-                         			</tr>
-                              	</table>
+											<li>
+												<article class="box mypage-menu">
+													<h3 class="major"><span><%=id %>님</span></h3>
+													<h1><a href="mypageUser.jsp">내 프로필</a></h1>
+                                       			</article>
+                                  			</li>
+                                   			<li>
+                                      			<article class="box mypage-menu">
+                                           			<h1><a href="workUser.jsp">작업의뢰 현황</a></h1>
+                                       			</article>
+                                   			</li>
+                               			</ul>
+                               			<table>
+                               				<tr>
+                              					<td colspan='2' align="right" style="font-size: 0.8em;">
+                               						<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
+                               						<a href="deleteUserCon">회원탈퇴</a>
+                              					</td>
+                         					</tr>
+                              			</table>
 									</c:when>
 									<c:when test="${not empty loginExpert}">
-									<h3 class="major"><span>🍀<%=id %>님</span></h3>
+										<h3 class="major"><span>🍀<%=id %>님</span></h3>
 										<ul class="divided">
 		   									<li>
 		   										<article class="box mypage-menu">
@@ -171,7 +170,7 @@
 													<h1><a href="droneList.jsp">드론관리</a></h1>
 												</article>
 											</li>
-		   								</ul>
+	   									</ul>
 		   								<table>
 								     	 	<tr>
 									         	<td colspan='2' align="right" style="font-size: 0.8em;">
@@ -182,51 +181,36 @@
 									     </table>
 									</c:when>										
 								</c:choose>   								
-   						</div>
-   					</div>
-   					<div class="col-9 col-12-medium imp-medium">
-   						<div class="content">
-							
-							<!-- 채팅창 시작 -->
-							<div class="wrap">
-								<div class="userchat">
-									<div id="chatList">
-							        	<!-- 채팅내용 -->   
-							        </div>
-								</div>
-						        <div class="input-text">
-						        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText"></textarea>
-						    	</div>
-						    	<div class="sub">
-						    		<span class="file"> 
-						    			<label for="file">파일</label>
-						    			<input id="file" type="file" name="file"> 
-						    		</span>
-						    		<span class="submit"> <button type="button" onclick="submitFunction()" id="sb">전송</button></span>
-						    	</div>
-							</div>	
-							<script type="text/javascript">
-								$(document).ready(function(){
-									chatListFunction("today");
-									getInfiniteChat();
-								});
-							</script>
-							
-							
-							   							
-   						</div>
-   					</div>
-   					
+	   						</div>
+	   					</div>
+	   					<div class="col-9 col-12-medium imp-medium">
+	   						<div class="content">
+								
+								<!-- 채팅창 시작 -->
+								<div class="wrap">
+									<div class="userchat">
+										<div id="chatList">
+								        	<!-- 채팅내용 -->   
+								        </div>
+									</div>
+							        <div class="input-text">
+							        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText" onkeypress="enterText(event)"></textarea>
+							    	</div>
+							    	<div class="sub">
+							    		<span class="submit"> <button type="button" onclick="submitFunction()" id="sb">전송</button></span>
+							    	</div>
+								</div>							
+	   						</div>
+	   					</div>
 					</div>
 				</div>
 			</section>
 		</div>
-		
-		
-		
-		
-		
-		
-		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				chatListFunction("today");
+				getInfiniteChat();
+			});
+		</script>
 	</body>
 </html>

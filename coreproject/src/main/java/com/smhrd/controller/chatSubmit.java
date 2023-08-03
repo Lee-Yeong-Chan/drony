@@ -60,7 +60,7 @@ public class chatSubmit extends HttpServlet {
 		}
 		else {
 			chatDTO chatDTO=new chatDTO(tuw_idx,id,chatText);
-			/* if (originName!=null||!"".equals(originName)) {
+			/*if (originName!=null||!"".equals(originName)) {
 				chatDTO.setCh_file(originName);
 			}*/
 			response.getWriter().write(new chatDAO().submit(chatDTO)+"");

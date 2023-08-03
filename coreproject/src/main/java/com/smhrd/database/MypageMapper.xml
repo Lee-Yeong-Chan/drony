@@ -34,10 +34,10 @@
 		delete from t_drone where dr_idx=#{dr_idx}
 	</delete>
 	<insert id="insertDroneImg" parameterType="com.smhrd.domain.expertDroneDTO">
-		insert into t_drone(dr_model,dr_maker,dr_serial,dr_desc,dr_img,exp_id) values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{dr_img},#{exp_id})
+		insert into t_drone values(null,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{dr_img},#{exp_id})
 	</insert>
 	<insert id="insertDroneEmpty" parameterType="com.smhrd.domain.expertDroneDTO">
-		insert into t_drone(dr_model,dr_maker,dr_serial,dr_desc,exp_id) values(T_DRONE_SEQ.nextval,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},#{exp_id})
+		insert into t_drone values(null,#{dr_model},#{dr_maker},#{dr_serial},#{dr_desc},null,#{exp_id})
 	</insert>
 	<select id="selectPost" parameterType="String" resultType="com.smhrd.domain.workDTO">
 		select * from t_work where exp_id=#{exp_id} order by w_idx desc
