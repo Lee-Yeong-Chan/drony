@@ -84,6 +84,65 @@
 		</script>
 	</head>
 	<body>
+		<div class="is-preload">
+			<div id="page-wrapper">
+				<!-- Header -->
+				<%@include file="header.jsp" %>
+				
+				<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+   							<!-- Sidebar -->
+							<div class="col-3 col-12-medium">
+   								<div class="sidebar">
+									<c:choose>
+										
+									</c:choose>   								
+	   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+	   								<ul class="divided">
+	   									<li>
+	   										<article class="box mypage-menu">
+												<h1><a href="mypageExpert.jsp">내프로필</a></h1>
+											</article>
+	   									</li>
+	   									<li>
+											<article class="box mypage-menu">
+												<h1><a href="myPost.jsp">내게시글</a></h1>
+											</article>
+										</li>
+										<li>
+											<article class="box mypage-menu">
+												<h1><a href="workExpert.jsp">작업목록</a></h1>
+											</article>
+										</li>
+										<li>
+											<article class="box mypage-menu">
+												<h1><a href="droneList.jsp">드론관리</a></h1>
+											</article>
+										</li>
+	   								</ul>
+	   								<table>
+							     	 <tr>
+							         	<td colspan='2' align="right" style="font-size: 0.8em;">
+							         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+							         		<a href="deleteExpertCon">회원탈퇴</a>	
+							         	</td>
+							         </tr>
+							     </table>
+	   						</div>
+	   					</div>
+						
+						</div>
+					</div>
+				</section>
+			
+			</div>
+		
+		
+		</div>
+	
+	
 		<div class="wrap">
 			<div class="userchat">
 				<div id="chatList">
