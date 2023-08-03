@@ -33,6 +33,10 @@
 		   box-shadow: 5px 5px 5px 5px gray;
 	   }
 	   
+	   .time{
+	   		color: whitesmoke;
+	   }
+	   
 	   .userchat{
 	  	width: 100%;
     	height: 78%;
@@ -52,7 +56,7 @@
 		}
 		
 		.userchat::-webkit-scrollbar-track{
-			background-color: white;
+			background-color: #4e4b63;
 		}
    
 	   .wrap .chat {
@@ -68,7 +72,7 @@
 	       width: 50px;
 	       height: 50px;
 	       border-radius: 50%;
-	       background-color: #e7e8f0;
+	       background-color: #c5c6cf;
 	   }
    
 	   .wrap .chat .icon i {
@@ -102,7 +106,7 @@
 	   .wrap .left .textbox {
 	       margin-left: 15px;
 	       background-color: #3e4346;
-	       color: #b0b0b0;
+	       color: whitesmoke;
 	   }
    
 	   .wrap .left .textbox::before {
@@ -186,6 +190,10 @@
 		align-self: end;
 		text-align: center;
 	}
+	
+	.userName b{
+		color: #cfcfcf;
+	}
 		
 	.time{
 		align-self: end;
@@ -206,6 +214,10 @@
 	}
 	
 	.chathead b{
-		color: #006376;
+		color: #4e5676;
 	}
+	   
+	.input-text>textarea:focus{
+		outline: none;
+	}   
 	   
