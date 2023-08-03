@@ -6,6 +6,11 @@ public class chatDTO {
 	private String talk;
 	private String created_at;
 	private String ch_file;
+	public chatDTO(int chat_idx, int tuw_idx) {
+		super();
+		this.chat_idx = chat_idx;
+		this.tuw_idx = tuw_idx;
+	}
 	public chatDTO() {
 		super();
 	}

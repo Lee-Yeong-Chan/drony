@@ -23,6 +23,13 @@ public class chatList extends HttpServlet {
 		else if(listType.equals("today")) {
 			response.getWriter().write(getWork(tuw_idx));
 		}
+		else {
+			try {
+				response.getWriter().write(getID(Integer.parseInt(listType),tuw_idx));
+			} catch (Exception e) {
+				response.getWriter().write("");
+			}
+		}
 	}
 	public String TimeSet(String time){
 		String timeSet="";
@@ -53,7 +60,23 @@ public class chatList extends HttpServlet {
 			}
 		}
 		result.append("], \"last\":\""+chatList.get(chatList.size()-1).getChat_idx()+"\"}");
-		System.out.println(result);
+		return result.toString();
+	}
+	public String getID(int chat_idx,int tuw_idx) {
+		StringBuffer result=new StringBuffer();
+		result.append("{\"result\":[");
+		chatDTO chatDTO=new chatDTO(chat_idx,tuw_idx);
+		chatDAO chatDAO=new chatDAO();
+		ArrayList<chatDTO> chatList=(ArrayList<chatDTO>) chatDAO.selectUpIdx(chatDTO);
+		for(int i=0;i<chatList.size();i++) {
+			result.append("[{\"value\":\""+chatList.get(i).getTalker()+"\"},");
+			result.append("{\"value\":\""+chatList.get(i).getTalk()+"\"},");
+			result.append("{\"value\":\""+TimeSet(chatList.get(i).getCreated_at())+"\"}]");
+			if(i!=chatList.size()-1) {
+				result.append(",");
+			}
+		}
+		result.append("], \"last\":\""+chatList.get(chatList.size()-1).getChat_idx()+"\"}");
 		return result.toString();
 	}
 }

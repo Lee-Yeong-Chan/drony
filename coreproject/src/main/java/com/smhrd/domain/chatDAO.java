@@ -43,4 +43,17 @@ public class chatDAO {
 		}
 		return cnt;
 	}
+	public List<chatDTO> selectUpIdx(chatDTO chatDTO) {
+		List<chatDTO> eachRoom=null;
+		try {
+			eachRoom=sqlSession.selectList("selectUpIdx", chatDTO);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return eachRoom;
+	}
 }

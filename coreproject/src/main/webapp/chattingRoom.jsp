@@ -30,13 +30,8 @@
 		<title>Insert title here</title>
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<script type="text/javascript">
-		<%-- <%=Integer.valueOf(request.getParameter("tuw_idx"))%>--%>
-		/* formData.append("file",$('#file')[0].files[0]); */
-			/* enctype:'multipart/form-data', */
-			/* contentType:false,
-			processData:false, */
 			var lastID=0;
-			var tuw_idx=<%=Integer.valueOf(request.getParameter("tuw_idx"))%>;
+			var tuw_idx=21;
 			function submitFunction(){
 				chatText=$('#chatText').val();
 				var chatText=$('#chatText').val();
@@ -48,30 +43,23 @@
 						'tuw_idx':tuw_idx
 					},
 					success: function(res){
-						if(res==1){
-							alert("1");
-						}
-						else if(res==0){
-							alert("2");
-						}
-						else{
-							alert("3");
-						}
+						
 					}
-				})
+				});
 				$('#chatText').val('');
-			}
-			/* enctype:'multipart/form-data', */
-			/*contentType:false,
-			processData:false, */
+			};
 			function chatListFunction(type){
 				$.ajax({
 					type:"POST",
 					url:'chatList',
 					data:{
-						listType:type,
+						'listType':type,
+						'tuw_idx':tuw_idx
 					},
 					success:function(data){
+						if(data==""){
+							return;
+						}
 						var parsed=JSON.parse(data);
 						var result=parsed.result;
 						for(var i=0;i<result.length;i++){
@@ -80,30 +68,30 @@
 						lastID=Number(parsed.last);
 					}
 				});
-			}
+			};
 			function addChat(chatName,chatContent,chatTime){
 				$('#chatList').append(
 						'<div class="chat">'+
-							'<div class="icon"><i class="icon solid fa-user"></i></div>'+
 							'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
-							'<div class="textbox">'+ chatContent +'</div>' +
+							'<div class="textbox">'+ chatContent +'</div>'+
 							'<div class="time" style="align-self:end; font-size: 13px;" >'+ chatTime +'</div>'+
-						'</div>'
+						'</div>'+
 						'<br>'
 						);
-			}
+				$('#chatList').scrollTop($('#chatList')[0].scrolHeight);
+			};
 			function getInfiniteChat(){
 				setInterval(function(){
 					chatListFunction(lastID);
-				},10000000);
-			}
+				},1000);
+			};
 		</script>
 	</head>
 	<body>
 		<div class="wrap">
 			<div class="userchat">
 				<div id="chatList">
-		           <!-- 채팅내용 -->
+		           
 		        </div>
 			        <div class="input-text">
 			        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText"></textarea>
@@ -116,8 +104,7 @@
 			    		<span class="submit"> <button type="button" onclick="submitFunction()">전송</button></span>
 			    	</div>
 			</div>
-		</div>
-		<button type="button" onclick="chatListFunction('today');">추가</button>
+		</div>	
 		<script type="text/javascript">
 			$(document).ready(function(){
 				chatListFunction("today");

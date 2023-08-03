@@ -15,4 +15,7 @@
 	<insert id="insertWelcomeChatting" parameterType="com.smhrd.domain.userWorkDTO">
 		insert into t_chatting(tuw_idx, talker, talk, created_at) values (#{tuw_idx},#{user_id},#{user_id}||'님이 입장하셨습니다.',sysdate)
 	</insert>
+	<select id="selectUpIdx" parameterType="int" resultType="com.smhrd.domain.chatDTO">
+		select * from t_chatting where tuw_idx=#{tuw_idx} and chat_idx>#{chat_idx} order by created_at
+	</select>
 </mapper>
