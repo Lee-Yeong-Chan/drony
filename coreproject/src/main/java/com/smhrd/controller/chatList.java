@@ -38,7 +38,7 @@ public class chatList extends HttpServlet {
 		int hour=Integer.valueOf(time.substring(11,13));
 		if(Integer.valueOf(time.substring(11,13))>=12) {
 			half="오후";
-			hour=Integer.valueOf(time.substring(11,13))-12;
+			hour=Integer.valueOf(time.substring(11,13))-12+((Integer.valueOf(time.substring(11,13))!=12)?0:12);
 		}
 		timeSet+=half;
 		timeSet+=hour;

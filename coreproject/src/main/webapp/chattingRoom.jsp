@@ -7,20 +7,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <%
-	int tuw_idx=21;
-	/*Integer.valueOf(request.getParameter("tuw_idx"));*/
+	int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
 	chatDAO chatDAO=new chatDAO();
 	List<chatDTO> chatting=chatDAO.selectEachChattingRoom(tuw_idx);
-	String id="abcde";
-	/*if(session.getAttribute("loginUser")!=null) {
+	String id="";
+	if(session.getAttribute("loginUser")!=null) {
 		id=((userDTO)session.getAttribute("loginUser")).getUser_id();
 	}
 	else if(session.getAttribute("loginExpert")!=null){
 		id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
 	}
-	else {
-		out.print("<script>alert('로그인상태가 아닙니다.');location.href='main.jsp';</script>");
-	}*/
 %>
 <html>
 	<head>
@@ -31,7 +27,7 @@
 		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<script type="text/javascript">
 			var lastID=0;
-			var tuw_idx=21;
+			var tuw_idx=<%=tuw_idx%>
 			function submitFunction(){
 				chatText=$('#chatText').val();
 				var chatText=$('#chatText').val();

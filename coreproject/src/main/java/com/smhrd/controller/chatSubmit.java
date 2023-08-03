@@ -31,7 +31,7 @@ public class chatSubmit extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
 		String chatText=URLDecoder.decode(request.getParameter("chatText").replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>"),"utf-8");
-		String id="abcde";
+		String id="";
 		/*String originName="";
 		Part file=request.getPart("file");
 		originName = file.getSubmittedFileName();
@@ -48,16 +48,13 @@ public class chatSubmit extends HttpServlet {
 			fis.close();
 	        fos.close();
 		}*/
-		/*
-		 * PrintWriter out=response.getWriter();
-		 * HttpSession session=request.getSession();
-		 * if(session.getAttribute("loginUser")!=null) {
-		 * id=((userDTO)session.getAttribute("loginUser")).getUser_id(); } else
-		 * if(session.getAttribute("loginExpert")!=null){
-		 * id=((expertDTO)session.getAttribute("loginExpert")).getExp_id(); } else {
-		 * out.print("<script>alert('로그인상태가 아닙니다.')location.href='main.jsp';</script>");
-		 * }
-		 */
+		HttpSession session=request.getSession();
+		if(session.getAttribute("loginUser")!=null) {
+			id=((userDTO)session.getAttribute("loginUser")).getUser_id();
+		} 
+		else if(session.getAttribute("loginExpert")!=null){
+			id=((expertDTO)session.getAttribute("loginExpert")).getExp_id();
+		}
 		if(chatText==null||chatText.equals("")) {
 			response.getWriter().write("0");
 		}
