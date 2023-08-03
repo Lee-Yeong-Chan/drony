@@ -11,23 +11,22 @@
 </head>
 <body>
 	<div class="wrap">
-		<div class="username">
-			이름
-		</div>
-		
-		<div class="chat-messages"></div>
-		
-		<div class="chat-form">
-			<form onsubmit="sendChatMessage(this); return false;">
-				<div class="input-text">
-					<input type="text" name="body" placeholder="메세지를 입력해주세요." />
-				</div>
-				<div align="right">
-					<input type="submit" value="전송" />
-				</div>
-			</form>
-		</div>
-	</div>
+		<div class="userchat">
+			<div class="chat ch1">
+	        	<div class="icon"><i class="icon solid fa-user"></i></div>
+	        	<div class="userName" style="align-self:end;"><b>이름</b></div>
+	        	<div class="textbox">안녕하세요. 반갑습니다.</div>
+	        	<div class="time" style="align-self:end; font-size: 13px;" >시간</div>
+	    	</div>
+	     
+	     <div class="input-text">
+	     	<input type="text" class="text_input" placeholder="메세지를 입력하세요." name="chatText">
+	 	</div>
+	 	<div class="sub">
+	 		<span class="file"></span>
+	 		<span class="submit"><input type="submit" value="전송"></span>
+	 	</div>
+	 </div>
 	
 	
 

@@ -155,6 +155,10 @@
 					    		<span class="submit"><input type="submit" value="전송"></span>
 					    	</div>
 					    	
+					    	
+					    	
+					    	
+					    	
    						</div>
    					</div>
    				

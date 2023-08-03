@@ -55,7 +55,7 @@
    									<table class="inquiryview">
    										<thead>
    											<tr>
-   												<td colspan="2"><h1><%=notice.get(0).getNotice_title() %></h1></td>
+   												<td colspan="2"><h5><%=notice.get(0).getNotice_title() %></h5></td>
    											</tr>
    										</thead>
    										<tbody>

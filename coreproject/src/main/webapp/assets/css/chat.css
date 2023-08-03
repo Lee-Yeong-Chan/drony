@@ -61,7 +61,7 @@
 	       max-width: calc(100% - 70px);
 	       padding: 10px;
 	       margin-top: 7px;
-	       font-size: 13px;
+	       font-size: 15px;
 	       border-radius: 10px;
 	   }
    
@@ -151,23 +151,13 @@
 			cursor: pointer;
 		} */
 	   
-/* chattest */	   
 	
-	.username{
-		
-	    width: 96%;
-	    padding: 10px;
-	    border-bottom: solid 1px;
-	    position: absolute;
-	    top: 0;
-	    left: 10px;
-
+	.userName{
+		align-self: end;
 	}
-	
-	.chat-form{
-		width: 96%;
-	    position: absolute;
-	    bottom: 10px;
-	    right: 10px;
-	}	   
+		
+	.time{
+		align-self: end;
+		font-size: 13px;
+	}
 	   

@@ -82,20 +82,15 @@
 				});
 			}
 			function addChat(chatName,chatContent,chatTime){
-				$('#chatList').append('<div class="rowasdasd"'+
-						'<div class="dedia-body">'+
-						'<h4 class="media-heading">'+
-						chatName+
-						'<span class="small pull-right">'+
-						chatTime+
-						'</span>'+
-						'<h4>'+
-						'<p>'+
-						chatContent+
-						'</p>'+
-						'</div>'+
-						'</div>'+
-						'<br>');
+				$('#chatList').append(
+						'<div class="chat">'+
+							'<div class="icon"><i class="icon solid fa-user"></i></div>'+
+							'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
+							'<div class="textbox">'+ chatContent +'</div>' +
+							'<div class="time" style="align-self:end; font-size: 13px;" >'+ chatTime +'</div>'+
+						'</div>'
+						'<br>'
+						);
 			}
 			function getInfiniteChat(){
 				setInterval(function(){
@@ -107,8 +102,8 @@
 	<body>
 		<div class="wrap">
 			<div class="userchat">
-				<div class="chat ch1" id="chatList">
-		           
+				<div id="chatList">
+		           <!-- 채팅내용 -->
 		        </div>
 			        <div class="input-text">
 			        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText"></textarea>

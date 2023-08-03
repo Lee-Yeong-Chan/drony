@@ -82,7 +82,7 @@
                   <!-- Content -->
                   <article class="box page-content">
                      <article id="view" class="postDetail">
-                        <h1><%=selectPost.get(0).getW_title()%></h1>
+                        <h5><%=selectPost.get(0).getW_title()%></h5>
                         <div class="posthead">
                            <div class="id"><span><%=selectPost.get(0).getExp_id()%></span></div>
                            <div class="date"><span style="text-align: right;"><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></span></div>

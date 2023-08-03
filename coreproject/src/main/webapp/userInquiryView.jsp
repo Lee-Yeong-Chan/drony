@@ -49,7 +49,7 @@
    									<table class="inquiryview">
    										<thead>
    											<tr>
-   												<td><h1><%=inquiry.get(0).getInq_title() %></h1></td>
+   												<td><h5><%=inquiry.get(0).getInq_title() %></h5></td>
    												<td align="right" style="vertical-align: bottom"><%=inquiry.get(0).getUser_id() %></td>
    											</tr>
    										</thead>
