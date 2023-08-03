@@ -33,7 +33,7 @@
    							
    							<!-- My page -->
    							
-   								<h3 class="major"><span><%=loginUser.getUser_id() %>님의 마이페이지</span></h3>
+   								<h3 class="major"><span><%=loginUser.getUser_id() %>님</span></h3>
    								<ul class="divided">
    									<li>
 	                               		<article class="box mypage-menu">
@@ -86,8 +86,8 @@
 											<td><%=mypageList.get(i).getStatus_memo()%></td>
 											<td><%=mypageList.get(i).getCreated_at().substring(0, mypageList.get(i).getCreated_at().length()-2)%></td>
 											<td>
-											<button onclick="location.href='chattingRoom.jsp?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">채팅</button>
-											<button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'">삭제</button>
+											<button onclick="location.href='chattingRoom.jsp?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-comments"></i></button>
+											<button onclick="location.href='deleteWorkUserMypageCon?tuw_idx=<%=mypageList.get(i).getTuw_idx()%>'"><i class="icon solid fa-trash"></i></button>
 										</tr>
 										<%	}
 										}%>

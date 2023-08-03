@@ -30,7 +30,7 @@
    							<div class="sidebar">
    							 
    							<!-- My page -->
-   							<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+   							<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님</span></h3>
    							<ul class="divided">
 								<li>
 									<article class="box mypage-menu">

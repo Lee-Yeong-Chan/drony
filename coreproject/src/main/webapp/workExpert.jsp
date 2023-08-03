@@ -47,7 +47,7 @@
    							
    							<!-- My page -->
    							
-   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님</span></h3>
    								<ul class="divided">
    									<li>
    										<article class="box mypage-menu">
@@ -119,7 +119,8 @@
 														<option value="작업중">작업중</option>
 														<option value="작업완료">작업완료</option>
 													</select>
-													<input type="submit" value="수정">
+													<input type="submit" id="submitbtn" style="display:none;" />
+													<label for ="submitbtn"><i class="icon solid fa-check"></i></label>
 													<% session.setAttribute("updateStatus_idx", mypageList.get(i).getStatus_idx());%>
 												</form>
 											</td>

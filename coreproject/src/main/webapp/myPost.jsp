@@ -33,7 +33,7 @@
    							<!-- Sidebar 여기서부터--> 
    							<!-- My page -->
    							
-   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
+   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님</span></h3>
    								<ul class="divided">
    									<li>
    										<article class="box mypage-menu">
@@ -81,7 +81,7 @@
    								
    								<section class="mycontent">
    								<span><a href="postInsert.jsp">게시글 작성</a></span>
-								      <table border='1'>
+								      <table class="mytable">
 								      	<thead>
 										<tr>
 											<td style="text-align: center;">번호</td>
@@ -100,8 +100,8 @@
 											<td><%=allPost.get(i).getCreated_at().substring(0,allPost.get(i).getCreated_at().length()-2)%></td>
 											<td><%=allPost.get(i).getW_price()%></td>
 											<td><%=postView.get(i)%></td>
-											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>">수정</a></td>
-											<td><a href="deletePostCon?w_idx=<%=allPost.get(i).getW_idx()%>&w_kind=<%=allPost.get(i).getW_kind()%>">삭제</a></td>
+											<td><a href="postDetail.jsp?w_idx=<%=allPost.get(i).getW_idx()%>"><button>수정</button></a></td>
+											<td><a href="deletePostCon?w_idx=<%=allPost.get(i).getW_idx()%>&w_kind=<%=allPost.get(i).getW_kind()%>"><button>삭제</button></a></td>
 										</tr>
 										<%	}
 										}%>

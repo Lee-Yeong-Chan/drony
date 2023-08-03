@@ -63,7 +63,7 @@
    												<td><span>첨부파일</span><a href="notice/<%=notice.get(0).getNotice_file()%>" download><i class="icon solid fa-download"></i></a></td>
    												<td align="right"><span><%=notice.get(0).getCreated_at() %></span></td>
    											</tr>
-   											<tr style="height: 50px;">
+   											<tr>
    												<td colspan="2"><span><%=notice.get(0).getNotice_content() %></span></td>
    											</tr>
    										</tbody>

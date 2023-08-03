@@ -82,7 +82,7 @@
 					$('#chatList').append(
 							'<div class="chat right">'+
 								'<div class="userName" style="align-self:end;"><i class="icon solid fa-user"></i><br><b>'+ chatName +'</b></div>'+
-								'<div class="textbox">'+ chatContent +'</div>'+
+								'<div class="textbox">'+ chatContent +'</div> &nbsp;'+
 								'<div class="time" style="align-self:end; font-size: 13px;" >'+ timeSet +'</div>'+
 							'</div>'+
 							'<br>');
@@ -91,7 +91,7 @@
 					$('#chatList').append(
 							'<div class="chat left">'+
 								'<div class="userName" style="align-self:end;"><i class="icon regular fa-user"></i><br><b>'+ chatName +'</b></div>'+
-								'<div class="textbox">'+ chatContent +'</div>'+
+								'<div class="textbox">'+ chatContent +'</div> &nbsp;'+
 								'<div class="time" style="align-self:end; font-size: 13px;" >'+ timeSet +'</div>'+
 							'</div>'+
 							'<br>');
@@ -188,6 +188,10 @@
 								
 								<!-- 채팅창 시작 -->
 								<div class="wrap">
+									<div class="chathead">
+										<div><a href="#"><i class="icon solid fa-arrow-left"></i></a></div>
+										<div><b>1:1채팅</b></div>
+									</div>
 									<div class="userchat">
 										<div id="chatList">
 								        	<!-- 채팅내용 -->   

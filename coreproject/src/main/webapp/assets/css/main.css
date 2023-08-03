@@ -122,7 +122,7 @@ select {
 	body, input, textarea, select {
 		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 400;
-		color: #6b7770;
+		color: #494949;
 		font-size: 13pt;
 		line-height: 2em;
 	}
@@ -131,7 +131,7 @@ select {
 		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
-		color: #6b7770;
+		color: #494949;
 		margin: 0 0 0.5em 0;
 		line-height: 1.3;
 	}
@@ -167,7 +167,7 @@ select {
 	}
 
 	a {
-		color: #006376;
+		color: #4e5676;
 		text-decoration: none;
 	}
 
@@ -1843,7 +1843,7 @@ select {
 		font-weight: 700;
 		text-transform: uppercase;
 		text-decoration: none;
-		background: #a3b9bd;
+		background: #4e4b63;
 		color: #fff;
 		border: 0;
 		line-height: 3px;
@@ -2148,12 +2148,13 @@ select {
 /* Forms */
 
 	form label {
-		display: block;
+		/* display: block; */
 		margin: 0 0 1em 0;
 		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
 		color: #6b7770;
+		font-size: 15px;
 	}
 
 	form input[type="text"],
@@ -2686,7 +2687,9 @@ select {
 		
 	}
 	.sidebar h3.major {
-		margin: 0 0 1.5em 0;
+		margin: 0 0 1em 0;
+		text-align: left;
+		padding-left: 30px;
 	}
 
 	.sidebar h3.major span {
@@ -2711,9 +2714,12 @@ select {
 	
 	.mycontent>table select{
 		display: inline-block;
-		width: 50%;
-		border-radius: 8px;
+		width: 60%;
+		border-radius: 5px;
 		border: solid 1px #E7EAE8;
+		font-size: 13px;
+		padding: 0;
+		height: 25px;
 	}
 	
 	.mycontent input[type="text"] {
@@ -2771,7 +2777,7 @@ select {
     			position: relative;
     			display: block;
     			text-decoration: none;
-    			color: #6b7770;
+    			color: #494949;
     			top: -6px;
     			padding: 6px 1.5em 0.25em 1.5em;
     			border-bottom-left-radius: 6px;
@@ -3526,8 +3532,16 @@ select {
 		margin: 10px;
 	}
 	
-	.inquiryview tr{
+	.inquiryview tbody>tr{
 		border-bottom: solid 1px #E7EAE8;
+	}
+	
+	.inquiryview tbody>tr:last-child{
+		height: 200px;
+	}
+	
+	.inquiryview thead{
+		border-bottom: solid 1.5px;
 	}
 	
 	.board{
@@ -3572,10 +3586,10 @@ select {
 		border-bottom: solid 1px;
 	}
 	
-	#view h5{
+	/* #view h5{
 		
-		border-bottom: solid 1px;
-	}
+		border-bottom: solid 1.5px;
+	} */
 	
 	#view>div>img{
 		width: 250px;
