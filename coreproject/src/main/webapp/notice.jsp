@@ -66,7 +66,7 @@
    								</header>
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<section class="mycontent" style="margin-left: 30px;">
+   								<section class="mycontent">
 								
 								
 								<table class="noticetable">

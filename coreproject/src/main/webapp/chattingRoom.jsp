@@ -81,7 +81,7 @@
 				if (chatName=="<%=id%>"){
 					$('#chatList').append(
 							'<div class="chat right">'+
-								'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
+								'<div class="userName" style="align-self:end;"><i class="icon solid fa-user"></i><br><b>'+ chatName +'</b></div>'+
 								'<div class="textbox">'+ chatContent +'</div>'+
 								'<div class="time" style="align-self:end; font-size: 13px;" >'+ timeSet +'</div>'+
 							'</div>'+
@@ -90,13 +90,20 @@
 				else{
 					$('#chatList').append(
 							'<div class="chat left">'+
-								'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
+								'<div class="userName" style="align-self:end;"><i class="icon regular fa-user"></i><br><b>'+ chatName +'</b></div>'+
 								'<div class="textbox">'+ chatContent +'</div>'+
 								'<div class="time" style="align-self:end; font-size: 13px;" >'+ timeSet +'</div>'+
 							'</div>'+
 							'<br>');
 				}
-				$('#chatList').scrollTop($('#chatList')[0].scrolHeight);
+				
+				/* $('#chatList').scrollTop($('#chatList')[0].scrollHeight); */
+				
+				$(function(){
+					$('.userchat').scrollTop($('.userchat')[0].scrollHeight)
+				});
+				
+				
 			};
 			function getInfiniteChat(){
 				setInterval(function(){
@@ -105,111 +112,121 @@
 			};
 		</script>
 	</head>
-	<body>
-		<div class="is-preload">
-			<div id="page-wrapper">
-				<!-- Header -->
-				<%@include file="header.jsp" %>
-				
-				<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row">
-   							<!-- Sidebar -->
-							<div class="col-3 col-12-medium">
-   								<div class="sidebar">
-									<c:choose>
-										<c:when test="${not empty loginUser}">
-											<ul class="divided">
-                                    <li>
-                                        <article class="box mypage-menu">
-                                        <h3 class="major"><span><%=id %>님의 마이페이지</span></h3>
-                                            <h1><a href="mypageUser.jsp">내 프로필</a></h1>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="box mypage-menu">
-                                            <h1><a href="workUser.jsp">작업의뢰 현황</a></h1>
-                                        </article>
-                                    </li>
-                                </ul>
-                                <table>
-	                               	<tr>
-                               			<td colspan='2' align="right" style="font-size: 0.8em;">
-	                               			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
-	                               			<a href="deleteUserCon">회원탈퇴</a>
-                               			</td>
-                          			</tr>
-                               	</table>
-										</c:when>
-										<c:when test="${not empty loginExpert}">
-										<h3 class="major"><span>🍀<%=id %>님의 마이페이지</span></h3>
-											<ul class="divided">
-			   									<li>
-			   										<article class="box mypage-menu">
-														<h1><a href="mypageExpert.jsp">내프로필</a></h1>
-													</article>
-			   									</li>
-			   									<li>
-													<article class="box mypage-menu">
-														<h1><a href="myPost.jsp">내게시글</a></h1>
-													</article>
-												</li>
-												<li>
-													<article class="box mypage-menu">
-														<h1><a href="workExpert.jsp">작업목록</a></h1>
-													</article>
-												</li>
-												<li>
-													<article class="box mypage-menu">
-														<h1><a href="droneList.jsp">드론관리</a></h1>
-													</article>
-												</li>
-			   								</ul>
-			   								<table>
-									     	 	<tr>
-										         	<td colspan='2' align="right" style="font-size: 0.8em;">
-										         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
-										         		<a href="deleteExpertCon">회원탈퇴</a>	
-										         	</td>
-										         </tr>
-										     </table>
-										</c:when>										
-									</c:choose>   								
-	   						</div>
-	   					</div>
-						</div>
-					</div>
-				</section>
+	<body class="is-preload">
+		<div id="page-wrapper">
+			<!-- Header -->
+			<%@include file="header.jsp" %>
 			
-			</div>
-		
-		
+			<!-- Main -->
+			<section id="main">
+				<div class="container">
+					<div class="row">
+  							<!-- Sidebar -->
+						<div class="col-3 col-12-medium">
+  								<div class="sidebar">
+								<c:choose>
+									<c:when test="${not empty loginUser}">
+										<ul class="divided">
+                                   <li>
+                                       <article class="box mypage-menu">
+                                       <h3 class="major"><span><%=id %>님</span></h3>
+                                           <h1><a href="mypageUser.jsp">내 프로필</a></h1>
+                                       </article>
+                                   </li>
+                                   <li>
+                                       <article class="box mypage-menu">
+                                           <h1><a href="workUser.jsp">작업의뢰 현황</a></h1>
+                                       </article>
+                                   </li>
+                               </ul>
+                               <table>
+                               	<tr>
+                              			<td colspan='2' align="right" style="font-size: 0.8em;">
+                               			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
+                               			<a href="deleteUserCon">회원탈퇴</a>
+                              			</td>
+                         			</tr>
+                              	</table>
+									</c:when>
+									<c:when test="${not empty loginExpert}">
+									<h3 class="major"><span>🍀<%=id %>님</span></h3>
+										<ul class="divided">
+		   									<li>
+		   										<article class="box mypage-menu">
+													<h1><a href="mypageExpert.jsp">내프로필</a></h1>
+												</article>
+		   									</li>
+		   									<li>
+												<article class="box mypage-menu">
+													<h1><a href="myPost.jsp">내게시글</a></h1>
+												</article>
+											</li>
+											<li>
+												<article class="box mypage-menu">
+													<h1><a href="workExpert.jsp">작업목록</a></h1>
+												</article>
+											</li>
+											<li>
+												<article class="box mypage-menu">
+													<h1><a href="droneList.jsp">드론관리</a></h1>
+												</article>
+											</li>
+		   								</ul>
+		   								<table>
+								     	 	<tr>
+									         	<td colspan='2' align="right" style="font-size: 0.8em;">
+									         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+									         		<a href="deleteExpertCon">회원탈퇴</a>	
+									         	</td>
+									         </tr>
+									     </table>
+									</c:when>										
+								</c:choose>   								
+   						</div>
+   					</div>
+   					<div class="col-9 col-12-medium imp-medium">
+   						<div class="content">
+							
+							<!-- 채팅창 시작 -->
+							<div class="wrap">
+								<div class="userchat">
+									<div id="chatList">
+							        	<!-- 채팅내용 -->   
+							        </div>
+								</div>
+						        <div class="input-text">
+						        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText"></textarea>
+						    	</div>
+						    	<div class="sub">
+						    		<span class="file"> 
+						    			<label for="file">파일</label>
+						    			<input id="file" type="file" name="file"> 
+						    		</span>
+						    		<span class="submit"> <button type="button" onclick="submitFunction()" id="sb">전송</button></span>
+						    	</div>
+							</div>	
+							<script type="text/javascript">
+								$(document).ready(function(){
+									chatListFunction("today");
+									getInfiniteChat();
+								});
+							</script>
+							
+							
+							   							
+   						</div>
+   					</div>
+   					
+					</div>
+				</div>
+			</section>
 		</div>
-	
-	
-		<div class="wrap">
-			<div class="userchat">
-				<div id="chatList">
-		           
-		        </div>
-			        <div class="input-text">
-			        	<textarea maxlength="100px" id='chatText' class="text_input" placeholder="메세지를 입력하세요." name="chatText"></textarea>
-			    	</div>
-			    	<div class="sub">
-			    		<span class="file"> 
-			    			<label for="file">파일</label>
-			    			<input id="file" type="file" name="file"> 
-			    		</span>
-			    		<span class="submit"> <button type="button" onclick="submitFunction()">전송</button></span>
-			    	</div>
-			</div>
-		</div>	
-		<script type="text/javascript">
-			$(document).ready(function(){
-				chatListFunction("today");
-				getInfiniteChat();
-			});
-		</script>
+		
+		
+		
+		
+		
+		
+		
 	</body>
 </html>
