@@ -71,15 +71,15 @@
 											</tr>
 											<tr>
 												<td class="co1">변경할 이름 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginUser.getUser_name() %>" name="name"></td>
+												<td class="co2"><input type="text" value="<%=loginUser.getUser_name() %>" name="name"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 이메일 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginUser.getUser_email() %>" name="email"></td>
+												<td class="co2"><input type="text" value="<%=loginUser.getUser_email() %>" name="email"></td>
 											</tr>
 											<tr>
 												<td class="co1">변경할 전화번호 : </td>
-												<td class="co2"><input type="text" placeholder="<%=loginUser.getUser_phone() %>" name="phone"></td>
+												<td class="co2"><input type="text" value="<%=loginUser.getUser_phone() %>" name="phone"></td>
 											</tr>
 											<tr>
 												<td colspan='2' align="right"><input type="submit" value="수정"></td>

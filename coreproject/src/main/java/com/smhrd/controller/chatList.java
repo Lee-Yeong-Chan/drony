@@ -16,8 +16,7 @@ public class chatList extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		String listType=request.getParameter("listType");
-		int tuw_idx=11;
-		/*Integer.valueOf(request.getParameter("tuw_idx"));*/
+		int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
 		if(listType==null || listType.equals("")) {
 			response.getWriter().write("");
 		}
@@ -49,9 +48,12 @@ public class chatList extends HttpServlet {
 			result.append("[{\"value\":\""+chatList.get(i).getTalker()+"\"},");
 			result.append("{\"value\":\""+chatList.get(i).getTalk()+"\"},");
 			result.append("{\"value\":\""+TimeSet(chatList.get(i).getCreated_at())+"\"}]");
-			if(i!=chatList.size()-1) result.append(",");
+			if(i!=chatList.size()-1) {
+				result.append(",");
+			}
 		}
 		result.append("], \"last\":\""+chatList.get(chatList.size()-1).getChat_idx()+"\"}");
+		System.out.println(result);
 		return result.toString();
 	}
 }

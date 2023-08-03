@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <%
-	int tuw_idx=11;
+	int tuw_idx=21;
 	/*Integer.valueOf(request.getParameter("tuw_idx"));*/
 	chatDAO chatDAO=new chatDAO();
 	List<chatDTO> chatting=chatDAO.selectEachChattingRoom(tuw_idx);
@@ -36,9 +36,9 @@
 			/* contentType:false,
 			processData:false, */
 			var lastID=0;
+			var tuw_idx=<%=Integer.valueOf(request.getParameter("tuw_idx"))%>;
 			function submitFunction(){
 				chatText=$('#chatText').val();
-				tuw_idx='11';
 				var chatText=$('#chatText').val();
 				$.ajax({
 					type:"POST",
@@ -67,13 +67,10 @@
 			function chatListFunction(type){
 				$.ajax({
 					type:"POST",
-					enctype:'multipart/form-data',
 					url:'chatList',
 					data:{
 						listType:type,
 					},
-					contentType:false,
-					processData:false,
 					success:function(data){
 						var parsed=JSON.parse(data);
 						var result=parsed.result;
@@ -85,7 +82,7 @@
 				});
 			}
 			function addChat(chatName,chatContent,chatTime){
-				$('#chatList').append('<div class="row"'+
+				$('#chatList').append('<div class="rowasdasd"'+
 						'<div class="dedia-body">'+
 						'<h4 class="media-heading">'+
 						chatName+
@@ -98,7 +95,7 @@
 						'</p>'+
 						'</div>'+
 						'</div>'+
-						'<hr>');
+						'<br>');
 			}
 			function getInfiniteChat(){
 				setInterval(function(){
@@ -125,6 +122,7 @@
 			    	</div>
 			</div>
 		</div>
+		<button type="button" onclick="chatListFunction('today');">추가</button>
 		<script type="text/javascript">
 			$(document).ready(function(){
 				chatListFunction("today");

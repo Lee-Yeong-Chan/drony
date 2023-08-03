@@ -38,7 +38,7 @@ public class updateUserCon extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		if(cnt>0) {
-			session.setAttribute("loginExpert", updateUser);
+			session.setAttribute("loginUser", updateUser);
 			out.println("<script>alert('내 정보 수정 완료'); location.href='mypageUser.jsp';</script>");
 		}
 		else{

@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +30,7 @@ public class chatSubmit extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		int tuw_idx=Integer.valueOf(request.getParameter("tuw_idx"));
-		String chatText=request.getParameter("chatText").replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>");
+		String chatText=URLDecoder.decode(request.getParameter("chatText").replaceAll(" ", "&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll("\n","<br>"),"utf-8");
 		String id="abcde";
 		/*String originName="";
 		Part file=request.getPart("file");
