@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.smhrd.domain.chatDAO;
 import com.smhrd.domain.chatDTO;
 public class chatList extends HttpServlet {
@@ -47,36 +48,18 @@ public class chatList extends HttpServlet {
 		return timeSet;
 	}
 	public String getWork(int tuw_idx) {
-		StringBuffer result=new StringBuffer();
-		result.append("{\"result\":[");
 		chatDAO chatDAO=new chatDAO();
 		ArrayList<chatDTO> chatList=(ArrayList<chatDTO>) chatDAO.selectEachChattingRoom(tuw_idx);
-		for(int i=0;i<chatList.size();i++) {
-			result.append("[{\"value\":\""+chatList.get(i).getTalker()+"\"},");
-			result.append("{\"value\":\""+chatList.get(i).getTalk()+"\"},");
-			result.append("{\"value\":\""+TimeSet(chatList.get(i).getCreated_at())+"\"}]");
-			if(i!=chatList.size()-1) {
-				result.append(",");
-			}
-		}
-		result.append("], \"last\":\""+chatList.get(chatList.size()-1).getChat_idx()+"\"}");
-		return result.toString();
+		Gson gson=new Gson();
+		String resultJson=gson.toJson(chatList);
+		return resultJson;
 	}
 	public String getID(int chat_idx,int tuw_idx) {
-		StringBuffer result=new StringBuffer();
-		result.append("{\"result\":[");
 		chatDTO chatDTO=new chatDTO(chat_idx,tuw_idx);
 		chatDAO chatDAO=new chatDAO();
 		ArrayList<chatDTO> chatList=(ArrayList<chatDTO>) chatDAO.selectUpIdx(chatDTO);
-		for(int i=0;i<chatList.size();i++) {
-			result.append("[{\"value\":\""+chatList.get(i).getTalker()+"\"},");
-			result.append("{\"value\":\""+chatList.get(i).getTalk()+"\"},");
-			result.append("{\"value\":\""+TimeSet(chatList.get(i).getCreated_at())+"\"}]");
-			if(i!=chatList.size()-1) {
-				result.append(",");
-			}
-		}
-		result.append("], \"last\":\""+chatList.get(chatList.size()-1).getChat_idx()+"\"}");
-		return result.toString();
+		Gson gson=new Gson();
+		String resultJson=gson.toJson(chatList);
+		return resultJson;
 	}
 }

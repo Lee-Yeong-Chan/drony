@@ -72,27 +72,27 @@
 	       font-size: 1.5rem;
 	   }
 	   
-	   .wrap .ch1 .textbox {
+	   .wrap .left .textbox {
 	       margin-left: 20px;
 	       background-color: #F7FBFC;
 	   }
    
-	   .wrap .ch1 .textbox::before {
+	   .wrap .left .textbox::before {
 	       left: -15px;
 	       content: "◀";
 	       color: #F7FBFC;
 	   }
 	   
-	   .wrap .ch2 {
+	   .wrap .right {
 	       flex-direction: row-reverse;
 	   }
 	   
-	   .wrap .ch2 .textbox {
+	   .wrap .right .textbox {
 	       margin-right: 20px;
 	       background-color: #D6E6F2;
 	   }
 	   
-	   .wrap .ch2 .textbox::before {
+	   .wrap .right .textbox::before {
 	       right: -15px;
 	       content: "▶";
 	       color: #D6E6F2;

@@ -52,28 +52,50 @@
 						'listType':type,
 						'tuw_idx':tuw_idx
 					},
-					success:function(data){
-						if(data==""){
+					dataType:'json',
+					success:function(result){
+						if(result==""){
 							return;
 						}
-						var parsed=JSON.parse(data);
-						var result=parsed.result;
 						for(var i=0;i<result.length;i++){
-							addChat(result[i][0].value,result[i][1].value,result[i][2].value)
+							addChat(result[i].talker,result[i].talk,result[i].created_at);
 						}
-						lastID=Number(parsed.last);
+						lastID=Number(result[(result.length)-1].chat_idx);
 					}
 				});
 			};
 			function addChat(chatName,chatContent,chatTime){
-				$('#chatList').append(
-						'<div class="chat">'+
-							'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
-							'<div class="textbox">'+ chatContent +'</div>'+
-							'<div class="time" style="align-self:end; font-size: 13px;" >'+ chatTime +'</div>'+
-						'</div>'+
-						'<br>'
-						);
+				var chatTime1=""+chatTime;
+				var timeSet="";
+				timeSet+=chatTime1.substring(0,11);
+				var half="오전";
+				var hour=Number(chatTime1.substring(11,13));
+				if(Number(chatTime1.substring(11,13))>=12) {
+					half="오후";
+					hour=Number(chatTime1.substring(11,13))-12+((Number(chatTime1.substring(11,13))!=12)?0:12);
+				}
+				timeSet+=half;
+				timeSet+=hour;
+				timeSet+=":";
+				timeSet+=chatTime1.substring(14,16);
+				if (chatName=="<%=id%>"){
+					$('#chatList').append(
+							'<div class="chat right">'+
+								'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
+								'<div class="textbox">'+ chatContent +'</div>'+
+								'<div class="time" style="align-self:end; font-size: 13px;" >'+ timeSet +'</div>'+
+							'</div>'+
+							'<br>');
+				}
+				else{
+					$('#chatList').append(
+							'<div class="chat left">'+
+								'<div class="userName" style="align-self:end;"><b>'+ chatName +'</b></div>'+
+								'<div class="textbox">'+ chatContent +'</div>'+
+								'<div class="time" style="align-self:end; font-size: 13px;" >'+ timeSet +'</div>'+
+							'</div>'+
+							'<br>');
+				}
 				$('#chatList').scrollTop($('#chatList')[0].scrolHeight);
 			};
 			function getInfiniteChat(){
@@ -97,42 +119,65 @@
 							<div class="col-3 col-12-medium">
    								<div class="sidebar">
 									<c:choose>
-										
+										<c:when test="${not empty loginUser}">
+											<ul class="divided">
+                                    <li>
+                                        <article class="box mypage-menu">
+                                        <h3 class="major"><span><%=id %>님의 마이페이지</span></h3>
+                                            <h1><a href="mypageUser.jsp">내 프로필</a></h1>
+                                        </article>
+                                    </li>
+                                    <li>
+                                        <article class="box mypage-menu">
+                                            <h1><a href="workUser.jsp">작업의뢰 현황</a></h1>
+                                        </article>
+                                    </li>
+                                </ul>
+                                <table>
+	                               	<tr>
+                               			<td colspan='2' align="right" style="font-size: 0.8em;">
+	                               			<a href='updateUser.jsp'>개인정보수정</a> &nbsp;
+	                               			<a href="deleteUserCon">회원탈퇴</a>
+                               			</td>
+                          			</tr>
+                               	</table>
+										</c:when>
+										<c:when test="${not empty loginExpert}">
+										<h3 class="major"><span>🍀<%=id %>님의 마이페이지</span></h3>
+											<ul class="divided">
+			   									<li>
+			   										<article class="box mypage-menu">
+														<h1><a href="mypageExpert.jsp">내프로필</a></h1>
+													</article>
+			   									</li>
+			   									<li>
+													<article class="box mypage-menu">
+														<h1><a href="myPost.jsp">내게시글</a></h1>
+													</article>
+												</li>
+												<li>
+													<article class="box mypage-menu">
+														<h1><a href="workExpert.jsp">작업목록</a></h1>
+													</article>
+												</li>
+												<li>
+													<article class="box mypage-menu">
+														<h1><a href="droneList.jsp">드론관리</a></h1>
+													</article>
+												</li>
+			   								</ul>
+			   								<table>
+									     	 	<tr>
+										         	<td colspan='2' align="right" style="font-size: 0.8em;">
+										         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+										         		<a href="deleteExpertCon">회원탈퇴</a>	
+										         	</td>
+										         </tr>
+										     </table>
+										</c:when>										
 									</c:choose>   								
-	   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님의 마이페이지</span></h3>
-	   								<ul class="divided">
-	   									<li>
-	   										<article class="box mypage-menu">
-												<h1><a href="mypageExpert.jsp">내프로필</a></h1>
-											</article>
-	   									</li>
-	   									<li>
-											<article class="box mypage-menu">
-												<h1><a href="myPost.jsp">내게시글</a></h1>
-											</article>
-										</li>
-										<li>
-											<article class="box mypage-menu">
-												<h1><a href="workExpert.jsp">작업목록</a></h1>
-											</article>
-										</li>
-										<li>
-											<article class="box mypage-menu">
-												<h1><a href="droneList.jsp">드론관리</a></h1>
-											</article>
-										</li>
-	   								</ul>
-	   								<table>
-							     	 <tr>
-							         	<td colspan='2' align="right" style="font-size: 0.8em;">
-							         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
-							         		<a href="deleteExpertCon">회원탈퇴</a>	
-							         	</td>
-							         </tr>
-							     </table>
 	   						</div>
 	   					</div>
-						
 						</div>
 					</div>
 				</section>
