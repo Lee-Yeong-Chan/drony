@@ -48,7 +48,7 @@
 	   										<thead>
 	   											<tr>
 	   												<td><h5><%=inquiry.get(0).getInq_title() %></h5></td>
-	   												<td align="right" style="vertical-align: bottom"><%=inquiry.get(0).getexp_id() %></td>
+	   												<td align="right" style="vertical-align: bottom"><%=inquiry.get(0).getexp_id() %>(<%=expertDAO.selectExpertInquiry(inquiry.get(0).getexp_id()).getExp_email()%>)</td>
 	   											</tr>
 	   										</thead>
 	   										<tbody>
@@ -58,9 +58,6 @@
 	   											</tr>
 	   											<tr style="height: 50px;">
 	   												<td colspan="2"><span><%=inquiry.get(0).getInq_content() %></span></td>
-	   											</tr>
-	   											<tr>
-	   												<td colspan="2">이메일:<%=expertDAO.selectExpertInquiry(inquiry.get(0).getexp_id()).getExp_email()%></td>
 	   											</tr>
 	   										</tbody>
 										</table>
