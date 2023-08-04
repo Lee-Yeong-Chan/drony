@@ -89,7 +89,7 @@
 												</tr>
 												<tr>
 													<td>내용</td>
-													<td><textarea rows="6" cols="" name="content" value="<%=inquiry.get(0).getInq_content()%>"></textarea></td>
+													<td><textarea rows="6" cols="" name="content"></textarea></td>
 												</tr>
 												<tr>
 													<td colspan='2' style="text-align:right;"><input type="button" value="수정" onclick="subm()"></td>

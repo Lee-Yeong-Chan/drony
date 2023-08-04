@@ -60,7 +60,7 @@
 		   										</tr>
 		   										<tr>
 		   											<td>내용</td>
-		   											<td><textarea type="text" name="content"></textarea></td>
+		   											<td><textarea name="content"></textarea></td>
 		   										</tr>
 		   										<tr style="text-align: right;">
 		   											<td colspan='2'><input type="button" onclick="subm()" value="작성"></td>

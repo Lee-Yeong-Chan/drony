@@ -150,7 +150,7 @@
 												</tr>
 												<tr>
 													<td>내용</td>
-													<td><textarea type="text" name="content" value="<%=selectPost.get(0).getW_content()%>"></textarea></td>
+													<td><textarea name="content"></textarea></td>
 												</tr>
 												<tr style="text-align: right;">
 													<td colspan="2"><input type="button" value="수정완료" onclick="subm()"></td>
