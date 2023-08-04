@@ -137,48 +137,6 @@
    						</div>
    					</div>
    				</div>
-   				
-   				<!--
-   					<div class="wrap">
-   						<div class="closebtn"><button>X</button></div>
-   						<div class="userchat">
-   						for문으로 이 과정 반복하기
-   							<div class="chat ch1">
-					            <div class="icon"><i class="icon solid fa-user"></i></div>
-					            <div class="textbox">안녕하세요. 반갑습니다.</div>
-					        </div>
-					        
-					        <div class="input-text">
-					        	<input type="text" class="text_input" placeholder="메세지를 입력하세요." name="chatText">
-					    	</div>
-					    	<div class="sub">
-					    		<span class="file"></span>
-					    		<span class="submit"><input type="submit" value="전송"></span>
-					    	</div>
-					    	
-					    	
-					    	
-					    	
-					    	
-   						</div>
-   					</div>
-   				
-   				<script>
-   					// 모달 열기
-   					function modalOpen(){
-   						document.querySelector('.wrap').style.display='block';
-   					}
-   					// 모달 끄기
-   					function modalClose(){
-   						document.querySelector('.wrap').style.display='none';
-   						
-   					}
-   					//버튼 클릭리스너 달기
-   					document.querySelector("#chat").addEventListener('click', modalOpen);
-   					document.querySelector(".closebtn").addEventListener('click', modalClose);
-   				</script>
-   				모달끝
-   				 -->
    			</div>
    		</section>
    		

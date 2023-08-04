@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.domain.expertDroneDTO"%>
+<%@page import="com.smhrd.domain.mypageDAO"%>
+<%@page import="com.smhrd.domain.expertDAO"%>
 <%@page import="com.smhrd.domain.expertDTO"%>
 <%@page import="com.smhrd.domain.workDTO"%>
 <%@page import="java.util.List"%>
@@ -9,7 +12,10 @@
    int w_idx=Integer.valueOf(request.getParameter("w_idx"));
    workDAO workDAO=new workDAO();
    List<workDTO> selectPost=workDAO.selectWork(w_idx);
-   
+   expertDAO expertDAO=new expertDAO();
+   expertDTO expertPost=expertDAO.selectExpertPost(w_idx);
+   mypageDAO mypageDAO=new mypageDAO();
+   List<expertDroneDTO> droneList=mypageDAO.selectExpertDrone(selectPost.get(0).getExp_id());
    String x, y;
    if(selectPost.get(0).getW_kind().equals("P")){
       x="farm";
@@ -43,6 +49,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
       <link rel="stylesheet" href="assets/css/main.css" />
+      <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
       <style type="text/css">
          #update{
             display: none;
@@ -94,10 +101,12 @@
                            <div><b>단가 : </b><%=selectPost.get(0).getW_price() %>원</div>   
                            <div style="border-bottom: solid 1px #efefef; height: 50px;"><%=selectPost.get(0).getW_content() %></div>
                            <div class="exinfo">
-								업체명<br>
-								사업자번호<br>
-								드론자격증<br>
-								보유드론<br>
+								업체명<span><%=expertPost.getCompany_name() %></span><br>
+								사업자번호<span><%=expertPost.getBno() %></span><br>
+								보유드론<%for (int i=0;i<droneList.size();i++){
+								out.print("<span>"+droneList.get(i).getDr_model()+"</span>");
+								}%>
+								<br>
                            </div>
                         </section>
                         
@@ -115,7 +124,7 @@
                      <!-- postDetail 수정부분 -->
                      <article id="update">
                         <div>
-                           <form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" method="post" enctype="multipart/form-data">
+                           <form action="updatePostCon?w_idx=<%=selectPost.get(0).getW_idx() %>" name="updatePostForm" method="post" enctype="multipart/form-data">
                               <table class="noticetable">
                                  <tr>
                                     <td>제목</td>
@@ -151,7 +160,7 @@
                                     <td><textarea type="text" name="content" value="<%=selectPost.get(0).getW_content()%>"></textarea></td>
                                  </tr>
                                  <tr style="text-align: right;">
-                                    <td colspan="2"><input type="submit" value="수정완료"></td>
+                                    <td colspan="2"><input type="button" value="수정완료" onclick="submit()"></td>
                                  </tr>
                               </table>
                            </form>
@@ -205,6 +214,31 @@
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-      
+      <script type="text/javascript">
+		var form = document.updatePostForm;
+		function submit(){
+			if(!form.title.value){
+				alert("제목을 입력해주세요.");
+				form.title.focus();
+				return;
+			}
+			if(!form.content.value){
+				alert("내용을 입력해주세요.");
+				form.content.focus();
+				return;
+			}
+			if(!form.w_kind.value){
+				alert("작업분류를 입력해주세요.");
+				form.w_kind.focus();
+				return;
+			}
+			if(!form.price.value){
+				alert("작업단가를 입력해주세요.");
+				form.price.focus();
+				return;
+			}
+			form.submit();
+		}
+      </script>
    </body>
 </html>

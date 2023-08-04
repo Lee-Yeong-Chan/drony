@@ -29,7 +29,6 @@
 			var lastID=0;
 			var tuw_idx=<%=tuw_idx%>
 			function submitFunction(){
-				chatText=$('#chatText').val();
 				var chatText=$('#chatText').val();
 				$.ajax({
 					type:"POST",

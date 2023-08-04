@@ -114,4 +114,17 @@ public class expertDAO {
 		}
 		return cnt;
 	}
+	public expertDTO selectExpertPost(int w_idx) {
+		expertDTO ExpertPost=null;
+		try {
+			ExpertPost=sqlSession.selectOne("selectExpertPost", w_idx);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return ExpertPost;
+	}
 }

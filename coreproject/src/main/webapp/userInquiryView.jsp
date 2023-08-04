@@ -15,6 +15,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<style type="text/css">
 			#update{
 				display: none;
@@ -66,7 +67,7 @@
 								</div>
 							
 							<div id="update">
-								<form action="updateUserInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" method="post" enctype="multipart/form-data">
+								<form action="updateUserInquiryCon?inq_idx=<%=inquiry.get(0).getInq_idx()%>" name="updateUserInquiryForm" method="post" enctype="multipart/form-data">
 									<h1> 제목<input type="text" name="title" value="<%=inquiry.get(0).getInq_title()%>"></h1>
 									<div>
 										내용<input type="text" name="content" value="<%=inquiry.get(0).getInq_content()%>">
@@ -74,7 +75,7 @@
 									<div>
 										<input type="file" name="file" value="<%=inquiry.get(0).getInq_file()%>">
 									</div>
-									<input type="submit" value="수정완료">
+									<input type="button" onclick="submit()" value="수정완료">
 								</form>
 							</div>
 							<div>
@@ -97,6 +98,20 @@
 									    view.style.display='none';
 									    updateButton.innerText='돌아가기';
 									  }
+								}
+								var form = document.updateUserInquiryForm;
+								function submit(){
+									if(!form.title.value){
+										alert("제목을 입력해주세요.");
+										form.title.focus();
+										return;
+									}
+									if(!form.content.value){
+										alert("내용을 입력해주세요.");
+										form.content.focus();
+										return;
+									}
+									form.submit();
 								}
 							</script>								
 								

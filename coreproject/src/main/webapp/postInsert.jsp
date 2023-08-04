@@ -7,6 +7,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -33,7 +34,7 @@
    								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<div id="insert" class="mypagetable">
-   									<form action="insertPostCon" method="post" enctype="multipart/form-data">
+   									<form action="insertPostCon" name="insertPostForm" method="post" enctype="multipart/form-data">
 	   									<table class="noticetable">
 	   										<tr>
 	   											<td>제목</td>
@@ -67,7 +68,7 @@
 	   											<td><textarea type="text" name="content"></textarea></td>
 	   										</tr>
 	   										<tr style="text-align: right;">
-	   											<td colspan='2'><input type="submit" value="작성"></td>
+	   											<td colspan='2'><input type="button" onclick="submit()" value="작성"></td>
 	   										</tr>
 	   									</table>
 	   								</form>
@@ -88,5 +89,31 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script type="text/javascript">
+			var form = document.insertPostForm;
+			function submit(){
+				if(!form.title.value){
+					alert("제목을 입력해주세요.");
+					form.title.focus();
+					return;
+				}
+				if(!form.content.value){
+					alert("내용을 입력해주세요.");
+					form.content.focus();
+					return;
+				}
+				if(!form.w_kind.value){
+					alert("작업분류를 입력해주세요.");
+					form.w_kind.focus();
+					return;
+				}
+				if(!form.price.value){
+					alert("작업단가를 입력해주세요.");
+					form.price.focus();
+					return;
+				}
+				form.submit();
+			}
+		</script>
 	</body>
 </html>

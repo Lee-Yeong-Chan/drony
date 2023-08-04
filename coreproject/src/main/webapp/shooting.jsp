@@ -10,6 +10,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 	</head>
 	<body class="is-preload">
 	
@@ -40,10 +41,10 @@
 						</div>
 						
 						<!-- 검색창 -->
-   						<form action="shooting.jsp" method="get">
+   						<form action="shooting.jsp" method="get" name="searchForm">
    							<div class="searchfi">
    								<input type="text" placeholder="검색어 입력" name="searchText">
-   								<button type="submit" value="검색">검색</button>
+   								<input type="button" onclick="submit()" value="검색">
    							</div>
    						</form>
    						<%
@@ -52,7 +53,7 @@
    							request.setCharacterEncoding("utf-8");
    							String searchText=request.getParameter("searchText");
    							List<workDTO> shooting=workDAO.selectAllWork("S");
-   							if(searchText!=null){
+   							if(!"".equals(searchText)&&searchText!=null){
    								shooting=workDAO2.selectSearchWork("S", searchText);
    							}
    							String pageN=request.getParameter("pageNum");
@@ -81,11 +82,16 @@
 						%>
 						<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
 						<div>
-							<c:if test="${not empty loginExpert}">
+							<c:choose>
+   							<c:when test="${not empty loginExpert}">
 								<div align="right">
 									<span><a href='postInsert.jsp'>글 작성하기</a></span>
 								</div>
-							</c:if>
+							</c:when>
+							<c:otherwise>
+								<br>
+							</c:otherwise>
+   						</c:choose>
 							<div class="row comlist workfield">
    								<%if(pageNum==shooting.size()/9+1){
 									for(int i=(shooting.size()/9)*9; i<shooting.size(); i++){ %>
@@ -155,7 +161,17 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	
+	<script type="text/javascript">
+		var form = document.searchForm;
+		function submit(){
+			if(!form.searchText.value){
+				alert("검색어를 입력해주세요.");
+				form.searchText.focus();
+				return;
+			}
+			form.submit();
+		}
+	</script>	
 				
 		
 	</body>

@@ -82,7 +82,7 @@
 											<input type="text" name="working_field">
 										</div>
 										<div>
-											<input type="button" value="회원가입" class="submit-btn"  onclick="join()">
+											<input type="button" value="회원가입" class="submit-btn" onclick="join()">
 										</div>
 									</form>
 								</section>

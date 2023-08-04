@@ -16,6 +16,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style type="text/css">
+			img{
+				width:200px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
@@ -74,7 +79,7 @@
    								
    								<!-- 여기서부터 오른쪽 페이지 수정 -->
    								<section class="mycontent">
-								      <form action="updateDroneCon" method="post">
+								      <form action="updateDroneCon" method="post" enctype="multipart/form-data">
 										<table>
 											<thead>
 											<tr>
@@ -89,11 +94,11 @@
 											<%for(int i=0;i<droneList.size();i++){%>
 											<tr style="border-bottom: solid 1px #e7eae8;" height='58px'>
 												<td style="text-align: center;"><%=i+1 %></td>
-												<td> <input type="text" name="model" placeholder=<%=droneList.get(i).getDr_model()%>></td>
-												<td> <input type="text" name="maker" placeholder=<%=droneList.get(i).getDr_maker()%>></td>
-												<td> <input type="text" name="serial" placeholder=<%=droneList.get(i).getDr_serial()%>></td>
-												<td> <input type="text" name="desc" placeholder=<%=droneList.get(i).getDr_desc()%>></td>
-												<td> <input type="file" name="img" placeholder=<%=droneList.get(i).getDr_img()%>></td>
+												<td> <input type="text" name="model" value=<%=droneList.get(i).getDr_model()%>></td>
+												<td> <input type="text" name="maker" value=<%=droneList.get(i).getDr_maker()%>></td>
+												<td> <input type="text" name="serial" value=<%=droneList.get(i).getDr_serial()%>></td>
+												<td> <input type="text" name="desc" value=<%=droneList.get(i).getDr_desc()%>></td>
+												<td> <img src="upload/<%=droneList.get(i).getDr_img()%>"><input type="file" name="file" value=<%=droneList.get(i).getDr_img()%>></td>
 												<td> <input type="submit" value="수정" style="margin-bottom: 3px;">
 													 <button type="button" onclick="location.href='deleteDroneCon?dr_idx=<%=droneList.get(i).getDr_idx()%>'">삭제</button>
 												</td>

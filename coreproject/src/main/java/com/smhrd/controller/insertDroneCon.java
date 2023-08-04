@@ -40,7 +40,7 @@ public class insertDroneCon extends HttpServlet {
 		String originName = file.getSubmittedFileName();
 		if (!"".equals(originName)) {
 			InputStream fis = file.getInputStream();
-			String realPath = request.getServletContext().getRealPath("/inquiry");
+			String realPath = request.getServletContext().getRealPath("/upload");
 			String filePath = realPath + File.separator + originName; 
 			FileOutputStream fos = new FileOutputStream(filePath);
 			byte[] buf = new byte[1024];
@@ -50,7 +50,7 @@ public class insertDroneCon extends HttpServlet {
 			}
 			fis.close();
 	        fos.close();
-		}	
+		}
 		insertDrone.setExp_id(exp_id);
 		insertDrone.setDr_img(originName);
 		mypageDAO mypageDAO=new mypageDAO();

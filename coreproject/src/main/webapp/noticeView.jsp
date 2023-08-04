@@ -18,6 +18,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 		<style type="text/css">
 			#update{
 				display: none;
@@ -78,7 +79,7 @@
    								</div>
    								
 								<div id="update" style="margin-left: 30px;">
-									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" method="post" enctype="multipart/form-data">
+									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" name="updateNoticeForm" method="post" enctype="multipart/form-data">
 										<table class="noticetable" height="180px">
 											<tr>
    												<td>작성자</td>
@@ -97,7 +98,7 @@
 												<td><textarea rows="7" cols="" name="content" value="<%=notice.get(0).getNotice_content()%>"></textarea></td>
 											</tr>
 											<tr>
-												<td colspan='2' style="text-align:right;"><input type="submit" value="수정"></td>
+												<td colspan='2' style="text-align:right;"><input type="button" value="수정" onclick="submit()"></td>
 											</tr>
 										</table>
 									</form>
@@ -119,7 +120,20 @@
 										    updateButton.innerText='돌아가기';
 										  }
 									}
-								
+									var form = document.updateNoticeForm;
+									function submit(){
+										if(!form.title.value){
+											alert("제목을 입력해주세요.");
+											form.title.focus();
+											return;
+										}
+										if(!form.content.value){
+											alert("내용을 입력해주세요.");
+											form.content.focus();
+											return;
+										}
+										form.submit();
+									}
 								 </script>							
    							<!-- 여기까지 -->
    							</article>
