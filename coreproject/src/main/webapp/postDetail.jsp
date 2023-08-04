@@ -90,12 +90,14 @@
 										<div><b>단가 : </b><%=selectPost.get(0).getW_price() %>원</div>   
 										<div style="border-bottom: solid 1px #efefef; height: 50px;"><%=selectPost.get(0).getW_content() %></div>
 										<div class="exinfo">
-											업체명<span><%=expertPost.getCompany_name() %></span><br>
-											사업자번호<span><%=expertPost.getBno() %></span><br>
-											보유드론<%for (int i=0;i<droneList.size();i++){
-												out.print("<span>"+droneList.get(i).getDr_model()+"</span>");
-											}%>
-											<br>
+											<div><h6>업체명 : </h6><span><%=expertPost.getCompany_name() %></span></div>
+											<div><h6>사업자번호 : </h6><span><%=expertPost.getBno() %></span></div>
+											<div>
+												<h6>보유드론 : </h6> 
+												<%for (int i=0;i<droneList.size();i++){
+													out.print("<span>"+droneList.get(i).getDr_model()+"</span>");
+												}%>
+											</div>
 										</div>
 									</section>
 									<c:if test="${not empty loginExpert and loginExpert.exp_id eq postExpert}">
