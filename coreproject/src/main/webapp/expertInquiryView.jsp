@@ -53,7 +53,7 @@
 	   										</thead>
 	   										<tbody>
 	   											<tr>
-	   												<td>
+	   												<td> 
 	   												<%pageContext.setAttribute("fileI",inquiry.get(0).getInq_file()); %>
 		   												<c:if test="${not empty fileI}">
 		   													<span>첨부파일<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download><i class="icon solid fa-download"></i></a></span>
