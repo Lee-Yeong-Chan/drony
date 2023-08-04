@@ -41,97 +41,87 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-	
-	<div id="page-wrapper">
-   		
-   		<!-- Header -->
-		<%@include file="header.jsp" %>
-   		 
-   		<!-- Main -->
-   		<section id="main">
-   			<div class="container">
-   				<div class="row">
-   				
-   					<!-- sidebar -->
-   					<%@include file="boardsidebar.jsp" %>
-   					<!-- sidebar끝 -->
-   					
-   					<div class="col-9 col-12-medium imp-medium">
-   						<div class="content">
-   							<!-- Content -->
-   							<article class="box page-content">
-   								<header>
-   									<h3>문의사항</h3>
-   								</header>
-   								
-   								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
-   								<section class="mycontent" style="margin-left: 30px;">								
-								
-								<table class="noticetable">
-									<thead>
-										<tr>
-											<td colspan="4" align="right">
-												<span><a href="userInquiryInsert.jsp">문의 작성하기</a></span>
-											</td>
-										</tr>
-										<tr>
-											<td class="co1" style="text-align: center; width: 10%;">순번</td>
-											<td class="co1" style="width: 40%;">제목</td>
-											<td class="co1" style="width: 20%;">작성자</td>
-											<td class="co1" style="width: 30%;">작성일자</td>
-										</tr>
-									</thead>
-									<tbody>
-									<%if(pageNum==userInquiryList.size()/10+1){
-											for(int i=(userInquiryList.size()/10)*10; i<userInquiryList.size(); i++){ %>
-										<tr>
-											<td style="text-align: center;"><%=i+1 %></td>
-											<td><a href="userInquiryView.jsp?number=<%=userInquiryList.get(i).getInq_idx()%>"><%=userInquiryList.get(i).getInq_title()%></a></td>
-											<td><%=userInquiryList.get(i).getUser_id()%></td>
-											<td align="right"><%=userInquiryList.get(i).getCreated_at()%></td>
-										</tr>
-										<%	} 
-										}
-										else if(pageNum<userInquiryList.size()/10+1){
-											for(int i=(pageNum-1)*10+1; i<10*pageNum+1; i++){ %>
+		<div id="page-wrapper">
+	   		<!-- Header -->
+			<%@include file="header.jsp" %>
+	   		<!-- Main -->
+	   		<section id="main">
+	   			<div class="container">
+	   				<div class="row">
+	   					<!-- sidebar -->
+	   					<%@include file="boardsidebar.jsp" %>
+	   					<!-- sidebar끝 -->
+	   					<div class="col-9 col-12-medium imp-medium">
+	   						<div class="content">
+	   							<!-- Content -->
+	   							<article class="box page-content">
+	   								<header>
+	   									<h3>문의사항</h3>
+	   								</header>
+	   								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
+	   								<section class="mycontent" style="margin-left: 30px;">
+									<table class="noticetable">
+										<thead>
+											<tr>
+												<td colspan="4" align="right">
+													<span><a href="userInquiryInsert.jsp">문의 작성하기</a></span>
+												</td>
+											</tr>
+											<tr>
+												<td class="co1" style="text-align: center; width: 10%;">순번</td>
+												<td class="co1" style="width: 40%;">제목</td>
+												<td class="co1" style="width: 20%;">작성자</td>
+												<td class="co1" style="width: 30%;">작성일자</td>
+											</tr>
+										</thead>
+										<tbody>
+										<%if(pageNum==userInquiryList.size()/10+1){
+												for(int i=(userInquiryList.size()/10)*10; i<userInquiryList.size(); i++){ %>
 											<tr>
 												<td style="text-align: center;"><%=i+1 %></td>
 												<td><a href="userInquiryView.jsp?number=<%=userInquiryList.get(i).getInq_idx()%>"><%=userInquiryList.get(i).getInq_title()%></a></td>
 												<td><%=userInquiryList.get(i).getUser_id()%></td>
 												<td align="right"><%=userInquiryList.get(i).getCreated_at()%></td>
 											</tr>
-										<%	} 
-										}
-										else{
-										%>
-										<tr>
-											<td style="text-align: center;"></td>
-											<td><a></a></td>
-											<td></td>
-											<td align="right"></td>
-										</tr>
-										<%} %>
-									</tbody>
-								</table>
-								</section>
-								<div class="page-wrap">
-									<ul class="page-nation">
-									<%for(int i=startPage;i<=endPage;i++){%>
-										<li><a href="userInquiry.jsp?pageNum=<%=i%>"><%=i%></a></li>
-									<%}%>
-									</ul>
-								</div>
-   							<!-- 여기까지 -->
-   							</article>
-   							
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-   		</section>
-       
-	</div>
-			
+											<%	} 
+											}
+											else if(pageNum<userInquiryList.size()/10+1){
+												for(int i=(pageNum-1)*10+1; i<10*pageNum+1; i++){ %>
+												<tr>
+													<td style="text-align: center;"><%=i+1 %></td>
+													<td><a href="userInquiryView.jsp?number=<%=userInquiryList.get(i).getInq_idx()%>"><%=userInquiryList.get(i).getInq_title()%></a></td>
+													<td><%=userInquiryList.get(i).getUser_id()%></td>
+													<td align="right"><%=userInquiryList.get(i).getCreated_at()%></td>
+												</tr>
+											<%	} 
+											}
+											else{
+											%>
+											<tr>
+												<td style="text-align: center;"></td>
+												<td><a></a></td>
+												<td></td>
+												<td align="right"></td>
+											</tr>
+											<%} %>
+										</tbody>
+									</table>
+									</section>
+									<div class="page-wrap">
+										<ul class="page-nation">
+										<%for(int i=startPage;i<=endPage;i++){%>
+											<li><a href="userInquiry.jsp?pageNum=<%=i%>"><%=i%></a></li>
+										<%}%>
+										</ul>
+									</div>
+	   							<!-- 여기까지 -->
+	   							</article>
+	   						</div>
+	   					</div>
+	   				</div>
+	   			</div>
+	   		</section>
+		</div>
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>

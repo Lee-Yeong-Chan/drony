@@ -14,9 +14,9 @@
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
-		<!-- Header -->
+			<!-- Header -->
 			<%@include file="header.jsp" %>
-   		<!-- Main -->
+   			<!-- Main -->
 	   		<section id="main">
 	   			<div class="container">
 	   				<div class="row">
@@ -32,7 +32,7 @@
 									</header>
 								</article>	
 							</div>
-						<!-- 검색창 -->
+							<!-- 검색창 -->
 	   						<form action="shooting.jsp" method="get" name="searchForm">
 	   							<div class="searchfi">
 	   								<input type="text" placeholder="검색어 입력" name="searchText">
@@ -72,7 +72,7 @@
 	   								}
 	   							}
 							%>
-						<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
+							<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
 							<div>
 								<c:choose>
 		   							<c:when test="${not empty loginExpert}">

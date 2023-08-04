@@ -11,7 +11,6 @@
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
-		
 			<!-- Header -->
 			<header id="header">
 				<div class="logo container">
@@ -20,58 +19,54 @@
 					</div>
 				</div>	
 			</header>
-		
 			<section id="main">
 				<div class="container">
-				
-						<div class="col-12">
-							<div class="content">
-	
-								<!-- Content -->
-									<header class="join">
-										<h2>회 원 가 입</h2>
-									</header>
-									<section class="logbutton join-form">
-										<form action="JoinUserCon" method="post" name="joinForm">
-											<div>
-												<b>아이디</b><br>
-												<input type="text" name="id" id="id">
-											</div>
-											<div align="right">
-												<p id="result"></p>
-												<button type="button" id="CheckId" class="checkId">중복확인</button>
-											</div>
-											<div>
-												<b>비밀번호</b><br>
-												<input type="password" name="pw">
-											</div>
-											<div>
-												<b>비밀번호확인</b><br>
-												<input type="password" name="pw_re">
-											</div>
-											<div>
-												<b>이름</b><br>
-												<input type="text" name="name">
-											</div>
-											<div>
-												<b>이메일</b><br>
-												<input type="text" name="email">
-											</div>
-											<div>
-												<b>전화번호</b><br>
-												<input type="text" name="phone">
-											</div>
-											<div>
-												<input class="submit-btn" type="button" value="회원가입" onclick="join()">
-											</div>
-										</form>
-									</section>
-							</div>
+					<div class="col-12">
+						<div class="content">
+							<!-- Content -->
+							<header class="join">
+								<h2>회 원 가 입</h2>
+							</header>
+							<section class="logbutton join-form">
+								<form action="JoinUserCon" method="post" name="joinForm">
+									<div>
+										<b>아이디</b><br>
+										<input type="text" name="id" id="id">
+									</div>
+									<div align="right">
+										<p id="result"></p>
+										<button type="button" id="CheckId" class="checkId">중복확인</button>
+									</div>
+									<div>
+										<b>비밀번호</b><br>
+										<input type="password" name="pw">
+									</div>
+									<div>
+										<b>비밀번호확인</b><br>
+										<input type="password" name="pw_re">
+									</div>
+									<div>
+										<b>이름</b><br>
+										<input type="text" name="name">
+									</div>
+									<div>
+										<b>이메일</b><br>
+										<input type="text" name="email">
+									</div>
+									<div>
+										<b>전화번호</b><br>
+										<input type="text" name="phone">
+									</div>
+									<div>
+										<input class="submit-btn" type="button" value="회원가입" onclick="join()">
+									</div>
+								</form>
+							</section>
 						</div>
+					</div>
 				</div>
 			</section>
-		</div>	
-
+		</div>
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
