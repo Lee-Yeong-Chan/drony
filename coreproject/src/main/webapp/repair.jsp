@@ -43,16 +43,13 @@
 		<div id="page-wrapper">
 			<!-- Header -->	
 			<%@include file="header.jsp" %>
-			
 			<!-- Main -->
 			<section id="main">
 				<div class="container">
 					<div class="row">
-						
 						<!-- sidebar -->
    						<%@include file="boardsidebar.jsp" %>
    						<!-- sidebar끝 -->
-						
 						<div class="col-9 col-12-medium imp-medium">
 							<div class="content">
 								<article class="box page-content">
@@ -78,56 +75,52 @@
 													</a></p>
 												</section>
 											</div>
-										<%	} 
-										}
-										else if(pageNum<dcRepairList.size()/9+1){
-											for(int i=(pageNum-1)*9; i<9*pageNum; i++){ %>
-												<div class="col-3 col-6-medium col-12-small" style="width: 100%; overflow: hidden;">
-													<section class="box feature droneCom">
-														<a href="<%=dcRepairList.get(i).getDc_homepage()%>">
-															<img alt="abcd" src="<%=dcRepairList.get(i).getDc_img()%>">
-														</a>
-														<p class="dronecomp"><a class="dronecoma">
-															업체명 : <%=dcRepairList.get(i).getDc_name() %><br>
-															주소 : <%=dcRepairList.get(i).getDc_addr() %><br>
-															연락처 : <%=dcRepairList.get(i).getDc_tel() %><br>
-															업체 소개 : <%=dcRepairList.get(i).getDc_info() %>
-														</a></p>
-													</section>
-												</div>
-										<%	} 
-										}
-										else{
-										%>
-											<div class="col-3 col-6-medium col-12-small">
+									<%	} 
+									}
+									else if(pageNum<dcRepairList.size()/9+1){
+										for(int i=(pageNum-1)*9; i<9*pageNum; i++){ %>
+											<div class="col-3 col-6-medium col-12-small" style="width: 100%; overflow: hidden;">
 												<section class="box feature droneCom">
-													<a>
-														<img>
+													<a href="<%=dcRepairList.get(i).getDc_homepage()%>">
+														<img alt="abcd" src="<%=dcRepairList.get(i).getDc_img()%>">
 													</a>
-													<p class="dronecomp">
-													<a class="dronecoma">
-													</a>
-													</p>
+													<p class="dronecomp"><a class="dronecoma">
+														업체명 : <%=dcRepairList.get(i).getDc_name() %><br>
+														주소 : <%=dcRepairList.get(i).getDc_addr() %><br>
+														연락처 : <%=dcRepairList.get(i).getDc_tel() %><br>
+														업체 소개 : <%=dcRepairList.get(i).getDc_info() %>
+													</a></p>
 												</section>
 											</div>
-										<%} %>
+									<%	} 
+									}
+									else{
+									%>
+										<div class="col-3 col-6-medium col-12-small">
+											<section class="box feature droneCom">
+												<a>
+													<img>
+												</a>
+												<p class="dronecomp">
+												<a class="dronecoma">
+												</a>
+												</p>
+											</section>
+										</div>
+									<%} %>
 								</div>
 							</div>
 							<div class="page-wrap">
-									<ul class="page-nation">
-									<%for(int i=startPage;i<=endPage;i++){%>
-										<li><a href="repair.jsp?pageNum=<%=i%>"><%=i%></a></li>
-									<%}%>
-									</ul>
-								</div>
+								<ul class="page-nation">
+								<%for(int i=startPage;i<=endPage;i++){%>
+									<li><a href="repair.jsp?pageNum=<%=i%>"><%=i%></a></li>
+								<%}%>
+								</ul>
+							</div>
 						</div>
-						
-						
-						
 					</div>
 				</div>
 			</section>
 		</div>
-
 	</body>
 </html>

@@ -127,19 +127,15 @@
 										</table>
 									</form>
    								</section>
-   								
    							</article>
    						</div>
    					</div>
    				</div>
    			</div>
    		</section>
-   		      
 		<!-- Footer -->
-		<%@include file="footer.jsp" %>
-		      
+		<%@include file="footer.jsp" %>  
 	</div>
-	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>

@@ -42,16 +42,13 @@
 		<div id="page-wrapper">
 			<!-- Header -->	
 			<%@include file="header.jsp" %>
-			
 			<!-- Main -->
 			<section id="main">
 				<div class="container">
 					<div class="row">
-					
 						<!-- sidebar -->
    						<%@include file="boardsidebar.jsp" %>
    						<!-- sidebar끝 -->
-						
 						<div class="col-9 col-12-medium imp-medium">
 							<div class="content">
 								<article class="box page-content">
@@ -79,30 +76,30 @@
 														</p>
 													</section>
 												</div>
-										<%	} 
-										}
-										else if(pageNum<dcSaleList.size()/9+1){
-											for(int i=(pageNum-1)*9; i<9*pageNum; i++){ %>
-												<div class="col-3 col-6-medium col-12-small">
-													<section class="box feature droneCom">
-														<a href="<%=dcSaleList.get(i).getDc_homepage()%>">
-															<img alt="abcd" src="<%=dcSaleList.get(i).getDc_img()%>">
+									<%	} 
+									}
+									else if(pageNum<dcSaleList.size()/9+1){
+										for(int i=(pageNum-1)*9; i<9*pageNum; i++){ %>
+											<div class="col-3 col-6-medium col-12-small">
+												<section class="box feature droneCom">
+													<a href="<%=dcSaleList.get(i).getDc_homepage()%>">
+														<img alt="abcd" src="<%=dcSaleList.get(i).getDc_img()%>">
+													</a>
+													<p class="dronecomp">
+														<a class="dronecoma" href="<%=dcSaleList.get(i).getDc_homepage()%>">
+															업체명 : <%=dcSaleList.get(i).getDc_name() %><br>
+															주소 : <%=dcSaleList.get(i).getDc_addr() %><br>
+															연락처 : <%=dcSaleList.get(i).getDc_tel() %><br>
+															업체 소개 : <%=dcSaleList.get(i).getDc_info() %>
 														</a>
-														<p class="dronecomp">
-															<a class="dronecoma" href="<%=dcSaleList.get(i).getDc_homepage()%>">
-																업체명 : <%=dcSaleList.get(i).getDc_name() %><br>
-																주소 : <%=dcSaleList.get(i).getDc_addr() %><br>
-																연락처 : <%=dcSaleList.get(i).getDc_tel() %><br>
-																업체 소개 : <%=dcSaleList.get(i).getDc_info() %>
-															</a>
-														</p>
-													</section>
-												</div>
-										<%	} 
-										}
-										else{
-										%>
-										<div class="col-3 col-6-medium col-12-small">
+													</p>
+												</section>
+											</div>
+									<%	} 
+									}
+									else{
+									%>
+									<div class="col-3 col-6-medium col-12-small">
 										<section class="box feature droneCom">
 											<a>
 												<img>
@@ -113,7 +110,7 @@
 											</p>
 										</section>
 									</div>
-										<%} %>
+									<%} %>
 								</div>
 							</div>
 							<div class="page-wrap">

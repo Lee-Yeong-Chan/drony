@@ -25,24 +25,17 @@
 			}
 		</style>
 	</head>
-	
 	<body class="is-preload">
 		<div id="page-wrapper">
-   		
    		<!-- Header -->
 		<%@include file="header.jsp" %>
-   		
-   		
-   		 
    		<!-- Main -->
    		<section id="main">
    			<div class="container">
    				<div class="row">
-   				
    					<!-- sidebar -->
    					<%@include file="boardsidebar.jsp" %>
    					<!-- sidebar끝 -->
-   					
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
@@ -50,7 +43,6 @@
    								<header>
    									<h3>공지사항</h3>
    								</header>
-   								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<div id="view">
    									<table class="inquiryview">
@@ -77,7 +69,6 @@
 										<button onclick="location.href='notice.jsp'">목록</button>
    									</div>
    								</div>
-   								
 								<div id="update" style="margin-left: 30px;">
 									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" name="updateNoticeForm" method="post" enctype="multipart/form-data">
 										<table class="noticetable" height="180px">
@@ -103,7 +94,6 @@
 										</table>
 									</form>
 								</div>
-								
 								<script>
 									function toggleUpdate() {
 										  const update = document.getElementById('update');
@@ -137,18 +127,14 @@
 								 </script>							
    							<!-- 여기까지 -->
    							</article>
-   							
    						</div>
    					</div>
    				</div>
    			</div>
-   		</section>
-   		      
+   		</section> 
 		<!-- Footer -->
 		<%@include file="footer.jsp" %>
-		      
 	</div>
-	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>

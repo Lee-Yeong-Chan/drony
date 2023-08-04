@@ -8,7 +8,7 @@ public class userDAO {
 	public int insertUser(userDTO joinUser) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("selectUserLogin", joinUser);
+			cnt=sqlSession.insert("insertUser", joinUser);
 			if(cnt>0) {
 				sqlSession.commit();
 			}
@@ -27,7 +27,7 @@ public class userDAO {
 	public userDTO selectUser(userDTO login) {
 		userDTO loginUser=null;
 		try {
-			loginUser=sqlSession.selectOne("selectUser", login);
+			loginUser=sqlSession.selectOne("selectUserLogin", login);
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

@@ -39,24 +39,18 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
    		<!-- Header -->
 		<%@include file="header.jsp" %>
-   		
-   		
-   		 
    		<!-- Main -->
    		<section id="main">
    			<div class="container">
    				<div class="row">
-   				
    					<!-- sidebar -->
    					<%@include file="boardsidebar.jsp" %>
    					<!-- sidebar끝 -->
-   					
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
@@ -64,11 +58,8 @@
    								<header>
    									<h3>공지사항</h3>
    								</header>
-   								
    								<!-- 여기서부터 오른쪽 페이지 수정되는 부분 -->
    								<section class="mycontent">
-								
-								
 								<table class="noticetable">
 									<thead>
 										<tr>
@@ -127,17 +118,12 @@
 								</div>
    							<!-- 여기까지 -->
    							</article>
-   							
    						</div>
    					</div>
    				</div>
    			</div>
-   		</section>
-   		      
-		
-		      
+   		</section>      
 	</div>
-	
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -146,8 +132,5 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>	
-	
-
-	
 	</body>
 </html>
