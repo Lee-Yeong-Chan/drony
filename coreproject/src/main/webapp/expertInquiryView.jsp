@@ -98,7 +98,7 @@
 												<td><textarea rows="6" cols="" name="content" value="<%=inquiry.get(0).getInq_content()%>"></textarea></td>
 											</tr>
 											<tr>
-												<td colspan='2' style="text-align:right;"><input type="button" value="수정" onclick="submit()"></td>
+												<td colspan='2' style="text-align:right;"><input type="button" value="수정" onclick="subm()"></td>
 											</tr>
 										</table>
 									</form>
@@ -121,7 +121,7 @@
 										  }
 									}
 									var form = document.updateExpertInquiryForm;
-									function submit(){
+									function subm(){
 										if(!form.title.value){
 											alert("제목을 입력해주세요.");
 											form.title.focus();

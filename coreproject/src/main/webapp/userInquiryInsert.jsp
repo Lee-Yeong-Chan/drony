@@ -52,7 +52,7 @@
 											</td>
 										</tr>
 										<tr style="text-align: right;">
-											<td colspan='2'><input type="button" value="추가" onclick="submit()"></td>
+											<td colspan='2'><input type="button" value="추가" onclick="subm()"></td>
 										</tr>
 									</table>
 								</form>
@@ -75,7 +75,7 @@
 		<script src="assets/js/main.js"></script>
 		<script type="text/javascript">
 			var form = document.userInquiryForm;
-			function submit(){
+			function subm(){
 				if(!form.title.value){
 					alert("제목을 입력해주세요.");
 					form.title.focus();

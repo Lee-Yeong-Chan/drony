@@ -48,7 +48,7 @@
    						<form action="pestControl.jsp" method="get" name="searchForm">
    							<div class="searchfi">
    								<input type="text" placeholder="검색어 입력" name="searchText">
-   								<input type="button" onclick="submit()" value="검색">
+   								<input type="button" onclick="subm()" value="검색">
    							</div>
    						</form>
    						<%
@@ -168,7 +168,7 @@
 	<script src="assets/js/main.js"></script>
 	<script>
 		var form = document.searchForm;
-		function submit(){
+		function subm(){
 			if(!form.searchText.value){
 				alert("검색어를 입력해주세요.");
 				form.searchText.focus();

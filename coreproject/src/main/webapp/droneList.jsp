@@ -103,7 +103,7 @@
 											}%>
 										</table>
 									</form>
-									<form action="insertDroneCon" method="post" enctype="multipart/form-data">
+									<form action="insertDroneCon" name="insertDroneForm" method="post" enctype="multipart/form-data">
 										<table>
 											<thead>
 											<tr>
@@ -122,7 +122,7 @@
 												<td> <input type="text" name="serial"></td>
 												<td> <input type="text" name="desc"></td>
 												<td> <input type="file" name="file"></td>
-												<td> <input type="submit" value="추가" style="margin-right: 14px;"></td>
+												<td> <input type="button" onclick="subm1()" value="추가" style="margin-right: 14px;"></td>
 											</tr>
 										</table>
 									</form>
@@ -148,6 +148,31 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-				
+	<script type="text/javascript">
+		var form1 = document.insertDroneForm;
+		function subm1(){
+			if(!form1.model.value){
+				alert("모델명을 입력해주세요.");
+				form1.model.focus();
+				return;
+			}
+			if(!form1.maker.value){
+				alert("제조회사를 입력해주세요.");
+				form1.maker.focus();
+				return;
+			}
+			if(!form1.serial.value){
+				alert("일련번호를 입력해주세요.");
+				form1.serial.focus();
+				return;
+			}
+			if(!form1.desc.value){
+				alert("드론에 관한 설명을 입력해주세요.");
+				form1.desc.focus();
+				return;
+			}
+			form1.submit();
+		}
+	</script>
 	</body>
 </html>

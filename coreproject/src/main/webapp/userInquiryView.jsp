@@ -80,7 +80,7 @@
 									<div>
 										<input type="file" name="file" value="<%=inquiry.get(0).getInq_file()%>">
 									</div>
-									<input type="button" onclick="submit()" value="수정완료">
+									<input type="button" onclick="subm()" value="수정완료">
 								</form>
 							</div>
 							<div>
@@ -105,7 +105,7 @@
 									  }
 								}
 								var form = document.updateUserInquiryForm;
-								function submit(){
+								function subm(){
 									if(!form.title.value){
 										alert("제목을 입력해주세요.");
 										form.title.focus();
