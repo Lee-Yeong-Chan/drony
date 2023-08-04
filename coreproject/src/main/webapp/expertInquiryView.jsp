@@ -53,7 +53,12 @@
 	   										</thead>
 	   										<tbody>
 	   											<tr>
-	   												<td><span>첨부파일<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download><i class="icon solid fa-download"></i></a></span></td>
+	   												<td>
+	   												<%pageContext.setAttribute("fileI",inquiry.get(0).getInq_file()); %>
+		   												<c:if test="${not empty fileI}">
+		   													<span>첨부파일<a href="inquiry/<%=inquiry.get(0).getInq_file()%>" download><i class="icon solid fa-download"></i></a></span>
+		   												</c:if>
+	   												</td>
 	   												<td align="right"><span><%=inquiry.get(0).getCreated_at() %></span></td>
 	   											</tr>
 	   											<tr style="height: 50px;">

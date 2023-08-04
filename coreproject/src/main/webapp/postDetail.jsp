@@ -84,7 +84,12 @@
 										<div class="id"><span><%=selectPost.get(0).getExp_id()%></span></div>
 										<div class="date"><span style="text-align: right;"><%=selectPost.get(0).getCreated_at().substring(0, selectPost.get(0).getCreated_at().length()-2) %></span></div>
 									</div>
-									<div class="file"><span>첨부파일</span><a href="upload/<%=selectPost.get(0).getW_file() %>" download><i class="icon solid fa-download"></i></a></div>
+									<div class="file">
+									<%pageContext.setAttribute("fileP",selectPost.get(0).getW_file()); %>
+										<c:if test="${not empty fileP}">
+											<span>첨부파일</span><a href="upload/<%=selectPost.get(0).getW_file() %>" download><i class="icon solid fa-download"></i></a>
+										</c:if>
+									</div>
 									<div class="postimg"><img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
 									<section class="post-content">
 										<div><b>단가 : </b><%=selectPost.get(0).getW_price() %>원</div>   

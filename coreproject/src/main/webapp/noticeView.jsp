@@ -53,7 +53,12 @@
    										</thead>
    										<tbody>
    											<tr>
-   												<td><span>첨부파일</span><a href="notice/<%=notice.get(0).getNotice_file()%>" download><i class="icon solid fa-download"></i></a></td>
+   												<td>
+   												<%pageContext.setAttribute("fileN",notice.get(0).getNotice_file());%>
+   													<c:if test="${not empty fileN}">
+   														<span>첨부파일</span><a href="notice/<%=notice.get(0).getNotice_file()%>" download><i class="icon solid fa-download"></i></a>
+   													</c:if>
+   												</td>   												
    												<td align="right"><span><%=notice.get(0).getCreated_at() %></span></td>
    											</tr>
    											<tr>
@@ -86,7 +91,7 @@
 											</tr>
 											<tr>
 												<td>내용</td>
-												<td><textarea rows="7" cols="" name="content" value="<%=notice.get(0).getNotice_content()%>"></textarea></td>
+												<td><textarea rows="7" cols="" name="content"></textarea></td>
 											</tr>
 											<tr>
 												<td colspan='2' style="text-align:right;"><input type="button" value="수정" onclick="subm()"></td>
