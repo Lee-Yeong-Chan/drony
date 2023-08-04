@@ -3,11 +3,14 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.database.ExpertMapper">
-	<select id="selectExpert" parameterType="com.smhrd.domain.expertDTO" resultType="com.smhrd.domain.expertDTO">
+	<select id="selectExpertLogin" parameterType="com.smhrd.domain.expertDTO" resultType="com.smhrd.domain.expertDTO">
 		select * from t_expert where exp_id=#{exp_id} and exp_pw=#{exp_pw}
 	</select>
 	<select id="selectExpertId" parameterType="String" resultType="int">
 		select count(*) from t_expert where exp_id=#{exp_id}
+	</select>
+	<select id="selectExpert" parameterType="String" resultType="com.smhrd.domain.expertDTO">
+		select * from t_expert where exp_id=#{exp_id}
 	</select>
 	<select id="selectExpertPost" parameterType="int" resultType="com.smhrd.domain.expertDTO">
 		select bno, company_name from t_expert where exp_id=(select exp_id from t_work where w_idx=#{w_idx})

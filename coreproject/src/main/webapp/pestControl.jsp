@@ -166,7 +166,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script type="text/javascript">
+	<script>
 		var form = document.searchForm;
 		function submit(){
 			if(!form.searchText.value){

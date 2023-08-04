@@ -170,21 +170,20 @@
 												</article>
 											</li>
 	   									</ul>
-		   								<table>
-								     	 	<tr>
-									         	<td colspan='2' align="right" style="font-size: 0.8em;">
-									         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
-									         		<a href="deleteExpertCon">회원탈퇴</a>	
-									         	</td>
-									         </tr>
-									     </table>
+										<table>
+											<tr>
+												<td colspan='2' align="right" style="font-size: 0.8em;">
+													<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+													<a href="deleteExpertCon">회원탈퇴</a>	
+												</td>
+											</tr>
+										</table>
 									</c:when>										
 								</c:choose>   								
 	   						</div>
 	   					</div>
 	   					<div class="col-9 col-12-medium imp-medium">
 	   						<div class="content">
-								
 								<!-- 채팅창 시작 -->
 								<div class="wrap">
 									<div class="chathead">

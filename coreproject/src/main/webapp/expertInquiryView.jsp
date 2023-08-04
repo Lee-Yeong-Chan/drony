@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.expertDAO"%>
 <%@page import="com.smhrd.domain.expertInquiryDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.inquiryDAO"%>
@@ -9,6 +10,7 @@
 	int number=Integer.valueOf(request.getParameter("number"));
 	inquiryDAO inquiryDAO=new inquiryDAO();
 	List<expertInquiryDTO> inquiry= inquiryDAO.selectExpertInquiry(number);
+	expertDAO expertDAO=new expertDAO();
 %>
 	<head>
 		<title>DRONY</title>
@@ -63,6 +65,9 @@
    											</tr>
    											<tr style="height: 50px;">
    												<td colspan="2"><span><%=inquiry.get(0).getInq_content() %></span></td>
+   											</tr>
+   											<tr>
+   												<td colspan="2">이메일:<%=expertDAO.selectExpertInquiry(inquiry.get(0).getexp_id()).getExp_email()%></td>
    											</tr>
    										</tbody>
 									</table>

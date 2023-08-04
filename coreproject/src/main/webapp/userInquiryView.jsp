@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.userDAO"%>
 <%@page import="com.smhrd.domain.userInquiryDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.inquiryDAO"%>
@@ -9,6 +10,7 @@
 	int number=Integer.valueOf(request.getParameter("number"));
 	inquiryDAO inquiryDAO=new inquiryDAO();
 	List<userInquiryDTO> inquiry= inquiryDAO.selectUserInquiry(number);
+	userDAO userDAO=new userDAO();
 %>
 	<head>
 		<title>Insert title here</title>
@@ -61,6 +63,9 @@
    											</tr>
    											<tr style="height: 50px;">
    												<td colspan="2"><span><%=inquiry.get(0).getInq_content() %></span></td>
+   											</tr>
+   											<tr>
+   												<td colspan="2"><span>이메일:<%=userDAO.selectUserInquiry(inquiry.get(0).getUser_id()).getUser_email() %></span></td>
    											</tr>
    										</tbody>
    									</table>

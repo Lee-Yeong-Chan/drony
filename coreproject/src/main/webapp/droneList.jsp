@@ -26,49 +26,46 @@
 		<div id="page-wrapper">
 			<!-- Header -->
 			<%@include file="header.jsp" %>
-			
 			<!-- Sidebar -->
 			<section id="main">
    				<div class="container">
    					<div class="row">
    						<div class="col-3 col-12-medium">
    							<div class="sidebar">
-   							 
    							<!-- My page -->
-   							<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님</span></h3>
-   							<ul class="divided">
-								<li>
-									<article class="box mypage-menu">
-										<h1><a href="mypageExpert.jsp">내프로필</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box mypage-menu">
-										<h1><a href="myPost.jsp">내게시글</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box mypage-menu">
-										<h1><a href="workExpert.jsp">작업목록</a></h1>
-									</article>
-								</li>
-								<li>
-									<article class="box mypage-menu">
-										<h1><a href="droneList.jsp">드론관리</a></h1>
-									</article>
-								</li>
-							</ul>
-							<table>
-						     	 <tr>
-						         	<td colspan='2' align="right" style="font-size: 0.8em;">
-						         		<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
-						         		<a href="deleteExpertCon">회원탈퇴</a>	
-						         	</td>
-						         </tr>
-						     </table>
-   						</div>
+   								<h3 class="major"><span>🍀<%=loginExpert.getExp_id() %>님</span></h3>
+	   							<ul class="divided">
+									<li>
+										<article class="box mypage-menu">
+											<h1><a href="mypageExpert.jsp">내프로필</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box mypage-menu">
+											<h1><a href="myPost.jsp">내게시글</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box mypage-menu">
+											<h1><a href="workExpert.jsp">작업목록</a></h1>
+										</article>
+									</li>
+									<li>
+										<article class="box mypage-menu">
+											<h1><a href="droneList.jsp">드론관리</a></h1>
+										</article>
+									</li>
+								</ul>
+								<table>
+									<tr>
+										<td colspan='2' align="right" style="font-size: 0.8em;">
+											<a href="updateExpert.jsp">개인정보수정</a> &nbsp;
+											<a href="deleteExpertCon">회원탈퇴</a>	
+										</td>
+									</tr>
+								</table>
+   							</div>
    					</div>
-   					
    					<div class="col-9 col-12-medium imp-medium">
    						<div class="content">
    							<!-- Content -->
@@ -76,20 +73,19 @@
    								<header>
    									<h3>드론관리</h3>
    								</header>
-   								
    								<!-- 여기서부터 오른쪽 페이지 수정 -->
    								<section class="mycontent">
 								      <form action="updateDroneCon" method="post" enctype="multipart/form-data">
 										<table>
 											<thead>
-											<tr>
-												<td style="width: 35px;">순번</td>
-												<td>모델명</td>
-												<td>제조사</td>
-												<td>일련번호</td>
-												<td>설명</td>
-												<td>사진</td>
-											</tr>
+												<tr>
+													<td style="width: 35px;">순번</td>
+													<td>모델명</td>
+													<td>제조사</td>
+													<td>일련번호</td>
+													<td>설명</td>
+													<td>사진</td>
+												</tr>
 											</thead>											
 											<%for(int i=0;i<droneList.size();i++){%>
 											<tr style="border-bottom: solid 1px #e7eae8;" height='58px'>

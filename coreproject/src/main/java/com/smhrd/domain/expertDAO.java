@@ -27,7 +27,7 @@ public class expertDAO {
 	public expertDTO selectExpert(expertDTO login) {
 		expertDTO loginExpert=null;
 		try {
-			loginExpert=sqlSession.selectOne("selectExpert", login);
+			loginExpert=sqlSession.selectOne("selectExpertLogin", login);
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -126,5 +126,18 @@ public class expertDAO {
 			sqlSession.close();
 		}
 		return ExpertPost;
+	}
+	public expertDTO selectExpertInquiry(String exp_id) {
+		expertDTO ExpertInquiry=null;
+		try {
+			ExpertInquiry=sqlSession.selectOne("selectExpert", exp_id);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return ExpertInquiry;
 	}
 }

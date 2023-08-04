@@ -8,7 +8,7 @@ public class userDAO {
 	public int insertUser(userDTO joinUser) {
 		int cnt=0;
 		try {
-			cnt=sqlSession.insert("insertUser", joinUser);
+			cnt=sqlSession.insert("selectUserLogin", joinUser);
 			if(cnt>0) {
 				sqlSession.commit();
 			}
@@ -98,5 +98,18 @@ public class userDAO {
 			sqlSession.close();
 		}
 		return cnt;
+	}
+	public userDTO selectUserInquiry(String user_id) {
+		userDTO UserInquiry=null;
+		try {
+			UserInquiry=sqlSession.selectOne("selectUser", user_id);
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			sqlSession.close();
+		}
+		return UserInquiry;
 	}
 }
