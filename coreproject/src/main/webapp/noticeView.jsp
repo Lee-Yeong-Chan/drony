@@ -62,7 +62,7 @@
    												<td align="right"><span><%=notice.get(0).getCreated_at() %></span></td>
    											</tr>
    											<tr>
-   												<td colspan="2"><span><%=notice.get(0).getNotice_content() %></span></td>
+   												<td colspan="2"><span class="cont"><%=notice.get(0).getNotice_content() %></span></td>
    											</tr>
    										</tbody>
    									</table>
@@ -74,6 +74,7 @@
 										<button onclick="location.href='notice.jsp'">목록</button>
    									</div>
    								</div>
+   								
 								<div id="update" style="margin-left: 30px;">
 									<form action="updateNoticeCon?notice_idx=<%=notice.get(0).getNotice_idx()%>" name="updateNoticeForm" method="post" enctype="multipart/form-data">
 										<table class="noticetable" height="180px">
@@ -91,7 +92,7 @@
 											</tr>
 											<tr>
 												<td>내용</td>
-												<td><textarea rows="7" cols="" name="content"></textarea></td>
+												<td><textarea rows="7" name="content"><%=notice.get(0).getNotice_content()%></textarea></td>
 											</tr>
 											<tr>
 												<td colspan='2' style="text-align:right;"><input type="button" value="수정" onclick="subm()"></td>
