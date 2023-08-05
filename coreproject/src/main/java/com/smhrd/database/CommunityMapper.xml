@@ -7,7 +7,7 @@
 		select * from t_notice where notice_idx=#{notice_idx}
 	</select>
 	<select id="selectAllNotice" resultType="com.smhrd.domain.noticeDTO">
-		select * from t_notice
+		select * from t_notice order by created_at desc
 	</select>
 	<insert id="insertNotice" parameterType="com.smhrd.domain.noticeDTO">
 		insert into t_notice values (t_notice_seq.nextval,#{notice_title},#{notice_content},#{notice_file},sysdate)
@@ -34,7 +34,7 @@
 		select * from t_inquiry_user where inq_idx=#{inq_idx}
 	</select>
 	<select id="selectAllUserInquiry" parameterType="String" resultType="com.smhrd.domain.userInquiryDTO">
-		select * from t_inquiry_user where user_id=#{user_id}
+		select * from t_inquiry_user where user_id=#{user_id} order by created_at desc
 	</select>
 	<insert id="insertUserInquiry" parameterType="com.smhrd.domain.userInquiryDTO">
 		insert into t_inquiry_user values (t_inquiry_user_seq.nextval,#{inq_title},#{inq_content},#{inq_file},sysdate,#{user_id})
@@ -61,7 +61,7 @@
 		select * from t_inquiry_exp where inq_idx=#{inq_idx}
 	</select>
 	<select id="selectAllExpertInquiry" parameterType="String" resultType="com.smhrd.domain.expertInquiryDTO">
-		select * from t_inquiry_exp where exp_id=#{exp_id}
+		select * from t_inquiry_exp where exp_id=#{exp_id} order by created_at desc
 	</select>
 	<insert id="insertExpertInquiry" parameterType="com.smhrd.domain.expertInquiryDTO">
 		insert into t_inquiry_exp values (t_inquiry_exp_seq.nextval,#{inq_title},#{inq_content},#{inq_file},sysdate,#{exp_id})
