@@ -201,9 +201,9 @@ select {
 	}
 
 	hr {
-		border: 0;
-		border-top: solid 2px #E7EAE8;
-		margin: 0 0 3em 0;
+		/* border: 0;
+		border-top: solid 2px #E7EAE8; */
+		margin: 5em 1em 0.5em -1em;
 	}
 
 	blockquote {
@@ -1831,7 +1831,7 @@ select {
 
 /* Button */
 	
-	.file label,
+	.filebox label,
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
@@ -1909,7 +1909,14 @@ select {
 			font-size: 1.65em;
 		}
 		
-		
+		.filebox input[type="file"] {
+		    position: absolute;
+		    width: 0;
+		    height: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    border: 0;
+		}
 		
 /* List */
 
@@ -2149,7 +2156,7 @@ select {
 
 	form label {
 		/* display: block; */
-		margin: 0 0 1em 0;
+		
 		font-family: 'Noto Sans KR', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -2183,6 +2190,7 @@ select {
 	form select {
 		line-height: 1.7em;
 		padding: 0 1em;
+		border-radius: 5px;
 	}
 
 	form textarea {
@@ -3568,6 +3576,25 @@ select {
 		border-bottom: solid 1px #E7EAE8;
 	}
 	
+	.noticetable input[type="file"]::file-selector-button{
+		-webkit-appearance: none;
+		display: inline-block;
+		font-weight: 700;
+		text-transform: uppercase;
+    	text-decoration: none;
+		background: #4e4b63;
+		color: #fff;
+		line-height: 2px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color .2s ease-in-out;
+	    font-size: 13px;
+	    padding: 0.7em 0.8em;
+	    text-align: center;
+		  
+}
+	
+	
 	
 	
 	/* .box.page-content>#view img{
@@ -3624,8 +3651,12 @@ select {
 	
 	
 	.box.page-content .post-content{
-		margin: 10px 0 10px 0;
+		margin: 10px 10px 10px 10px;
 		padding: 10px;
+	}
+	
+	.post-content div{
+		margin: 10px 0;
 	}
 	
 	.postimg{

@@ -93,10 +93,10 @@
 									<div class="postimg"><img onerror=this.src="images/<%=x%>.png" src="upload/<%=selectPost.get(0).getW_img()%>"></div>
 									<section class="post-content">
 										<div><b>단가 : </b><%=selectPost.get(0).getW_price() %>원</div>   
-										<div style="border-bottom: solid 1px #efefef; height: 50px;"><%=selectPost.get(0).getW_content() %></div>
+										<div><%=selectPost.get(0).getW_content() %></div>
 										<div class="exinfo">
-											<div><h6>업체명 : </h6><span><%=expertPost.getCompany_name() %></span></div>
-											<div><h6>사업자번호 : </h6><span><%=expertPost.getBno() %></span></div>
+											<div><b>업체명 : </b><%=expertPost.getCompany_name() %></div>
+											<div><b>사업자번호 : </b><%=expertPost.getBno() %></div>
 											<div>
 												<h6>보유드론 : </h6> 
 												<%for (int i=0;i<droneList.size();i++){
@@ -114,6 +114,7 @@
 									</c:if>
 									<button onclick="location.href='<%=y %>.jsp'">목록</button>
 								</article>
+								
 								<!-- postDetail 수정부분 -->
 								<article id="update">
 									<div>
