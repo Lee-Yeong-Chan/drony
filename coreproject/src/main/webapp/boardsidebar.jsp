@@ -54,7 +54,7 @@
 					</li>
 					<li>
 						<article class="box side-info">
-							<h1><a href="flight.jsp">비행지도</a></h1>
+							<h1><a href="https://drone.onestop.go.kr/common/flightArea" target="_blank">비행지도</a></h1>
 						</article>
 					</li>
 					<li>
