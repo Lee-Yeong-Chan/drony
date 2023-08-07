@@ -88,7 +88,7 @@
 											</tr>
 											<tr>
 												<td>첨부파일</td>
-												<td><input type="text" name="file" value="<%=notice.get(0).getNotice_file()%>"></td>
+												<td><input type="file" name="file" value="<%=notice.get(0).getNotice_file()%>"></td>
 											</tr>
 											<tr>
 												<td>내용</td>
