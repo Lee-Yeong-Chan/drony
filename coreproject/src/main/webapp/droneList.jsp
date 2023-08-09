@@ -65,21 +65,58 @@
 									</tr>
 								</table>
    							</div>
-   					</div>
-   					<div class="col-9 col-12-medium imp-medium">
-   						<div class="content">
-   							<!-- Content -->
-   							<article class="box page-content">
-   								<header>
-   									<h3>드론관리</h3>
-   								</header>
-   								<!-- 여기서부터 오른쪽 페이지 수정 -->
-   								<section class="mycontent">
-								      <form action="updateDroneCon" method="post" enctype="multipart/form-data">
-										<table>
-											<thead>
+   						</div>
+	   					<div class="col-9 col-12-medium imp-medium">
+	   						<div class="content">
+	   							<!-- Content -->
+	   							<article class="box page-content">
+	   								<header>
+	   									<h3>드론관리</h3>
+	   								</header>
+	   								<!-- 여기서부터 오른쪽 페이지 수정 -->
+	   								<section class="mycontent">
+									      <form action="updateDroneCon" method="post" enctype="multipart/form-data">
+											<table>
+												<thead>
+													<tr>
+														<td style="width: 5%;">순번</td>
+														<td style="width: 20%;">모델명</td>
+														<td style="width: 20%;">제조사</td>
+														<td style="width: 20%;">일련번호</td>
+														<td style="width: 20%;">설명</td>
+														<td style="width: 10%;">사진</td>
+														<td style="width:5%"></td>
+													</tr>
+												</thead>											
+												<%for(int i=0;i<droneList.size();i++){%>
+												<tr style="border-bottom: solid 1px #e7eae8;">
+													<td style="text-align: center;"><%=i+1 %></td>
+													<td> <input type="text" name="model" value=<%=droneList.get(i).getDr_model()%>></td>
+													<td> <input type="text" name="maker" value=<%=droneList.get(i).getDr_maker()%>></td>
+													<td> <input type="text" name="serial" value=<%=droneList.get(i).getDr_serial()%>></td>
+													<td> <input type="text" name="desc" value=<%=droneList.get(i).getDr_desc()%>></td>
+													<td style="vertical-align: bottom;"> 
+														<img src="upload/<%=droneList.get(i).getDr_img()%>" style="width: 150px;">
+													</td>
+													<td> 
+														<div class="filebox">
+															<label for="file"><span>첨부</span></label>
+															<input type="file" name="file" id="file">
+														</div>
+														<input type="submit" value="수정" style="margin-bottom: 3px;">
+														<button type="button" onclick="location.href='deleteDroneCon?dr_idx=<%=droneList.get(i).getDr_idx()%>'">삭제</button>
+													</td>
+												</tr>
+												<% session.setAttribute("dr_idx", droneList.get(i).getDr_idx());
+												}%>
+											</table>
+										</form>
+										<hr>
+										<form action="insertDroneCon" name="insertDroneForm" method="post" enctype="multipart/form-data">
+											<table>
+												<thead>
 												<tr>
-													<td style="width: 5%;">순번</td>
+													<td style="width: 5%;">추가</td>
 													<td style="width: 20%;">모델명</td>
 													<td style="width: 20%;">제조사</td>
 													<td style="width: 20%;">일련번호</td>
@@ -87,70 +124,33 @@
 													<td style="width: 10%;">사진</td>
 													<td style="width:5%"></td>
 												</tr>
-											</thead>											
-											<%for(int i=0;i<droneList.size();i++){%>
-											<tr style="border-bottom: solid 1px #e7eae8;">
-												<td style="text-align: center;"><%=i+1 %></td>
-												<td> <input type="text" name="model" value=<%=droneList.get(i).getDr_model()%>></td>
-												<td> <input type="text" name="maker" value=<%=droneList.get(i).getDr_maker()%>></td>
-												<td> <input type="text" name="serial" value=<%=droneList.get(i).getDr_serial()%>></td>
-												<td> <input type="text" name="desc" value=<%=droneList.get(i).getDr_desc()%>></td>
-												<td style="vertical-align: bottom;"> 
-													<img src="upload/<%=droneList.get(i).getDr_img()%>" style="width: 150px;">
-												</td>
-												<td> 
-													<div class="filebox">
-														<label for="file"><span>첨부</span></label>
-														<input type="file" name="file" id="file">
-													</div>
-													<input type="submit" value="수정" style="margin-bottom: 3px;">
-													<button type="button" onclick="location.href='deleteDroneCon?dr_idx=<%=droneList.get(i).getDr_idx()%>'">삭제</button>
-												</td>
-											</tr>
-											<% session.setAttribute("dr_idx", droneList.get(i).getDr_idx());
-											}%>
-										</table>
-									</form>
-									<hr>
-									<form action="insertDroneCon" name="insertDroneForm" method="post" enctype="multipart/form-data">
-										<table>
-											<thead>
-											<tr>
-												<td style="width: 5%;">추가</td>
-												<td style="width: 20%;">모델명</td>
-												<td style="width: 20%;">제조사</td>
-												<td style="width: 20%;">일련번호</td>
-												<td style="width: 20%;">설명</td>
-												<td style="width: 10%;">사진</td>
-												<td style="width:5%"></td>
-											</tr>
-											</thead>
-											<tr style="border-bottom: solid 1px #e7eae8;">
-												<td> </td>
-												<td> <input type="text" name="model"></td>
-												<td> <input type="text" name="maker"></td>
-												<td> <input type="text" name="serial"></td>
-												<td> <input type="text" name="desc"></td>
-												<td>
-													<div class="filebox" style="width:150px;" >
-														<label for="file"><span>첨부</span></label>
-														<input type="file" name="file" id="file">
-													</div>
-												</td>
-												<td> <input type="button" onclick="subm1()" value="추가" ></td>
-											</tr>
-										</table>
-									</form>
-   								</section>
-   							</article>
-   						</div>
-   					</div>
-   				</div>
-   			</div>
-   		</section>
-		<!-- Footer -->
-		<%@include file="footer.jsp" %>  
-	</div>
+												</thead>
+												<tr style="border-bottom: solid 1px #e7eae8;">
+													<td> </td>
+													<td> <input type="text" name="model"></td>
+													<td> <input type="text" name="maker"></td>
+													<td> <input type="text" name="serial"></td>
+													<td> <input type="text" name="desc"></td>
+													<td>
+														<div class="filebox" style="width:150px;" >
+															<label for="file"><span>첨부</span></label>
+															<input type="file" name="file" id="file">
+														</div>
+													</td>
+													<td> <input type="button" onclick="subm1()" value="추가" ></td>
+												</tr>
+											</table>
+										</form>
+	   								</section>
+	   							</article>
+	   						</div>
+	   					</div>
+	   				</div>
+	   			</div>
+	   		</section>
+			<!-- Footer -->
+			<%@include file="footer.jsp" %>  
+		</div>
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.dropotron.min.js"></script>

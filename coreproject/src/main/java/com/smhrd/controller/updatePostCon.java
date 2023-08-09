@@ -39,7 +39,8 @@ public class updatePostCon extends HttpServlet {
 			}
 			String originName = file.getSubmittedFileName();
 			if ("".equals(originName)){
-				break;
+				j++;
+				continue;
 			}
 			InputStream fis = file.getInputStream();
 			String realPath = request.getServletContext().getRealPath("/upload");

@@ -13,7 +13,6 @@
 				width: 550px; 
 				height: 450px;
 			}
-			
 			.overlaybox{
 				position: relative;
 				display: inline-block;
@@ -73,6 +72,5 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		
 	</body>
 </html>

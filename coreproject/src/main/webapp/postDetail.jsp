@@ -86,7 +86,7 @@
 									</div>
 									<div class="file">
 									<%pageContext.setAttribute("fileP",selectPost.get(0).getW_file()); %>
-										<c:if test="${not empty fileP}">
+										<c:if test="${not empty fileP or not fileP eq ''}">
 											<span>첨부파일</span><a href="upload/<%=selectPost.get(0).getW_file() %>" download><i class="icon solid fa-download"></i></a>
 										</c:if>
 									</div>
