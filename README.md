@@ -77,7 +77,3 @@
 ## 7. ER다이어그램
 ![image](https://github.com/Lee-Yeong-Chan/drony/blob/master/coreproject/src/main/webapp/images/dronytable.png?raw=true)
 ## 8. 화면 구성
-
-## 9. 팀원 및 역할
-
-## 10. 트러블슈팅
