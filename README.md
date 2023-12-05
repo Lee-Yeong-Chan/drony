@@ -1,6 +1,6 @@
 # 데이터 분석을 활용한 드론 업체 정보 제공 및 아웃소싱 중개 서비스
 ## 팀명 : DRONY
-![image](https://github.com/2022-SMHRD-DCX-BigData-7/DRONY/blob/master/coreproject/src/main/webapp/images/DRONY.png?raw=true)
+![image](https://github.com/Lee-Yeong-Chan/drony/blob/master/coreproject/src/main/webapp/images/DRONY.png?raw=true)
 
 ## 1. 서비스 소개
 > - 제안 배경 : 코로나 이후 급격하게 성장하는 플랫폼 시장과 드론의 기술 발전이 희소한 드론 인력 중개 시장의 수익성이 기대되는 상황
@@ -67,14 +67,15 @@
 </table>
 
 ## 5. 유스케이스
-![image](https://github.com/2022-SMHRD-DCX-BigData-7/DRONY/blob/master/coreproject/src/main/webapp/images/%EC%9C%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%EC%8A%A4.png?raw=true)
+![image](https://github.com/Lee-Yeong-Chan/drony/blob/master/coreproject/src/main/webapp/images/%EC%9C%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%EC%8A%A4.png?raw=true)
+
 ## 6. 서비스 흐름도
 #### 의뢰인
-![image](https://github.com/2022-SMHRD-DCX-BigData-7/DRONY/blob/master/coreproject/src/main/webapp/images/%EC%9D%98%EB%A2%B0%EC%9D%B8%EC%84%9C%EB%B9%84%EC%8A%A4%ED%9D%90%EB%A6%84%EB%8F%84.png?raw=true)
+![image](https://github.com/Lee-Yeong-Chan/drony/blob/master/coreproject/src/main/webapp/images/%EC%9D%98%EB%A2%B0%EC%9D%B8%EC%84%9C%EB%B9%84%EC%8A%A4%ED%9D%90%EB%A6%84%EB%8F%84.png?raw=true)
 #### 전문가
-![image](https://github.com/2022-SMHRD-DCX-BigData-7/DRONY/blob/master/coreproject/src/main/webapp/images/%EC%A0%84%EB%AC%B8%EA%B0%80%EC%84%9C%EB%B9%84%EC%8A%A4%ED%9D%90%EB%A6%84%EB%8F%84.png?raw=true)
+![image](https://github.com/Lee-Yeong-Chan/drony/blob/master/coreproject/src/main/webapp/images/%EC%A0%84%EB%AC%B8%EA%B0%80%EC%84%9C%EB%B9%84%EC%8A%A4%ED%9D%90%EB%A6%84%EB%8F%84.png?raw=true)
 ## 7. ER다이어그램
-![image](https://github.com/2022-SMHRD-DCX-BigData-7/DRONY/blob/master/coreproject/src/main/webapp/images/dronytable.png?raw=true)
+![image](https://github.com/Lee-Yeong-Chan/drony/blob/master/coreproject/src/main/webapp/images/dronytable.png?raw=true)
 ## 8. 화면 구성
 
 ## 9. 팀원 및 역할
